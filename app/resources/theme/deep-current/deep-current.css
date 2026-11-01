@@ -1,0 +1,250 @@
+/*
+ * Deep Current — GDS shared design system palette
+ *
+ * Maritime-inspired color scheme: navy primary, seafoam accent.
+ * Import this file AFTER `@import "tailwindcss"` in your app's CSS entry.
+ *
+ * Usage:
+ *   @import "tailwindcss";
+ *   @import "@gds/ui/design/themes/deep-current.css";
+ */
+
+/* Manrope for display, Inter for body, JetBrains Mono for data. All vendored. */
+@import "./typography.css";
+
+@theme {
+  /* Primary — deep navy */
+  --color-primary: #1e3a5f;
+  --color-primary-dark: #0f2440;
+  --color-primary-darker: #0a1628;
+  --color-primary-light: #2a4d7a;
+
+  /* Accent — seafoam teal */
+  --color-accent: #2dd4bf;
+  --color-accent-dark: #14b8a6;
+
+  /* Danger — red */
+  --color-danger: #ef4444;
+  --color-danger-dark: #dc2626;
+
+  /* App surface — the page card behind every screen, top to bottom */
+  --color-surface: hsl(210 9.5% 91.8%);
+  --color-surface-deep: hsl(210 9.5% 90.3%);
+
+  /*
+   * Card lift. Three layers rather than one: a hairline to seat the edge,
+   * a mid blur for shape, and a long low-opacity throw for the drop. Tinted
+   * navy, not black, so it sits in the palette instead of greying it.
+   */
+  --shadow-card:
+    0 1px 2px 0 rgb(15 23 42 / 0.03), 0 8px 16px -6px rgb(15 23 42 / 0.06),
+    0 24px 48px -16px rgb(15 23 42 / 0.1);
+  --shadow-card-raised:
+    0 2px 4px 0 rgb(15 23 42 / 0.04), 0 12px 24px -8px rgb(15 23 42 / 0.08),
+    0 36px 64px -20px rgb(15 23 42 / 0.14);
+}
+
+/*
+ * Override the browser's default cursor:default on interactive elements.
+ *
+ * Tailwind v4 removed the cursor:pointer override from preflight, deferring
+ * to the UA stylesheet (cursor:default on buttons). We restore it here.
+ *
+ * IMPORTANT: This block is intentionally UNLAYERED (not wrapped in @layer base).
+ * In the CSS cascade, unlayered author styles always beat layered styles
+ * (theme < base < components < utilities < unlayered). If we put this inside
+ * @layer base, it shares the same layer as Tailwind's preflight and the
+ * Vite/Lightning CSS import-inlining can reorder it before preflight,
+ * causing it to lose. Keeping it unlayered guarantees it wins regardless
+ * of how the bundler merges @layer base blocks from imported files.
+ */
+button:not(:disabled),
+a,
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
+
+/*
+ * Squircle corners — iOS-style superellipse (corner-shape: squircle is
+ * shorthand for superellipse(2)). Two sizes, because nested surfaces
+ * need the inner corner to sit inside the outer one: `squircle-lg` for
+ * the card, `squircle` for a panel or tile within it.
+ *
+ * Only Chromium ships corner-shape; every other engine drops the
+ * declaration and keeps the radius, so the fallback is an ordinary
+ * rounded corner. The @supports guard is here to say that out loud.
+ *
+ * Radius and shape travel together — pairing either with a `rounded-*`
+ * class leaves the winning border-radius to source order, and the core
+ * radius utilities sort last. On a Card use `shape="squircle"`, which
+ * swaps the radius out instead of stacking a second one.
+ */
+@utility squircle {
+  border-radius: 2rem;
+  @supports (corner-shape: squircle) {
+    corner-shape: squircle;
+  }
+}
+
+/*
+ * The card lift as a filter, for a clipped surface: anything wearing
+ * the Squircle component cuts its own box-shadow off, so a floating
+ * squircle panel puts this on its wrapper instead.
+ *
+ * Written as a utility rather than a `--drop-shadow-*` theme token on
+ * purpose. Tailwind emits that as `drop-shadow(var(--token))` — one
+ * wrapper around the whole value — so a multi-layer token becomes
+ * `drop-shadow(a, b, c)`, which is invalid and silently drops the
+ * entire filter. Three layers need three calls.
+ */
+@utility drop-shadow-card {
+  filter: drop-shadow(0 1px 2px rgb(15 23 42 / 0.04))
+    drop-shadow(0 8px 12px rgb(15 23 42 / 0.07))
+    drop-shadow(0 20px 32px rgb(15 23 42 / 0.1));
+}
+
+/* Shape without a radius, for pairing with any `rounded-*`. */
+@utility corner-squircle {
+  @supports (corner-shape: squircle) {
+    corner-shape: squircle;
+  }
+}
+
+@utility squircle-lg {
+  border-radius: 2.5rem;
+  @supports (corner-shape: squircle) {
+    corner-shape: squircle;
+  }
+}
+
+/*
+ * Minimal scrollbars, everywhere.
+ *
+ * No track and no buttons — just a slate thumb that sits on whatever is
+ * behind it. The thumb is drawn with a transparent border and
+ * background-clip: content-box, which insets it a couple of px without
+ * a second element, so it reads as a hairline rather than a bar in a
+ * gutter.
+ *
+ * Unlayered, like the cursor rule above: element and pseudo-element
+ * selectors here must not lose to a utility.
+ *
+ * macOS hides scrollbars until you scroll regardless; this is what
+ * Windows, Linux and any always-on setting get.
+ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(148 163 184 / 0.5) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(148 163 184 / 0.5);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(100 116 139 / 0.7);
+}
+
+/* No stepper arrows at the ends. */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/*
+ * .scrollbar-slim — narrow, faint scrollbar for long scroll containers.
+ *
+ * Apply to any element with overflow: auto / overflow: scroll when you
+ * want the default chunky scrollbar replaced with a subtle one. Works
+ * in both WebKit (thumb/track pseudo-elements) and Firefox
+ * (scrollbar-width / scrollbar-color) so it behaves the same on every
+ * browser.
+ *
+ * The thumb is slate-400 at ~30% alpha so it blends into light
+ * backgrounds, deepening to ~50% on hover for a touch of affordance.
+ */
+.scrollbar-slim {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(163, 163, 163, 0.6) transparent;
+}
+
+.scrollbar-slim::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+.scrollbar-slim::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-slim::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.scrollbar-slim::-webkit-scrollbar-thumb {
+  background-color: rgba(163, 163, 163, 0.6);
+  border-radius: 9999px;
+}
+
+.scrollbar-slim::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(163, 163, 163, 0.8);
+}
+
+/*
+ * Slide-over enter animations — used by the shared Slider. Enter-only
+ * (the panel unmounts on close); CSS keyframes keep it off the JS path.
+ */
+@keyframes gds-slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes gds-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gds-slide-in-right {
+  animation: gds-slide-in-right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gds-fade-in {
+  animation: gds-fade-in 0.2s ease-out;
+}
+
+@keyframes gds-notification-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gds-notification-enter {
+  animation: gds-notification-in 0.2s ease-out;
+}
