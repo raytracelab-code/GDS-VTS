@@ -7,8 +7,11 @@ class TopTabs(QWidget):
             button=QPushButton(name.upper()); button.setObjectName('moduleTab'); button.setCheckable(True); button.clicked.connect(lambda _, n=name: self._select(navigate,n)); layout.addWidget(button); self.buttons[name]=button
         self.buttons['Configure'].setChecked(True); layout.addStretch(); self.set_locked(False)
     def set_locked(self, unlocked):
-        for name in ('VDR','VJR','Nav'):
+        # Nav is an installer/development workspace and remains available offline.
+        # VDR/VJR retain the session telemetry gate.
+        for name in ('VDR','VJR'):
             self.buttons[name].setEnabled(unlocked); self.buttons[name].setText(name.upper() if unlocked else f'{name.upper()}  ·  LOCKED')
+        self.buttons['Nav'].setEnabled(True); self.buttons['Nav'].setText('NAV')
     def _select(self,navigate,name):
         for button in self.buttons.values(): button.setChecked(False)
         self.buttons[name].setChecked(True); navigate(name)
