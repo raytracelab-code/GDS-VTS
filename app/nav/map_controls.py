@@ -4,6 +4,7 @@ from dataclasses import dataclass
 
 
 LAYER_VISIBILITY = {
+    "Squall Alerts": ("squall-current", "squall-direction", "squall-trajectories", "squall-impact-zones-fill", "squall-impact-zones-outline", "squall-surveillance-zones-fill", "squall-surveillance-zones-outline", "squall-prediction-points", "squall-eta", "squall-selection-point", "squall-selection-line", "squall-selection-outline"),
     "Vessel": ("vessel",),
     "Track": ("track", "track-start"),
     "Heading / COG": ("heading-vector", "cog-vector"),
