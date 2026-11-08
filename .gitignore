@@ -7,3 +7,6 @@ build/
 dist/
 *.log
 .vscode/
+.env
+.env.*
+!.env.example

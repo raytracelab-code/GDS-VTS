@@ -1,0 +1,25 @@
+{
+  "bounds": [
+    100.12000000000245,
+    3.8020716142080886,
+    100.89000000000249,
+    4.257918734151801
+  ],
+  "http_status": 200,
+  "bytes": 34951,
+  "raw_elements": 22,
+  "incomplete": false,
+  "reason": null,
+  "normalized": 17,
+  "categories": {
+    "aton": 3,
+    "ports": 1,
+    "hazards": 13
+  },
+  "types": {
+    "light": 3,
+    "harbour": 1,
+    "rock": 12,
+    "reef": 1
+  }
+}

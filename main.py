@@ -4,6 +4,12 @@ register_gds_scheme()
 from PySide6.QtWidgets import QApplication
 from app.ui.main_window import MainWindow
 def main():
+    import logging
+    maritime_log=logging.getLogger('app.nav.maritime')
+    if not maritime_log.handlers:
+        handler=logging.StreamHandler();handler.setFormatter(logging.Formatter('%(levelname)s %(name)s %(message)s'))
+        maritime_log.addHandler(handler)
+    maritime_log.setLevel(logging.INFO);maritime_log.propagate=False
     print('STARTUP 1: main entered', flush=True)
     app=QApplication(sys.argv); print('STARTUP 2: QApplication created', flush=True); app.setApplicationName('GDS VTS')
     print('STARTUP 3: before MainWindow import', flush=True)

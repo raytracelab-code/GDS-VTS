@@ -3,3 +3,4 @@ bleak>=0.22
 pyserial>=3.5
 pytest>=8
 pytest-qt>=4.5
+shapely>=2.0

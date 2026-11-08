@@ -1,0 +1,34 @@
+{
+  "configuration_states": {
+    "malaysia_gis": "NOT_CONFIGURED",
+    "overpass": "CONNECTING",
+    "aisstream": "NOT_CONFIGURED",
+    "gebco": "CONNECTING",
+    "openwaters": "NOT_CONFIGURED",
+    "openseamap": "DISABLED",
+    "boem": "DISABLED",
+    "emodnet": "DISABLED",
+    "gfw": "DISABLED_LICENSE",
+    "copernicus_wave": "NOT_CONFIGURED",
+    "copernicus_current": "NOT_CONFIGURED",
+    "copernicus_sst": "NOT_CONFIGURED",
+    "copernicus_sealevel": "NOT_CONFIGURED",
+    "navarea8": "NO_STABLE_MACHINE_API"
+  },
+  "regional_coverage": {
+    "boem": "OUT_OF_COVERAGE",
+    "emodnet": "OUT_OF_COVERAGE"
+  },
+  "sdk_versions": {
+    "websockets": "16.1.1",
+    "copernicusmarine": "2.5.1",
+    "mapbox-vector-tile": "2.2.0"
+  },
+  "credentials_present": {
+    "AISSTREAM_API_KEY": false,
+    "COPERNICUSMARINE_USERNAME": false,
+    "COPERNICUSMARINE_PASSWORD": false,
+    "GDS_GFW_API_TOKEN": false
+  },
+  "notes": "No credential values recorded; configuration states captured before any I/O."
+}

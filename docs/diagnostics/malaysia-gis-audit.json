@@ -1,0 +1,802 @@
+{
+  "metadata": {
+    "display_name": "MALAYSIA OFFSHORE GIS",
+    "source_tier": "LOCAL_GIS",
+    "licence_authority": "NOT YET RECORDED",
+    "directory": "data\\maritime\\malaysia",
+    "total_features": 10268,
+    "in_view": 0,
+    "file_count": 18,
+    "invalid_features": 13,
+    "null_geometries": 2,
+    "duplicate_features": 45,
+    "cross_layer_native_overlaps": 384,
+    "errors": [],
+    "bounds": [
+      98.022889,
+      1.263626,
+      120.264806,
+      9.030622
+    ]
+  },
+  "layers": [
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_abandoned_psc_wgs84.geojson",
+      "feature_count": 9,
+      "valid_features": 9,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 9
+      },
+      "bounds": [
+        111.758282,
+        4.270329,
+        115.008817,
+        5.605329
+      ],
+      "important_properties": [
+        "CONTRACT",
+        "CORE",
+        "CURRENT_OPERATOR",
+        "DISC_WELL",
+        "DISC_YR",
+        "FIELD_NAME",
+        "FIELD_STATUS",
+        "FIELD_TYPE",
+        "FLUID_SAMPLE",
+        "GAS_DRO",
+        "GLOBALID",
+        "LOCATION",
+        "NO_WELL_BY_FIELD",
+        "OBJECTID",
+        "OIL_DRO",
+        "ON_SMARTVIEWER_LAYER",
+        "PRESSURE",
+        "PRODUCTION",
+        "PSC_EXPIRY_YEAR",
+        "PSC_NAME",
+        "PSC_TYPE",
+        "PVT",
+        "REGION",
+        "RESOURCE_BSCF",
+        "RESOURCE_MMSTB",
+        "SEIS_2D",
+        "SEIS_3D",
+        "WATER_DEPTH_METER",
+        "WELL_LOG",
+        "WELL_TEST"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "development_areas"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_awarded_block_wgs84.geojson",
+      "feature_count": 116,
+      "valid_features": 111,
+      "invalid_features": 5,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "MultiPolygon": 51,
+        "Polygon": 65
+      },
+      "bounds": [
+        102.975665,
+        1.500177,
+        120.264805,
+        7.832283
+      ],
+      "important_properties": [
+        "AREA_SQKM_CALC",
+        "BASIN_NAME",
+        "BLK_NAME",
+        "COUNTRY_NAME",
+        "LOCATION",
+        "OBJECTID",
+        "REGION",
+        "SOURCE_WHITESPACE_CLEANED",
+        "TYPE_OF_DEPTH"
+      ],
+      "errors": [
+        "Self-intersection[116.202385809482 6.81169062272441]",
+        "Ring Self-intersection[112.170029 3.815844]",
+        "Ring Self-intersection[112.740513 4.48948]",
+        "Self-intersection[116.584959765342 6.64521815288298]",
+        "Self-intersection[104.781319153735 5.51398093617428]"
+      ],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "petroleum_blocks"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_basin_wgs84.geojson",
+      "feature_count": 26,
+      "valid_features": 26,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 26
+      },
+      "bounds": [
+        98.022889,
+        1.392119,
+        120.264806,
+        9.030622
+      ],
+      "important_properties": [
+        "ACREAGE",
+        "AREA_SQKM_CALC",
+        "BASIN_NAME",
+        "COUNTRY",
+        "OBJECTID",
+        "PARENT_BASIN_ID",
+        "REGION",
+        "TYPE"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "basins"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_ceased_psc_wgs84.geojson",
+      "feature_count": 6,
+      "valid_features": 6,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 6
+      },
+      "bounds": [
+        104.998106,
+        4.560305,
+        113.855924,
+        6.300701
+      ],
+      "important_properties": [
+        "CONTRACT",
+        "CORE",
+        "CURRENT_OPERATOR",
+        "DISC_WELL",
+        "DISC_YR",
+        "FIELD_NAME",
+        "FIELD_STATUS",
+        "FIELD_TYPE",
+        "FLUID_SAMPLE",
+        "GAS_DRO",
+        "GLOBALID",
+        "LOCATION",
+        "NO_WELL_BY_FIELD",
+        "OBJECTID",
+        "OIL_DRO",
+        "ON_SMARTVIEWER_LAYER",
+        "PRESSURE",
+        "PRODUCTION",
+        "PSC_EXPIRY_YEAR",
+        "PSC_NAME",
+        "PSC_TYPE",
+        "PVT",
+        "REGION",
+        "RESOURCE_BSCF",
+        "RESOURCE_MMSTB",
+        "SEIS_2D",
+        "SEIS_3D",
+        "SOURCE_WHITESPACE_CLEANED",
+        "WATER_DEPTH_METER",
+        "WELL_LOG",
+        "WELL_TEST"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "development_areas"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_development_psc_wgs84.geojson",
+      "feature_count": 2,
+      "valid_features": 2,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 2
+      },
+      "bounds": [
+        105.306235,
+        4.711992,
+        113.794406,
+        5.486622
+      ],
+      "important_properties": [
+        "CONTRACT",
+        "CORE",
+        "CURRENT_OPERATOR",
+        "DISC_WELL",
+        "DISC_YR",
+        "FIELD_NAME",
+        "FIELD_STATUS",
+        "FIELD_TYPE",
+        "FLUID_SAMPLE",
+        "GAS_DRO",
+        "GLOBALID",
+        "LOCATION",
+        "NO_WELL_BY_FIELD",
+        "OBJECTID",
+        "OIL_DRO",
+        "ON_SMARTVIEWER_LAYER",
+        "PRESSURE",
+        "PRODUCTION",
+        "PSC_EXPIRY_YEAR",
+        "PSC_NAME",
+        "PSC_TYPE",
+        "PVT",
+        "REGION",
+        "RESOURCE_BSCF",
+        "RESOURCE_MMSTB",
+        "SEIS_2D",
+        "SEIS_3D",
+        "SOURCE_WHITESPACE_CLEANED",
+        "WATER_DEPTH_METER",
+        "WELL_LOG",
+        "WELL_TEST"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "development_areas"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_fields_all_wgs84.geojson",
+      "feature_count": 491,
+      "valid_features": 491,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 489,
+        "MultiPolygon": 2
+      },
+      "bounds": [
+        98.191132,
+        2.985731,
+        118.877379,
+        7.391592
+      ],
+      "important_properties": [
+        "CONTRACT",
+        "CORE",
+        "CURRENT_OPERATOR",
+        "DISC_WELL",
+        "DISC_YR",
+        "FIELD_NAME",
+        "FIELD_STATUS",
+        "FIELD_TYPE",
+        "FLUID_SAMPLE",
+        "GAS_DRO",
+        "GLOBALID",
+        "LOCATION",
+        "NO_WELL_BY_FIELD",
+        "OBJECTID",
+        "OIL_DRO",
+        "PRESSURE",
+        "PRODUCTION",
+        "PSC_EXPIRY_YEAR",
+        "PSC_NAME",
+        "PSC_TYPE",
+        "PVT",
+        "REGION",
+        "RESOURCE_BSCF",
+        "RESOURCE_MMSTB",
+        "SEIS_2D",
+        "SEIS_3D",
+        "SOURCE_WHITESPACE_CLEANED",
+        "WATER_DEPTH_METER",
+        "WELL_LOG",
+        "WELL_TEST"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "oil_gas_fields"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_ftg_wgs84.geojson",
+      "feature_count": 31,
+      "valid_features": 30,
+      "invalid_features": 1,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 28,
+        "MultiPolygon": 3
+      },
+      "bounds": [
+        98.070733,
+        1.263626,
+        119.443887,
+        7.444987
+      ],
+      "important_properties": [
+        "ACQUI_YEAR",
+        "ACQUI_YEAR_NUM",
+        "AREA_SQKM_CALC",
+        "BLOCK_NAME",
+        "COUNTRY_NAME",
+        "DATA_PROCESS_YEAR",
+        "FIELD_CONTRACTOR",
+        "GLOBALID",
+        "OBJECTID",
+        "REGION",
+        "SOURCE_WHITESPACE_CLEANED",
+        "SURVEY_ACREAGE_SQKM",
+        "SURVEY_ACREAGE_SQKM_NUM",
+        "SURVEY_AREA",
+        "SURVEY_DATE",
+        "SURVEY_NAME",
+        "UNSI"
+      ],
+      "errors": [
+        "Self-intersection[102.794281 5.806133]"
+      ],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "geophysical_surveys"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_open_block_wgs84.geojson",
+      "feature_count": 28,
+      "valid_features": 26,
+      "invalid_features": 2,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 18,
+        "MultiPolygon": 10
+      },
+      "bounds": [
+        98.025,
+        1.140806,
+        119.584722,
+        8.915528
+      ],
+      "important_properties": [
+        "AREA_SQKM_CALC",
+        "BASIN_NAME",
+        "BLK_NAME",
+        "COUNTRY_NAME",
+        "LOCATION",
+        "OBJECTID",
+        "REGION",
+        "TYPE_OF_DEPTH"
+      ],
+      "errors": [
+        "Self-intersection[117.902114312974 5.78345433615693]",
+        "Too few points in geometry component[101.711265 2.59575]"
+      ],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "petroleum_blocks"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_pipeline_wgs84.geojson",
+      "feature_count": 745,
+      "valid_features": 742,
+      "invalid_features": 3,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "LineString": 669,
+        "MultiLineString": 76
+      },
+      "bounds": [
+        100.324687,
+        1.461589,
+        116.345808,
+        7.696013
+      ],
+      "important_properties": [
+        "CONTENT",
+        "CURRENT_PROD",
+        "DESIGN_CAPACITY",
+        "FRM_FACILITY",
+        "FRM_LOC",
+        "GLOBALID",
+        "INNER_DIA_INCH",
+        "INSTALL_YEAR",
+        "LANDING_PRESSURE",
+        "LENGTH_KM_CALC",
+        "LENGTH_QUALITY",
+        "LGTH_KM",
+        "MATERIAL",
+        "MAT_GRADE",
+        "MAX_PRESSURE",
+        "OBJECTID",
+        "OPERATOR",
+        "OUTER_DIA_INCH",
+        "PIPE_NAME",
+        "REGION",
+        "STATUS",
+        "TO_FACILITY",
+        "TO_LOC",
+        "TYPE",
+        "WALL_THICK_INCH"
+      ],
+      "errors": [
+        "Too few points in geometry component[105.303155 6.119255]",
+        "Too few points in geometry component[103.449113 4.56063]",
+        "Too few points in geometry component[112.682561 4.334408]"
+      ],
+      "simplified_features": 2,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "subsea"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_platform_wgs84.geojson",
+      "feature_count": 477,
+      "valid_features": 477,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Point": 477
+      },
+      "bounds": [
+        103.2,
+        3.2318301,
+        116.3458517,
+        7.3826029
+      ],
+      "important_properties": [
+        "COORD_QUALITY",
+        "GLOBALID",
+        "LAT_WGS84",
+        "LAT_WGS84_DD",
+        "LONG_WGS84",
+        "LONG_WGS84_DD",
+        "NUM_OF_WELLS",
+        "OBJECTID",
+        "PLAT_ABBREV_NAME",
+        "PLAT_FIELD_LOC",
+        "PLAT_FULL_NAME",
+        "PLAT_OPERATOR",
+        "PLAT_PRO_INSTALL_YEAR",
+        "PLAT_STATUS",
+        "PLAT_TYPE",
+        "PSC_REF",
+        "REGION",
+        "WATER_DPTH_M"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "offshore"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_pre_development_psc_wgs84.geojson",
+      "feature_count": 235,
+      "valid_features": 235,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 234,
+        "MultiPolygon": 1
+      },
+      "bounds": [
+        102.9418,
+        3.139955,
+        118.877379,
+        7.341277
+      ],
+      "important_properties": [
+        "CONTRACT",
+        "CORE",
+        "CURRENT_OPERATOR",
+        "DISC_WELL",
+        "DISC_YR",
+        "FIELD_NAME",
+        "FIELD_STATUS",
+        "FIELD_TYPE",
+        "FLUID_SAMPLE",
+        "GAS_DRO",
+        "GLOBALID",
+        "LOCATION",
+        "NO_WELL_BY_FIELD",
+        "OBJECTID",
+        "OIL_DRO",
+        "ON_SMARTVIEWER_LAYER",
+        "PRESSURE",
+        "PRODUCTION",
+        "PSC_EXPIRY_YEAR",
+        "PSC_NAME",
+        "PSC_TYPE",
+        "PVT",
+        "REGION",
+        "RESOURCE_BSCF",
+        "RESOURCE_MMSTB",
+        "SEIS_2D",
+        "SEIS_3D",
+        "SOURCE_WHITESPACE_CLEANED",
+        "WATER_DEPTH_METER",
+        "WELL_LOG",
+        "WELL_TEST"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "development_areas"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_production_within_psc_area_wgs84.geojson",
+      "feature_count": 132,
+      "valid_features": 132,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 131,
+        "MultiPolygon": 1
+      },
+      "bounds": [
+        103.180364,
+        3.296577,
+        116.393241,
+        7.391592
+      ],
+      "important_properties": [
+        "CONTRACT",
+        "CORE",
+        "CURRENT_OPERATOR",
+        "DISC_WELL",
+        "DISC_YR",
+        "FIELD_NAME",
+        "FIELD_STATUS",
+        "FIELD_TYPE",
+        "FLUID_SAMPLE",
+        "GAS_DRO",
+        "GLOBALID",
+        "LOCATION",
+        "NO_WELL_BY_FIELD",
+        "OBJECTID",
+        "OIL_DRO",
+        "ON_SMARTVIEWER_LAYER",
+        "PRESSURE",
+        "PRODUCTION",
+        "PSC_EXPIRY_YEAR",
+        "PSC_NAME",
+        "PSC_TYPE",
+        "PVT",
+        "REGION",
+        "RESOURCE_BSCF",
+        "RESOURCE_MMSTB",
+        "SEIS_2D",
+        "SEIS_3D",
+        "SOURCE_WHITESPACE_CLEANED",
+        "WATER_DEPTH_METER",
+        "WELL_LOG",
+        "WELL_TEST"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "development_areas"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_seismic_3d_wgs84.geojson",
+      "feature_count": 829,
+      "valid_features": 829,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "Polygon": 693,
+        "MultiPolygon": 136
+      },
+      "bounds": [
+        100.884561,
+        2.811866,
+        119.130864,
+        7.83235
+      ],
+      "important_properties": [
+        "ACQUISIITION_YEAR",
+        "AREA_KM_SQUARE",
+        "BLOCK",
+        "COUNTRY_NAME",
+        "DOMAIN_TYPE",
+        "FIELD",
+        "OBJECTID",
+        "PROCESSING_YEAR",
+        "REGION",
+        "USI_CODE"
+      ],
+      "errors": [],
+      "simplified_features": 9,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "seismic_surveys"
+    },
+    {
+      "filename": "GIS Data/Malaysia GIS Data/malaysia_well_location_wgs84.geojson",
+      "feature_count": 6969,
+      "valid_features": 6967,
+      "invalid_features": 2,
+      "null_geometries": 2,
+      "duplicates": 0,
+      "geometry_types": {
+        "Point": 6967
+      },
+      "bounds": [
+        98.1587728,
+        2.2400192,
+        119.4654328,
+        7.6691971
+      ],
+      "important_properties": [
+        "COUNTRY_NAME",
+        "CURRENT_WELL_STATUS",
+        "DRILLERS_TD_M",
+        "ELEV_M",
+        "FIELD",
+        "GLOBALID",
+        "LAT_WGS84",
+        "LEASE_NAME",
+        "LONG_WGS84",
+        "OBJECTID",
+        "OPERATOR",
+        "PA_DATE",
+        "PREVIOUS_OPERATOR",
+        "REGION",
+        "SPUD_DATE",
+        "TD_TVD_M",
+        "UWI",
+        "WATER_DEPTH_M",
+        "WATER_DEPTH_REF",
+        "WELL_CLASS",
+        "WELL_NAME"
+      ],
+      "errors": [
+        "Null geometry",
+        "Null geometry"
+      ],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "offshore_wells"
+    },
+    {
+      "filename": "GIS Data/platforms/platforms_134.geojson",
+      "feature_count": 53,
+      "valid_features": 44,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 9,
+      "geometry_types": {
+        "MultiLineString": 11,
+        "LineString": 12,
+        "Point": 24,
+        "Polygon": 6
+      },
+      "bounds": [
+        111.71553429130196,
+        4.305642086485419,
+        113.47337519874193,
+        4.78382317412876
+      ],
+      "important_properties": [
+        "client",
+        "crane_radius",
+        "name",
+        "text_label",
+        "type"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "RFC7946 WGS84 / CRS84 (implicit)",
+      "category": "offshore"
+    },
+    {
+      "filename": "GIS Data/platforms/platforms_3.geojson",
+      "feature_count": 87,
+      "valid_features": 87,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 0,
+      "geometry_types": {
+        "MultiLineString": 64,
+        "Polygon": 6,
+        "Point": 17
+      },
+      "bounds": [
+        103.731295486109,
+        5.09148430964031,
+        104.69528147917,
+        7.22920539212696
+      ],
+      "important_properties": [
+        "client",
+        "crane_radius",
+        "name",
+        "text_label",
+        "type"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "RFC7946 WGS84 / CRS84 (implicit)",
+      "category": "offshore"
+    },
+    {
+      "filename": "GIS Data/platforms/platforms_34.geojson",
+      "feature_count": 73,
+      "valid_features": 50,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 23,
+      "geometry_types": {
+        "MultiLineString": 44,
+        "Point": 29
+      },
+      "bounds": [
+        114.69697222291308,
+        5.428697548637112,
+        116.3460437635963,
+        6.838779501656064
+      ],
+      "important_properties": [
+        "Name",
+        "client",
+        "crane_radius",
+        "name",
+        "text_label",
+        "type"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "RFC7946 WGS84 / CRS84 (implicit)",
+      "category": "offshore"
+    },
+    {
+      "filename": "GIS Data/platforms/platforms_496.geojson",
+      "feature_count": 17,
+      "valid_features": 4,
+      "invalid_features": 0,
+      "null_geometries": 0,
+      "duplicates": 13,
+      "geometry_types": {
+        "Point": 17
+      },
+      "bounds": [
+        112.45491277777778,
+        3.3411997222222225,
+        112.94619527777778,
+        3.8850141666666667
+      ],
+      "important_properties": [
+        "client",
+        "field_location",
+        "lat_dms",
+        "lon_dms",
+        "no",
+        "platform_abbreviation",
+        "platform_full_name",
+        "platform_type",
+        "text_label",
+        "type"
+      ],
+      "errors": [],
+      "simplified_features": 0,
+      "crs": "urn:ogc:def:crs:OGC:1.3:CRS84",
+      "category": "offshore"
+    }
+  ],
+  "performance": {
+    "initial_load_seconds": 56.055,
+    "representative_query_seconds": 0.004061,
+    "representative_in_view": 2776,
+    "load_count": 1
+  }
+}

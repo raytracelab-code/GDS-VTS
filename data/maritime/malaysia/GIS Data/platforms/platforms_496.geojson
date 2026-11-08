@@ -1,0 +1,335 @@
+{
+  "type": "FeatureCollection",
+  "name": "PTTEP Platform Locations",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.66489055555556, 3.4132777777777776]
+      },
+      "properties": {
+        "no": 1,
+        "field_location": "BELUM",
+        "platform_abbreviation": "BE-SA",
+        "platform_full_name": "BELUM SATELLITE A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 24 47.800 N",
+        "lon_dms": "112 39 53.606 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "BE-SA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.82058305555555, 3.3581769444444447]
+      },
+      "properties": {
+        "no": 2,
+        "field_location": "GOLOK",
+        "platform_abbreviation": "GOR-A",
+        "platform_full_name": "GOLOK DRILLING RISER PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 21 29.437 N",
+        "lon_dms": "112 49 14.099 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "GOR-A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.82112166666666, 3.3579680555555558]
+      },
+      "properties": {
+        "no": 3,
+        "field_location": "GOLOK",
+        "platform_abbreviation": "GOP-A",
+        "platform_full_name": "GOLOK PRODUCTION PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 21 28.685 N",
+        "lon_dms": "112 49 16.038 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "GOP-A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.78723638888889, 3.3411997222222225]
+      },
+      "properties": {
+        "no": 4,
+        "field_location": "GOLOK",
+        "platform_abbreviation": "GOP-B",
+        "platform_full_name": "GOLOK PRODUCTION PLATFORM B",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 20 28.319 N",
+        "lon_dms": "112 47 14.051 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "GOP-B"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.59741583333333, 3.4732000000000003]
+      },
+      "properties": {
+        "no": 5,
+        "field_location": "MERAPUH",
+        "platform_abbreviation": "ME-PA",
+        "platform_full_name": "MERAPUH PRODUCTION PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 28 23.520 N",
+        "lon_dms": "112 35 50.697 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "ME-PA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.94619527777778, 3.5860205555555558]
+      },
+      "properties": {
+        "no": 6,
+        "field_location": "PATRICIA",
+        "platform_abbreviation": "PT-SA",
+        "platform_full_name": "PATRICIA SATELLITE PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 35 9.674 N",
+        "lon_dms": "112 56 46.303 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "PT-SA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.5140525, 3.469701111111111]
+      },
+      "properties": {
+        "no": 7,
+        "field_location": "PEMANIS",
+        "platform_abbreviation": "PE-SA",
+        "platform_full_name": "PEMANIS SATELLITE PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 28 10.924 N",
+        "lon_dms": "112 30 50.589 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "PE-SA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.45491277777778, 3.8850141666666667]
+      },
+      "properties": {
+        "no": 8,
+        "field_location": "PERMAS",
+        "platform_abbreviation": "PR-PA",
+        "platform_full_name": "PERMAS PRODUCTION PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 53 6.051 N",
+        "lon_dms": "112 27 17.686 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "PR-PA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.78270944444445, 3.7151680555555555]
+      },
+      "properties": {
+        "no": 9,
+        "field_location": "SERAMPANG",
+        "platform_abbreviation": "SE-PA",
+        "platform_full_name": "SERAMPANG PRODUCTION PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 42 54.605 N",
+        "lon_dms": "112 46 57.754 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "SE-PA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.68167416666667, 3.350581111111111]
+      },
+      "properties": {
+        "no": 10,
+        "field_location": "SERENDAH",
+        "platform_abbreviation": "SN-PA",
+        "platform_full_name": "SERENDAH PRODUCTION PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 21 2.092 N",
+        "lon_dms": "112 40 54.027 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "SN-PA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.67771333333334, 3.6276297222222222]
+      },
+      "properties": {
+        "no": 11,
+        "field_location": "SOUTH ACIS",
+        "platform_abbreviation": "SA-PA",
+        "platform_full_name": "SOUTH ACIS PRODUCTION PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 37 39.467 N",
+        "lon_dms": "112 40 39.768 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "SA-PA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.712395, 3.631341388888889]
+      },
+      "properties": {
+        "no": 12,
+        "field_location": "SOUTH ACIS",
+        "platform_abbreviation": "SA-SA",
+        "platform_full_name": "SOUTH ACIS SATELLITE A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 37 52.829 N",
+        "lon_dms": "112 42 44.622 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "SA-SA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.67730944444445, 3.6282247222222224]
+      },
+      "properties": {
+        "no": 13,
+        "field_location": "SOUTH ACIS",
+        "platform_abbreviation": "SA-AA",
+        "platform_full_name": "SOUTH ACIS UTILITY PLATFORM A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 37 41.609 N",
+        "lon_dms": "112 40 38.314 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "SA-AA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.81594722222222, 3.5575980555555553]
+      },
+      "properties": {
+        "no": 14,
+        "field_location": "WEST PATRICIA",
+        "platform_abbreviation": "WP-IA",
+        "platform_full_name": "WEST PATRICIA INJECTION PRODUCTION-A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 33 27.353 N",
+        "lon_dms": "112 48 57.410 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "WP-IA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.82951333333332, 3.568761111111111]
+      },
+      "properties": {
+        "no": 15,
+        "field_location": "WEST PATRICIA",
+        "platform_abbreviation": "WP-PA",
+        "platform_full_name": "WEST PATRICIA PRODUCTION-A",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 34 7.540 N",
+        "lon_dms": "112 49 46.248 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "WP-PA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.81446222222222, 3.5577908333333332]
+      },
+      "properties": {
+        "no": 16,
+        "field_location": "WEST PATRICIA",
+        "platform_abbreviation": "WP-PB",
+        "platform_full_name": "WEST PATRICIA PRODUCTION-B",
+        "platform_type": "Fixed Steel",
+        "lat_dms": "3 33 28.047 N",
+        "lon_dms": "112 48 52.064 E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "WP-PB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.80666666666667, 3.5666666666666664]
+      },
+      "properties": {
+        "no": 19,
+        "field_location": "WEST PATRICIA",
+        "platform_abbreviation": "WP-FA",
+        "platform_full_name": "WEST PATRICIA FLOATING -A",
+        "platform_type": "Float Stor & Off",
+        "lat_dms": "3 34' N",
+        "lon_dms": "112 48.4' E",
+        "type": "platform.label",
+        "client": 496,
+        "text_label": "WP-FA"
+      }
+    }
+  ]
+}

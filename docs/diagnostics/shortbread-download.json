@@ -1,0 +1,20 @@
+{
+  "page": "https://download.geofabrik.de/asia/malaysia-singapore-brunei.html",
+  "url": "https://download.geofabrik.de/asia/malaysia-singapore-brunei-shortbread-1.0.mbtiles",
+  "http_headers": {
+    "Date": "Sun, 08 Nov 2026 12:20:22 GMT",
+    "Server": "Apache",
+    "Last-Modified": "Sun, 08 Nov 2026 03:54:19 GMT",
+    "ETag": "\"118e7000-65fbbccc94a2e\"",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "294547456",
+    "Cache-Control": "max-age=604800, public",
+    "Cache-Status": "download-proxy9;detail=mismatch",
+    "Via": "1.1 download-proxy9 (squid/6.14)",
+    "Connection": "close"
+  },
+  "bytes": 294547456,
+  "sha256": "5acc0e97f0d5b68289c4bc03ceef1aa72ffdae48dc4849a984ccc340588fbc86",
+  "downloaded_at": "2026-11-08T12:21:22.771204+00:00",
+  "download_seconds": 60.95225420012139
+}

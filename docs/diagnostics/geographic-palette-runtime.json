@@ -1,0 +1,768 @@
+{
+  "asset_installed": false,
+  "snapshots": [
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 0,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -17.327447898341788,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-11-08T11:53:50.155278+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 0,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 0,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.9440327637162664,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 104.56090871960942,
+        "lat": 5.422655663945591
+      },
+      "zoom": 9.346477057284991,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 219,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -2.4941005131524374,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.444203943343055,
+        "longitude": 104.50360255402677,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.57049427981599,
+        "lat": 5.864403078288248
+      },
+      "zoom": 6.694739872043337,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 469,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.881167316539794,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.7164002216685645,
+        "longitude": 103.8864978995274,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 104.02989159336266,
+        "lat": 5.710734606558134
+      },
+      "zoom": 7.104123136154974,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 759,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -0.6451536421871777,
+        "reference_type": "MAP_CENTER",
+        "latitude": 6.256549620535026,
+        "longitude": 102.64042598906303,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 104.22256236486783,
+        "lat": 5.635006759866556
+      },
+      "zoom": 7.376672389169382,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 702,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -84.04549841522532,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.635006759866556,
+        "longitude": 104.22256236486783,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T17:00:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 104.22256236486783,
+        "lat": 5.635006759866556
+      },
+      "zoom": 7.376672389169382,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 702,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -84.04549841522532,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.635006759866556,
+        "longitude": 104.22256236486783,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T17:00:00+00:00"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 104.22256236486783,
+        "lat": 5.635006759866556
+      },
+      "zoom": 7.376672389169382,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 702,
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -84.04549841522532,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.635006759866556,
+        "longitude": 104.22256236486783,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T17:00:00+00:00"
+      },
+      "blocked_http": []
+    }
+  ],
+  "clock": "DIAGNOSTIC ONLY deterministic UTC"
+}

@@ -1,0 +1,86 @@
+{
+  "providers": [
+    {
+      "provider": "boem",
+      "result": "REAL NETWORK VALIDATED",
+      "count": 19,
+      "categories": {
+        "offshore": 2,
+        "subsea": 17
+      },
+      "object_types": {
+        "wellhead": 2,
+        "submarine_pipeline": 17
+      },
+      "area": {
+        "latitude": 28.5,
+        "longitude": -90,
+        "radius_nm": 2,
+        "origin": "diagnostic"
+      }
+    },
+    {
+      "provider": "emodnet",
+      "result": "REAL NETWORK VALIDATED",
+      "count": 11,
+      "categories": {
+        "offshore": 3,
+        "subsea": 5,
+        "hazards": 3
+      },
+      "object_types": {
+        "wellhead": 1,
+        "submarine_pipeline": 5,
+        "offshore_wind_farm": 2,
+        "wreck": 3
+      },
+      "area": {
+        "latitude": 55,
+        "longitude": 2,
+        "radius_nm": 5,
+        "origin": "diagnostic"
+      }
+    },
+    {
+      "provider": "gebco",
+      "result": "REAL NETWORK VALIDATED",
+      "layer": "GEBCO_LATEST",
+      "tile_bytes": 4774,
+      "area": {
+        "latitude": 22.25,
+        "longitude": 91.8,
+        "radius_nm": 10,
+        "origin": "diagnostic"
+      }
+    },
+    {
+      "provider": "openseamap",
+      "result": "REAL NETWORK VALIDATED",
+      "kind": "raster",
+      "area": {
+        "latitude": 22.25,
+        "longitude": 91.8,
+        "radius_nm": 10,
+        "origin": "diagnostic"
+      }
+    },
+    {
+      "provider": "openwaters",
+      "result": "NOT_CONFIGURED",
+      "reason": "No configured MapLibre style URL; no request made"
+    },
+    {
+      "provider": "overpass",
+      "result": "FAILED",
+      "error": "ProviderRequestError",
+      "reason": "HTTP 502",
+      "http_status": null,
+      "area": {
+        "latitude": 22.25,
+        "longitude": 91.8,
+        "radius_nm": 2.0,
+        "origin": "diagnostic"
+      }
+    }
+  ]
+}

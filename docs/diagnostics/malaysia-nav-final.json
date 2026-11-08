@@ -1,0 +1,2013 @@
+{
+  "telemetry": "NO SOURCE",
+  "snapshots": [
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {},
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 0,
+        "malaysia_production_within_psc_area": 0,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 0,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 0,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {}
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {},
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 0,
+        "malaysia_production_within_psc_area": 0,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 0,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 0,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {}
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {},
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 0,
+        "malaysia_production_within_psc_area": 0,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 0,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 0,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {}
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    },
+    {
+      "ready": true,
+      "zoom": 7.266088151164302,
+      "rendered": {
+        "malaysia_platform": 33,
+        "malaysia_pipeline": 181,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_fields_all": 156
+      },
+      "errors": [],
+      "source_counts": {
+        "malaysia_basin": 0,
+        "malaysia_awarded_block": 0,
+        "malaysia_open_block": 0,
+        "malaysia_seismic_3d": 0,
+        "malaysia_ftg": 0,
+        "malaysia_fields_all": 156,
+        "malaysia_production_within_psc_area": 51,
+        "malaysia_pre_development_psc": 0,
+        "malaysia_development_psc": 0,
+        "malaysia_abandoned_psc": 0,
+        "malaysia_ceased_psc": 0,
+        "malaysia_pipeline": 200,
+        "malaysia_well_location": 0,
+        "malaysia_platform": 135,
+        "malaysia_platforms_134": 0,
+        "malaysia_platforms_3": 0,
+        "malaysia_platforms_34": 0,
+        "malaysia_platforms_496": 0
+      },
+      "own_marker": false,
+      "layer_count": 82,
+      "source_count": 18,
+      "bounds": [
+        101.8487395473636,
+        4.408916820677618,
+        106.0512604526408,
+        6.890707884046719
+      ],
+      "gis_dataset": {
+        "display_name": "MALAYSIA OFFSHORE GIS",
+        "source_tier": "LOCAL_GIS",
+        "licence_authority": "NOT YET RECORDED",
+        "directory": "C:\\Users\\rayha\\GDS-VTS\\data\\maritime\\malaysia",
+        "total_features": 10268,
+        "in_view": 3637,
+        "file_count": 18,
+        "invalid_features": 13,
+        "null_geometries": 2,
+        "duplicate_features": 45,
+        "cross_layer_native_overlaps": 384,
+        "errors": [],
+        "bounds": [
+          98.022889,
+          1.263626,
+          120.264806,
+          9.030622
+        ]
+      }
+    }
+  ]
+}

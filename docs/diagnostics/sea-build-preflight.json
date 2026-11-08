@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-08T12:08:28.341146+00:00",
+  "work_root": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build",
+  "disk_free_bytes": 195898241024,
+  "ram_total_bytes": 16851132416,
+  "ram_available_bytes": 4420841472,
+  "cpu_count": 16,
+  "java": "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath\\java.EXE",
+  "java_version": "java version \"1.8.0_251\"\nJava(TM) SE Runtime Environment (build 1.8.0_251-b08)\nJava HotSpot(TM) Client VM (build 25.251-b08, mixed mode, sharing)",
+  "java_major": 8,
+  "planetiler_jar": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\tools\\planetiler.jar",
+  "planetiler_present": false,
+  "docker": null,
+  "gdal": {
+    "gdalinfo": null,
+    "gdalwarp": null,
+    "gdaldem": null,
+    "gdaladdo": null
+  },
+  "existing_assets": [],
+  "blockers": [
+    "Need 8 GiB available RAM for heap plus OS/native reserve",
+    "Java 25+ required; detected major 8",
+    "Planetiler JAR missing: C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\tools\\planetiler.jar",
+    "gdalinfo missing from PATH",
+    "gdalwarp missing from PATH",
+    "gdaldem missing from PATH",
+    "gdaladdo missing from PATH",
+    "Provide a real GEBCO_2026 subset GeoTIFF using --gebco"
+  ],
+  "ready": false
+}

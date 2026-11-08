@@ -1,0 +1,112 @@
+{
+  "package_path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\packages\\malaysia_singapore_brunei\\shortbread-1.0-20261108T035419Z-5acc0e97f0d5",
+  "installed_path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\e95f3d5dc1f844b4a3942d008f04246b",
+  "manifest": {
+    "schema_version": 1,
+    "package_id": "malaysia_singapore_brunei",
+    "name": "Malaysia / Singapore / Brunei",
+    "revision": "shortbread-1.0-20261108T035419Z-5acc0e97f0d5",
+    "created_at": "2026-11-08T12:24:59.466746+00:00",
+    "region": "Malaysia / Singapore / Brunei",
+    "bounds": [
+      99.25611,
+      0.830813,
+      119.6683,
+      7.736849
+    ],
+    "minzoom": 0,
+    "maxzoom": 14,
+    "basemap_file": "basemap.mbtiles",
+    "detail_files": [],
+    "style_revision": "gds-shortbread-maritime-1",
+    "vector_schemas": {
+      "basemap": "shortbread-1.0"
+    },
+    "attribution": "\u00a9 OpenStreetMap contributors \u00b7 Geofabrik GmbH \u00b7 Open Database License 1.0",
+    "source_date": "2026-11-08T03:54:19+00:00",
+    "source_date_kind": "HTTP Last-Modified of MBTiles (not OSM replication timestamp)",
+    "source": {
+      "page": "https://download.geofabrik.de/asia/malaysia-singapore-brunei.html",
+      "url": "https://download.geofabrik.de/asia/malaysia-singapore-brunei-shortbread-1.0.mbtiles",
+      "http_headers": {
+        "Date": "Sun, 08 Nov 2026 12:20:22 GMT",
+        "Server": "Apache",
+        "Last-Modified": "Sun, 08 Nov 2026 03:54:19 GMT",
+        "ETag": "\"118e7000-65fbbccc94a2e\"",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "294547456",
+        "Cache-Control": "max-age=604800, public",
+        "Cache-Status": "download-proxy9;detail=mismatch",
+        "Via": "1.1 download-proxy9 (squid/6.14)",
+        "Connection": "close"
+      },
+      "bytes": 294547456,
+      "sha256": "5acc0e97f0d5b68289c4bc03ceef1aa72ffdae48dc4849a984ccc340588fbc86",
+      "downloaded_at": "2026-11-08T12:21:22.771204+00:00",
+      "download_seconds": 60.95225420012139
+    },
+    "assets": {
+      "basemap": {
+        "file": "basemap.mbtiles",
+        "role": "basemap",
+        "metadata": {
+          "name": "Shortbread",
+          "type": "baselayer",
+          "version": "1.0",
+          "description": "Tile config for a simple vector tiles schema",
+          "format": "pbf",
+          "minzoom": "0",
+          "maxzoom": "14",
+          "json": "{\"vector_layers\":[{\"id\":\"place_labels\",\"fields\":{\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"population\":\"Number\"},\"minzoom\":3,\"maxzoom\":14},{\"id\":\"boundaries\",\"fields\":{\"admin_level\":\"Number\",\"disputed\":\"Boolean\",\"maritime\":\"Boolean\"},\"minzoom\":0,\"maxzoom\":14},{\"id\":\"boundary_labels\",\"fields\":{\"admin_level\":\"Number\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"way_area\":\"Number\"},\"minzoom\":2,\"maxzoom\":14},{\"id\":\"addresses\",\"fields\":{\"housename\":\"String\",\"housenumber\":\"String\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"water_lines\",\"fields\":{\"bridge\":\"Boolean\",\"kind\":\"String\",\"tunnel\":\"Boolean\"},\"minzoom\":4,\"maxzoom\":14},{\"id\":\"water_lines_labels\",\"fields\":{\"bridge\":\"Boolean\",\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"tunnel\":\"Boolean\"},\"minzoom\":4,\"maxzoom\":14},{\"id\":\"dam_lines\",\"fields\":{\"kind\":\"String\"},\"minzoom\":12,\"maxzoom\":14},{\"id\":\"dam_polygons\",\"fields\":{\"kind\":\"String\"},\"minzoom\":12,\"maxzoom\":14},{\"id\":\"pier_lines\",\"fields\":{\"kind\":\"String\"},\"minzoom\":12,\"maxzoom\":14},{\"id\":\"pier_polygons\",\"fields\":{\"kind\":\"String\"},\"minzoom\":12,\"maxzoom\":14},{\"id\":\"bridges\",\"fields\":{\"kind\":\"String\"},\"minzoom\":12,\"maxzoom\":14},{\"id\":\"street_polygons\",\"fields\":{\"bridge\":\"Boolean\",\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"rail\":\"Boolean\",\"service\":\"String\",\"surface\":\"String\",\"tunnel\":\"Boolean\"},\"minzoom\":11,\"maxzoom\":14},{\"id\":\"streets_polygons_labels\",\"fields\":{\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"ferries\",\"fields\":{\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\"},\"minzoom\":8,\"maxzoom\":14},{\"id\":\"streets\",\"fields\":{\"bicycle\":\"String\",\"bridge\":\"Boolean\",\"horse\":\"String\",\"kind\":\"String\",\"link\":\"Boolean\",\"oneway\":\"Boolean\",\"oneway_reverse\":\"Boolean\",\"rail\":\"Boolean\",\"service\":\"String\",\"surface\":\"String\",\"tracktype\":\"String\",\"tunnel\":\"Boolean\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"street_labels\",\"fields\":{\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"ref\":\"String\",\"ref_cols\":\"Number\",\"ref_rows\":\"Number\",\"tunnel\":\"Boolean\"},\"minzoom\":10,\"maxzoom\":14},{\"id\":\"street_labels_points\",\"fields\":{\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"ref\":\"String\"},\"minzoom\":12,\"maxzoom\":14},{\"id\":\"aerialways\",\"fields\":{\"kind\":\"String\"},\"minzoom\":12,\"maxzoom\":14},{\"id\":\"public_transport\",\"fields\":{\"iata\":\"String\",\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\"},\"minzoom\":11,\"maxzoom\":14},{\"id\":\"buildings\",\"fields\":{\"amenity\":\"String\",\"atm\":\"Boolean\",\"cuisine\":\"String\",\"denomination\":\"String\",\"dummy\":\"Number\",\"historic\":\"String\",\"housename\":\"String\",\"housenumber\":\"String\",\"leisure\":\"String\",\"man_made\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"religion\":\"String\",\"shop\":\"String\",\"sport\":\"String\",\"tourism\":\"String\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"water_polygons\",\"fields\":{\"kind\":\"String\",\"way_area\":\"Number\"},\"minzoom\":4,\"maxzoom\":14},{\"id\":\"ocean\",\"fields\":{\"x\":\"Number\",\"y\":\"Number\"},\"minzoom\":8,\"maxzoom\":14},{\"id\":\"water_polygons_labels\",\"fields\":{\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"way_area\":\"Number\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"land\",\"fields\":{\"amenity\":\"String\",\"housenumber\":\"String\",\"kind\":\"String\",\"leisure\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"sport\":\"String\"},\"minzoom\":7,\"maxzoom\":14},{\"id\":\"sites\",\"fields\":{\"amenity\":\"String\",\"housenumber\":\"String\",\"kind\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\"},\"minzoom\":14,\"maxzoom\":14},{\"id\":\"pois\",\"fields\":{\"amenity\":\"String\",\"atm\":\"Boolean\",\"cuisine\":\"String\",\"denomination\":\"String\",\"emergency\":\"String\",\"highway\":\"String\",\"historic\":\"String\",\"housename\":\"String\",\"housenumber\":\"String\",\"information\":\"String\",\"leisure\":\"String\",\"man_made\":\"String\",\"name\":\"String\",\"name_de\":\"String\",\"name_en\":\"String\",\"recycling:clothes\":\"Boolean\",\"recycling:glass_bottles\":\"Boolean\",\"recycling:paper\":\"Boolean\",\"recycling:scrap_metal\":\"Boolean\",\"religion\":\"String\",\"shop\":\"String\",\"sport\":\"String\",\"tourism\":\"String\",\"tower:type\":\"String\",\"vending\":\"String\"},\"minzoom\":14,\"maxzoom\":14}]}",
+          "author": "OpenStreetMap contributors, Geofabrik GmbH",
+          "license": "Open Database License 1.0",
+          "bounds": "99.25611,0.830813,119.6683,7.736849",
+          "center": "109.46220500000001,4.283831,7",
+          "attribution": "OpenStreetMap contributors, Geofabrik GmbH | Open Database License 1.0"
+        },
+        "bounds": [
+          99.25611,
+          0.830813,
+          119.6683,
+          7.736849
+        ],
+        "format": "pbf",
+        "minzoom": 0,
+        "maxzoom": 14,
+        "bytes": 294547456,
+        "tile_count": 390078,
+        "tiles_per_zoom": {
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 2,
+          "5": 3,
+          "6": 10,
+          "7": 24,
+          "8": 96,
+          "9": 330,
+          "10": 1239,
+          "11": 4797,
+          "12": 18625,
+          "13": 73737,
+          "14": 291211
+        },
+        "sha256": "5acc0e97f0d5b68289c4bc03ceef1aa72ffdae48dc4849a984ccc340588fbc86",
+        "sample_zooms": [
+          0,
+          7,
+          14
+        ]
+      }
+    },
+    "asset_files": [
+      "source.json"
+    ],
+    "checksums": {
+      "basemap.mbtiles": "5acc0e97f0d5b68289c4bc03ceef1aa72ffdae48dc4849a984ccc340588fbc86",
+      "source.json": "caab1284cf0bbb8be6ce11513227d37d376d4b3f6d699e24ab692c6fef81a456"
+    }
+  },
+  "source_unchanged": true
+}

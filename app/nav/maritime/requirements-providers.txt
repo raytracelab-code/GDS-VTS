@@ -1,0 +1,4 @@
+# Optional provider SDKs; no credentials are stored here.
+websockets>=15,<17
+copernicusmarine>=2.4,<3
+mapbox-vector-tile>=2,<3

@@ -1,0 +1,19 @@
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/nav/map_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/nav/web_scheme.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/ui/main_window.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'requirements.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/nav_event_runtime.cjs', LF will be replaced by CRLF the next time Git touches it
+ .gitignore                   |   3 [32m+[m
+ app/nav/map_bridge.py        |  58 [32m+++++++++++[m[31m-[m
+ app/nav/web_scheme.py        |  67 [32m+++++++++++++[m[31m-[m
+ app/resources/map/index.html |   2 [32m+[m[31m-[m
+ app/resources/map/nav.css    |   2 [32m+[m
+ app/resources/map/nav.js     | 202 [32m++++++++++++++++++++++++++++++++++++++++[m[31m--[m
+ app/ui/main_window.py        |   8 [32m+[m[31m-[m
+ app/ui/pages/nav/nav_page.py | 204 [32m++++++++++++++++++++++++++++++++++++++[m[31m-----[m
+ main.py                      |   6 [32m++[m
+ requirements.txt             |   1 [32m+[m
+ tests/nav_event_runtime.cjs  | 121 [32m++++++++++++++++++++++++[m[31m-[m
+ 11 files changed, 633 insertions(+), 41 deletions(-)

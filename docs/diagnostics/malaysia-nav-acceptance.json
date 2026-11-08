@@ -1,0 +1,31 @@
+{
+  "telemetry": "NO SOURCE",
+  "own_marker_created": false,
+  "maximum_rendered_by_layer": {
+    "malaysia_platform": 33,
+    "malaysia_pipeline": 187,
+    "malaysia_production_within_psc_area": 52,
+    "malaysia_fields_all": 157,
+    "malaysia_well_location": 213,
+    "malaysia_awarded_block": 4,
+    "malaysia_open_block": 1,
+    "malaysia_basin": 1,
+    "malaysia_seismic_3d": 29,
+    "malaysia_ftg": 6
+  },
+  "errors": [],
+  "source_count": 18,
+  "manual_checks": {
+    "platform_inspector": "Dulang Drilling Platform-C; available fields and local source verified",
+    "pipeline_inspector": "JE-A/ OSC 28 inch Gas 074; operator, endpoints, diameter and length verified",
+    "well_inspector": "DULANG-6G-1.6; appraisal, PCSB, depth 1640 m and position verified",
+    "show_object": "Selected pipeline fitted; Follow remained off",
+    "well_zoom": "OFF initially; enabled at low zoom remained hidden; 213 well points rendered at zoom 11.219; restored OFF",
+    "reference_controls": "Awarded/Open blocks, basin, seismic enabled and rendered; FTG toggled (no features in this local test extent)",
+    "ui_responsiveness": "Map zoom, selection and layer toggles stayed responsive during testing",
+    "ftg": "Six actual geophysical coverage polygons rendered over Dent/Sabah at zoom 8.059 with no GIS source errors."
+  },
+  "final_gis_layer_count": 82,
+  "visibility_preferences_restored": true,
+  "pytest": "263 passed in 41.19s"
+}

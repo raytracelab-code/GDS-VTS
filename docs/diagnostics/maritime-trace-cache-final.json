@@ -1,0 +1,5535 @@
+{
+  "environment": {
+    "AISSTREAM_ENABLED": "NOT SET",
+    "AISSTREAM_API_KEY": "NOT SET",
+    "GDS_MARITIME_RADIUS_NM": "NOT SET",
+    "GDS_OWN_MMSI": "NOT SET",
+    "GDS_OVERPASS_ENDPOINT": "NOT SET",
+    "GDS_OPENSEAMAP_ENABLED": "NOT SET",
+    "GDS_OPENWATERS_ENABLED": "NOT SET",
+    "GDS_OPENWATERS_STYLE_URL": "NOT SET",
+    "GDS_GEBCO_ENABLED": "NOT SET",
+    "GDS_GEBCO_WMS_ENDPOINT": "NOT SET",
+    "COPERNICUSMARINE_USERNAME": "NOT SET",
+    "COPERNICUSMARINE_PASSWORD": "NOT SET",
+    "GDS_CMEMS_WAVE_DATASET": "NOT SET",
+    "GDS_CMEMS_CURRENT_DATASET": "NOT SET",
+    "GDS_CMEMS_SST_DATASET": "NOT SET",
+    "GDS_CMEMS_SEALEVEL_DATASET": "NOT SET",
+    "GDS_GFW_ENABLED": "NOT SET",
+    "GDS_GFW_API_TOKEN": "NOT SET",
+    "GDS_GFW_LICENSE_ACK": "NOT SET",
+    "GDS_BOEM_ENABLED": "NOT SET",
+    "GDS_BOEM_BASE_URL": "NOT SET",
+    "GDS_EMODNET_ENABLED": "NOT SET",
+    "GDS_EMODNET_WFS_ENDPOINT": "NOT SET",
+    "GDS_NAVAREA8_ENABLED": "NOT SET",
+    "GDS_NAVAREA8_SOURCE_URL": "NOT SET"
+  },
+  "requested_bounds": [
+    100.12,
+    3.82,
+    100.89,
+    4.24
+  ],
+  "http": [],
+  "overpass": [],
+  "deliveries": [
+    {
+      "source": "overpass",
+      "normalized": 17,
+      "error": null,
+      "cached": true,
+      "service": 17,
+      "bridge": 17
+    }
+  ],
+  "viewport_events": [
+    [
+      100.12000000000239,
+      3.8020716142080886,
+      100.89000000000249,
+      4.257918734151801
+    ],
+    [
+      100.12000000000239,
+      3.8020716142080886,
+      100.89000000000249,
+      4.257918734151801
+    ]
+  ],
+  "signal_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17,
+    17
+  ],
+  "startup_sources": {
+    "overpass": {
+      "state": "CONNECTING",
+      "instantiated": true
+    },
+    "aisstream": {
+      "state": "DISABLED",
+      "instantiated": false
+    },
+    "gebco": {
+      "state": "DISABLED",
+      "instantiated": false
+    },
+    "openwaters": {
+      "state": "DISABLED",
+      "instantiated": false
+    },
+    "openseamap": {
+      "state": "DISABLED",
+      "instantiated": false
+    },
+    "boem": {
+      "state": "DISABLED",
+      "instantiated": false
+    },
+    "emodnet": {
+      "state": "DISABLED",
+      "instantiated": false
+    },
+    "gfw": {
+      "state": "DISABLED_LICENSE",
+      "instantiated": false
+    },
+    "copernicus_wave": {
+      "state": "NOT_CONFIGURED",
+      "instantiated": false
+    },
+    "copernicus_current": {
+      "state": "NOT_CONFIGURED",
+      "instantiated": false
+    },
+    "copernicus_sst": {
+      "state": "NOT_CONFIGURED",
+      "instantiated": false
+    },
+    "copernicus_sealevel": {
+      "state": "NOT_CONFIGURED",
+      "instantiated": false
+    },
+    "navarea8": {
+      "state": "NO_STABLE_MACHINE_API",
+      "instantiated": false
+    }
+  },
+  "visibility": {
+    "Vessel": true,
+    "Track": true,
+    "Heading / COG": true,
+    "AIS Vessels": true,
+    "Squall Alerts": true,
+    "Nav Warnings": true,
+    "MetOcean": true,
+    "Offshore Installations": true,
+    "Aids to Navigation": true,
+    "Ports / Harbours": true,
+    "Routes / TSS": true,
+    "Anchorages": true,
+    "Restricted Areas": true,
+    "Subsea Infrastructure": true,
+    "Hazards": true,
+    "Bathymetry": true,
+    "Site Boundary": true,
+    "Anchor Pattern": true,
+    "Pipelines": true,
+    "Survey Areas": true,
+    "Operational Zones": true
+  },
+  "map": {
+    "ready": true,
+    "bounds": [
+      100.12000000000245,
+      3.8020716142080886,
+      100.89000000000249,
+      4.257918734151801
+    ],
+    "zoom": 9.714412796353859,
+    "own_marker": false,
+    "js_received": 17,
+    "sources": {
+      "maritime-vessels": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-offshore": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-aton": {
+        "type": "geojson",
+        "count": 3
+      },
+      "maritime-ports": {
+        "type": "geojson",
+        "count": 1
+      },
+      "maritime-routes": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-anchorages": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-restricted": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-subsea": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-hazards": {
+        "type": "geojson",
+        "count": 13
+      },
+      "maritime-bathymetry": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-warnings": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-metocean": {
+        "type": "geojson",
+        "count": 0
+      },
+      "maritime-selection": {
+        "type": "geojson",
+        "count": 0
+      }
+    },
+    "layers": {
+      "maritime-vessels-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#42566b",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-vessels-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#42566b",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-vessels-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#42566b",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-vessels-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#42566b",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-vessels-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#42566b",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-offshore-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#4f6472",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-offshore-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#4f6472",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-offshore-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#4f6472",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-offshore-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#4f6472",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-offshore-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#4f6472",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-aton-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#287c73",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-aton-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#287c73",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-aton-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#287c73",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-aton-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#287c73",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-aton-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#287c73",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-ports-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#607b87",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-ports-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#607b87",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-ports-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#607b87",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-ports-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#607b87",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-ports-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#607b87",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-routes-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#76647b",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-routes-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#76647b",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-routes-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#76647b",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-routes-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#76647b",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-routes-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#76647b",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-anchorages-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#526c88",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-anchorages-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#526c88",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-anchorages-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#526c88",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-anchorages-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#526c88",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-anchorages-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#526c88",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-restricted-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#aa7754",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-restricted-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#aa7754",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-restricted-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#aa7754",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-restricted-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#aa7754",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-restricted-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#aa7754",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-subsea-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#7b6d85",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-subsea-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#7b6d85",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-subsea-line": {
+        "type": "line",
+        "filter": [
+          "all",
+          [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          [
+            "!=",
+            [
+              "get",
+              "object_type"
+            ],
+            "submarine_cable"
+          ]
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#7b6d85",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "line-dasharray": [
+            5,
+            2
+          ]
+        }
+      },
+      "maritime-subsea-cable": {
+        "type": "line",
+        "filter": [
+          "all",
+          [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          [
+            "==",
+            [
+              "get",
+              "object_type"
+            ],
+            "submarine_cable"
+          ]
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#7b6d85",
+          "line-width": 2,
+          "line-dasharray": [
+            1,
+            2
+          ]
+        }
+      },
+      "maritime-subsea-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#7b6d85",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-subsea-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#7b6d85",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-hazards-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#a46f50",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-hazards-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#a46f50",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-hazards-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#a46f50",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-hazards-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#a46f50",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-hazards-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#a46f50",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-bathymetry-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#6696ac",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-bathymetry-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#6696ac",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-bathymetry-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#6696ac",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-bathymetry-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#6696ac",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-bathymetry-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#6696ac",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-warnings-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#ae6c4c",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-warnings-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#ae6c4c",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-warnings-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#ae6c4c",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-warnings-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#ae6c4c",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-warnings-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#ae6c4c",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-metocean-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#508f9a",
+          "fill-opacity": 0.07
+        }
+      },
+      "maritime-metocean-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#508f9a",
+          "line-width": 1.5,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-metocean-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#508f9a",
+          "line-width": 2,
+          "line-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ]
+        }
+      },
+      "maritime-metocean-point": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "icon-color": "#508f9a",
+          "icon-opacity": [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "status"
+              ],
+              "STALE"
+            ],
+            0.35,
+            0.85
+          ],
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 1
+        }
+      },
+      "maritime-metocean-label": {
+        "type": "symbol",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "text-color": "#508f9a",
+          "text-halo-color": "#fff",
+          "text-halo-width": 1
+        }
+      },
+      "maritime-selection-fill": {
+        "type": "fill",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "fill-color": "#d9b26f",
+          "fill-opacity": 0.12
+        }
+      },
+      "maritime-selection-outline": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#d9b26f",
+          "line-width": 3,
+          "line-opacity": 0.95
+        }
+      },
+      "maritime-selection-line": {
+        "type": "line",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "LineString"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "line-color": "#d9b26f",
+          "line-width": 4,
+          "line-opacity": 0.95
+        }
+      },
+      "maritime-selection-point": {
+        "type": "circle",
+        "filter": [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        "visibility": "visible",
+        "paint": {
+          "circle-radius": 14,
+          "circle-color": "#d9b26f",
+          "circle-opacity": 0.12,
+          "circle-stroke-color": "#d9b26f",
+          "circle-stroke-width": 2
+        }
+      }
+    },
+    "icons": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "rendered_unique": 6,
+    "rendered_categories": {
+      "hazards": 2,
+      "ports": 1,
+      "aton": 3
+    }
+  },
+  "before_camera_change": {
+    "map": {
+      "ready": true,
+      "bounds": [
+        100.12000000000245,
+        3.8020716142080886,
+        100.89000000000249,
+        4.257918734151801
+      ],
+      "zoom": 9.714412796353859,
+      "own_marker": false,
+      "js_received": 17,
+      "sources": {
+        "maritime-vessels": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-offshore": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-aton": {
+          "type": "geojson",
+          "count": 3
+        },
+        "maritime-ports": {
+          "type": "geojson",
+          "count": 1
+        },
+        "maritime-routes": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-anchorages": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-restricted": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-subsea": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-hazards": {
+          "type": "geojson",
+          "count": 13
+        },
+        "maritime-bathymetry": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-warnings": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-metocean": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-selection": {
+          "type": "geojson",
+          "count": 0
+        }
+      },
+      "layers": {
+        "maritime-vessels-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#42566b",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-vessels-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#42566b",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-vessels-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#42566b",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-vessels-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#42566b",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-vessels-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#42566b",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-offshore-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#4f6472",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-offshore-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#4f6472",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-offshore-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#4f6472",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-offshore-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#4f6472",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-offshore-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#4f6472",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-aton-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#287c73",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-aton-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#287c73",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-aton-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#287c73",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-aton-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#287c73",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-aton-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#287c73",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-ports-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#607b87",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-ports-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#607b87",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-ports-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#607b87",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-ports-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#607b87",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-ports-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#607b87",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-routes-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#76647b",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-routes-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#76647b",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-routes-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#76647b",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-routes-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#76647b",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-routes-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#76647b",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-anchorages-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#526c88",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-anchorages-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#526c88",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-anchorages-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#526c88",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-anchorages-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#526c88",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-anchorages-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#526c88",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-restricted-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#aa7754",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-restricted-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#aa7754",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-restricted-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#aa7754",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-restricted-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#aa7754",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-restricted-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#aa7754",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-subsea-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#7b6d85",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-subsea-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#7b6d85",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-subsea-line": {
+          "type": "line",
+          "filter": [
+            "all",
+            [
+              "==",
+              [
+                "geometry-type"
+              ],
+              "LineString"
+            ],
+            [
+              "!=",
+              [
+                "get",
+                "object_type"
+              ],
+              "submarine_cable"
+            ]
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#7b6d85",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "line-dasharray": [
+              5,
+              2
+            ]
+          }
+        },
+        "maritime-subsea-cable": {
+          "type": "line",
+          "filter": [
+            "all",
+            [
+              "==",
+              [
+                "geometry-type"
+              ],
+              "LineString"
+            ],
+            [
+              "==",
+              [
+                "get",
+                "object_type"
+              ],
+              "submarine_cable"
+            ]
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#7b6d85",
+            "line-width": 2,
+            "line-dasharray": [
+              1,
+              2
+            ]
+          }
+        },
+        "maritime-subsea-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#7b6d85",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-subsea-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#7b6d85",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-hazards-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#a46f50",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-hazards-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#a46f50",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-hazards-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#a46f50",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-hazards-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#a46f50",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-hazards-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#a46f50",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-bathymetry-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#6696ac",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-bathymetry-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#6696ac",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-bathymetry-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#6696ac",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-bathymetry-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#6696ac",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-bathymetry-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#6696ac",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-warnings-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#ae6c4c",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-warnings-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#ae6c4c",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-warnings-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#ae6c4c",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-warnings-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#ae6c4c",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-warnings-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#ae6c4c",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-metocean-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#508f9a",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-metocean-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#508f9a",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-metocean-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#508f9a",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-metocean-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#508f9a",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-metocean-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#508f9a",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-selection-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#d9b26f",
+            "fill-opacity": 0.12
+          }
+        },
+        "maritime-selection-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#d9b26f",
+            "line-width": 3,
+            "line-opacity": 0.95
+          }
+        },
+        "maritime-selection-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#d9b26f",
+            "line-width": 4,
+            "line-opacity": 0.95
+          }
+        },
+        "maritime-selection-point": {
+          "type": "circle",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "circle-radius": 14,
+            "circle-color": "#d9b26f",
+            "circle-opacity": 0.12,
+            "circle-stroke-color": "#d9b26f",
+            "circle-stroke-width": 2
+          }
+        }
+      },
+      "icons": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "rendered_unique": 6,
+      "rendered_categories": {
+        "hazards": 2,
+        "ports": 1,
+        "aton": 3
+      }
+    },
+    "area": {
+      "latitude": 4.029995174179945,
+      "longitude": 100.50500000000244,
+      "radius_nm": 50.0,
+      "origin": "viewport",
+      "viewport_bounds": [
+        100.12000000000239,
+        3.8020716142080886,
+        100.89000000000249,
+        4.257918734151801
+      ]
+    }
+  },
+  "runtime": {
+    "telemetry": "NO SOURCE",
+    "own_position": null,
+    "area": {
+      "latitude": 4.029995174179945,
+      "longitude": 100.50500000000244,
+      "radius_nm": 50.0,
+      "origin": "viewport",
+      "viewport_bounds": [
+        100.12000000000239,
+        3.8020716142080886,
+        100.89000000000249,
+        4.257918734151801
+      ]
+    },
+    "provider_bboxes": [
+      [
+        100.12000000000239,
+        3.8020716142080886,
+        100.89000000000249,
+        4.257918734151801
+      ]
+    ],
+    "service_count": 17,
+    "bridge_count": 17,
+    "render_count": 17,
+    "sources": {
+      "overpass": {
+        "state": "READY",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": true
+      },
+      "aisstream": {
+        "state": "DISABLED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "gebco": {
+        "state": "DISABLED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "openwaters": {
+        "state": "DISABLED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "openseamap": {
+        "state": "DISABLED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "boem": {
+        "state": "DISABLED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "emodnet": {
+        "state": "DISABLED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "gfw": {
+        "state": "DISABLED_LICENSE",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "copernicus_wave": {
+        "state": "NOT_CONFIGURED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "copernicus_current": {
+        "state": "NOT_CONFIGURED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "copernicus_sst": {
+        "state": "NOT_CONFIGURED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "copernicus_sealevel": {
+        "state": "NOT_CONFIGURED",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      },
+      "navarea8": {
+        "state": "NO_STABLE_MACHINE_API",
+        "last_message_at": null,
+        "last_success_at": null,
+        "age_seconds": null,
+        "error": null,
+        "area": {
+          "latitude": 4.029995174179945,
+          "longitude": 100.50500000000244,
+          "radius_nm": 50.0,
+          "origin": "viewport",
+          "viewport_bounds": [
+            100.12000000000239,
+            3.8020716142080886,
+            100.89000000000249,
+            4.257918734151801
+          ]
+        },
+        "cached": false
+      }
+    },
+    "busy": []
+  },
+  "first_rendered": {
+    "map": {
+      "ready": true,
+      "bounds": [
+        100.12000000000245,
+        3.8020716142080886,
+        100.89000000000249,
+        4.257918734151801
+      ],
+      "zoom": 9.714412796353859,
+      "own_marker": false,
+      "js_received": 17,
+      "sources": {
+        "maritime-vessels": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-offshore": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-aton": {
+          "type": "geojson",
+          "count": 3
+        },
+        "maritime-ports": {
+          "type": "geojson",
+          "count": 1
+        },
+        "maritime-routes": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-anchorages": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-restricted": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-subsea": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-hazards": {
+          "type": "geojson",
+          "count": 13
+        },
+        "maritime-bathymetry": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-warnings": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-metocean": {
+          "type": "geojson",
+          "count": 0
+        },
+        "maritime-selection": {
+          "type": "geojson",
+          "count": 0
+        }
+      },
+      "layers": {
+        "maritime-vessels-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#42566b",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-vessels-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#42566b",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-vessels-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#42566b",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-vessels-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#42566b",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-vessels-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#42566b",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-offshore-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#4f6472",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-offshore-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#4f6472",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-offshore-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#4f6472",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-offshore-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#4f6472",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-offshore-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#4f6472",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-aton-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#287c73",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-aton-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#287c73",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-aton-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#287c73",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-aton-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#287c73",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-aton-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#287c73",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-ports-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#607b87",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-ports-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#607b87",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-ports-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#607b87",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-ports-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#607b87",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-ports-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#607b87",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-routes-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#76647b",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-routes-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#76647b",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-routes-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#76647b",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-routes-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#76647b",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-routes-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#76647b",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-anchorages-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#526c88",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-anchorages-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#526c88",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-anchorages-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#526c88",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-anchorages-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#526c88",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-anchorages-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#526c88",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-restricted-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#aa7754",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-restricted-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#aa7754",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-restricted-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#aa7754",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-restricted-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#aa7754",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-restricted-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#aa7754",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-subsea-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#7b6d85",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-subsea-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#7b6d85",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-subsea-line": {
+          "type": "line",
+          "filter": [
+            "all",
+            [
+              "==",
+              [
+                "geometry-type"
+              ],
+              "LineString"
+            ],
+            [
+              "!=",
+              [
+                "get",
+                "object_type"
+              ],
+              "submarine_cable"
+            ]
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#7b6d85",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "line-dasharray": [
+              5,
+              2
+            ]
+          }
+        },
+        "maritime-subsea-cable": {
+          "type": "line",
+          "filter": [
+            "all",
+            [
+              "==",
+              [
+                "geometry-type"
+              ],
+              "LineString"
+            ],
+            [
+              "==",
+              [
+                "get",
+                "object_type"
+              ],
+              "submarine_cable"
+            ]
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#7b6d85",
+            "line-width": 2,
+            "line-dasharray": [
+              1,
+              2
+            ]
+          }
+        },
+        "maritime-subsea-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#7b6d85",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-subsea-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#7b6d85",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-hazards-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#a46f50",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-hazards-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#a46f50",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-hazards-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#a46f50",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-hazards-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#a46f50",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-hazards-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#a46f50",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-bathymetry-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#6696ac",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-bathymetry-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#6696ac",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-bathymetry-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#6696ac",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-bathymetry-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#6696ac",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-bathymetry-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#6696ac",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-warnings-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#ae6c4c",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-warnings-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#ae6c4c",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-warnings-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#ae6c4c",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-warnings-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#ae6c4c",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-warnings-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#ae6c4c",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-metocean-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#508f9a",
+            "fill-opacity": 0.07
+          }
+        },
+        "maritime-metocean-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#508f9a",
+            "line-width": 1.5,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-metocean-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#508f9a",
+            "line-width": 2,
+            "line-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ]
+          }
+        },
+        "maritime-metocean-point": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "icon-color": "#508f9a",
+            "icon-opacity": [
+              "case",
+              [
+                "==",
+                [
+                  "get",
+                  "status"
+                ],
+                "STALE"
+              ],
+              0.35,
+              0.85
+            ],
+            "icon-halo-color": "#fff",
+            "icon-halo-width": 1
+          }
+        },
+        "maritime-metocean-label": {
+          "type": "symbol",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#508f9a",
+            "text-halo-color": "#fff",
+            "text-halo-width": 1
+          }
+        },
+        "maritime-selection-fill": {
+          "type": "fill",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#d9b26f",
+            "fill-opacity": 0.12
+          }
+        },
+        "maritime-selection-outline": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Polygon"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#d9b26f",
+            "line-width": 3,
+            "line-opacity": 0.95
+          }
+        },
+        "maritime-selection-line": {
+          "type": "line",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "LineString"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#d9b26f",
+            "line-width": 4,
+            "line-opacity": 0.95
+          }
+        },
+        "maritime-selection-point": {
+          "type": "circle",
+          "filter": [
+            "==",
+            [
+              "geometry-type"
+            ],
+            "Point"
+          ],
+          "visibility": "visible",
+          "paint": {
+            "circle-radius": 14,
+            "circle-color": "#d9b26f",
+            "circle-opacity": 0.12,
+            "circle-stroke-color": "#d9b26f",
+            "circle-stroke-width": 2
+          }
+        }
+      },
+      "icons": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "rendered_unique": 6,
+      "rendered_categories": {
+        "hazards": 2,
+        "ports": 1,
+        "aton": 3
+      }
+    },
+    "runtime": {
+      "telemetry": "NO SOURCE",
+      "own_position": null,
+      "area": {
+        "latitude": 4.029995174179945,
+        "longitude": 100.50500000000244,
+        "radius_nm": 50.0,
+        "origin": "viewport",
+        "viewport_bounds": [
+          100.12000000000239,
+          3.8020716142080886,
+          100.89000000000249,
+          4.257918734151801
+        ]
+      },
+      "provider_bboxes": [
+        [
+          100.12000000000239,
+          3.8020716142080886,
+          100.89000000000249,
+          4.257918734151801
+        ]
+      ],
+      "service_count": 17,
+      "bridge_count": 17,
+      "render_count": 17,
+      "sources": {
+        "overpass": {
+          "state": "READY",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": true
+        },
+        "aisstream": {
+          "state": "DISABLED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "gebco": {
+          "state": "DISABLED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "openwaters": {
+          "state": "DISABLED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "openseamap": {
+          "state": "DISABLED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "boem": {
+          "state": "DISABLED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "emodnet": {
+          "state": "DISABLED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "gfw": {
+          "state": "DISABLED_LICENSE",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "copernicus_wave": {
+          "state": "NOT_CONFIGURED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "copernicus_current": {
+          "state": "NOT_CONFIGURED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "copernicus_sst": {
+          "state": "NOT_CONFIGURED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "copernicus_sealevel": {
+          "state": "NOT_CONFIGURED",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        },
+        "navarea8": {
+          "state": "NO_STABLE_MACHINE_API",
+          "last_message_at": null,
+          "last_success_at": null,
+          "age_seconds": null,
+          "error": null,
+          "area": {
+            "latitude": 4.029995174179945,
+            "longitude": 100.50500000000244,
+            "radius_nm": 50.0,
+            "origin": "viewport",
+            "viewport_bounds": [
+              100.12000000000239,
+              3.8020716142080886,
+              100.89000000000249,
+              4.257918734151801
+            ]
+          },
+          "cached": false
+        }
+      },
+      "busy": []
+    }
+  }
+}

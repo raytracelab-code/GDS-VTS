@@ -1,0 +1,916 @@
+{
+  "asset_installed": false,
+  "snapshots": [
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 0,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -4.175953099241515,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 0,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 0,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.03979769159056,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.9440327637162664,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.9440327637162664,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.9440327637162664,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 703,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#334952",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.9440327637162664,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.67670345262809,
+        "lat": 5.7845114819695596
+      },
+      "zoom": 6.967289125057741,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 740,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.64436442501855,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.7845114819695596,
+        "longitude": 103.67670345262809,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.6913298849422,
+        "lat": 5.9710388198745505
+      },
+      "zoom": 6.657862794682612,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 738,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.0975645793108,
+        "reference_type": "MAP_CENTER",
+        "latitude": 6.2795022186138,
+        "longitude": 103.43640816983793,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 104.40003552990845,
+        "lat": 5.215472049529367
+      },
+      "zoom": 9.485721737867848,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 103,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -84.4550412536657,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.232531153772129,
+        "longitude": 104.34028356030785,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 104.62867748343683,
+        "lat": 5.153035205268964
+      },
+      "zoom": 11.613733759965564,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 27,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -84.64769150489317,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.156429891505127,
+        "longitude": 104.60905276566541,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 32,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.79175662998654,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.45683641414476,
+        "longitude": 103.44794275436107,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 656,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 695,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 695,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 509,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "DAY",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "DAY",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#cddfe3",
+      "palette": {
+        "requested_mode": "DAY",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "DAY",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "NIGHT",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "NIGHT",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "NIGHT",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.30944829298755,
+        "lat": 5.527778265095975
+      },
+      "zoom": 7.347007179990739,
+      "source_count": 55,
+      "layer_count": 241,
+      "rendered_gis": 519,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP NOT INSTALLED",
+      "background": "#101f29",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.65386446810821,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.527778265095975,
+        "longitude": 103.30944829298755,
+        "time_source": "SYSTEM_UTC"
+      },
+      "blocked_http": []
+    }
+  ],
+  "clock": "DIAGNOSTIC ONLY deterministic UTC"
+}

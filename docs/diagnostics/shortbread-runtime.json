@@ -1,0 +1,1006 @@
+{
+  "asset_installed": true,
+  "snapshots": [
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 273,
+      "rendered_basemap_layers": [
+        "offline-basemap-land",
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-roads",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#202e34",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -26.001442599705822,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-11-08T12:30:00.283533+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 12,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 273,
+      "rendered_basemap_layers": [
+        "offline-basemap-land",
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-roads",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#e8e8df",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.06200599629786,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 12,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 273,
+      "rendered_basemap_layers": [
+        "offline-basemap-land",
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-roads",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#e8e8df",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.06200599629786,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 12,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 703,
+      "rendered_basemap": 272,
+      "rendered_basemap_layers": [
+        "offline-basemap-land",
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-roads",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#e8e8df",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.06200599629786,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 12,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 703,
+      "rendered_basemap": 272,
+      "rendered_basemap_layers": [
+        "offline-basemap-land",
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-roads",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#e8e8df",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "DAY",
+        "effective_state": "DAY",
+        "solar_elevation": 83.06200599629786,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T05:00:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 12,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.95000000000005,
+        "lat": 5.651141965856155
+      },
+      "zoom": 7.313761712716933,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 703,
+      "rendered_basemap": 272,
+      "rendered_basemap_layers": [
+        "offline-basemap-land",
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-roads",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": true,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#465154",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.9937942864292781,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.651141965856155,
+        "longitude": 103.95000000000005,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 12,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 103.59452183747112,
+        "lat": 5.720834404924929
+      },
+      "zoom": 6.855260354885121,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 693,
+      "rendered_basemap": 515,
+      "rendered_basemap_layers": [
+        "offline-basemap-land",
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-roads",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#465154",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -1.7923147612431654,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.690070260112762,
+        "longitude": 103.7473315107784,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 12,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 102.37860816664352,
+        "lat": 5.98336309421903
+      },
+      "zoom": 5.90107714574502,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 347,
+      "rendered_basemap_layers": [
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-countries",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#465154",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -0.4325659400716626,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.98336309421903,
+        "longitude": 102.37860816664352,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 22,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/25/15.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/24/15.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/256-511.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/7680-7935.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 102.37860816664352,
+        "lat": 5.98336309421903
+      },
+      "zoom": 5.90107714574502,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 347,
+      "rendered_basemap_layers": [
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-countries",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#465154",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "TWILIGHT",
+        "effective_state": "TWILIGHT",
+        "solar_elevation": -0.4325659400716626,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.98336309421903,
+        "longitude": 102.37860816664352,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T11:20:12+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 22,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/25/15.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/24/15.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/256-511.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/7680-7935.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 102.37860816664352,
+        "lat": 5.98336309421903
+      },
+      "zoom": 5.90107714574502,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 347,
+      "rendered_basemap_layers": [
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-countries",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#202e34",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.63215172339632,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.98336309421903,
+        "longitude": 102.37860816664352,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T17:06:29.134040+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 22,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/25/15.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/24/15.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/256-511.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/7680-7935.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 102.37860816664352,
+        "lat": 5.98336309421903
+      },
+      "zoom": 5.90107714574502,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 347,
+      "rendered_basemap_layers": [
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-countries",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#202e34",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.63215172339632,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.98336309421903,
+        "longitude": 102.37860816664352,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T17:06:29.134040+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 22,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/25/15.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/24/15.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/256-511.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/7680-7935.pbf"
+      ]
+    },
+    {
+      "ready": true,
+      "center": {
+        "lng": 102.37860816664352,
+        "lat": 5.98336309421903
+      },
+      "zoom": 5.90107714574502,
+      "source_count": 56,
+      "layer_count": 253,
+      "rendered_gis": 0,
+      "rendered_basemap": 347,
+      "rendered_basemap_layers": [
+        "offline-basemap-ocean",
+        "offline-basemap-water",
+        "offline-basemap-boundaries",
+        "offline-basemap-countries",
+        "offline-basemap-places"
+      ],
+      "source_identity_preserved": true,
+      "layer_ids_preserved": true,
+      "camera_matches_initial": false,
+      "palette_updates": [
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "DAY",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "TWILIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        },
+        {
+          "state": "NIGHT",
+          "camera_preserved": true,
+          "sources_preserved": true,
+          "layers_and_visibility_preserved": true
+        }
+      ],
+      "camera_preserved": true,
+      "own_marker": false,
+      "errors": [],
+      "status": "OFFLINE MAP \u00b7 Malaysia / Singapore / Brunei \u00b7 READY",
+      "background": "#202e34",
+      "palette": {
+        "requested_mode": "AUTO",
+        "computed_solar_state": "NIGHT",
+        "effective_state": "NIGHT",
+        "solar_elevation": -83.63215172339632,
+        "reference_type": "MAP_CENTER",
+        "latitude": 5.98336309421903,
+        "longitude": 102.37860816664352,
+        "time_source": "SYSTEM_UTC",
+        "utc_timestamp": "2026-03-20T17:06:29.134040+00:00"
+      },
+      "blocked_http": [],
+      "local_request_count": 22,
+      "local_tile_requests": [
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/100/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/61.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/7/101/62.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/50/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/49/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/30.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/6/51/31.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/25/15.pbf",
+        "gds://tiles/malaysia_singapore_brunei/basemap/5/24/15.pbf"
+      ],
+      "local_glyph_requests": [
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/0-255.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/256-511.pbf",
+        "gds://map/assets/glyphs/KlokanTech Noto Sans Regular/7680-7935.pbf"
+      ]
+    }
+  ],
+  "offline_providers": true,
+  "clock": "DIAGNOSTIC ONLY deterministic UTC"
+}
