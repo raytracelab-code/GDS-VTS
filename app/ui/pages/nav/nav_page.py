@@ -1,11 +1,12 @@
 from pathlib import Path
 import logging
-from PySide6.QtCore import QUrl,QSettings,QTimer,Qt
-from PySide6.QtWidgets import QSizePolicy,QComboBox
-from PySide6.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,QFrame,QCheckBox,QFileDialog,QMessageBox,QScrollArea
-from PySide6.QtWebChannel import QWebChannel
-from PySide6.QtWebEngineWidgets import QWebEngineView
-from PySide6.QtWebEngineCore import QWebEnginePage,QWebEngineSettings
+from app.qt.QtCore import QUrl,QSettings,QTimer,Qt
+from app.qt.QtGui import QColor
+from app.qt.QtWidgets import QSizePolicy,QComboBox
+from app.qt.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,QFrame,QCheckBox,QFileDialog,QMessageBox,QScrollArea
+from app.qt.QtWebChannel import QWebChannel
+from app.qt.QtWebEngineWidgets import QWebEngineView
+from app.qt.QtWebEngineCore import QWebEnginePage,QWebEngineSettings
 from app.nav import VesselConfig,VesselState,TrackManager
 from app.nav.map_controls import FollowController, LAYER_VISIBILITY
 from app.nav.map_bridge import MapBridge
@@ -17,37 +18,79 @@ from app.nav.spatial import SpatialStateService
 from app.nav.spatial.interaction import feature_info
 from .vessel_config_dialog import VesselConfigDialog
 from .presentation_widgets import NAV_STYLE, Disclosure, SourceStatusPanel, InspectorRows, populate_legend
+from .floating_controls import FloatingControls
 from app.nav.maritime.render_state import LAYER_GROUPS, GIS_GROUPS, GIS_DEFAULTS, GIS_LAYERS
 log=logging.getLogger(__name__)
 class NavMapPage(QWebEnginePage):
  def javaScriptConsoleMessage(self,l,m,line,s): print(f'NAV JS [{l}] {s}:{line} {m}',flush=True)
-class NavPage(QWidget):
+class NavPage(FloatingControls,QWidget):
  def __init__(self,state,squall_event_service=None,maritime_runtime=None):
   self.maritime_runtime=maritime_runtime
-  print('NAVPY 1: entered',flush=True);super().__init__();self.setObjectName('navSurface');self.setStyleSheet(NAV_STYLE);self.state,self.squall_event_service,self.config,self.vessel,self.track=state,squall_event_service,VesselConfig(),VesselState(),TrackManager();self.follow=FollowController();self.layer_checks={};self.spatial=SpatialStateService();root=QVBoxLayout(self);root.setContentsMargins(12,10,12,10);root.setSpacing(7);head=QHBoxLayout();title=QLabel('NAVIGATION');title.setObjectName('sectionTitle');self.status=QLabel(f'● {state.telemetry_status.value}');self.status.setObjectName('statusNeutral');head.addWidget(title);head.addStretch();head.addWidget(self.status);root.addLayout(head);root.addLayout(self._toolbar());body=QHBoxLayout();body.setSpacing(10);self.web=QWebEngineView();self.web_profile=create_nav_profile(self);self.web.setPage(NavMapPage(self.web_profile,self.web));settings=self.web.settings();a=QWebEngineSettings.WebAttribute;settings.setAttribute(a.JavascriptEnabled,True);settings.setAttribute(a.WebGLEnabled,True);self._gds_scheme_handler=GdsMapSchemeHandler(self.web);self.web_profile.installUrlSchemeHandler(b'gds',self._gds_scheme_handler);print('WEB 3 scheme handler installed',flush=True);self.bridge=MapBridge(self.squall_event_service,maritime_service=maritime_runtime.service if maritime_runtime else None);
+  print('NAVPY 1: entered',flush=True)
+  super().__init__();self.setObjectName('navSurface');self.setStyleSheet(NAV_STYLE)
+  self.state,self.squall_event_service,self.config,self.vessel,self.track=state,squall_event_service,VesselConfig(),VesselState(),TrackManager()
+  self.follow=FollowController();self.layer_checks={};self.spatial=SpatialStateService()
+  root=QVBoxLayout(self);root.setContentsMargins(0,0,0,0);root.setSpacing(0)
+  self.status=QLabel(state.telemetry_status.value)
+  self.web=QWebEngineView();root.addWidget(self.web)
+  self.web_profile=create_nav_profile(self);self.web.setPage(NavMapPage(self.web_profile,self.web))
+  self.web.page().setBackgroundColor(QColor('#101f29'))
+  settings=self.web.settings();a=QWebEngineSettings.WebAttribute
+  settings.setAttribute(a.JavascriptEnabled,True);settings.setAttribute(a.WebGLEnabled,True)
+  self._gds_scheme_handler=GdsMapSchemeHandler(self.web)
+  self.web_profile.installUrlSchemeHandler(b'gds',self._gds_scheme_handler)
+  self.bridge=MapBridge(self.squall_event_service,maritime_service=maritime_runtime.service if maritime_runtime else None)
+  self.trackbar=QLabel('TRACK IDLE')
+  self._init_floating()
   if self.squall_event_service is not None:
    self.squall_event_service.add_listener(
     self._on_squall_event_state_changed
    )
-  self.spatial.spatialStateChanged.connect(self.bridge.spatialStateChanged);self.spatial.selectedSpatialFeatureChanged.connect(self.bridge.selectedSpatialFeatureChanged);self.spatial.selectedSpatialFeatureChanged.connect(self._show_feature_info);self.bridge.spatialFeatureClicked.connect(self._select_spatial_feature);self.bridge.spatialViewChanged.connect(self._set_spatial_view_hint);channel=QWebChannel(self.web.page());channel.registerObject('bridge',self.bridge);self.web.page().setWebChannel(channel);print('WEB 4 page created',flush=True);self.web.loadStarted.connect(lambda:print('WEB 6 load started',flush=True));self.web.loadFinished.connect(self._map_loaded);url=QUrl('gds://map/index.html');print(f'WEB 5 URL requested {url.toString()}',flush=True);self.web.setUrl(url);body.addWidget(self.web,1);body.addWidget(self._side(),0);root.addLayout(body,1);self.trackbar=QLabel('TRACK  IDLE     DISTANCE  — NM     DURATION  —     POINTS  0');self.trackbar.setObjectName('navReadout');root.addWidget(self.trackbar);print('NAVPY complete',flush=True)
+  self.spatial.spatialStateChanged.connect(self.bridge.spatialStateChanged);self.spatial.selectedSpatialFeatureChanged.connect(self.bridge.selectedSpatialFeatureChanged);self.spatial.selectedSpatialFeatureChanged.connect(self._show_feature_info);self.bridge.spatialFeatureClicked.connect(self._select_spatial_feature);self.bridge.spatialViewChanged.connect(self._set_spatial_view_hint)
+  channel=QWebChannel(self.web.page());channel.registerObject('bridge',self.bridge);self.web.page().setWebChannel(channel)
+  self.web.loadFinished.connect(self._map_loaded)
+  from app.qt import LEGACY
+  if LEGACY:
+   from app.nav.legacy_resources import LegacyResourceServer
+   self._gds_scheme_handler._legacy_server=LegacyResourceServer(self._gds_scheme_handler)
+   self.web.setUrl(QUrl(self._gds_scheme_handler._legacy_server.url))
+  else:self.web.setUrl(QUrl('gds://map/index.html'))
   self._setup_events()
   self._setup_maritime()
   self._setup_offline_maps()
  def _setup_offline_maps(self):
   from app.nav.offline_maps.controller import PaletteController
   self.bridge.offline_config=self._gds_scheme_handler.config
-  self.bridge.offline_config['map_view']=QSettings('GDS','VTS').value('nav/map_view','MARINE')
+  self.bridge.offline_config['map_view']='MARINE' if self.bridge.offline_config.get('preferred_source')=='online' else QSettings('GDS','VTS').value('nav/map_view','MARINE')
+  self.bridge.basemapStateChanged.connect(self._basemap_state_changed)
   self.palette=PaletteController(self.state,self)
+  self.bridge.offlineRegionsActive.connect(self._gds_scheme_handler.regional.retain)
+  self.bridge.offlineRegionsChanged.connect(self._map_status_changed)
   self.bridge.mapCenterChanged.connect(self.palette.map_center)
   self.palette.changed.connect(self._palette_changed)
   self.palette_control.currentIndexChanged.connect(lambda _:self.palette.set_mode(self.palette_control.currentData()))
   self.palette_control.setCurrentIndex(self.palette_control.findData(self.palette.engine.mode))
   self._palette_changed(self.palette.payload)
   config=self.bridge.offline_config
+  satellite=config.get('preferred_source')=='online' or any(layer.get('metadata',{}).get('gds:owner')=='satellite' for layer in config['style']['layers'])
+  self.control_buttons['SATELLITE'].setEnabled(satellite)
+  self.control_buttons['SATELLITE'].setToolTip('NASA GIBS · VIIRS True Color · No API key\nRegional Earth-observation context; detailed infrastructure comes from local GIS.' if config.get('preferred_source')=='online' else 'Satellite imagery' if satellite else 'Satellite · Not configured')
   self.map_package_status.setText(config['status']+('\nBATHYMETRY · '+config['bathymetry_status'] if config['installed'] else ''))
   if config.get('source_date'):self.map_package_status.setText(self.map_package_status.text()+'\nSource '+config['source_date'][:10])
-  self.map_package_status.setToolTip('Offline map engine ready. Install a licensed map asset package using tools/maps/maps.py. '+('Online development fallback enabled.' if config['allow_online_fallback'] else 'Online map fallback disabled.'))
-  if config.get('package_id'):QSettings('GDS','VTS').setValue('nav/map_package',config['package_id'])
+  self.map_package_status.setToolTip('OpenFreeMap / OpenStreetMap: global online context. Primary region: Bangladesh + Southeast Asia. Offline map: NOT INSTALLED.' if config.get('preferred_source')=='online' else 'Optional offline map package installed.')
+  settings=QSettings('GDS','VTS')
+  if config.get('package_id'):settings.setValue('nav/map_package',config['package_id'])
+  else:settings.remove('nav/map_package')
+ def _basemap_state_changed(self,mode,state,date):
+  for name in ('MARINE','SATELLITE'):self.control_buttons[name].setChecked(mode==name)
+  detail='Satellite unavailable · Marine retained' if state=='ERROR' else 'NASA GIBS · '+state+(' · '+date if date else '')
+  self.control_buttons['SATELLITE'].setToolTip(detail+'\nEarth-observation context; local GIS provides infrastructure detail.')
+ def _map_regions(self):
+  from .map_regions_dialog import MapRegionsDialog
+  def changed():
+   config=self._gds_scheme_handler.reload_packages();self.bridge.offline_config=config
+   self.bridge.offlineConfigChanged.emit(config)
+  MapRegionsDialog(self,changed=changed,release=self._gds_scheme_handler.regional.pause).exec()
  def showEvent(self,event):
   super().showEvent(event)
   if hasattr(self,'web'):QTimer.singleShot(0,lambda:self.web.page().runJavaScript('window.navMap&&navMap.resize()'))
@@ -64,6 +107,7 @@ class NavPage(QWidget):
   self.feature_info.setWordWrap(True);self.feature_info.setTextFormat(Qt.TextFormat.PlainText)
   self.bridge.eventStateChanged.connect(self._update_events)
   self.bridge.eventSelected.connect(lambda _:self.spatial.clear_selection())
+  self.bridge.eventSelected.connect(self.reopen_selection)
   if self.bridge._event_render_state:self.bridge._event_render_state.spatial=self.spatial
   self.spatial.spatialStateChanged.connect(lambda _:self.bridge.publishEventState())
   self._update_events(self.bridge.getEventState())
@@ -77,7 +121,7 @@ class NavPage(QWidget):
    self._event_buttons={}
    for event_id in ids:
     button=QPushButton();button.setObjectName('secondaryButton');button.setSizePolicy(QSizePolicy.Policy.Ignored,QSizePolicy.Policy.Fixed)
-    button.clicked.connect(lambda _,eid=event_id:self.bridge.selectEvent(eid));self.event_cards.addWidget(button);self._event_buttons[event_id]=button
+    button.clicked.connect(lambda _=False,eid=event_id:self.bridge.selectEvent(eid));self.event_cards.addWidget(button);self._event_buttons[event_id]=button
   for event in payload['events']:
    self._event_buttons[event['event_id']].setText(f'{event["event_id"]}  {event["status"]}\n{event["severity"] or "—"} · {event["impact_state"]}\nETA {event["eta_label"]} · Updated {event["age_label"]}')
   selected=next((e for e in payload['events'] if e['event_id']==payload['selected_event_id']),None)
@@ -95,20 +139,6 @@ class NavPage(QWidget):
  def _send_map_state(self):
   self.bridge.spatialStateChanged.emit(self.spatial.payload());self.bridge.eventStateChanged.emit(self.bridge.getEventState());self.bridge.publishMaritimeState()
   for name,checkbox in self.layer_checks.items():self.set_layer_visibility(name,checkbox.isChecked())
- def _toolbar(self):
-  bar=QHBoxLayout();bar.setSpacing(12)
-  labels={'CENTER VESSEL':'Center vessel','FOLLOW':'Follow','NORTH UP':'North up','FIT TRACK':'Fit track','MARINE':'Marine','SATELLITE':'Satellite','VESSEL CONFIG':'Vessel config'}
-  for caption,names in [('VESSEL',('CENTER VESSEL','FOLLOW','NORTH UP','FIT TRACK')),('MAP',('MARINE','SATELLITE')),('VIEW',('2D','3D')),('CONFIG',('VESSEL CONFIG',))]:
-   group=QHBoxLayout();group.setSpacing(4);label=QLabel(caption);label.setObjectName('fieldLabelDark');group.addWidget(label)
-   for name in names:
-    b=QPushButton(labels.get(name,name));b.setObjectName('secondaryButton');b.setAccessibleName(name)
-    if name=='FOLLOW':self.follow_button=b;b.setCheckable(True)
-    b.clicked.connect(lambda _,n=name:self.command(n));group.addWidget(b)
-   bar.addLayout(group)
-  palette_label=QLabel('PALETTE');palette_label.setObjectName('fieldLabelDark');bar.addWidget(palette_label)
-  self.palette_control=QComboBox();self.palette_control.setAccessibleName('Map palette');self.palette_control.setMinimumWidth(160)
-  for mode in ('AUTO','DAY','NIGHT'):self.palette_control.addItem(mode,mode)
-  bar.addWidget(self.palette_control);bar.addStretch();return bar
  def _layer_toggle(self,layout,name,caption=None):
   settings=QSettings('GDS','VTS');c=QCheckBox(caption or name)
   c.setChecked(settings.value(f'nav/layers/{name}',GIS_DEFAULTS.get(name,True),type=bool))
@@ -119,7 +149,7 @@ class NavPage(QWidget):
   panel.setWidgetResizable(True);panel.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff);panel.setFrameShape(QFrame.Shape.NoFrame)
   host=QFrame();host.setObjectName('navPanel');panel.setWidget(host)
   l=QVBoxLayout(host);l.setContentsMargins(11,10,11,10);l.setSpacing(6)
-  self.map_package_status=QLabel('OFFLINE MAP NOT INSTALLED');self.map_package_status.setWordWrap(True);self.map_package_status.setObjectName('fieldLabelDark');l.addWidget(self.map_package_status)
+  self.map_package_status=QLabel('MAP / ONLINE / CONNECTING');self.map_package_status.setWordWrap(True);self.map_package_status.setObjectName('fieldLabelDark');l.addWidget(self.map_package_status)
   self.inspector_box=QFrame();self.inspector_box.setObjectName('navInspectorBox');inspector=QVBoxLayout(self.inspector_box)
   inspector.setContentsMargins(9,8,9,8);inspector.setSpacing(5);l.addWidget(self.inspector_box);self.inspector_box.hide()
   def inspector_section(title,command):
@@ -136,7 +166,7 @@ class NavPage(QWidget):
   self.feature_heading,self.feature_info,self.zoom_feature_button=inspector_section('FEATURE INFO','Zoom to feature')
   self.zoom_feature_button.clicked.connect(lambda:self.web.page().runJavaScript('window.navMap&&navMap.zoomToSelectedFeature()'))
   self._inspector_active=False;self._inspector_key=None;self.nav_groups={}
-  title=QLabel('LAYERS');title.setObjectName('cardTitle');l.addWidget(title)
+  close=QPushButton('LAYERS                                      ×');close.setAccessibleName('Close layers');close.setObjectName('secondaryButton');close.clicked.connect(lambda:self.toggle_layers() if getattr(self,'_floating',False) else None);l.addWidget(close)
   def group(title,key,expanded=False,parent_layout=l):
    section=Disclosure(title,key,expanded);self.nav_groups[key]=section;parent_layout.addWidget(section);return section
   own=group('OWN VESSEL','own-vessel',True)
@@ -173,7 +203,7 @@ class NavPage(QWidget):
   squall_row=QHBoxLayout();squall_label=QLabel('SQUALL');squall_label.setObjectName('cardTitle');squall_row.addWidget(squall_label)
   self.event_count=QLabel('No active events');self.event_count.setObjectName('navMuted');squall_row.addWidget(self.event_count,1,Qt.AlignmentFlag.AlignRight);l.addLayout(squall_row)
   self.event_cards=QVBoxLayout();self.event_cards.setSpacing(4);l.addLayout(self.event_cards)
-  self.sources_section=group('DATA SOURCES','sources',True);self.source_info=SourceStatusPanel();self.sources_section.content.addWidget(self.source_info)
+  self.sources_section=group('DATA SOURCES','sources',False);self.source_info=SourceStatusPanel();self.sources_section.content.addWidget(self.source_info)
   legend=group('LEGEND','legend',False);populate_legend(legend.content)
   self.telemetry_section=group('VESSEL TELEMETRY','vessel-telemetry',False)
   self.readout=QLabel('Position ?\nSOG ? kn   COG ??\nHeading ??\nSource ?');self.readout.setObjectName('navReadout');self.readout.setWordWrap(True);self.telemetry_section.content.addWidget(self.readout)
@@ -181,6 +211,19 @@ class NavPage(QWidget):
  def _sync_inspector(self,key=None):
   if not hasattr(self,'inspector_box'):return
   active=any(not label.isHidden() for label in (self.maritime_heading,self.event_heading,self.feature_heading))
+  if getattr(self,'_floating',False):
+   new_selection=key and key!=self._inspector_key
+   if new_selection:self._details=False;self._dismissed_selection=None
+   if key:self._inspector_key=key
+   self.inspector_box.setVisible(active)
+   if not active:self.selection_panel.hide()
+   elif new_selection or not self._inspector_active:
+    self.selection_panel.setVisible(self._dismissed_selection!=self._inspector_key)
+   if active:
+    if new_selection:self.layers_panel.hide();self.layers_button.setChecked(False)
+    self.details_button.setText('LESS' if self._details else 'DETAILS')
+    for info in (self.maritime_info,self.event_info,self.feature_info):info.set_compact(not self._details)
+   self._inspector_active=active;self._position_floating();return
   self.inspector_box.setVisible(active)
   if active!=self._inspector_active:
    for section in (self.sources_section,self.telemetry_section):
@@ -191,11 +234,14 @@ class NavPage(QWidget):
   self._inspector_active=active
   if key:self._inspector_key=key
  def command(self,name):
+  if getattr(self,'_floating',False) and name=='MARINE':self.control_buttons['MARINE'].setChecked(True)
+  if getattr(self,'_floating',False) and name in ('2D','3D'):
+   for mode in ('2D','3D'):self.control_buttons[mode].setChecked(mode==name)
   if name=='VESSEL CONFIG':
    d=VesselConfigDialog(self.config,self)
    if d.exec(): d.apply()
   elif name=='FOLLOW':
-   enabled=self.follow.toggle();self.follow_button.setChecked(enabled);self.follow_button.setText(f'FOLLOW {"ON" if enabled else "OFF"}');self.web.page().runJavaScript(f'window.navMap&&navMap.setFollow({str(enabled).lower()})')
+   enabled=self.follow.toggle();self.follow_button.setChecked(enabled);self.follow_button.setToolTip('Follow vessel · '+('On' if enabled else 'Off'));self.web.page().runJavaScript(f'window.navMap&&navMap.setFollow({str(enabled).lower()})')
    if hasattr(self,'palette'):self.palette.update(follow=enabled)
   else:self.web.page().runJavaScript(f"window.navMap&&navMap.command('{name}')")
  def set_layer_visibility(self,name,visible):
@@ -219,6 +265,7 @@ class NavPage(QWidget):
    return
   labels={'name':'NAME','category':'CATEGORY','feature_id':'FEATURE ID','status':'STATUS','description':'DESCRIPTION','source':'SOURCE','revision':'REVISION','valid_from':'VALID FROM','valid_to':'VALID TO','notes':'NOTES'}
   self.feature_info.setText('\n'.join(f'{labels[key]}\n{value}' for key,value in data.items()));self.feature_heading.show();self.feature_info.show();self.zoom_feature_button.show()
+  if getattr(self,'_floating',False):self._dismissed_selection=None;self._inspector_active=False
   if hasattr(self,'_sync_inspector'):self._sync_inspector(data.get('feature_id'))
  def _select_spatial_feature(self, category, feature_id):
   self.bridge.clearEventSelection()
@@ -241,12 +288,14 @@ class NavPage(QWidget):
    if accepted:
     self.bridge.telemetryChanged.emit({'latitude':self.vessel.latitude,'longitude':self.vessel.longitude,'heading':self.vessel.heading or 0})
     self.bridge.renderStateChanged.emit({'track':self.track.geojson_segments(),'start':self.track.start_geojson(),'heading':vector_geojson(self.vessel.latitude,self.vessel.longitude,f.heading),'cog':vector_geojson(self.vessel.latitude,self.vessel.longitude,f.cog)})
+   self.trackbar.setVisible(True)
    m=track_metrics(self.track);self.readout.setText(f'POSITION\n{self.vessel.latitude:.6f}, {self.vessel.longitude:.6f}\n\nSOG\n{f.speed_knots or "—"} kn\n\nCOG\n{f.cog or "—"}°\n\nHEADING\n{f.heading or "—"}°\n\nSOURCE\n{f.source or "—"}\n\nTELEMETRY AGE\n{telemetry_age(f,__import__("datetime").datetime.now(__import__("datetime").timezone.utc))}');self.trackbar.setText(f'TRACK  {m["status"]}     DISTANCE  {m["distance_nm"]}     DURATION  {m["duration"]}     POINTS  {m["points"]}')
 
  def _setup_maritime(self):
   for label in (self.source_info,self.maritime_info):label.setSizePolicy(QSizePolicy.Policy.Ignored,QSizePolicy.Policy.Preferred)
   self.bridge.maritimeStateChanged.connect(self._update_maritime)
   self.bridge.maritimeObjectSelected.connect(lambda _:self.spatial.clear_selection())
+  self.bridge.maritimeObjectSelected.connect(self.reopen_selection)
   if self.maritime_runtime:
    self.maritime_runtime.changed.connect(self.bridge.publishMaritimeState)
    self.bridge.maritimeViewportChanged.connect(self.maritime_runtime.viewport)
@@ -275,6 +324,12 @@ class NavPage(QWidget):
   if selected['properties'].get('gis_layer'):
    from app.nav.maritime.inspector import gis_inspector
    title,fields=gis_inspector(selected,payload.get('gis_layers',[]))
+   dataset=next((layer for layer in payload.get('gis_layers',[]) if layer['dataset_id']==selected['properties']['gis_layer']),{})
+   if dataset.get('style_class') in ('platform','platform_detail'):
+    title='OFFSHORE INSTALLATION'
+    priority=('Name','Type','Operator','Status','Water Depth (m)','Position')
+    values=dict(fields)
+    fields=[(key,values[key]) for key in priority if key in values]+[(key,value) for key,value in fields if key not in priority]
    self.maritime_heading.setText(title);self.maritime_info.setText('\n'.join(f'{key}  {value}' for key,value in fields))
    for widget in (self.feature_heading,self.feature_info,self.zoom_feature_button,self.event_heading,self.event_info,self.show_event_button):widget.hide()
    if hasattr(self,'_sync_inspector'):self._sync_inspector(selected['object_id'])

@@ -1,8 +1,8 @@
 """Qt coordinator: worker-only I/O, queued results, one batched publication timer."""
 import logging
 import time
-from concurrent.futures import ThreadPoolExecutor
-from PySide6.QtCore import QObject, Signal, Slot, QTimer, Qt
+from app.core.compat import ThreadPoolExecutor
+from app.qt.QtCore import QObject, Signal, Slot, QTimer, Qt
 from .config import MaritimeConfig
 from .service import MaritimeObjectService
 from .area_controller import MaritimeAreaController

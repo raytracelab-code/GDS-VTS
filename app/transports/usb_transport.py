@@ -1,3 +1,4 @@
+from __future__ import annotations
 import threading
 from typing import Iterable
 from app.core.models import UsbDevice

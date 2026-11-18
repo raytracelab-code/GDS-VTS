@@ -1,4 +1,5 @@
 """Shared Malaysia layer contract, read from the customer dataset manifest."""
+from app.core.compat import is_relative_to
 import json
 import os
 from pathlib import Path
@@ -27,6 +28,6 @@ def read_manifest(directory=None):
             raise ValueError('Invalid or duplicate Malaysia layer ID')
         ids.add(key)
         candidate = (directory / layer['filename']).resolve()
-        if not candidate.is_relative_to(directory):
+        if not is_relative_to(candidate, directory):
             raise ValueError('Malaysia GIS filename escapes dataset directory')
     return manifest

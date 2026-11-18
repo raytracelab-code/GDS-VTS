@@ -1,4 +1,5 @@
 """Versioned package validation, staging and atomic activation pointers."""
+from app.core.compat import is_relative_to, remove_suffix
 from dataclasses import dataclass
 import hashlib
 import json
@@ -9,9 +10,19 @@ import shutil
 import tempfile
 import uuid
 import zipfile
+from contextlib import contextmanager
+from functools import wraps
+import time
 from .mbtiles import MBTiles, MapPackageError, bounds
 
 ROLES = ('overview_file', 'basemap_file', 'bathymetry_file')
+
+
+def regional_transaction(method):
+    @wraps(method)
+    def locked(self,*args,**kwargs):
+        with self._region_lock():return method(self,*args,**kwargs)
+    return locked
 
 
 def safe_name(name):
@@ -30,7 +41,7 @@ def safe_file(root, name):
         raise MapPackageError('Unsafe package path')
     root = Path(root).resolve()
     path = (root / name).resolve()
-    if not path.is_relative_to(root) or not path.is_file():
+    if not is_relative_to(path, root) or not path.is_file():
         raise MapPackageError(f'Missing/unsafe package file: {name}')
     return path
 
@@ -49,7 +60,7 @@ class Package:
     manifest: dict
 
     def files(self):
-        return {**{role.removesuffix('_file'): self.manifest[role] for role in ROLES if self.manifest.get(role)},
+        return {**{remove_suffix(role, '_file'): self.manifest[role] for role in ROLES if self.manifest.get(role)},
                 **{f'detail-{i}': name for i, name in enumerate(self.manifest.get('detail_files', []))},
                 **{f'satellite-{i}': name for i, name in enumerate(self.manifest.get('optional_satellite_files', []))}}
 
@@ -124,6 +135,27 @@ class PackageManager:
     def __init__(self, store=None):
         self.store = Path(store) if store else default_store()
 
+    @contextmanager
+    def _region_lock(self):
+        """Serialize short registry mutations across the installer and NAV UI."""
+        self.store.mkdir(parents=True,exist_ok=True)
+        with (self.store/'.regions.lock').open('a+b') as stream:
+            if stream.tell()==0:stream.write(b'0');stream.flush()
+            if os.name=='nt':
+                import msvcrt
+                for attempt in range(200):
+                    try:stream.seek(0);msvcrt.locking(stream.fileno(),msvcrt.LK_NBLCK,1);break
+                    except OSError:
+                        if attempt==199:raise MapPackageError('Regional registry is busy')
+                        time.sleep(.025)
+                try:yield
+                finally:stream.seek(0);msvcrt.locking(stream.fileno(),msvcrt.LK_UNLCK,1)
+            else:
+                import fcntl
+                fcntl.flock(stream,fcntl.LOCK_EX)
+                try:yield
+                finally:fcntl.flock(stream,fcntl.LOCK_UN)
+
     def _pointer(self):
         try:
             with (self.store / 'active.json').open('rb') as stream:
@@ -164,14 +196,14 @@ class PackageManager:
             return validate_package(self._resolve(pointer['current']), verify_checksums=False)
         return None
 
-    def install(self, source):
+    def install(self, source, activate=True):
         self.store.mkdir(parents=True, exist_ok=True)
         revision = uuid.uuid4().hex
         with tempfile.TemporaryDirectory(prefix='.staging-', dir=self.store) as temp:
             stage = Path(temp) / 'package'
             source = Path(source).resolve(strict=True)
             if source.is_dir():
-                if self.store.resolve().is_relative_to(source):
+                if is_relative_to(self.store.resolve(), source):
                     raise MapPackageError('Source must not contain installed map storage')
                 # Validate before copying and reject links (including Windows junctions).
                 validate_package(source)
@@ -189,7 +221,7 @@ class PackageManager:
                     seen = set()
                     for entry in entries:
                         name = entry.filename
-                        if name.casefold() in seen or not safe_name(name.removesuffix('/')) or (entry.external_attr >> 16) & 0o170000 == 0o120000:
+                        if name.casefold() in seen or not safe_name(remove_suffix(name, '/')) or (entry.external_attr >> 16) & 0o170000 == 0o120000:
                             raise MapPackageError('Unsafe archive entry')
                         seen.add(name.casefold())
                     archive.extractall(stage)
@@ -197,8 +229,92 @@ class PackageManager:
             destination = self._resolve(revision)
             destination.parent.mkdir(exist_ok=True)
             os.replace(stage, destination)
-            self._activate(revision, self._pointer().get('current'))
-        return self.active()
+            if activate:self._activate(revision, self._pointer().get('current'))
+        return validate_package(destination, verify_checksums=False)
+
+    def regional_index(self):
+        """Independent region pointers; the legacy accepted active pointer stays intact."""
+        self.invalid_regions={}
+        try:
+            path=self.store/'regions.json'
+            if path.stat().st_size>1024*1024:raise ValueError()
+            data=json.loads(path.read_text(encoding='utf-8'))
+            if not isinstance(data,dict):raise ValueError()
+            result={}
+            for key,entry in data.items():
+                if not isinstance(entry,dict):self.invalid_regions[key]='Invalid registry entry';continue
+                try:package=validate_package(self._resolve(entry.get('current')),verify_checksums=False)
+                except (MapPackageError,OSError) as error:self.invalid_regions[key]=str(error);continue
+                if key==package.manifest['package_id']:
+                    result[key]={**entry,'enabled':entry.get('enabled') is not False}
+                else:self.invalid_regions[key]='Regional package ID mismatch'
+            return result
+        except (OSError,ValueError,TypeError):return {}
+
+    def _save_regions(self, data):
+        self.store.mkdir(parents=True,exist_ok=True)
+        temp=self.store/('.regions-'+uuid.uuid4().hex+'.json')
+        try:
+            with temp.open('w',encoding='utf-8') as stream:
+                json.dump(data,stream);stream.flush();os.fsync(stream.fileno())
+            os.replace(temp,self.store/'regions.json')
+        finally:temp.unlink(missing_ok=True)
+
+    def installed_regions(self, enabled_only=False):
+        entries=self.regional_index();packages={}
+        legacy=self.discover()
+        if legacy:packages[legacy.manifest['package_id']]=legacy
+        for key,entry in entries.items():
+            if enabled_only and not entry['enabled']:
+                packages.pop(key,None);continue
+            package=validate_package(self._resolve(entry['current']),verify_checksums=False)
+            package.manifest={**package.manifest,'enabled':entry['enabled'],'priority':entry.get('priority',100)}
+            packages[key]=package
+        return list(packages.values())
+
+    def install_region(self, source, priority=100):
+        package=self.install(source,activate=False)
+        return self._register_region(package,priority)
+
+    @regional_transaction
+    def _register_region(self, package, priority):
+        entries=self.regional_index();key=package.manifest['package_id'];old=entries.get(key,{})
+        entries[key]={'current':package.root.name,'previous':old.get('current'),
+                      'enabled':old.get('enabled',True),'priority':int(priority)}
+        self._save_regions(entries)
+        return package
+
+    @regional_transaction
+    def set_region_enabled(self, key, enabled):
+        entries=self.regional_index()
+        if key not in entries:
+            package=next((p for p in self.installed_regions() if p.manifest['package_id']==key),None)
+            if not package or package.root.parent!=self.store/'revisions':raise MapPackageError('Region not installed in registry')
+            entries[key]={'current':package.root.name,'previous':None,'priority':100}
+        entries[key]['enabled']=bool(enabled);self._save_regions(entries)
+
+    @regional_transaction
+    def rollback_region(self, key):
+        entries=self.regional_index();entry=entries.get(key,{})
+        previous=entry.get('previous')
+        if not previous:raise MapPackageError('No previous regional revision')
+        package=validate_package(self._resolve(previous))
+        if package.manifest['package_id']!=key:raise MapPackageError('Regional revision mismatch')
+        entry['current'],entry['previous']=previous,entry['current'];self._save_regions(entries)
+
+    @regional_transaction
+    def remove_region(self, key):
+        entries=self.regional_index();entry=entries.get(key)
+        if not entry:raise MapPackageError('Region not registered')
+        protected=set(self._pointer().values())
+        protected.update(v for k,e in entries.items() if k!=key for v in (e.get('current'),e.get('previous')) if isinstance(v,str))
+        targets={self._resolve(v).resolve() for v in (entry.get('current'),entry.get('previous')) if v}
+        root=(self.store/'revisions').resolve()
+        if any(p.name in protected or p.parent!=root for p in targets):raise MapPackageError('Accepted active revisions are protected')
+        if any(p.exists() and validate_package(p,verify_checksums=False).manifest['package_id']!=key for p in targets):raise MapPackageError('Regional revision mismatch')
+        del entries[key];self._save_regions(entries)
+        for path in targets:
+            if path.exists():shutil.rmtree(path)
 
     def rollback(self):
         pointer = self._pointer()

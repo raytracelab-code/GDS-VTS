@@ -1,0 +1,1859 @@
+{
+  "timestamp_utc": "2026-11-08T17:29:32.399714+00:00",
+  "bulk_state": "RUNNING",
+  "accepted_pointer": {
+    "current": "e95f3d5dc1f844b4a3942d008f04246b",
+    "previous": null
+  },
+  "malaysia_sha256": "5acc0e97f0d5b68289c4bc03ceef1aa72ffdae48dc4849a984ccc340588fbc86",
+  "installed_count": 52,
+  "installed_tile_bytes": 27260678144,
+  "installed_package_bytes": 27261108995,
+  "disk": {
+    "total": 510668042240,
+    "used": 404623224832,
+    "free": 106044817408
+  },
+  "packages": [
+    {
+      "region_id": "malaysia_singapore_brunei",
+      "name": "Malaysia / Singapore / Brunei",
+      "revision": "shortbread-1.0-20261108T035419Z-5acc0e97f0d5",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\e95f3d5dc1f844b4a3942d008f04246b",
+      "tile_bytes": 294547456,
+      "package_bytes": 294556662,
+      "enabled": true,
+      "bounds": [
+        99.25611,
+        0.830813,
+        119.6683,
+        7.736849
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/malaysia-singapore-brunei-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/malaysia-singapore-brunei.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "5acc0e97f0d5b68289c4bc03ceef1aa72ffdae48dc4849a984ccc340588fbc86",
+        "source.json": "caab1284cf0bbb8be6ce11513227d37d376d4b3f6d699e24ab692c6fef81a456"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "thailand",
+      "name": "Thailand",
+      "revision": "shortbread-1.0-20261108T040830Z-ee71f0427200",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\cbb12fcd09c64e04afd64267aec2786c",
+      "tile_bytes": 514768896,
+      "package_bytes": 514777141,
+      "enabled": true,
+      "bounds": [
+        97.13562,
+        5.597877,
+        105.6392,
+        20.46875
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/thailand-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/thailand.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "ee71f04272004a2e40d775c8a1915464cacb29071c7c61cd1362718456d259ba",
+        "source.json": "7a43caafe1f983f023280eeacfaf80210d33b080f74c7f1872201705cec31905"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "cambodia",
+      "name": "Cambodia",
+      "revision": "shortbread-1.0-20261108T034607Z-ca42ecc56a6c",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\fbbc6a251f474a8bb4d55c8457febf7d",
+      "tile_bytes": 139993088,
+      "package_bytes": 140001327,
+      "enabled": true,
+      "bounds": [
+        101.8522,
+        8.858092,
+        107.6397,
+        14.71875
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/cambodia-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/cambodia.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "ca42ecc56a6cab8f1ff3a28f48f3cd897cf9dcfb2ad4e47705d1ea48753c4767",
+        "source.json": "86cfac40a4f866e004a132bfe37579be9bbe26f9edf584b5f6dccfcc01de64ff"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "laos",
+      "name": "Laos",
+      "revision": "shortbread-1.0-20261108T035342Z-78185d34c7e5",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\8ba9546729fc4c89a55bcc002c52340f",
+      "tile_bytes": 382476288,
+      "package_bytes": 382484501,
+      "enabled": true,
+      "bounds": [
+        100.0828,
+        13.90159,
+        107.6503,
+        22.52825
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/laos-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/laos.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "78185d34c7e573408531fdeec9e93cd9e8fb9f8cb0d44bcd2ef766f946859517",
+        "source.json": "277e6047fe995ff0222565e277b1bc6e2c8df815cf261244b4f95cc2cd744efe"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "philippines",
+      "name": "Philippines",
+      "revision": "shortbread-1.0-20261108T040513Z-1675bfd52b12",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\e445d475111c4a61a101c9c5ab986757",
+      "tile_bytes": 519008256,
+      "package_bytes": 519016524,
+      "enabled": true,
+      "bounds": [
+        112.1661,
+        4.382696,
+        127.0742,
+        21.53021
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/philippines-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/philippines.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "1675bfd52b123754c218fd6ab93f63ac9f4e96a8a4b2d19844810959e7279e5b",
+        "source.json": "14e418a491a3073fbd32aa6823baf5f5cda4cfc6d13894d8931495917ee18c28"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "kalimantan",
+      "name": "Kalimantan",
+      "revision": "shortbread-1.0-20261108T035203Z-882dad5f5adb",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\90882d2d2ab443d5a27937277a7ec579",
+      "tile_bytes": 248037376,
+      "package_bytes": 248045693,
+      "enabled": true,
+      "bounds": [
+        104.9606,
+        -5.59958,
+        119.9267,
+        4.404166
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/indonesia/kalimantan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/indonesia/kalimantan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "882dad5f5adb5f5553e63112baf949c772e99f1f88f4bd1f59bf86543aec5bc2",
+        "source.json": "7b56f29ebe8991b39220767199a413a0d02ae996d3c275f551fa0d37e34fabe3"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "java",
+      "name": "Java",
+      "revision": "shortbread-1.0-20261108T035153Z-88f58725da74",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\cbddfda2f08c41bf932e49baa98426fe",
+      "tile_bytes": 584445952,
+      "package_bytes": 584454211,
+      "enabled": true,
+      "bounds": [
+        104.1394,
+        -9.541155,
+        116.5814,
+        -3.951935
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/indonesia/java-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/indonesia/java.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "88f58725da74c744e10f5a79bc5c853a05703bbdd3fbac3c894d1a1074f7a24e",
+        "source.json": "ccdf10a494ae532e973cb90f869ec7cb9de718df658b0c8d60b11fef6df3a0e9"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "nusa-tenggara",
+      "name": "Nusa-Tenggara",
+      "revision": "shortbread-1.0-20261108T040250Z-4b4f1d4d2a48",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\c3cdb04a65e94b4f98265cfd883fa29c",
+      "tile_bytes": 133029888,
+      "package_bytes": 133038218,
+      "enabled": true,
+      "bounds": [
+        114.4089,
+        -11.60655,
+        128.408,
+        -6.675509
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/indonesia/nusa-tenggara-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/indonesia/nusa-tenggara.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "4b4f1d4d2a486c798fae1f22289409d81020cb044c2643fff30fd78a0ff9c593",
+        "source.json": "d64d88267cda638501c2673c4d44cf1d3b1add1b16e108bace649ed5437f5329"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "papua",
+      "name": "Papua",
+      "revision": "shortbread-1.0-20261108T040428Z-752852ed9d8f",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\cf510acaa2c94efd88dc5f8103280253",
+      "tile_bytes": 92246016,
+      "package_bytes": 92254289,
+      "enabled": true,
+      "bounds": [
+        128.2819,
+        -9.495116,
+        141.0217,
+        2.075967
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/indonesia/papua-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/indonesia/papua.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "752852ed9d8f6a1e167110276d02c88c883bb92384224bf3b1d39c70de8c16a0",
+        "source.json": "fda7222c5174198c776f16c275572d4cf0fd704c158754f487e79c690d512106"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "maluku",
+      "name": "Maluku",
+      "revision": "shortbread-1.0-20261108T035432Z-ce5e7bd4b363",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\39adace2e41b4af89d450aed7bfd85ce",
+      "tile_bytes": 113991680,
+      "package_bytes": 113999959,
+      "enabled": true,
+      "bounds": [
+        123.8928,
+        -9.524903,
+        135.412,
+        3.727232
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/indonesia/maluku-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/indonesia/maluku.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "ce5e7bd4b36342fd59f78dbb1dd709f228e9cd9bfa2aa4210435a63de4778614",
+        "source.json": "174f4e253c4f36628760bc2a5762845520b94845db9d37e691e8489e318506c7"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "vietnam",
+      "name": "Vietnam",
+      "revision": "shortbread-1.0-20261108T041432Z-884e45cb428a",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\90351963394c47868523bd38fbb3bd73",
+      "tile_bytes": 686673920,
+      "package_bytes": 686682168,
+      "enabled": true,
+      "bounds": [
+        102.0959,
+        7.382239,
+        114.6423,
+        23.40214
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/vietnam-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/vietnam.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "884e45cb428ab50461d0c04faa715071009d36c1b20e31701d8f2681cf8d74bd",
+        "source.json": "80e7540248c9ce356cce9b0dff15d7ea0fcce9bbc93d99248cac900947ac009e"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "sulawesi",
+      "name": "Sulawesi",
+      "revision": "shortbread-1.0-20261108T040800Z-7a03d173c494",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\d58428dd08ab4801a9e9389e51f87621",
+      "tile_bytes": 206213120,
+      "package_bytes": 206221424,
+      "enabled": true,
+      "bounds": [
+        116.2518,
+        -8.02115,
+        127.9523,
+        5.948258
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/indonesia/sulawesi-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/indonesia/sulawesi.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "7a03d173c4946e94de4b2766ae0ab83c391447981bbfb88db686b1bdb2c457c5",
+        "source.json": "960a79241de4c59d260127bc132062219d1e95f76f43fc1d6817556d4c9ec987"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "bangladesh",
+      "name": "Bangladesh",
+      "revision": "shortbread-1.0-20261108T034543Z-45d574166198",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\355c4c899e1148209c21a0281f548eaa",
+      "tile_bytes": 348438528,
+      "package_bytes": 348446779,
+      "enabled": true,
+      "bounds": [
+        87.99765,
+        18.58403,
+        92.69714,
+        26.64677
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/bangladesh-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/bangladesh.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "45d5741661989176a921de27d20085d17a5d799f6566f1b4e2b511704dcb40ac",
+        "source.json": "8adb838a3dac53150e9a89044c0a3e2886ecf461d016f7a9eee70b41dd9143ad"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "papua-new-guinea",
+      "name": "Papua New Guinea",
+      "revision": "shortbread-1.0-20261108T040450Z-74e1207183fa",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\82f735525a1b4a90a315de20c5c79b11",
+      "tile_bytes": 219656192,
+      "package_bytes": 219664561,
+      "enabled": true,
+      "bounds": [
+        139.2014,
+        -14.74845,
+        162.8034,
+        2.587814
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/australia-oceania/papua-new-guinea-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/australia-oceania/papua-new-guinea.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "74e1207183fac513e418421cc26e146622c9ee4159b57425128a9abd8aa28c23",
+        "source.json": "00e7b00e20cf474f48cf3e173aaeddd8933f3205207fd3f5edb1edbc9bf4362b"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "sumatra",
+      "name": "Sumatra",
+      "revision": "shortbread-1.0-20261108T040814Z-c5bcefd4a187",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\7cbd9aff64124c78b403d0edea0ab87d",
+      "tile_bytes": 647979008,
+      "package_bytes": 647987308,
+      "enabled": true,
+      "bounds": [
+        92.76481,
+        -7.169929,
+        109.7524,
+        6.99933
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/indonesia/sumatra-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/indonesia/sumatra.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "c5bcefd4a1871ed4d3614eced367114b0f1757ce548eb99cda83734ae89749da",
+        "source.json": "ea77dbe6766da432f466654368e19d9b574f021b792e224e7b8dbacb10e3c2a9"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "myanmar",
+      "name": "Myanmar (a.k.a. Burma)",
+      "revision": "shortbread-1.0-20261108T035708Z-643d8438a4fb",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\4ca69be14ba64bfdad1eeef9ddf3c82e",
+      "tile_bytes": 756658176,
+      "package_bytes": 756666455,
+      "enabled": true,
+      "bounds": [
+        90.65133,
+        9.510211,
+        101.1971,
+        28.57476
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/myanmar-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/myanmar.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "643d8438a4fba08f9f29aae0d952f7ad0f82fc95d6acafaf3062da263a446690",
+        "source.json": "4d0d292abc4887d81e0e71aa5e48bfe4cad76c46e5057745943ad211c74ca849"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "armenia",
+      "name": "Armenia",
+      "revision": "shortbread-1.0-20261108T034522Z-e4cbe11b5be0",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\e1fd99c30d4d4245840ac1acafbcacc7",
+      "tile_bytes": 70717440,
+      "package_bytes": 70725684,
+      "enabled": true,
+      "bounds": [
+        43.43821,
+        38.83743,
+        46.64262,
+        41.31029
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/armenia-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/armenia.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "e4cbe11b5be0597cdeece5c619c9f62e05f6819b10c5c3b65658c95f34115b41",
+        "source.json": "7057f0959b6818f0a26376846dfe4c2b32f3c886826e30eba305a625989fbb03"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "azerbaijan",
+      "name": "Azerbaijan",
+      "revision": "shortbread-1.0-20261108T034537Z-e9e6c19bb227",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\3acfdff701ee467d830d34e95ca25f61",
+      "tile_bytes": 165941248,
+      "package_bytes": 165949508,
+      "enabled": true,
+      "bounds": [
+        44.75006,
+        38.24727,
+        51.7231,
+        42.67437
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/azerbaijan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/azerbaijan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "e9e6c19bb227d3cefdf473c97ea9c749d19434e686f7a8ac57ff1a44222ee2b4",
+        "source.json": "e7d991e9c5ed81ba56cef174394702bb3a2f0878b2cde7299519d1b232b3b558"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "bhutan",
+      "name": "Bhutan",
+      "revision": "shortbread-1.0-20261108T034550Z-aa8800ba9c9a",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\97823bc5606f47d0899aefdc67bf0041",
+      "tile_bytes": 37715968,
+      "package_bytes": 37724188,
+      "enabled": true,
+      "bounds": [
+        88.73917,
+        26.6948,
+        92.13159,
+        28.25372
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/bhutan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/bhutan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "aa8800ba9c9ae79b0f317293a0bad9bb90d0082ec61ac1472baf4d8366bff9bd",
+        "source.json": "de1b2ba95c30eb6919ada66b18b5c83402642b3f3b165ac5afab17e28b697764"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "afghanistan",
+      "name": "Afghanistan",
+      "revision": "shortbread-1.0-20261108T034527Z-c5e70e5161c2",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\c75fd3483b0a48f9847a9c85c5e0d18e",
+      "tile_bytes": 363122688,
+      "package_bytes": 363130952,
+      "enabled": true,
+      "bounds": [
+        60.48761,
+        29.36856,
+        74.90017,
+        38.50674
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/afghanistan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/afghanistan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "c5e70e5161c288a1358f73a51e9394558deccb7d3779ba8b9ad8cd8f1fc97c74",
+        "source.json": "e314572fdffac616cfa4f2ecacda6cd2f06cc43c8b59b156018b6cf2447464d3"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "central-zone",
+      "name": "Central Zone",
+      "revision": "shortbread-1.0-20261108T034639Z-24eb868c0fee",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\87b88c47844645e29afb7a9445352a8f",
+      "tile_bytes": 896663552,
+      "package_bytes": 896671866,
+      "enabled": true,
+      "bounds": [
+        74.01489,
+        17.77092,
+        84.64657,
+        31.49075
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/india/central-zone-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/india/central-zone.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "24eb868c0fee17e19bb93a73933fc35804a828ed50c3ba83c7cf7e1062a8c077",
+        "source.json": "c9e1ceb3ab2af01d41ca25bfe45fc7abfd78091e49f27a755da22e98f09eb446"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "chubu",
+      "name": "Ch\u016bbu region",
+      "revision": "shortbread-1.0-20261108T034703Z-7e4f4758fe0a",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\239bc62254ba4278821f09a7e08169a1",
+      "tile_bytes": 648437760,
+      "package_bytes": 648446012,
+      "enabled": true,
+      "bounds": [
+        135.4393,
+        34.26649,
+        139.909,
+        38.90717
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/japan/chubu-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/japan/chubu.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "7e4f4758fe0adcfdf5a3392ed79bce40c9ead0e650e4bbbacd3f4517b7a1a7b5",
+        "source.json": "9953be1aa968b90ba49b58bf1b7be98bfddf21c1751585fe9b45170c29caa263"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "chugoku",
+      "name": "Ch\u016bgoku region",
+      "revision": "shortbread-1.0-20261108T034706Z-4f8a7cb57263",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\b65ccfc32141405ab6975252d00ad85b",
+      "tile_bytes": 212914176,
+      "package_bytes": 212922452,
+      "enabled": true,
+      "bounds": [
+        129.8975,
+        33.54225,
+        134.5244,
+        36.9681
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/japan/chugoku-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/japan/chugoku.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "4f8a7cb57263241b616aeec31e884208511cd08253c6a49938e87a745a558ec6",
+        "source.json": "6144f7272dcc9663fb8e4b4e267e961c5278c51e805f223078e23c5754d6afd6"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "east-timor",
+      "name": "East Timor",
+      "revision": "shortbread-1.0-20261108T034805Z-e20bb3e3de25",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\57edf13c5bb043f7999296eafe931742",
+      "tile_bytes": 23429120,
+      "package_bytes": 23437370,
+      "enabled": true,
+      "bounds": [
+        123.7912,
+        -9.690103,
+        127.5911,
+        -8.057869
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/east-timor-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/east-timor.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "e20bb3e3de25ae8eb29e2e286c225f54165671e60fb4694adcb4ef1a2afd0dcc",
+        "source.json": "1c348fae24f797f4242fd0646cade45ed594faf4b64230c0e6aa66938a1a2ff0"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "australia",
+      "name": "Australia",
+      "revision": "shortbread-1.0-20261108T035331Z-3e52da0917c7",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\d10e737fe0fe44568e265a31432c0dda",
+      "tile_bytes": 2838573056,
+      "package_bytes": 2838581397,
+      "enabled": true,
+      "bounds": [
+        68.13342,
+        -57.07106,
+        169.0016,
+        -8.809565
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/australia-oceania/australia-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/australia-oceania/australia.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "3e52da0917c712d3d2b254fecb6bd1795d27e6a7977c5b9be6c6f8231309f853",
+        "source.json": "dd84ed0a8e37fde3db127fcdf430f5aca28be729a027a51581f443eb85df4d66"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "eastern-zone",
+      "name": "Eastern Zone",
+      "revision": "shortbread-1.0-20261108T034814Z-1a28fd61b817",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\3b78c276858f43af91b7bd9e0e8cb080",
+      "tile_bytes": 620195840,
+      "package_bytes": 620204143,
+      "enabled": true,
+      "bounds": [
+        81.36749,
+        17.78056,
+        89.91829,
+        27.52837
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/india/eastern-zone-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/india/eastern-zone.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "1a28fd61b817d92aeac862bb5763c70348387d2ce99d6538519dc8b25d3de649",
+        "source.json": "1715ea0a03b7b5e92e0c4349a1f79780726613c48fbf354e6ddca0db40b7b6ca"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "hokkaido",
+      "name": "Hokkaid\u014d",
+      "revision": "shortbread-1.0-20261108T035045Z-6b4fb958a2e1",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\3d8be083cc3b40b69a39d95e8c1c22bd",
+      "tile_bytes": 171765760,
+      "package_bytes": 171774041,
+      "enabled": true,
+      "bounds": [
+        137.9346,
+        41.15098,
+        146.2476,
+        45.8154
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/japan/hokkaido-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/japan/hokkaido.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "6b4fb958a2e1a72be65494eb585a5c4a0e51936f563e3bd3a25dff1b46c501d0",
+        "source.json": "d8edc07265ff35b36bef3522bdd9d3b99b53a63edf2bd6c9705530a34649b006"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "gcc-states",
+      "name": "GCC States",
+      "revision": "shortbread-1.0-20261108T035009Z-6df3c11af32a",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\f24b0eb2c14d453b996b1a06fa9070d9",
+      "tile_bytes": 610365440,
+      "package_bytes": 610373722,
+      "enabled": true,
+      "bounds": [
+        34.43489,
+        15.24752,
+        60.94748,
+        32.19653
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/gcc-states-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/gcc-states.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "6df3c11af32a816ae7fb50201e336bac9da1086f88608b46b4de19b1b82516d0",
+        "source.json": "a0f1f6c2a87355d372e5a322f01359d6cb6fc57ea9a0f93f0976a3efa2b1572e"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "iraq",
+      "name": "Iraq",
+      "revision": "shortbread-1.0-20261108T035137Z-e1da6476bed1",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\b314eeb078e74ed69822cda2f4a29f30",
+      "tile_bytes": 248823808,
+      "package_bytes": 248832015,
+      "enabled": true,
+      "bounds": [
+        38.784,
+        29.01775,
+        49.55108,
+        37.39063
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/iraq-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/iraq.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "e1da6476bed1035c50ddb570674695e209e20d57174976838a92eab3021ce985",
+        "source.json": "c3d0a08412b539323dd8cba112618f69a3295089eff1af7b63897f2f4cc46906"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "israel-and-palestine",
+      "name": "Israel and Palestine",
+      "revision": "shortbread-1.0-20261108T035146Z-0f1027442d41",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\24b8cbc01f4749c1a8711b69b7e278f3",
+      "tile_bytes": 103505920,
+      "package_bytes": 103514236,
+      "enabled": true,
+      "bounds": [
+        33.99994,
+        29.4396,
+        35.91531,
+        33.45436
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/israel-and-palestine-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/israel-and-palestine.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "0f1027442d4138935ff5c42a3f487b167122be40ce9555f24b6b93efb3aacca3",
+        "source.json": "cbb3e40f58bc47da7b8028491747a47e5d205d847ee4869f061a443019295f51"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "jordan",
+      "name": "Jordan",
+      "revision": "shortbread-1.0-20261108T035151Z-d64b552433d1",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\abc5180605e347c7b135ac69c8e5b999",
+      "tile_bytes": 104923136,
+      "package_bytes": 104931357,
+      "enabled": true,
+      "bounds": [
+        34.86886,
+        29.18213,
+        39.31022,
+        33.37922
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/jordan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/jordan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "d64b552433d123a9b0163afdfca7e46a695086b46d055cd4794dce10b3b67a53",
+        "source.json": "a7523f047565f8b184909b7c006ce36765b7ed07efdf644857a0eea6f2d691f1"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "iran",
+      "name": "Iran",
+      "revision": "shortbread-1.0-20261108T035134Z-4fffc8916f93",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\433e37a00e8d4c8b8f673b2bd693d8c6",
+      "tile_bytes": 651440128,
+      "package_bytes": 651448346,
+      "enabled": true,
+      "bounds": [
+        44.02303,
+        24.03947,
+        63.35413,
+        39.79045
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/iran-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/iran.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "4fffc8916f93b0eae08d2774eae78b1d7e044dedd6b0ad851f5e3de89ebd3b40",
+        "source.json": "086bca782dca100e0a1f405e7b383253dba55b4a22af254a794f154c4f37254b"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "kansai",
+      "name": "Kansai region (a.k.a. Kinki region)",
+      "revision": "shortbread-1.0-20261108T035157Z-057cf192dabf",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\47dfd236a8e1470c99a59edb7d1ecfe3",
+      "tile_bytes": 369086464,
+      "package_bytes": 369094773,
+      "enabled": true,
+      "bounds": [
+        133.9644,
+        33.07898,
+        137.6573,
+        36.4582
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/japan/kansai-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/japan/kansai.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "057cf192dabfb1150054c4bed5f1f37e25ad223abe36e7d212834b0e5bfe9bc2",
+        "source.json": "5551c0eb165d352b03d2efde179dbf98bb84e0306cdecbeec212f35baf627f39"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "kanto",
+      "name": "Kant\u014d region",
+      "revision": "shortbread-1.0-20261108T035229Z-d91bf46597a2",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\d19a3ec75e6042b1934acc2dab92ee87",
+      "tile_bytes": 862007296,
+      "package_bytes": 862015562,
+      "enabled": true,
+      "bounds": [
+        134.5757,
+        20.08228,
+        154.4709,
+        37.15988
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/japan/kanto-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/japan/kanto.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "d91bf46597a29d5bdc5da3c2d48702cce7d599d9932a8f283740fb9123767f31",
+        "source.json": "f7ab697b46722f737f6de9eb37e176406541b73d055e4a7f51a800e4ed648517"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "kyrgyzstan",
+      "name": "Kyrgyzstan",
+      "revision": "shortbread-1.0-20261108T035327Z-c96bf3d85382",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\1705e816110640d3977e464b57b36eb3",
+      "tile_bytes": 221372416,
+      "package_bytes": 221380665,
+      "enabled": true,
+      "bounds": [
+        69.25507,
+        39.15136,
+        80.2771,
+        43.2812
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/kyrgyzstan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/kyrgyzstan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "c96bf3d85382b9d99b0718600fe4a1494e997f4799025c12810d79fdef0a46b8",
+        "source.json": "bee7b2cdfea6a4d79cfc806be5b3ab5a1fbcca30b09e812698c984a5c88f6c03"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "kyushu",
+      "name": "Ky\u016bsh\u016b",
+      "revision": "shortbread-1.0-20261108T035341Z-04dc3b966b79",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\b3ab59632f7140d58ee641984c3c181e",
+      "tile_bytes": 357404672,
+      "package_bytes": 357412930,
+      "enabled": true,
+      "bounds": [
+        122.5814,
+        21.38691,
+        132.8044,
+        35.09724
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/japan/kyushu-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/japan/kyushu.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "04dc3b966b7994ed7614d06be0d64cbdc7c32845398e73a4291f0fb8134f0989",
+        "source.json": "28b0930fb5521385bc48f6119a6e6cc960985e4f4eab11b984e177958b5df59c"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "lebanon",
+      "name": "Lebanon",
+      "revision": "shortbread-1.0-20261108T035342Z-e10d61af2d80",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\2cecb49d960e44989f8a6c1ba19540d5",
+      "tile_bytes": 45572096,
+      "package_bytes": 45580317,
+      "enabled": true,
+      "bounds": [
+        34.76799,
+        33.05299,
+        36.63666,
+        34.80253
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/lebanon-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/lebanon.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "e10d61af2d80f2dfc4753bfec9311288d56de6ab98ccc031127fd43370cfde1e",
+        "source.json": "8ec2b2f025488eb2a327f90e5ec187d84a3049d05bc505d98709f7309511a618"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "maldives",
+      "name": "Maldives",
+      "revision": "shortbread-1.0-20261108T035416Z-1838a029e9bb",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\9be8afada1834825a7e33049b9d51643",
+      "tile_bytes": 11612160,
+      "package_bytes": 11620340,
+      "enabled": true,
+      "bounds": [
+        71.7,
+        -1.36,
+        74.5,
+        7.69
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/maldives-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/maldives.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "1838a029e9bb0a1c04148093686852f734fff66e081502f84a8daff9cda20527",
+        "source.json": "63b3727c68deb059524712a055ccdc70546945a7b54de1fad77b045e172047d0"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "mongolia",
+      "name": "Mongolia",
+      "revision": "shortbread-1.0-20261108T035628Z-5ecf984fd9db",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\67700355dd604a17be22513ee81df9fe",
+      "tile_bytes": 308711424,
+      "package_bytes": 308719674,
+      "enabled": true,
+      "bounds": [
+        87.70255,
+        41.50035,
+        120.0201,
+        52.19582
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/mongolia-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/mongolia.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "5ecf984fd9dbee8a9dd1d8eeea1477373d19b4f03774b13c416038f909418a1b",
+        "source.json": "1710805017e9366d92b26dddd8c62c40a893f53929c2cb32b3fd8aefa11c9996"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "kazakhstan",
+      "name": "Kazakhstan",
+      "revision": "shortbread-1.0-20261108T035320Z-1fecfcb70898",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\7fdd1ebdc49945f483f61ea34b14dc7c",
+      "tile_bytes": 1557524480,
+      "package_bytes": 1557532760,
+      "enabled": true,
+      "bounds": [
+        46.42304,
+        40.55346,
+        87.35359,
+        55.50799
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/kazakhstan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/kazakhstan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "1fecfcb70898c7374b12bbd3bb06cad177b5aa45a3f800a8dfda2c80eeb1d9e9",
+        "source.json": "461ef4d8c9279e86396b71310c6b0879c30a3689170c187be143ceb555ca852a"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "nepal",
+      "name": "Nepal",
+      "revision": "shortbread-1.0-20261108T035702Z-cf1f09fe1bcd",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\5f26f246a4f24496a36f9e21e9854235",
+      "tile_bytes": 390893568,
+      "package_bytes": 390901792,
+      "enabled": true,
+      "bounds": [
+        80.04913,
+        26.3445,
+        88.22213,
+        30.47822
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/nepal-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/nepal.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "cf1f09fe1bcdc1649a4e396c3d8b20a17bc44ebe4bcdb6717db19900904925da",
+        "source.json": "6c29104587660ee640181cbbaaf640a0543e231e0db829bb1ada7ac6e217880b"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "north-korea",
+      "name": "North Korea",
+      "revision": "shortbread-1.0-20261108T035901Z-e563de5ade42",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\e8d3d42bcc65499ea4a979931b4d04df",
+      "tile_bytes": 196521984,
+      "package_bytes": 196530243,
+      "enabled": true,
+      "bounds": [
+        123.697,
+        37.61103,
+        131.6447,
+        43.02043
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/north-korea-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/north-korea.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "e563de5ade42e8646e46e3842aa5262bea771e8ef676132159651d9c3c95d395",
+        "source.json": "12e890707f4586de6f160c723fd6d312b1158f9f0f6de6110625a0a313200727"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "north-eastern-zone",
+      "name": "North-Eastern Zone",
+      "revision": "shortbread-1.0-20261108T035856Z-76b365b5ca29",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\3e33fa91fdd94ef2b3a5d767829c6f68",
+      "tile_bytes": 514260992,
+      "package_bytes": 514269337,
+      "enabled": true,
+      "bounds": [
+        88.00852,
+        21.92712,
+        97.41989,
+        29.42883
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/india/north-eastern-zone-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/india/north-eastern-zone.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "76b365b5ca2955ab942cd125f6a8acaf98b119dce9c53aad17f103511d7fc901",
+        "source.json": "27c115957227e00de36338c9e021d9ae96f884af35c4c5aa5c1424f8084f0e5b"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "new-zealand",
+      "name": "New Zealand",
+      "revision": "shortbread-1.0-20261108T041535Z-488318dce9fc",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\2eefaf74b8494117bf2a0995f62db9b7",
+      "tile_bytes": 6569754624,
+      "package_bytes": 6569762978,
+      "enabled": true,
+      "bounds": [
+        -179.989,
+        -56.75268,
+        179.9999,
+        -28.488
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/australia-oceania/new-zealand-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/australia-oceania/new-zealand.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "488318dce9fcec5e584b069ee2dff24d6f785e5d15107a451afd39cce1e7f173",
+        "source.json": "b42e5cfbf39b0e4c443f46169826134280c3d033f99fd4730d7b535441500ea1"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "northern-zone",
+      "name": "Northern Zone",
+      "revision": "shortbread-1.0-20261108T035914Z-9872e3094ba7",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\28cb391655a94bba99b6a3b8290661ad",
+      "tile_bytes": 606507008,
+      "package_bytes": 606515311,
+      "enabled": true,
+      "bounds": [
+        69.43908,
+        23.04688,
+        79.48883,
+        35.73091
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/india/northern-zone-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/india/northern-zone.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "9872e3094ba731f8697649120b071ad25b935fd4731748c5124bef47e497b086",
+        "source.json": "7e67b1323fbf2abd47d2283d5074f5db8e1ca94c70b09a4ed24f967457fbec36"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "shikoku",
+      "name": "Shikoku",
+      "revision": "shortbread-1.0-20261108T040628Z-d1946d691826",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\c6bcf7e59dc8412c9d350a2c27380b8d",
+      "tile_bytes": 140554240,
+      "package_bytes": 140562491,
+      "enabled": true,
+      "bounds": [
+        131.7698,
+        32.22959,
+        135.1794,
+        34.65151
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/japan/shikoku-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/japan/shikoku.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "d1946d691826f3c66bcbb7d3367bc0a1bd84e4a9ec355f8a6254aff903b5dc2b",
+        "source.json": "83175337ea4bd40be7295fe0f42982988967475424e2ec2a36457363abe19505"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "sri-lanka",
+      "name": "Sri Lanka",
+      "revision": "shortbread-1.0-20261108T040711Z-fcb52120d63c",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\a832966f0f22404197082dcaa322e12d",
+      "tile_bytes": 107261952,
+      "package_bytes": 107270203,
+      "enabled": true,
+      "bounds": [
+        79.16416,
+        5.621275,
+        82.64612,
+        10.07153
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/sri-lanka-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/sri-lanka.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "fcb52120d63cc018835cd988eddc6359080c6801e8a010202f376cc47f68900e",
+        "source.json": "71ce02d90e7093850da8e0d25435cb231078bcc0f9ed007fd11a6e242b3669b8"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "pakistan",
+      "name": "Pakistan",
+      "revision": "shortbread-1.0-20261108T040412Z-4bacb8d045dd",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\23bcf10e425d453eab506ad18d5fc57d",
+      "tile_bytes": 645427200,
+      "package_bytes": 645435444,
+      "enabled": true,
+      "bounds": [
+        60.82168,
+        23.3763,
+        77.22427,
+        37.10667
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/pakistan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/pakistan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "4bacb8d045ddafc7b8549000abe996deafa52c5061ee15dc22c73d03d5a49ec1",
+        "source.json": "3e7b30152905a9dc738cdf4bb25aca8ea378f9c13cebc03ffed0bb01bd9d51af"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "syria",
+      "name": "Syria",
+      "revision": "shortbread-1.0-20261108T040810Z-d74923ae9e5b",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\d1743c12285f41a2a05ef5854b9137c0",
+      "tile_bytes": 185819136,
+      "package_bytes": 185827352,
+      "enabled": true,
+      "bounds": [
+        35.28548,
+        32.3066,
+        42.38383,
+        37.32239
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/syria-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/syria.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "d74923ae9e5b40136c6a48fdbd12f6f00a5d90ad1fc1d211c07472ec85ac98f6",
+        "source.json": "acf702be72d6817476ddaf6db62e08985c862d5591e01b3ad99d4236216deef5"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "taiwan",
+      "name": "Taiwan",
+      "revision": "shortbread-1.0-20261108T040813Z-0bef396e4a97",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\7e717a4801434b7ea7a1d75685ae4428",
+      "tile_bytes": 182599680,
+      "package_bytes": 182607912,
+      "enabled": true,
+      "bounds": [
+        118.1036,
+        20.72799,
+        122.9312,
+        26.60305
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/taiwan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/taiwan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "0bef396e4a97d1a52d1654d519929d94c2636ade7b488041557d537ca7b95c72",
+        "source.json": "632573670b96202c4113ef9bfd93e3b5b6957aa3695dc3652279208b3432d1c2"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "tajikistan",
+      "name": "Tajikistan",
+      "revision": "shortbread-1.0-20261108T040817Z-5bbebf5c7e04",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\29135ea4e6ee4a1aa42b61d64441262d",
+      "tile_bytes": 171261952,
+      "package_bytes": 171270211,
+      "enabled": true,
+      "bounds": [
+        67.3201,
+        36.66374,
+        75.16571,
+        41.05502
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/tajikistan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/tajikistan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "5bbebf5c7e0486d4d6f93e8d30500f3a84f4af50e9ca638286c5a2938fc32bc0",
+        "source.json": "1fbd189361686cb642f63dee99b7ce0bbad909e4380f9b6e6c45501b0a695256"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    },
+    {
+      "region_id": "turkmenistan",
+      "name": "Turkmenistan",
+      "revision": "shortbread-1.0-20261108T040850Z-28657e7a0f77",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\88ed261aa5374d0194055d1892a7bcf1",
+      "tile_bytes": 159825920,
+      "package_bytes": 159834191,
+      "enabled": true,
+      "bounds": [
+        51.83271,
+        35.12355,
+        66.72272,
+        42.81253
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "source_url": "https://download.geofabrik.de/asia/turkmenistan-shortbread-1.0.mbtiles",
+      "source_page": "https://download.geofabrik.de/asia/turkmenistan.html",
+      "schema": {
+        "basemap": "shortbread-1.0"
+      },
+      "checksums": {
+        "basemap.mbtiles": "28657e7a0f77904ef7a9a9bc9ba97e33ef45499c6942421c7d7ebdf3597e1576",
+        "source.json": "a09c2031b532c4bd2c493de7a54b7772d0f05a3044ec31e46add1535348019a6"
+      },
+      "sample_zooms": [
+        0,
+        7,
+        14
+      ]
+    }
+  ],
+  "complete_cached_files": [
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\afghanistan-shortbread-1.0.mbtiles",
+      "bytes": 363122688
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\armenia-shortbread-1.0.mbtiles",
+      "bytes": 70717440
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\australia-shortbread-1.0.mbtiles",
+      "bytes": 2838573056
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\azerbaijan-shortbread-1.0.mbtiles",
+      "bytes": 165941248
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\bangladesh-shortbread-1.0.mbtiles",
+      "bytes": 348438528
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\bhutan-shortbread-1.0.mbtiles",
+      "bytes": 37715968
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\cambodia-shortbread-1.0.mbtiles",
+      "bytes": 139993088
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\central-zone-shortbread-1.0.mbtiles",
+      "bytes": 896663552
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\chubu-shortbread-1.0.mbtiles",
+      "bytes": 648437760
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\chugoku-shortbread-1.0.mbtiles",
+      "bytes": 212914176
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\east-timor-shortbread-1.0.mbtiles",
+      "bytes": 23429120
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\eastern-zone-shortbread-1.0.mbtiles",
+      "bytes": 620195840
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\gcc-states-shortbread-1.0.mbtiles",
+      "bytes": 610365440
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\hokkaido-shortbread-1.0.mbtiles",
+      "bytes": 171765760
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\iran-shortbread-1.0.mbtiles",
+      "bytes": 651440128
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\iraq-shortbread-1.0.mbtiles",
+      "bytes": 248823808
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\israel-and-palestine-shortbread-1.0.mbtiles",
+      "bytes": 103505920
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\java-shortbread-1.0.mbtiles",
+      "bytes": 584445952
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\jordan-shortbread-1.0.mbtiles",
+      "bytes": 104923136
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\kalimantan-shortbread-1.0.mbtiles",
+      "bytes": 248037376
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\kansai-shortbread-1.0.mbtiles",
+      "bytes": 369086464
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\kanto-shortbread-1.0.mbtiles",
+      "bytes": 862007296
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\kazakhstan-shortbread-1.0.mbtiles",
+      "bytes": 1557524480
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\kyrgyzstan-shortbread-1.0.mbtiles",
+      "bytes": 221372416
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\kyushu-shortbread-1.0.mbtiles",
+      "bytes": 357404672
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\laos-shortbread-1.0.mbtiles",
+      "bytes": 382476288
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\lebanon-shortbread-1.0.mbtiles",
+      "bytes": 45572096
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\malaysia-singapore-brunei-shortbread-1.0.mbtiles",
+      "bytes": 294547456
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\maldives-shortbread-1.0.mbtiles",
+      "bytes": 11612160
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\maluku-shortbread-1.0.mbtiles",
+      "bytes": 113991680
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\mongolia-shortbread-1.0.mbtiles",
+      "bytes": 308711424
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\myanmar-shortbread-1.0.mbtiles",
+      "bytes": 756658176
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\nepal-shortbread-1.0.mbtiles",
+      "bytes": 390893568
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\new-zealand-shortbread-1.0.mbtiles",
+      "bytes": 6569754624
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\north-eastern-zone-shortbread-1.0.mbtiles",
+      "bytes": 514260992
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\north-korea-shortbread-1.0.mbtiles",
+      "bytes": 196521984
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\northern-zone-shortbread-1.0.mbtiles",
+      "bytes": 606507008
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\nusa-tenggara-shortbread-1.0.mbtiles",
+      "bytes": 133029888
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\pakistan-shortbread-1.0.mbtiles",
+      "bytes": 645427200
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\papua-new-guinea-shortbread-1.0.mbtiles",
+      "bytes": 219656192
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\papua-shortbread-1.0.mbtiles",
+      "bytes": 92246016
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\philippines-shortbread-1.0.mbtiles",
+      "bytes": 519008256
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\shikoku-shortbread-1.0.mbtiles",
+      "bytes": 140554240
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\sri-lanka-shortbread-1.0.mbtiles",
+      "bytes": 107261952
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\sulawesi-shortbread-1.0.mbtiles",
+      "bytes": 206213120
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\sumatra-shortbread-1.0.mbtiles",
+      "bytes": 647979008
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\syria-shortbread-1.0.mbtiles",
+      "bytes": 185819136
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\taiwan-shortbread-1.0.mbtiles",
+      "bytes": 182599680
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\tajikistan-shortbread-1.0.mbtiles",
+      "bytes": 171261952
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\thailand-shortbread-1.0.mbtiles",
+      "bytes": 514768896
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\turkmenistan-shortbread-1.0.mbtiles",
+      "bytes": 159825920
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\vietnam-shortbread-1.0.mbtiles",
+      "bytes": 686673920
+    }
+  ],
+  "partials": [
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\china-shortbread-1.0.mbtiles.part",
+      "bytes": 6659506176
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\southern-zone-shortbread-1.0.mbtiles.part",
+      "bytes": 689963008
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\tohoku-shortbread-1.0.mbtiles.part",
+      "bytes": 217055232
+    },
+    {
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\map-build\\sources\\uzbekistan-shortbread-1.0.mbtiles.part",
+      "bytes": 97517568
+    }
+  ]
+}

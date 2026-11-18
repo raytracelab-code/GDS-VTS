@@ -1,0 +1,106 @@
+{
+  "disk": {
+    "total": 510668042240,
+    "used": 331500453888,
+    "free": 179167588352
+  },
+  "ram_total_bytes": 16851132416,
+  "ram_available_bytes": 1675239424,
+  "accepted_pointer": {
+    "current": "e95f3d5dc1f844b4a3942d008f04246b",
+    "previous": null
+  },
+  "accepted_malaysia_sha256": "5acc0e97f0d5b68289c4bc03ceef1aa72ffdae48dc4849a984ccc340588fbc86",
+  "installed": [
+    {
+      "region": "malaysia_singapore_brunei",
+      "revision": "shortbread-1.0-20261108T035419Z-5acc0e97f0d5",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\e95f3d5dc1f844b4a3942d008f04246b",
+      "size": 294547456
+    },
+    {
+      "region": "thailand",
+      "revision": "shortbread-1.0-20261108T040830Z-ee71f0427200",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\cbb12fcd09c64e04afd64267aec2786c",
+      "size": 514768896
+    },
+    {
+      "region": "cambodia",
+      "revision": "shortbread-1.0-20261108T034607Z-ca42ecc56a6c",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\fbbc6a251f474a8bb4d55c8457febf7d",
+      "size": 139993088
+    },
+    {
+      "region": "laos",
+      "revision": "shortbread-1.0-20261108T035342Z-78185d34c7e5",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\8ba9546729fc4c89a55bcc002c52340f",
+      "size": 382476288
+    },
+    {
+      "region": "philippines",
+      "revision": "shortbread-1.0-20261108T040513Z-1675bfd52b12",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\e445d475111c4a61a101c9c5ab986757",
+      "size": 519008256
+    },
+    {
+      "region": "kalimantan",
+      "revision": "shortbread-1.0-20261108T035203Z-882dad5f5adb",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\90882d2d2ab443d5a27937277a7ec579",
+      "size": 248037376
+    },
+    {
+      "region": "java",
+      "revision": "shortbread-1.0-20261108T035153Z-88f58725da74",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\cbddfda2f08c41bf932e49baa98426fe",
+      "size": 584445952
+    },
+    {
+      "region": "nusa-tenggara",
+      "revision": "shortbread-1.0-20261108T040250Z-4b4f1d4d2a48",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\c3cdb04a65e94b4f98265cfd883fa29c",
+      "size": 133029888
+    },
+    {
+      "region": "papua",
+      "revision": "shortbread-1.0-20261108T040428Z-752852ed9d8f",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\cf510acaa2c94efd88dc5f8103280253",
+      "size": 92246016
+    },
+    {
+      "region": "maluku",
+      "revision": "shortbread-1.0-20261108T035432Z-ce5e7bd4b363",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\39adace2e41b4af89d450aed7bfd85ce",
+      "size": 113991680
+    },
+    {
+      "region": "vietnam",
+      "revision": "shortbread-1.0-20261108T041432Z-884e45cb428a",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\90351963394c47868523bd38fbb3bd73",
+      "size": 686673920
+    },
+    {
+      "region": "sulawesi",
+      "revision": "shortbread-1.0-20261108T040800Z-7a03d173c494",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\d58428dd08ab4801a9e9389e51f87621",
+      "size": 206213120
+    },
+    {
+      "region": "bangladesh",
+      "revision": "shortbread-1.0-20261108T034543Z-45d574166198",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\355c4c899e1148209c21a0281f548eaa",
+      "size": 348438528
+    },
+    {
+      "region": "papua-new-guinea",
+      "revision": "shortbread-1.0-20261108T040450Z-74e1207183fa",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\82f735525a1b4a90a315de20c5c79b11",
+      "size": 219656192
+    },
+    {
+      "region": "sumatra",
+      "revision": "shortbread-1.0-20261108T040814Z-c5bcefd4a187",
+      "path": "C:\\Users\\rayha\\AppData\\Local\\GDS VTS\\maps\\revisions\\7cbd9aff64124c78b403d0edea0ab87d",
+      "size": 647979008
+    }
+  ]
+}

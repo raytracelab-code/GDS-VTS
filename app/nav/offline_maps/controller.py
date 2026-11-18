@@ -1,7 +1,7 @@
 """One shared minute clock and settled-center debounce for NAV palette."""
 from datetime import datetime, timezone
 import logging
-from PySide6.QtCore import QObject, QTimer, QSettings, Signal
+from app.qt.QtCore import QObject, QTimer, QSettings, Signal
 from .palette import PaletteEngine, canonical_utc, position
 
 log = logging.getLogger(__name__)

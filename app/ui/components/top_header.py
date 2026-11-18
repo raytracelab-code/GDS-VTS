@@ -1,6 +1,6 @@
 from pathlib import Path
-from PySide6.QtSvgWidgets import QSvgWidget
-from PySide6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel
+from app.qt.QtSvgWidgets import QSvgWidget
+from app.qt.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel
 
 class TopHeader(QWidget):
     def __init__(self):

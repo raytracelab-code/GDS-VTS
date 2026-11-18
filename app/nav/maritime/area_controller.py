@@ -1,4 +1,5 @@
 """Bounded operating area, distance hysteresis and debounced viewport requests."""
+from __future__ import annotations
 from dataclasses import dataclass, asdict
 import math
 import time

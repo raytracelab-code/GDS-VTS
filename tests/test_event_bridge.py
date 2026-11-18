@@ -15,7 +15,7 @@ from app.ui.main_window import MainWindow
 
 NOW=datetime(2026,11,1,9,tzinfo=timezone.utc)
 def message(operation='CREATE',**changes):
- return dict(operation=operation,event_type='squall',event_id='SQ-001',observed_at=NOW.isoformat(),latitude=0,longitude=0,direction_deg=45,**{})|changes
+ return {**(dict(operation=operation,event_type='squall',event_id='SQ-001',observed_at=NOW.isoformat(),latitude=0,longitude=0,direction_deg=45,**{})), **(changes)}
 
 @pytest.fixture
 def integration():

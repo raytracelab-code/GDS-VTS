@@ -1,11 +1,13 @@
 """Secure application scheme for bundled NAV resources; registered pre-QApplication."""
 from pathlib import Path
 import mimetypes
-from PySide6.QtCore import QByteArray,QBuffer,QIODevice,QFile,Signal,QSettings,QCoreApplication
-from PySide6.QtWebEngineCore import QWebEngineUrlScheme,QWebEngineUrlSchemeHandler,QWebEngineUrlRequestJob
+from app.qt.QtCore import QByteArray,QBuffer,QIODevice,QFile,Signal,QSettings,QCoreApplication
+from app.qt.QtWebEngineCore import QWebEngineUrlScheme,QWebEngineUrlSchemeHandler,QWebEngineUrlRequestJob
 def register_gds_scheme():
  scheme=QWebEngineUrlScheme(b'gds');scheme.setSyntax(QWebEngineUrlScheme.Syntax.Host)
- scheme.setFlags(QWebEngineUrlScheme.Flag.SecureScheme|QWebEngineUrlScheme.Flag.LocalAccessAllowed|QWebEngineUrlScheme.Flag.CorsEnabled|QWebEngineUrlScheme.Flag.FetchApiAllowed)
+ flags=QWebEngineUrlScheme.Flag.SecureScheme|QWebEngineUrlScheme.Flag.LocalAccessAllowed|QWebEngineUrlScheme.Flag.CorsEnabled
+ if hasattr(QWebEngineUrlScheme.Flag,'FetchApiAllowed'):flags|=QWebEngineUrlScheme.Flag.FetchApiAllowed
+ scheme.setFlags(flags)
  QWebEngineUrlScheme.registerScheme(scheme)
 
 ROOT=Path(__file__).resolve().parents[1]/'resources'/'map'
@@ -20,26 +22,47 @@ class GdsMapSchemeHandler(QWebEngineUrlSchemeHandler):
  tileReady=Signal(object,object,object)
  def __init__(self,parent=None):
   super().__init__(parent)
-  from concurrent.futures import ThreadPoolExecutor
+  from app.core.compat import ThreadPoolExecutor
   from app.nav.offline_maps.manager import PackageManager
   from app.nav.offline_maps.render_config import render_config
   from app.nav.offline_maps.mbtiles import MapPackageError
-  try:
-   self.package=PackageManager().discover(QSettings('GDS','VTS').value('nav/map_package',''))
-   self.config=render_config(self.package)
-  except (MapPackageError,OSError):
-   # A removable package can disappear after discovery, before style creation.
-   self.package=None;self.config=render_config(None)
-  self.readers={};self.pending=0;self.closed=False
+  import os
+  self.packages=[];self.package=None
+  if os.environ.get('GDS_MAP_SOURCE','online').lower()=='offline':
+   try:
+    manager=PackageManager()
+    self.packages=manager.installed_regions(enabled_only=True)
+    from app.nav.offline_maps.regional import regional_config
+    self.config=regional_config(self.packages)
+    self.package=next((p for p in self.packages if p.manifest['package_id']==self.config.get('package_id')),None)
+   except (MapPackageError,OSError):self.config=render_config(None)
+  else:
+   from app.nav.online_map import online_config
+   self.config=online_config()
+  from app.nav.offline_maps.regional import RegionalReaders
+  self.regional=RegionalReaders(getattr(self,'packages',[]));self.readers=self.regional.readers;self.pending=0;self.closed=False
   self.pool=ThreadPoolExecutor(max_workers=2,thread_name_prefix='offline-tiles')
   self.tileReady.connect(self._tile_reply)
   QCoreApplication.instance().aboutToQuit.connect(self.close)
  def close(self):
   if self.closed:return
-  self.closed=True;self.pool.shutdown(wait=True,cancel_futures=True)
-  for reader in self.readers.values():reader.close()
+  self.closed=True
+  if hasattr(self,'_legacy_server'):self._legacy_server.close()
+  self.pool.shutdown(wait=True,cancel_futures=True)
+  self.regional.close()
+ def reload_packages(self):
+  from app.nav.offline_maps.manager import PackageManager
+  from app.nav.offline_maps.regional import regional_config
+  manager=PackageManager();packages=manager.installed_regions(enabled_only=True)
+  primary=manager.discover()
+  if primary and not any(p.manifest['package_id']==primary.manifest['package_id'] for p in packages):primary=None
+  config=regional_config(packages,primary)
+  with self.regional.lock:
+   self.regional.close();self.regional.packages={p.manifest['package_id']:p for p in packages}
+  self.packages=packages;self.package=next((p for p in packages if p.manifest['package_id']==config.get('package_id')),None);self.config=config
+  return config
  def _tile_reply(self,job,mime,data):
-  from shiboken6 import isValid
+  from app.qt import isValid
   self.pending-=1
   if self.closed or not isValid(job):return
   if data is None:self._tile_unavailable(job);return
@@ -53,23 +76,21 @@ class GdsMapSchemeHandler(QWebEngineUrlSchemeHandler):
   from app.nav.offline_maps.manager import safe_file
   import os,re
   match=re.fullmatch(r'/([A-Za-z0-9._-]+)/([A-Za-z0-9-]+)/(\d{1,2})/(\d{1,8})/(\d{1,8})\.(pbf|mvt|png|jpg|jpeg|webp)',path)
-  if self.closed or not self.package or not match or self.pending>=64:
+  if self.closed or not match or self.pending>=64:
    self._tile_unavailable(job);return
-  package_id,role,z,x,y,extension=match.groups();spec=self.config['tiles'].get(role)
-  if package_id!=self.package.manifest['package_id'] or not spec or spec['format']!=extension:
+  package_id,role,z,x,y,extension=match.groups()
+  config=next((p for p in self.config.get('regional_packages',[]) if p['package_id']==package_id),{})
+  spec=config.get('tiles',{}).get(role)
+  if not spec or spec['format']!=extension:
    self._tile_unavailable(job);return
   try:
    z,x,y=int(z),int(x),int(y);xyz_to_tms(z,x,y)
-   if role not in self.readers:
-    try:cache=int(os.environ.get('GDS_MAP_TILE_CACHE_SIZE','128'))
-    except ValueError:cache=128
-    self.readers[role]=MBTiles(safe_file(self.package.root,spec['file']),cache)
   except (MapPackageError,OSError):
    self._tile_unavailable(job);return
   self.pending+=1
-  future=self.pool.submit(self.readers[role].tile,z,x,y)
+  future=self.pool.submit(self.regional.tile,package_id,role,z,x,y,extension)
   def finished(result):
-   from shiboken6 import isValid
+   from app.qt import isValid
    try:data=result.result()
    except Exception:data=None
    if isValid(self):self.tileReady.emit(job,spec['mime'],data)

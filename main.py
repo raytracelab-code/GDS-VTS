@@ -1,7 +1,10 @@
 import sys
 from app.nav.web_scheme import register_gds_scheme
 register_gds_scheme()
-from PySide6.QtWidgets import QApplication
+from app.qt.QtWidgets import QApplication
+from app.qt.QtCore import QStandardPaths
+from app.qt.QtGui import QFont, QIcon
+from pathlib import Path
 from app.ui.main_window import MainWindow
 def main():
     import logging
@@ -11,7 +14,13 @@ def main():
         maritime_log.addHandler(handler)
     maritime_log.setLevel(logging.INFO);maritime_log.propagate=False
     print('STARTUP 1: main entered', flush=True)
-    app=QApplication(sys.argv); print('STARTUP 2: QApplication created', flush=True); app.setApplicationName('GDS VTS')
+    validation='--validation-profile' in sys.argv
+    args=[arg for arg in sys.argv if arg!='--validation-profile']
+    if validation:QStandardPaths.setTestModeEnabled(True)
+    app=QApplication(args); print('STARTUP 2: QApplication created', flush=True); app.setApplicationName('GDS VTS Validation' if validation else 'GDS VTS')
+    QFont.insertSubstitutions('Cascadia Mono',['Consolas','JetBrains Mono','Courier New'])
+    QFont.insertSubstitutions('Segoe UI Semibold',['Segoe UI','Arial'])
+    app.setWindowIcon(QIcon(str(Path(__file__).resolve().parent/'app/resources/theme/deep-current/gds-vts.ico')))
     print('STARTUP 3: before MainWindow import', flush=True)
     from app.ui.main_window import MainWindow
     print('STARTUP 4: MainWindow imported', flush=True); print('STARTUP 5: before MainWindow construction', flush=True)

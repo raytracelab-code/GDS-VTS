@@ -1,3 +1,4 @@
+from __future__ import annotations
 import json
 class TelemetryParser:
     def parse(self, line: str) -> dict | None:

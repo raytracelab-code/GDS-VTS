@@ -1,0 +1,25 @@
+{
+  "baseline_pytest": "476 passed in 73.37s (0:01:13)",
+  "final_pytest": "488 passed in 68.59s (0:01:08)",
+  "compileall_exit": 0,
+  "py_compile_exit": 0,
+  "diff_check_exit": 0,
+  "online_runtime_exit": 0,
+  "blocked_http_runtime_exit": 0,
+  "online_scene_count": 13,
+  "map_provider": "OpenFreeMap Liberty",
+  "backend_edits_this_checkpoint": [],
+  "new_tests": 12,
+  "manual_checks": [
+    "Configure and NAV rail",
+    "Coordinate entry to Malaysia",
+    "Loaded Resak search results",
+    "Platform card and DETAILS",
+    "Escape dismisses without clearing selection",
+    "Layers popover",
+    "AUTO palette and geographic HUD"
+  ],
+  "reference_images_attached": false,
+  "comparison_basis": "Written visual direction",
+  "no_commit_created": true
+}

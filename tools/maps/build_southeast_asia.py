@@ -24,6 +24,7 @@ import zlib
 
 PROJECT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT))
+from app.core.compat import is_relative_to
 from app.nav.offline_maps.manager import PackageManager, checksum, validate_package
 from app.nav.offline_maps.mbtiles import MBTiles, MapPackageError, _protobuf_fields
 
@@ -45,7 +46,7 @@ def dump(path, data):
 
 def external_root(value):
     root = Path(value).expanduser().resolve()
-    if root == PROJECT or root.is_relative_to(PROJECT):
+    if root == PROJECT or is_relative_to(root, PROJECT):
         raise ValueError('Large map build/storage directories must be outside the project')
     return root
 

@@ -1,8 +1,8 @@
 """Behavior checks for the preserved NAV presentation changes; no WebEngine."""
 from types import SimpleNamespace
 import pytest
-from PySide6.QtCore import QSettings, Qt
-from PySide6.QtWidgets import QWidget, QScrollArea, QPushButton
+from app.qt.QtCore import QSettings, Qt
+from app.qt.QtWidgets import QWidget, QScrollArea, QPushButton
 from app.ui.pages.nav.nav_page import NavPage
 from app.ui.pages.nav.presentation_widgets import Disclosure, SourceStatusPanel, source_rows
 from app.nav.maritime.render_state import GIS_GROUPS, GIS_DEFAULTS
@@ -45,6 +45,7 @@ def test_disclosure_persistence(presentation):
 
 def test_inspector_temporary_priority_preserves_preferences(presentation,qtbot):
     page,_,settings=presentation
+    page.sources_section.set_expanded(True)
     page.maritime_heading.show();page.maritime_info.show();page.show_object_button.show()
     page._sync_inspector('platform:test');qtbot.wait(1)
     assert not page.inspector_box.isHidden() and not page.sources_section.expanded
@@ -67,3 +68,24 @@ def test_source_status_rows_group_models_without_changing_health(qtbot):
     assert panel.rows['aisstream'][3].text()=='Not Configured'
     assert '10,268 total' in panel.detail.text()
     panel.set_payload(payload);assert len(panel.rows)==len(rows)
+
+
+def test_platform_inspector_prioritizes_operational_fields(presentation):
+    page,_,_=presentation
+    selected=dict(object_id='platform:test',category='offshore',source='malaysia_gis',
+        properties=dict(gis_layer='platform',name='TEST',type='Platform',operator='Operator',
+                        status='Active',water_depth_m=45,field='Field'),
+        geometry=dict(type='Point',coordinates=[104,5]))
+    payload=dict(objects=[selected],selected_object_id=selected['object_id'],sources={},counts={},
+                 gis_layers=[dict(dataset_id='platform',style_class='platform')])
+    page._update_maritime(payload)
+    assert page.maritime_heading.text()=='OFFSHORE INSTALLATION'
+    assert [line.split('  ')[0] for line in page.maritime_info.text().splitlines()][:6]==[
+        'Name','Type','Operator','Status','Water Depth (m)','Position']
+
+
+def test_legend_includes_producing_area_and_stays_collapsed(presentation):
+    from app.qt.QtWidgets import QLabel
+    page,_,_=presentation
+    assert not page.nav_groups['legend'].expanded
+    assert 'Producing area' in [label.text() for label in page.nav_groups['legend'].findChildren(QLabel)]

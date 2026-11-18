@@ -1,6 +1,7 @@
+from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime
-from enum import StrEnum
+from app.core.compat import StrEnum
 from typing import Optional
 class EventStatus(StrEnum): ACTIVE='ACTIVE'; STALE='STALE'; EXPIRED='EXPIRED'; CLEARED='CLEARED'
 class EventOperation(StrEnum): CREATE='CREATE'; UPDATE='UPDATE'; CLEAR='CLEAR'

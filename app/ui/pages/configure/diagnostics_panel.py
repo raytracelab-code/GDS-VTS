@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QFrame,QWidget,QVBoxLayout,QGridLayout,QLabel
+from app.qt.QtWidgets import QFrame,QWidget,QVBoxLayout,QGridLayout,QLabel
 from app.telemetry.diagnostics import derive_diagnostics
 
 class DiagnosticsPanel(QFrame):

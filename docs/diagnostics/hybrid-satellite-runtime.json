@@ -1,0 +1,3600 @@
+{
+  "provider": {
+    "provider": "NASA GIBS",
+    "layer": "VIIRS_NOAA20_CorrectedReflectance_TrueColor",
+    "endpoint": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best",
+    "state": "READY",
+    "requires_key": false,
+    "projection": "EPSG:3857",
+    "tile_matrix_set": "GoogleMapsCompatible_Level9",
+    "format": "image/jpeg",
+    "tile_size": 256,
+    "minzoom": 0,
+    "maxzoom": 9,
+    "date_source": "SYSTEM_UTC",
+    "dates": [
+      "2026-11-09",
+      "2026-11-08",
+      "2026-11-07",
+      "2026-11-06"
+    ],
+    "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+    "bathymetry": {
+      "layer": "GEBCO_LATEST",
+      "endpoint": "https://wms.gebco.net/mapserv?",
+      "contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+      "source": {
+        "type": "raster",
+        "tileSize": 256,
+        "minzoom": 0,
+        "maxzoom": 9,
+        "attribution": "Imagery reproduced from the GEBCO_2026 Grid, <a href=\"https://doi.org/10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa\">GEBCO Compilation Group (2026) GEBCO 2026 Grid</a> \u00b7 Context only; not for navigation",
+        "tiles": [
+          "https://wms.gebco.net/mapserv?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=GEBCO_LATEST&STYLES=default&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=256&HEIGHT=256&FORMAT=image/png&TRANSPARENT=TRUE"
+        ]
+      }
+    },
+    "limitation": "Regional Earth-observation context; infrastructure is shown by local GIS.",
+    "candidates": [
+      {
+        "date": "2026-11-09",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      },
+      {
+        "date": "2026-11-08",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-08/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      },
+      {
+        "date": "2026-11-07",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-07/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      },
+      {
+        "date": "2026-11-06",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-06/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "ready": true,
+      "status": "MAP / ONLINE / READY",
+      "basemap": {
+        "mode": "MARINE",
+        "state": "READY",
+        "date": null,
+        "bathymetry": "OFF",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104,
+          "lat": 5.5
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 0
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco"
+      ],
+      "operational_rendered": 780,
+      "platforms": 51,
+      "pipelines": 219,
+      "fields": 173,
+      "raster": null,
+      "hybrid_layers": [],
+      "hud_present": true,
+      "pipeline_glow": 0,
+      "scene": "marine",
+      "nasa_requests": 0,
+      "satellite_button_enabled": true,
+      "marine_checked": true,
+      "satellite_checked": false,
+      "layers_visible": false,
+      "search": ""
+    },
+    {
+      "ready": true,
+      "status": "MAP / SATELLITE / READY  /  NASA VIIRS  /  2026-11-09  /  BATHYMETRY READY",
+      "basemap": {
+        "mode": "SATELLITE",
+        "state": "READY",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [
+          "2026-11-09"
+        ],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104,
+          "lat": 5.5
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 0
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "nasa-gibs-satellite",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 780,
+      "platforms": 51,
+      "pipelines": 219,
+      "fields": 173,
+      "raster": {
+        "visible": "visible",
+        "brightness": 1,
+        "saturation": 0,
+        "below_operational": true,
+        "source": {
+          "type": "raster",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+          "maxzoom": 9,
+          "minzoom": 0,
+          "scheme": "xyz",
+          "tileSize": 256,
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ]
+        }
+      },
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#142f40",
+            "fill-opacity": 0.93
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "visible",
+          "paint": {
+            "raster-opacity": 0.16,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.8,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#b5c8cd",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0,
+      "scene": "satellite-day",
+      "nasa_requests": 32,
+      "satellite_button_enabled": true,
+      "marine_checked": false,
+      "satellite_checked": true,
+      "layers_visible": false,
+      "search": ""
+    },
+    {
+      "ready": true,
+      "status": "MAP / SATELLITE / READY  /  NASA VIIRS  /  2026-11-09  /  BATHYMETRY READY",
+      "basemap": {
+        "mode": "SATELLITE",
+        "state": "READY",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [
+          "2026-11-09"
+        ],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104,
+          "lat": 5.5
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 0
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "nasa-gibs-satellite",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 780,
+      "platforms": 51,
+      "pipelines": 219,
+      "fields": 173,
+      "raster": {
+        "visible": "visible",
+        "brightness": 0.68,
+        "saturation": -0.25,
+        "below_operational": true,
+        "source": {
+          "type": "raster",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+          "maxzoom": 9,
+          "minzoom": 0,
+          "scheme": "xyz",
+          "tileSize": 256,
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ]
+        }
+      },
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#0d2433",
+            "fill-opacity": 0.95
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "visible",
+          "paint": {
+            "raster-opacity": 0.12,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.55,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.053200000000000004,
+      "scene": "satellite-twilight",
+      "nasa_requests": 32,
+      "satellite_button_enabled": true,
+      "marine_checked": false,
+      "satellite_checked": true,
+      "layers_visible": false,
+      "search": ""
+    },
+    {
+      "ready": true,
+      "status": "MAP / SATELLITE / READY  /  NASA VIIRS  /  2026-11-09  /  BATHYMETRY READY",
+      "basemap": {
+        "mode": "SATELLITE",
+        "state": "READY",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [
+          "2026-11-09"
+        ],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104,
+          "lat": 5.5
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 0
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "nasa-gibs-satellite",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 780,
+      "platforms": 51,
+      "pipelines": 219,
+      "fields": 173,
+      "raster": {
+        "visible": "visible",
+        "brightness": 0.32,
+        "saturation": -0.45,
+        "below_operational": true,
+        "source": {
+          "type": "raster",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+          "maxzoom": 9,
+          "minzoom": 0,
+          "scheme": "xyz",
+          "tileSize": 256,
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ]
+        }
+      },
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#091923",
+            "fill-opacity": 0.97
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "visible",
+          "paint": {
+            "raster-opacity": 0.08,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.28,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.19,
+      "scene": "satellite-night",
+      "nasa_requests": 32,
+      "satellite_button_enabled": true,
+      "marine_checked": false,
+      "satellite_checked": true,
+      "layers_visible": false,
+      "search": ""
+    },
+    {
+      "ready": true,
+      "status": "MAP / SATELLITE / READY  /  NASA VIIRS  /  2026-11-09  /  BATHYMETRY READY",
+      "basemap": {
+        "mode": "SATELLITE",
+        "state": "READY",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [
+          "2026-11-09"
+        ],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104.00000000000091,
+          "lat": 5.499999999999588
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 55.00000000000001
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "nasa-gibs-satellite",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 880,
+      "platforms": 55,
+      "pipelines": 251,
+      "fields": 197,
+      "raster": {
+        "visible": "visible",
+        "brightness": 0.32,
+        "saturation": -0.45,
+        "below_operational": true,
+        "source": {
+          "type": "raster",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+          "maxzoom": 9,
+          "minzoom": 0,
+          "scheme": "xyz",
+          "tileSize": 256,
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ]
+        }
+      },
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#091923",
+            "fill-opacity": 0.97
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "visible",
+          "paint": {
+            "raster-opacity": 0.08,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.28,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.19,
+      "scene": "satellite-3d",
+      "nasa_requests": 75,
+      "satellite_button_enabled": true,
+      "marine_checked": false,
+      "satellite_checked": true,
+      "layers_visible": false,
+      "search": ""
+    },
+    {
+      "ready": true,
+      "status": "MAP / SATELLITE / READY  /  NASA VIIRS  /  2026-11-09  /  BATHYMETRY READY",
+      "basemap": {
+        "mode": "SATELLITE",
+        "state": "READY",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [
+          "2026-11-09"
+        ],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104.00000000000091,
+          "lat": 5.499999999999588
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 55.00000000000001
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "nasa-gibs-satellite",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 880,
+      "platforms": 55,
+      "pipelines": 251,
+      "fields": 197,
+      "raster": {
+        "visible": "visible",
+        "brightness": 0.32,
+        "saturation": -0.45,
+        "below_operational": true,
+        "source": {
+          "type": "raster",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+          "maxzoom": 9,
+          "minzoom": 0,
+          "scheme": "xyz",
+          "tileSize": 256,
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ]
+        }
+      },
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#091923",
+            "fill-opacity": 0.97
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "visible",
+          "paint": {
+            "raster-opacity": 0.08,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.28,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.19,
+      "scene": "satellite-panels",
+      "nasa_requests": 75,
+      "satellite_button_enabled": true,
+      "marine_checked": false,
+      "satellite_checked": true,
+      "layers_visible": true,
+      "search": "Resak"
+    },
+    {
+      "ready": true,
+      "status": "MAP / ONLINE / READY",
+      "basemap": {
+        "mode": "MARINE",
+        "state": "READY",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [
+          "2026-11-09"
+        ],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104.00000000000091,
+          "lat": 5.499999999999588
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 55.00000000000001
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "nasa-gibs-satellite",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 880,
+      "platforms": 55,
+      "pipelines": 251,
+      "fields": 197,
+      "raster": {
+        "visible": "visible",
+        "brightness": 0.32,
+        "saturation": -0.45,
+        "below_operational": true,
+        "source": {
+          "type": "raster",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+          "maxzoom": 9,
+          "minzoom": 0,
+          "scheme": "xyz",
+          "tileSize": 256,
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ]
+        }
+      },
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "none",
+          "paint": {
+            "fill-color": "#091923",
+            "fill-opacity": 0.97
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "none",
+          "paint": {
+            "raster-opacity": 0.08,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.28,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.19,
+      "scene": "marine-return",
+      "nasa_requests": 75,
+      "satellite_button_enabled": true,
+      "marine_checked": true,
+      "satellite_checked": false,
+      "layers_visible": true,
+      "search": "Resak"
+    },
+    {
+      "ready": true,
+      "status": "MAP / SATELLITE / READY  /  NASA VIIRS  /  2026-11-09  /  BATHYMETRY READY",
+      "basemap": {
+        "mode": "SATELLITE",
+        "state": "READY",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 104.00000000000091,
+          "lat": 5.499999999999588
+        },
+        "zoom": 8,
+        "bearing": 17.000000000000004,
+        "pitch": 55.00000000000001
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "nasa-gibs-satellite",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 880,
+      "platforms": 55,
+      "pipelines": 251,
+      "fields": 197,
+      "raster": {
+        "visible": "visible",
+        "brightness": 0.32,
+        "saturation": -0.45,
+        "below_operational": true,
+        "source": {
+          "type": "raster",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+          "maxzoom": 9,
+          "minzoom": 0,
+          "scheme": "xyz",
+          "tileSize": 256,
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ]
+        }
+      },
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "visible",
+          "paint": {
+            "fill-color": "#091923",
+            "fill-opacity": 0.97
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "visible",
+          "paint": {
+            "raster-opacity": 0.08,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.28,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "visible",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "visible",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.19,
+      "scene": "satellite-return",
+      "nasa_requests": 75,
+      "satellite_button_enabled": true,
+      "marine_checked": false,
+      "satellite_checked": true,
+      "layers_visible": true,
+      "search": "Resak"
+    },
+    {
+      "ready": true,
+      "status": "MAP / ONLINE / READY  /  Satellite unavailable",
+      "basemap": {
+        "mode": "MARINE",
+        "state": "ERROR",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [],
+        "failure_reason": "TILE_ERROR",
+        "failure_detail": "Failed to fetch"
+      },
+      "tiles_loaded": false,
+      "camera": {
+        "center": {
+          "lng": 110.5,
+          "lat": 4.5
+        },
+        "zoom": 9,
+        "bearing": 17.000000000000004,
+        "pitch": 55.00000000000001
+      },
+      "source_identity": true,
+      "selected_id": null,
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 189,
+      "platforms": 9,
+      "pipelines": 16,
+      "fields": 36,
+      "raster": null,
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "none",
+          "paint": {
+            "fill-color": "#091923",
+            "fill-opacity": 0.97
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "none",
+          "paint": {
+            "raster-opacity": 0.08,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.28,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.19,
+      "scene": "network-loss",
+      "nasa_requests": 92,
+      "satellite_button_enabled": true,
+      "marine_checked": true,
+      "satellite_checked": false,
+      "layers_visible": true,
+      "search": "Resak"
+    },
+    {
+      "ready": true,
+      "status": "MAP / ONLINE UNAVAILABLE / LOCAL OVERLAYS ACTIVE",
+      "basemap": {
+        "mode": "MARINE",
+        "state": "ERROR",
+        "date": "2026-11-09",
+        "bathymetry": "READY",
+        "depth_contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE",
+        "attempted_dates": [],
+        "failure_reason": "TILE_ERROR",
+        "failure_detail": "Failed to fetch"
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 115.5,
+          "lat": 5.5
+        },
+        "zoom": 9,
+        "bearing": 17.000000000000004,
+        "pitch": 55.00000000000001
+      },
+      "source_identity": true,
+      "selected_id": null,
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco",
+        "gebco-hybrid-bathymetry"
+      ],
+      "operational_rendered": 573,
+      "platforms": 16,
+      "pipelines": 214,
+      "fields": 79,
+      "raster": null,
+      "hybrid_layers": [
+        {
+          "id": "hybrid-marine-sea-water",
+          "visibility": "none",
+          "paint": {
+            "fill-color": "#091923",
+            "fill-opacity": 0.97
+          }
+        },
+        {
+          "id": "gebco-hybrid-bathymetry",
+          "visibility": "none",
+          "paint": {
+            "raster-opacity": 0.08,
+            "raster-fade-duration": 200,
+            "raster-brightness-max": 0.28,
+            "raster-saturation": -0.65
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_3",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear",
+                1
+              ],
+              [
+                "zoom"
+              ],
+              7,
+              1,
+              11,
+              2
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_2",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-opacity": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              0,
+              0.4,
+              4,
+              1
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-boundary_disputed",
+          "visibility": "none",
+          "paint": {
+            "line-color": "#9babae",
+            "line-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "line-dasharray": [
+              1,
+              2
+            ],
+            "line-width": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "zoom"
+              ],
+              3,
+              1,
+              5,
+              1.2,
+              12,
+              3
+            ]
+          }
+        },
+        {
+          "id": "hybrid-reference-water_name_line_label",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1.5
+          }
+        },
+        {
+          "id": "hybrid-reference-label_town",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_state",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_city_capital",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_3",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_2",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        },
+        {
+          "id": "hybrid-reference-label_country_1",
+          "visibility": "none",
+          "paint": {
+            "text-color": "#93aeb9",
+            "text-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-blur": 1,
+            "text-halo-color": "#122834",
+            "text-halo-color-transition": {
+              "duration": 250,
+              "delay": 0
+            },
+            "text-halo-width": 1
+          }
+        }
+      ],
+      "hud_present": true,
+      "pipeline_glow": 0.19,
+      "scene": "all-network-loss",
+      "nasa_requests": 92,
+      "satellite_button_enabled": true,
+      "marine_checked": true,
+      "satellite_checked": false,
+      "layers_visible": true,
+      "search": "Resak"
+    }
+  ],
+  "offline_readers": 0
+}

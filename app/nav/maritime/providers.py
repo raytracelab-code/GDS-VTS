@@ -8,6 +8,7 @@ from .adapters.copernicus import CopernicusAdapter
 from .adapters.navarea import Navarea8Adapter
 from .adapters.aisstream import AISStreamAdapter,AISStreamNormalizer
 from .source_health import SourceHealth,SourceState
+from app.core.platform_capabilities import copernicus_available, COPERNICUS_UNAVAILABLE
 
 
 def enabled(env,key,default=False):return str(env.get(key,str(default))).strip().lower() in ('true','1','yes')
@@ -50,6 +51,8 @@ def install(runtime,env):
     for product in ('wave','current','sst','sealevel'):
         dataset=env.get('GDS_CMEMS_'+product.upper()+'_DATASET','');username=env.get('COPERNICUSMARINE_USERNAME','');password=env.get('COPERNICUSMARINE_PASSWORD','')
         register('copernicus_'+product,'https://marine.copernicus.eu/'+dataset,
-                 lambda c,p=product,d=dataset,u=username,pw=password:CopernicusAdapter(c,p,d,u,pw),bool(dataset and username and password),'NOT_CONFIGURED',dynamic=True,interval=3600)
+                 lambda c,p=product,d=dataset,u=username,pw=password:CopernicusAdapter(c,p,d,u,pw),bool(dataset and username and password) and copernicus_available(),'NOT_CONFIGURED',dynamic=True,interval=3600)
+        if not copernicus_available():
+            service.sources['copernicus_'+product].error=COPERNICUS_UNAVAILABLE
     register('navarea8',env.get('GDS_NAVAREA8_SOURCE_URL','https://hydrobharat.gov.in/navarea-warnings/'),Navarea8Adapter,
              False,'NO_STABLE_MACHINE_API' if enabled(env,'GDS_NAVAREA8_ENABLED',True) else 'DISABLED')

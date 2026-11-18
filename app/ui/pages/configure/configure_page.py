@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget,QVBoxLayout,QScrollArea
+from app.qt.QtWidgets import QWidget,QVBoxLayout,QScrollArea
 from .connection_panel import ConnectionPanel
 from .telemetry_panel import TelemetryPanel
 from .diagnostics_panel import DiagnosticsPanel

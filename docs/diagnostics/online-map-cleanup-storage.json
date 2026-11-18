@@ -1,0 +1,21 @@
+{
+  "before": {
+    "installed_map_bytes": 37747727610,
+    "installed_map_files": 222,
+    "build_cache_bytes": 84247389911,
+    "build_cache_files": 370
+  },
+  "after": {
+    "installed_map_bytes": 8,
+    "installed_packages": 0,
+    "active_packages": 0,
+    "build_cache_bytes": 0
+  },
+  "reclaimed_bytes": 121995117513,
+  "registry": {
+    "active": {},
+    "regions": {},
+    "nav/map_package": "removed"
+  },
+  "note": "Size measured before deletion. Exclusive MBTiles handles checked and closed before removal. Initial cleanup reporting failed after deletion; after state independently verified."
+}

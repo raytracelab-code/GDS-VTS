@@ -1,3 +1,4 @@
+from __future__ import annotations
 class StreamAssembler:
     def __init__(self) -> None: self.buffer = b''
     def feed(self, chunk: bytes) -> list[str]:

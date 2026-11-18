@@ -1,7 +1,35 @@
-from PySide6.QtCore import QObject, Signal, Slot
+from app.qt.QtCore import QObject, Signal, Slot
 from app.nav.events.render_state import EventRenderStateBuilder
 from app.nav.maritime.render_state import build_render_state
 class MapBridge(QObject):
+    basemapStateChanged=Signal(str,str,str)
+    @Slot(result=dict)
+    def getSatelliteMapConfig(self):
+        from app.nav.satellite_map import satellite_config
+        return satellite_config()
+    @Slot(str,str,str)
+    def reportBasemapState(self,mode,state,date):
+        if mode not in ('MARINE','SATELLITE') or state not in ('READY','LOADING','ERROR'):return
+        from datetime import date as calendar_date
+        try:
+            if date:calendar_date.fromisoformat(date)
+        except ValueError:return
+        self.satellite_state=dict(mode=mode,state=state,date=date)
+        self.basemapStateChanged.emit(mode,state,date)
+    offlineConfigChanged=Signal(dict)
+    offlineRegionsChanged=Signal(str)
+    offlineRegionsActive=Signal(list)
+    @Slot(str)
+    def reportMapStatus(self,status):
+        self.offlineRegionsChanged.emit(status[:160])
+    @Slot(str,str)
+    def reportOfflineRegions(self,ids,status):
+        import json
+        try:
+            keys=json.loads(ids)
+            if not isinstance(keys,list) or len(keys)>256 or any(not isinstance(k,str) for k in keys):return
+        except ValueError:return
+        self.offlineRegionsActive.emit(keys);self.offlineRegionsChanged.emit(status)
     paletteChanged=Signal(dict)
     mapCenterChanged=Signal(float,float)
     @Slot(result=dict)
@@ -17,7 +45,7 @@ class MapBridge(QObject):
     @Slot(str)
     def setMapView(self,mode):
         if mode in ('MARINE','SATELLITE'):
-            from PySide6.QtCore import QSettings
+            from app.qt.QtCore import QSettings
             QSettings('GDS','VTS').setValue('nav/map_view',mode)
     maritimeStateChanged=Signal(dict)
     maritimeObjectSelected=Signal(str)

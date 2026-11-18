@@ -1,0 +1,25 @@
+{
+  "checked": "2026-11-09",
+  "nasa_capabilities": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/1.0.0/WMTSCapabilities.xml",
+  "nasa_layers": [
+    {
+      "identifier": "VIIRS_NOAA20_CorrectedReflectance_TrueColor",
+      "latest": "2026-11-09",
+      "format": "image/jpeg",
+      "matrix": "GoogleMapsCompatible_Level9",
+      "template": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpeg"
+    },
+    {
+      "identifier": "VIIRS_SNPP_CorrectedReflectance_TrueColor",
+      "latest": "2026-11-02",
+      "format": "image/jpeg",
+      "matrix": "GoogleMapsCompatible_Level9",
+      "template": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_CorrectedReflectance_TrueColor/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpeg"
+    }
+  ],
+  "gebco_capabilities": "https://wms.gebco.net/mapserv?SERVICE=WMS&REQUEST=GetCapabilities",
+  "gebco_layer": "GEBCO_LATEST",
+  "gebco_edition": "2026",
+  "projection": "EPSG:3857",
+  "contours": "DEPTH CONTOUR VECTOR SOURCE NOT AVAILABLE"
+}

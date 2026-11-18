@@ -25,7 +25,7 @@ AREA=OperatingArea(22,91,50)
 
 
 def message(kind='PositionReport',mmsi=123456789,**changes):
-    body=dict(Valid=True,UserID=mmsi,Latitude=22,Longitude=91,Sog=8,Cog=45,TrueHeading=40)|changes
+    body={**(dict(Valid=True,UserID=mmsi,Latitude=22,Longitude=91,Sog=8,Cog=45,TrueHeading=40)), **(changes)}
     return dict(MessageType=kind,MetaData=dict(MMSI=mmsi,time_utc=NOW.isoformat()),Message={kind:body})
 
 
@@ -411,7 +411,7 @@ def test_normalized_bridge_payload_reaches_js_sources():
     ({'AISSTREAM_API_KEY':'test-key','AISSTREAM_ENABLED':'false'},'DISABLED',False)])
 def test_public_defaults_and_ais_key_activation(qapp,env,state,active):
     from app.nav.maritime.runtime import MaritimeRuntime
-    config=MaritimeConfig({'GDS_OVERPASS_FALLBACK_ENDPOINTS':''}|env)
+    config=MaritimeConfig({**({'GDS_OVERPASS_FALLBACK_ENDPOINTS':''}), **(env)})
     runtime=MaritimeRuntime(config=config);runtime.timer.stop()
     try:
         assert 'overpass' in runtime.adapters and 'gebco' in runtime.adapters
@@ -558,7 +558,7 @@ def test_cached_view_is_available_during_provider_rate_limit(qtbot,monkeypatch):
 
 
 def test_successful_empty_overpass_is_visibly_ready_with_zero_objects(qapp):
-    from PySide6.QtWidgets import QLabel
+    from app.qt.QtWidgets import QLabel
     from app.ui.pages.nav.nav_page import NavPage
     from app.nav.maritime.render_state import build_render_state
     service=MaritimeObjectService()

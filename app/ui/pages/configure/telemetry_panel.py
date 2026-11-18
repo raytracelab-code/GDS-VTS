@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget,QFrame,QVBoxLayout,QGridLayout,QLabel
+from app.qt.QtWidgets import QWidget,QFrame,QVBoxLayout,QGridLayout,QLabel
 
 class TelemetryPanel(QWidget):
     GROUPS=[('POSITION',[('PID','pid'),('DATE','date'),('UTC','utc'),('LATITUDE','latitude'),('LONGITUDE','longitude')],2),('NAVIGATION',[('SPEED','speed_knots'),('COG','cog'),('HEADING','heading')],2),('WEATHER',[('WIND SPEED','wind_speed_knots'),('WIND DIRECTION','wind_direction_deg'),('TRUE WIND','true_wind_speed_knots'),('TRUE DIRECTION','true_wind_direction_deg'),('HUMIDITY','humidity_percent'),('TEMPERATURE','temperature_c'),('PRESSURE','pressure_kpa'),('ILLUMINATION','illumination_lux'),('NOISE','noise_db'),('PM2.5','pm25'),('PM10','pm10'),('RAINFALL','rainfall_mm_min'),('SOLAR POWER','solar_power_w_m2')],3),('ATTITUDE & POWER',[('ROLL','roll'),('PITCH','pitch'),('YAW','yaw'),('VOLTAGE','voltage'),('ERROR STATUS','error_status')],3)]

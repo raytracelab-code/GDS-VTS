@@ -2,7 +2,7 @@ from __future__ import annotations
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
-from PySide6.QtCore import QObject, Signal
+from app.qt.QtCore import QObject, Signal
 from .models import SpatialCategory, SpatialState
 from .package_loader import read_package
 from .repository import SpatialRepository

@@ -1,0 +1,135 @@
+Window: "GDS VTS", App: python.exe.
+	0 window (settable, string) GDS VTS Secondary Actions: Raise ID: QApplication.MainWindow
+		1 title bar (settable, string) Value: GDS VTS
+			2 menu bar System ID: MenuBar
+				3 menu item System
+			4 button Minimize
+			5 button Maximize
+			6 button Close
+		7 group (settable, string) ID: QApplication.MainWindow.appRoot
+			8 group (settable, string) ID: QApplication.MainWindow.appRoot.navigationRail
+				9 group (settable, string) ID: QApplication.MainWindow.appRoot.navigationRail.QSvgWidget
+				10 checkbox (check box) (settable, string) Configure ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+				11 checkbox (check box) (settable, string) VDR ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+				12 checkbox (check box) (disabled, settable, string) VJR ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+				13 checkbox (check box) (settable, string) Nav ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+			14 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget
+				20 pane (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget
+					201 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage
+						202 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea
+							203 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport
+								204 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar
+									205 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QWidget
+										206 text Vessel Daily Report ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QWidget.pageTitle
+										207 text UNNAMED VESSEL ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QWidget.subtitle
+									208 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QWidget
+										209 text DATE OF HIRE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QWidget.chromeText
+										210 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QWidget.hireValue
+									211 text DRAFT · 9 ISSUES ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.badge
+									212 text Saved 00:25:01 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.chromeText
+									213 button (settable, string) Undo ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QPushButton
+									214 button (settable, string) Redo ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QPushButton
+									215 button (disabled, settable, string) Download Report ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QPushButton
+									216 button (settable, string) Import ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.QPushButton
+									217 button (settable, string) Finalize report ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QScrollArea.qt_scrollarea_viewport.topbar.finalize
+						218 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget
+							219 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea
+								220 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport
+									221 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar
+										222 text REPORT DATE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QLabel
+										223 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget
+											224 button (settable, string) ‹ ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.QPushButton
+											225 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.QWidget
+												226 text 19 Nov 2026 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.QWidget.reportDate
+												227 text Today ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.QWidget.QLabel
+											228 button (disabled, settable, string) › ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.QPushButton
+										229 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget
+											230 checkbox (check box) (settable, string) SCROLL ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.QPushButton
+											231 checkbox (check box) (settable, string) STEPS ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.QPushButton
+										232 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget
+											233 checkbox (check box) (settable, string) 01 Report & HSE 3 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.sectionNav
+											234 checkbox (check box) (settable, string) 02 Weather 4 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.sectionNav
+											235 checkbox (check box) (settable, string) 03 Activity log 1 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.sectionNav
+											236 checkbox (check box) (settable, string) 04 Running hours ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.sectionNav
+											237 checkbox (check box) (settable, string) 05 Bulk inventory ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.sectionNav
+											238 checkbox (check box) (settable, string) 06 Core crew 1 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.sectionNav
+											239 checkbox (check box) (settable, string) 07 Contractors ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QWidget.sectionNav
+										240 text KEYBOARD ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QLabel
+										241 text TAB — next field ENTER — cell below ↑↓ — move in column ←→ — at text edge, move Type in lists: “lab” → LABUAN ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QLabel
+										242 text White cell — manual entry Shaded cell — computed Dark highlight — needs attention ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.sidebar.QLabel
+							243 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea
+								244 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport
+									998 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget
+										999 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel
+											1000 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection
+												1001 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget
+													1002 text 01 REPORT & HSE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.sectionHeading
+												1003 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget
+													1004 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget
+														1005 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget
+															1006 text DATE * ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget.fieldLabel
+															1007 spinner (settable, float) Value: 0 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget.QDateEdit
+														1008 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget
+															1009 text CAPTAIN ON DUTY * ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget.fieldLabel
+															1010 text field (edit) (settable, string) meta.captain ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget.QLineEdit
+														1011 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget
+															1012 text LOCATION @ 2400H * ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget.fieldLabel
+															1013 combo box (settable, string) meta.loc24 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget.QComboBox
+																1014 text field (edit) (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.QWidget.QWidget.QComboBox.QLineEdit
+													1015 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock
+														1016 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget
+															1017 text DRAFT PROFILE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.blockTitle
+															1018 text FWD — m · AFT — m · ENTER FWD & AFT DRAFTS ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.sectionHint
+														1019 group (settable, string) Draft profile: forward and aft vessel trim ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.DraftProfile
+														1020 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget
+															1021 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1022 text DRAFT FWD (M) * ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1023 text field (edit) (settable, string) meta.fwd ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QLineEdit
+															1024 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1025 text DRAFT AFT (M) * ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1026 text field (edit) (settable, string) meta.aft ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QLineEdit
+												1027 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget
+													1028 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock
+														1029 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget
+															1030 text HSE PERFORMANCE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.blockTitle
+															1031 text PERFECT DAYS — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.sectionHint
+														1032 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget
+															1033 text HSE INCIDENT LAST 24 HOURS ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.fieldLabel
+															1034 text field (edit) (settable, string) hse.inc24 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QLineEdit
+														1035 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget
+															1036 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1037 text LAST LTI (EMPTY = NONE) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1038 spinner (settable, float) hse.lti Value: 0 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QDateEdit
+															1039 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1040 text LAST RECORDABLE INJURY ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1041 spinner (settable, float) hse.inj Value: 0 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QDateEdit
+															1042 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1043 text LAST RECORDABLE INCIDENT ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1044 spinner (settable, float) hse.incd Value: 0 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QDateEdit
+													1045 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock
+														1046 text ENDURANCE STATUS — REMAINING DAYS / DATE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.blockTitle
+														1047 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget
+															1048 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1049 text FUEL ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1050 text field (edit) (settable, string) end.fuel ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QLineEdit
+															1051 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1052 text DRINKING WATER ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1053 text field (edit) (settable, string) end.water ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QLineEdit
+															1054 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1055 text PROVISION ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1056 text field (edit) (settable, string) end.prov ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QLineEdit
+															1057 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget
+																1058 text NEXT PROV SUPPLY ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.fieldLabel
+																1059 text field (edit) (settable, string) end.nextProv ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.reportSection.QWidget.formBlock.QWidget.QWidget.QLineEdit
+											1060 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.QWidget
+												1061 button (disabled, settable, string) ← Previous ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.QWidget.QPushButton
+												1062 button (settable, string) Next section → ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.vdrPage.QWidget.QScrollArea.qt_scrollarea_viewport.QWidget.reportPanel.QWidget.QPushButton
+
+Document text: ```
+Vessel Daily Report
+UNNAMED VESSEL
+DATE OF HIRE
+—
+DRAFT · 9 ISSUES
+Saved 00:25:01
+```

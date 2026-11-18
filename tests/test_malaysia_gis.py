@@ -177,7 +177,7 @@ def test_runtime_worker_no_source_and_stale_result(qapp,small_provider):
     from app.nav.maritime.config import MaritimeConfig
     from app.nav.maritime.source_health import SourceHealth
     import threading,time
-    from PySide6.QtCore import QCoreApplication
+    from app.qt.QtCore import QCoreApplication
     p,_=small_provider
     rt=MaritimeRuntime(config=MaritimeConfig({}));rt.timer.stop()
     rt.malaysia_gis=p;rt.service.sources['malaysia_gis']=SourceHealth()
@@ -203,7 +203,7 @@ def test_actual_python_payload_in_maplibre(real_provider):
     s=MaritimeObjectService()
     s.set_gis_result(real_provider.fetch(OperatingArea(5.5,104,150)))
     payload=MapBridge(maritime_service=s).getMaritimeState()
-    from PySide6.QtCore import QJsonDocument
+    from app.qt.QtCore import QJsonDocument
     wire=bytes(QJsonDocument.fromVariant(payload).toJson(QJsonDocument.JsonFormat.Compact)).decode()
     assert json.loads(wire)==json.loads(json.dumps(payload))
     result=subprocess.run([node,'tests/nav_malaysia_runtime.cjs'],input=wire,capture_output=True,text=True)
@@ -212,7 +212,7 @@ def test_actual_python_payload_in_maplibre(real_provider):
 
 def test_shapely_coordinates_survive_real_qt_json_boundary():
     from shapely.geometry import LineString, mapping
-    from PySide6.QtCore import QJsonDocument
+    from app.qt.QtCore import QJsonDocument
     from app.nav.maritime.models import validate_geometry
     geometry=validate_geometry(mapping(LineString([(103,5),(104,6)])))
     wire=json.loads(bytes(QJsonDocument.fromVariant(geometry).toJson()).decode())

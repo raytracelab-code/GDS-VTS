@@ -1,0 +1,285 @@
+{
+  "provider": {
+    "provider": "NASA GIBS",
+    "layer": "VIIRS_NOAA20_CorrectedReflectance_TrueColor",
+    "endpoint": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best",
+    "state": "READY",
+    "requires_key": false,
+    "projection": "EPSG:3857",
+    "tile_matrix_set": "GoogleMapsCompatible_Level9",
+    "format": "image/jpeg",
+    "tile_size": 256,
+    "minzoom": 0,
+    "maxzoom": 9,
+    "date_source": "SYSTEM_UTC",
+    "dates": [
+      "2026-11-09",
+      "2026-11-08",
+      "2026-11-07",
+      "2026-11-06"
+    ],
+    "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color",
+    "limitation": "Regional Earth-observation context; infrastructure is shown by local GIS.",
+    "candidates": [
+      {
+        "date": "2026-11-09",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-09/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      },
+      {
+        "date": "2026-11-08",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-08/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      },
+      {
+        "date": "2026-11-07",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-07/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      },
+      {
+        "date": "2026-11-06",
+        "source": {
+          "type": "raster",
+          "tiles": [
+            "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_NOAA20_CorrectedReflectance_TrueColor/default/2026-11-06/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpeg"
+          ],
+          "tileSize": 256,
+          "minzoom": 0,
+          "maxzoom": 9,
+          "scheme": "xyz",
+          "attribution": "<a href=\"https://nasa-gibs.github.io/gibs-api-docs/\" target=\"_blank\" rel=\"noopener\">NASA GIBS / EOSDIS</a> \u00b7 VIIRS NOAA-20 True Color"
+        }
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "ready": true,
+      "status": "MAP / ONLINE / READY",
+      "basemap": {
+        "mode": "MARINE",
+        "state": "READY",
+        "date": null,
+        "attempted_dates": [],
+        "failure_reason": null,
+        "failure_detail": null
+      },
+      "tiles_loaded": false,
+      "camera": {
+        "center": {
+          "lng": 103.01391595042651,
+          "lat": 6.085947092898309
+        },
+        "zoom": 5.690970393076305,
+        "bearing": 17.000000000000004,
+        "pitch": 0
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco"
+      ],
+      "operational_rendered": 2,
+      "platforms": 0,
+      "pipelines": 0,
+      "fields": 0,
+      "raster": null,
+      "hud_present": true,
+      "pipeline_glow": 0,
+      "scene": "marine",
+      "nasa_requests": 0,
+      "satellite_button_enabled": true,
+      "marine_checked": true,
+      "satellite_checked": false,
+      "layers_visible": false,
+      "search": ""
+    },
+    {
+      "ready": true,
+      "status": "MAP / ONLINE / READY \ufffd Satellite unavailable",
+      "basemap": {
+        "mode": "MARINE",
+        "state": "ERROR",
+        "date": "2026-11-09",
+        "attempted_dates": [
+          "2026-11-09"
+        ],
+        "failure_reason": "TIMEOUT",
+        "failure_detail": null
+      },
+      "tiles_loaded": true,
+      "camera": {
+        "center": {
+          "lng": 103.01391595042651,
+          "lat": 6.085947092898309
+        },
+        "zoom": 5.690970393076305,
+        "bearing": 17.000000000000004,
+        "pitch": 0
+      },
+      "source_identity": true,
+      "selected_id": "malaysia_gis:malaysia_platform:{825DBE02-50EF-4819-9FC5-23FFD4847684}",
+      "follow": false,
+      "source_ids": [
+        "ne2_shaded",
+        "openmaptiles",
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco"
+      ],
+      "operational_rendered": 2,
+      "platforms": 0,
+      "pipelines": 0,
+      "fields": 0,
+      "raster": null,
+      "hud_present": true,
+      "pipeline_glow": 0,
+      "scene": "satellite-day",
+      "nasa_requests": 44,
+      "satellite_button_enabled": true,
+      "marine_checked": true,
+      "satellite_checked": false,
+      "layers_visible": false,
+      "search": ""
+    }
+  ],
+  "offline_readers": 0
+}

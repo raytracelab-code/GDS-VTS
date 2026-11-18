@@ -1,3 +1,4 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from app.telemetry.frame import TelemetryFrame
 from .antenna_offset import reference_position

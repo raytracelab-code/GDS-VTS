@@ -1,0 +1,224 @@
+Window: "GDS VTS", App: python.exe.
+	0 window (settable, string) GDS VTS Secondary Actions: Raise ID: QApplication.MainWindow
+		1 title bar (settable, string) Value: GDS VTS
+			2 menu bar System ID: MenuBar
+				3 menu item System
+			4 button Minimize
+			5 button Maximize
+			6 button Close
+		7 group (settable, string) ID: QApplication.MainWindow.appRoot
+			8 group (settable, string) ID: QApplication.MainWindow.appRoot.navigationRail
+				9 group (settable, string) ID: QApplication.MainWindow.appRoot.navigationRail.QSvgWidget
+				10 checkbox (check box) (settable, string) Configure ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+				11 checkbox (check box) (settable, string) VDR ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+				12 checkbox (check box) (disabled, settable, string) VJR ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+				13 checkbox (check box) (settable, string) Nav ID: QApplication.MainWindow.appRoot.navigationRail.QToolButton
+			14 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget
+				15 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.header
+					16 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.header.QSvgWidget
+					17 text GDS VTS ID: QApplication.MainWindow.appRoot.QWidget.header.brandDark
+					18 text VESSEL TELEMETRY SYSTEM ID: QApplication.MainWindow.appRoot.QWidget.header.productSubtleDark
+					19 text ● NO SOURCE ID: QApplication.MainWindow.appRoot.QWidget.header.statusNeutral
+				20 pane (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget
+					21 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage
+						22 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea
+							23 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport
+								24 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget
+									25 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea
+										26 text PATROLLER-I CONNECTION ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.sectionTitle
+										27 text Select a transport and establish live telemetry from Patroller-I. ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.sectionSubtitle
+										28 text CONNECTION MODE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.fieldLabelDark
+										29 combo box (settable, string) Value: AUTO ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.QComboBox
+										30 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card
+											31 text USB ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.cardTitle
+											32 text ○ NO DEVICE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.statusNeutral
+											33 text Device ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QLabel
+											34 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.technicalValue
+											35 text Port ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QLabel
+											36 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.technicalValue
+											37 text VID:PID ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QLabel
+											38 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.technicalValue
+											39 text Serial ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QLabel
+											40 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.technicalValue
+											41 text SELECT DEVICE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.fieldLabelDark
+											42 combo box (disabled, settable, string) Value: No device selected ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QComboBox
+											43 button (settable, string) SCAN USB ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.secondaryButton
+											44 button (disabled, settable, string) CONNECT ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QPushButton
+										45 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card
+											46 text BLUETOOTH ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.cardTitle
+											47 text ○ NO DEVICE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.statusNeutral
+											48 text Device ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QLabel
+											49 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.technicalValue
+											50 text Address ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QLabel
+											51 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.technicalValue
+											52 text RSSI ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QLabel
+											53 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.technicalValue
+											54 text SELECT DEVICE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.fieldLabelDark
+											55 combo box (disabled, settable, string) Value: No device selected ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QComboBox
+											56 button (settable, string) SCAN BLE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.secondaryButton
+											57 button (disabled, settable, string) CONNECT ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.card.QPushButton
+										58 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.summary
+											59 text ACTIVE SOURCE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.summary.fieldLabelDark
+											60 text NONE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.summary.summaryValue
+											61 text STANDBY ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.summary.fieldLabelDark
+											62 text NONE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.summary.summaryValue
+											63 text TELEMETRY ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.summary.fieldLabelDark
+											64 text NO SOURCE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.connectionArea.summary.summaryValue
+									65 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel
+										66 text LIVE TELEMETRY ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.sectionTitle
+										67 text Canonical vessel data received from the active transport. ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.sectionSubtitle
+										68 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card
+											69 text POSITION ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.cardTitle
+											70 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												71 text PID ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												72 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											73 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												74 text DATE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												75 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											76 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												77 text UTC ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												78 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											79 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												80 text LATITUDE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												81 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+											82 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												83 text LONGITUDE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												84 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+										85 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card
+											86 text NAVIGATION ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.cardTitle
+											87 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												88 text SPEED ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												89 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+											90 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												91 text COG ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												92 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+											93 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												94 text HEADING ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												95 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+										96 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card
+											97 text WEATHER ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.cardTitle
+											98 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												99 text WIND SPEED ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												100 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											101 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												102 text WIND DIRECTION ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												103 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											104 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												105 text TRUE WIND ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												106 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											107 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												108 text TRUE DIRECTION ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												109 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											110 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												111 text HUMIDITY ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												112 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											113 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												114 text TEMPERATURE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												115 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											116 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												117 text PRESSURE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												118 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											119 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												120 text ILLUMINATION ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												121 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											122 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												123 text NOISE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												124 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											125 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												126 text PM2.5 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												127 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											128 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												129 text PM10 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												130 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											131 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												132 text RAINFALL ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												133 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+											134 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												135 text SOLAR POWER ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												136 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+										137 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card
+											138 text ATTITUDE & POWER ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.cardTitle
+											139 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												140 text ROLL ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												141 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+											142 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												143 text PITCH ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												144 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+											145 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												146 text YAW ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												147 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+											148 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												149 text VOLTAGE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												150 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.operationalValue
+											151 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget
+												152 text ERROR STATUS ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.fieldLabelDark
+												153 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.TelemetryPanel.card.QWidget.technicalValue
+									154 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card
+										155 text SYSTEM HEALTH ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.sectionTitle
+										156 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											157 text USB ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											158 text ○ NO DEVICE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										159 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											160 text BLE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											161 text ○ NO DEVICE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										162 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											163 text TELEMETRY ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											164 text ○ NO SOURCE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										165 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											166 text GPS ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											167 text ○ UNAVAILABLE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										168 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											169 text HEADING ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											170 text ○ UNAVAILABLE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										171 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											172 text WEATHER ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											173 text ○ UNAVAILABLE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										174 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											175 text IMU ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											176 text ○ UNAVAILABLE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										177 custom (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile
+											178 text POWER ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.fieldLabelDark
+											179 text ○ UNAVAILABLE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.healthTile.statusNeutral
+										180 text ADVANCED DIAGNOSTICS ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.cardTitle
+										181 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget
+											182 text FRAME AGE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.fieldLabelDark
+											183 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.diagnosticValue
+										184 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget
+											185 text FRAME RATE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.fieldLabelDark
+											186 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.diagnosticValue
+										187 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget
+											188 text VALID FRAMES ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.fieldLabelDark
+											189 text 0 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.diagnosticValue
+										190 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget
+											191 text INVALID FRAMES ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.fieldLabelDark
+											192 text 0 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.diagnosticValue
+										193 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget
+											194 text RECONNECT COUNT ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.fieldLabelDark
+											195 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.diagnosticValue
+										196 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget
+											197 text ACTIVE SOURCE SINCE ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.fieldLabelDark
+											198 text — ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_viewport.QWidget.card.QWidget.diagnosticValue
+							199 group (settable, string) ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_vcontainer
+								200 scroll bar (settable, float) Value: 0 ID: QApplication.MainWindow.appRoot.QWidget.QStackedWidget.configurePage.QScrollArea.qt_scrollarea_vcontainer.QScrollBar
+
+Document text: ```
+PATROLLER-I CONNECTION
+Select a transport and establish live telemetry from Patroller-I.
+CONNECTION MODE
+USB
+○  NO DEVICE
+Device
+—
+Port
+VID:PID
+Serial
+SELECT DEVICE
+BLUETOOTH
+Address
+RSSI
+ACTIVE SOURCE
+NONE
+STANDBY
+TELEMETRY
+NO SOURCE
+```

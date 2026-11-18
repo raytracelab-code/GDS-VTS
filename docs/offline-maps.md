@@ -1,8 +1,20 @@
 # Offline maritime maps
 
-## Primary asset strategy: prebuilt Geofabrik Shortbread
+## Current NAV default
 
-The first real offline region is installed: **Malaysia / Singapore / Brunei**.
+NAV now uses OpenFreeMap Liberty online, with Bangladesh and Southeast Asia as
+its primary operational region and no geographic clipping. Production offline
+assets and the build/download cache were removed on 2026-11-09. No offline
+packages are installed. Malaysia Offshore GIS remains local and independent.
+
+The engine and the developer workflows below remain available for intentional
+future use. Set `GDS_MAP_SOURCE=offline` only when using an installed package.
+Normal startup does not discover or scan offline assets, and never runs these
+download/build tools. See [online validation](online-map-cleanup.md).
+
+## Historical asset strategy: prebuilt Geofabrik Shortbread
+
+The first historical offline region was: **Malaysia / Singapore / Brunei**.
 Use prebuilt Shortbread MBTiles for this route. Planetiler, Java and GDAL are
 not prerequisites for downloading/importing vector packs. Offline bathymetry
 and a separate global overview remain pending.
@@ -22,7 +34,7 @@ $shortbreadPath = Join-Path $env:LOCALAPPDATA 'GDS VTS\map-build\sources\malaysi
 .\.venv\Scripts\python.exe tools/maps/import_shortbread.py install --region malaysia_singapore_brunei --path $shortbreadPath
 ```
 
-The installed first asset is294,547,456 bytes,390,078 tiles, native z0–14,
+The historical first asset was294,547,456 bytes,390,078 tiles, native z0–14,
 bounds `[99.25611,0.830813,119.6683,7.736849]`. Its source package HTTP
 Last-Modified is2026-11-08T03:54:19Z; this is **not** an asserted OSM replication
 timestamp. SHA256:

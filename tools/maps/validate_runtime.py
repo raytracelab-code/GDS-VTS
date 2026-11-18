@@ -16,6 +16,8 @@ def main():
     parser.add_argument('--output',type=Path,default=Path('docs/diagnostics/offline-map-runtime.json'))
     parser.add_argument('--offline-providers',action='store_true',help='Disable online operational adapters in this diagnostic process only')
     parser.add_argument('--show-nav-after',type=float,default=0,help='Delay opening NAV to exercise hidden-tab canvas sizing')
+    parser.add_argument('--route',help='Comma-separated installed regional package IDs; 35 seconds per region')
+    parser.add_argument('--fixed-palette',choices=('DAY','TWILIGHT','NIGHT'),help='Diagnostic-only fixed solar scene')
     args=parser.parse_args()
     import main as entry
     if args.offline_providers:
@@ -61,6 +63,8 @@ def main():
             snapshot['local_request_count']=len(window.validation_interceptor.local)
             snapshot['local_tile_requests']=[url for url in window.validation_interceptor.local if url.startswith('gds://tiles/')]
             snapshot['local_glyph_requests']=[url for url in window.validation_interceptor.local if '/glyphs/' in url]
+            snapshot['sqlite_reader_count']=len(window.nav._gds_scheme_handler.readers)
+            snapshot['sqlite_reader_keys']=['/'.join(key) for key in list(window.nav._gds_scheme_handler.readers)]
             report['snapshots'].append(snapshot)
             args.output.parent.mkdir(parents=True,exist_ok=True)
             args.output.write_text(json.dumps(report,indent=2),encoding='utf-8')
@@ -68,7 +72,7 @@ def main():
         snapshot="""JSON.stringify((()=>{
          if(typeof map==='undefined'||!map||!ready)return {ready:false};
          const layers=map.getStyle().layers,ids=layers.filter(l=>l.id.startsWith('gis-')).map(l=>l.id);
-         const baseIds=layers.filter(l=>l.id.startsWith('offline-basemap-')).map(l=>l.id);
+         const baseIds=layers.filter(l=>l.source&&l.metadata&&l.metadata['gds:owner']==='basemap').map(l=>l.id);
          const sourceIds=Object.keys(map.getStyle().sources);
          if(!window.paletteBaseline)window.paletteBaseline={
           sources:Object.fromEntries(sourceIds.map(id=>[id,map.getSource(id)])),
@@ -79,6 +83,8 @@ def main():
          return {ready:true,center:map.getCenter(),zoom:map.getZoom(),source_count:Object.keys(map.getStyle().sources).length,
           canvas_fits_container:canvas.clientWidth===container.clientWidth&&canvas.clientHeight===container.clientHeight,
           layer_count:layers.length,rendered_gis:map.queryRenderedFeatures({layers:ids}).length,
+          basemap_sources:Object.keys(map.getStyle().sources).filter(id=>id.startsWith('offline-')),
+          basemap_layer_count:baseIds.length,
           rendered_basemap:baseIds.length?map.queryRenderedFeatures({layers:baseIds}).length:0,
           rendered_basemap_layers:baseIds.filter(id=>map.queryRenderedFeatures({layers:[id]}).length>0),
           source_identity_preserved:Object.entries(base.sources).every(([id,source])=>map.getSource(id)===source),
@@ -87,6 +93,9 @@ def main():
           palette_updates:window.paletteChecks||[],
           camera_preserved:(window.paletteChecks||[]).every(c=>c.camera_preserved),
           own_marker:Boolean(marker),errors:window.offlineValidationErrors||[],status:status.textContent,
+          visual_effects:layers.filter(l=>l.metadata&&l.metadata['gds:effect']).map(l=>({id:l.id,
+           core:l.metadata['gds:core'],kind:l.metadata['gds:effect'],opacity:map.getPaintProperty(l.id,l.type==='line'?'line-opacity':'circle-opacity'),
+           adjacent:layers.findIndex(c=>c.id===l.metadata['gds:core'])===layers.indexOf(l)+1})),
           background:map.getPaintProperty('offline-background','background-color')};
         })())"""
         def setup(ok):
@@ -111,6 +120,9 @@ def main():
              map.fitBounds([[103.3,4.5],[104.6,6.8]],{duration:0,padding:20});
             })()""")
         window.nav.web.loadFinished.connect(setup)
+        # Frame the detail scene after a hidden NAV canvas has been shown/resized.
+        QTimer.singleShot(max(8000,int(args.show_nav_after*1000)+2000),lambda:
+            window.nav.web.page().runJavaScript("if(typeof map!=='undefined'&&ready)map.fitBounds([[103.3,4.5],[104.6,6.8]],{duration:0,padding:20})"))
         def diagnostic(hour,minute=0):
             palette=window.nav.palette
             window.nav.palette_control.setCurrentIndex(window.nav.palette_control.findData('AUTO'))
@@ -121,8 +133,28 @@ def main():
             instant=datetime(2026,3,20,hour,minute,tzinfo=timezone.utc)-timedelta(minutes=4*(longitude-104))
             palette.clock=lambda:instant
             palette.update(force=True)
-        for seconds,hour,minute in ((10,5,0),(30,11,20),(50,17,0)):
-            QTimer.singleShot(seconds*1000,lambda h=hour,m=minute:diagnostic(h,m))
+        if args.route:
+            regions={p['package_id']:p for p in window.nav.bridge.offline_config.get('regional_packages',[])}
+            def frame(key):
+                b=regions[key]['bounds']
+                # Official country bounds can include remote islands or span
+                # the date line; use explicit camera scenes for visual QA only.
+                scenes={'malaysia_singapore_brunei':[[103.3,4.5],[104.6,6.8]],
+                        'australia':[[149.8,-34.8],[152.4,-32.7]],
+                        'new-zealand':[[165,-48],[180,-33]]}
+                scene=scenes.get(key,[[b[0],b[1]],[b[2],b[3]]])
+                window.nav.web.page().runJavaScript('map.fitBounds('+json.dumps(scene)+',{duration:0,padding:20,maxZoom:8})')
+            for i,key in enumerate(args.route.split(',')):
+                if key not in regions:raise ValueError('Route region is not installed: '+key)
+                QTimer.singleShot((i*35+9)*1000,lambda k=key:frame(k))
+                scenes=((11,5,0),(21,11,20),(31,17,0))
+                if args.fixed_palette:
+                    scenes=((11,*(dict(DAY=(5,0),TWILIGHT=(11,20),NIGHT=(17,0))[args.fixed_palette])),)
+                for offset,hour,minute in scenes:
+                    QTimer.singleShot((i*35+offset)*1000,lambda h=hour,m=minute:diagnostic(h,m))
+        else:
+            for seconds,hour,minute in ((10,5,0),(30,11,20),(50,17,0)):
+                QTimer.singleShot(seconds*1000,lambda h=hour,m=minute:diagnostic(h,m))
         window.validation_timer=QTimer(window);window.validation_timer.setInterval(5000)
         window.validation_timer.timeout.connect(lambda:window.nav.web.page().runJavaScript(snapshot,capture));window.validation_timer.start()
         QTimer.singleShot(args.seconds*1000,window.close)

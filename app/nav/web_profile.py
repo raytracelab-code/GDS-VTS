@@ -4,8 +4,9 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from PySide6.QtCore import QStandardPaths
-from PySide6.QtWebEngineCore import QWebEngineProfile
+from app.qt.QtCore import QStandardPaths
+from app.qt import LEGACY
+from app.qt.QtWebEngineCore import QWebEngineProfile
 
 
 def _probe(path: str) -> None:
@@ -27,7 +28,11 @@ def _probe(path: str) -> None:
 
 def create_nav_profile(parent) -> QWebEngineProfile:
     """Configure paths before a page is constructed; retain this profile in NavPage."""
-    root = Path(os.environ.get("LOCALAPPDATA", QStandardPaths.writableLocation(QStandardPaths.StandardLocation.AppLocalDataLocation))) / "GDS VTS" / "webengine"
+    if QStandardPaths.isTestModeEnabled():
+        base=Path(QStandardPaths.writableLocation(QStandardPaths.StandardLocation.AppLocalDataLocation))
+    else:
+        base=Path(os.environ.get('LOCALAPPDATA',QStandardPaths.writableLocation(QStandardPaths.StandardLocation.AppLocalDataLocation)))/'GDS VTS'
+    root=base/('webengine-qt5' if LEGACY else 'webengine')
     cache, storage = root / "cache", root / "storage"
     cache.mkdir(parents=True, exist_ok=True)
     storage.mkdir(parents=True, exist_ok=True)

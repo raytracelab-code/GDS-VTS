@@ -1,0 +1,12 @@
+{
+  "all_sources_retained": true,
+  "all_huds_retained": true,
+  "satellite_palettes": true,
+  "camera_2d_retained": true,
+  "satellite_return_retains_camera": true,
+  "selection_retained": true,
+  "panels_search_retained": true,
+  "live_nasa_fallback": true,
+  "live_all_network_fallback": true,
+  "live_gebco_loaded": true
+}

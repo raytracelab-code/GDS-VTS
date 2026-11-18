@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 from types import SimpleNamespace
 
 import pytest
-from PySide6.QtCore import QSettings, QTimer
+from app.qt.QtCore import QSettings, QTimer
 from app.nav.offline_maps.controller import PaletteController
 from app.nav.offline_maps.palette import PaletteEngine, canonical_utc, position, solar_elevation, solar_state
 
@@ -184,7 +184,7 @@ def test_polar_and_date_line_remain_finite():
 
 
 def test_follow_toolbar_notifies_service_without_waiting(qapp):
-    from PySide6.QtWidgets import QWidget, QPushButton
+    from app.qt.QtWidgets import QWidget, QPushButton
     from app.nav.map_controls import FollowController
     from app.ui.pages.nav.nav_page import NavPage
     page=NavPage.__new__(NavPage);QWidget.__init__(page)

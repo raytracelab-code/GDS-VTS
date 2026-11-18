@@ -20,13 +20,13 @@ NOW = datetime(2026, 11, 1, 12, tzinfo=timezone.utc)
 
 
 def ais(**changes):
-    return dict(mmsi='123456789', name='TEST CARGO', ship_type='cargo', latitude=22, longitude=91,
-                sog=10, cog=40, heading=45, position_timestamp=NOW.isoformat()) | changes
+    return {**(dict(mmsi='123456789', name='TEST CARGO', ship_type='cargo', latitude=22, longitude=91,
+                sog=10, cog=40, heading=45, position_timestamp=NOW.isoformat())), **(changes)}
 
 
 def feature(category='offshore', kind='oil platform', **changes):
-    return dict(type='Feature', id='TEST-1', geometry={'type': 'Point', 'coordinates': [91, 22]},
-                properties=dict(category=category, object_type=kind, name='TEST / SYNTHETIC')) | changes
+    return {**(dict(type='Feature', id='TEST-1', geometry={'type': 'Point', 'coordinates': [91, 22]},
+                properties=dict(category=category, object_type=kind, name='TEST / SYNTHETIC'))), **(changes)}
 
 
 @pytest.fixture

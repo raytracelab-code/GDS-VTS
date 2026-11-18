@@ -1,7 +1,9 @@
+from __future__ import annotations
 import asyncio
 import threading
 from app.core.models import BleDevice
 from .base_transport import BaseTransport
+from app.core.platform_capabilities import native_ble_available, BLE_UNAVAILABLE
 
 NUS_SERVICE = '6E400001-B5A3-F393-E0A9-E50E24DCCA9E'
 NUS_NOTIFY = '6E400003-B5A3-F393-E0A9-E50E24DCCA9E'
@@ -13,7 +15,9 @@ class BleTransport(BaseTransport):
         super().__init__(); self._client = None; self._loop = None; self._thread = None
 
     def scan(self) -> list[BleDevice]:
-        try: return self._run(asyncio.run(self._scan_async()))
+        if not native_ble_available():
+            self._emit_error(BLE_UNAVAILABLE); return []
+        try: return self._run(self._scan_async())
         except Exception as exc: self._emit_error(f"BLE scan failed: {exc}"); return []
 
     async def _scan_async(self):
@@ -31,6 +35,8 @@ class BleTransport(BaseTransport):
         return result[0]
 
     def connect(self, device: BleDevice) -> bool:
+        if not native_ble_available():
+            self._emit_error(BLE_UNAVAILABLE); return False
         try:
             from bleak import BleakClient
             self._client = BleakClient(device.address)

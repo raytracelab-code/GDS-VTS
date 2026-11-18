@@ -21,8 +21,8 @@ def make_tiles(path, fmt='pbf', data=None):
         if fmt in ('pbf', 'mvt'):
             data = bytes.fromhex('1a210a05776174657212131803220f090080401a00ff3f8040000080400f2880207802')
         else:
-            from PySide6.QtGui import QImage
-            from PySide6.QtCore import QByteArray, QBuffer, QIODevice
+            from app.qt.QtGui import QImage
+            from app.qt.QtCore import QByteArray, QBuffer, QIODevice
             image = QImage(2, 2, QImage.Format.Format_RGB32);image.fill(0x112233)
             array=QByteArray();buffer=QBuffer(array);buffer.open(QIODevice.OpenModeFlag.WriteOnly)
             assert image.save(buffer, fmt.upper());data=bytes(array)
@@ -188,7 +188,7 @@ def test_gnss_utc_priority_and_freshness(date,utc):
 
 
 def test_palette_controller_persistence_debounce_and_no_source(qapp,tmp_path):
-    from PySide6.QtCore import QSettings
+    from app.qt.QtCore import QSettings
     from app.nav.offline_maps.controller import PaletteController
     telemetry=SimpleNamespace(telemetry_status=SimpleNamespace(value='NO SOURCE'),latest_frame=None)
     controller=PaletteController(telemetry)

@@ -1,5 +1,6 @@
-from PySide6.QtWidgets import QFrame,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,QComboBox
+from app.qt.QtWidgets import QFrame,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,QComboBox
 from app.core.models import ConnectionMode
+from app.core.platform_capabilities import native_ble_available, BLE_UNAVAILABLE
 
 class ConnectionPanel(QFrame):
     def __init__(self, usb, ble, state):
@@ -17,7 +18,11 @@ class ConnectionPanel(QFrame):
             g.addWidget(QLabel(key),row,0); value=QLabel('—'); value.setObjectName('technicalValue'); g.addWidget(value,row,1); details[key]=value
         l.addLayout(g); selector_label=QLabel('SELECT DEVICE'); selector_label.setObjectName('fieldLabelDark'); l.addWidget(selector_label); selector=QComboBox(); selector.addItem('No device selected'); selector.setEnabled(False); l.addWidget(selector); buttons=QHBoxLayout(); scan=QPushButton(f'SCAN {"BLE" if kind == "BLUETOOTH" else "USB"}'); scan.setObjectName('secondaryButton'); connect=QPushButton('CONNECT'); connect.setEnabled(False); buttons.addWidget(scan); buttons.addWidget(connect); buttons.addStretch(); l.addLayout(buttons)
         if kind == 'USB': self.usb_info,self.usb_detail,self.usb_select,self.usb_connect=info,details,selector,connect; scan.clicked.connect(self.scan_usb); connect.clicked.connect(self.connect_usb)
-        else: self.ble_info,self.ble_detail,self.ble_select,self.ble_connect=info,details,selector,connect; scan.clicked.connect(self.scan_ble); connect.clicked.connect(self.connect_ble)
+        else:
+            self.ble_info,self.ble_detail,self.ble_select,self.ble_connect=info,details,selector,connect; scan.clicked.connect(self.scan_ble); connect.clicked.connect(self.connect_ble)
+            if not native_ble_available():
+                scan.setEnabled(False); scan.setToolTip(BLE_UNAVAILABLE); connect.setToolTip(BLE_UNAVAILABLE)
+                selector.setItemText(0,BLE_UNAVAILABLE); info.setText('UNAVAILABLE'); card.setToolTip(BLE_UNAVAILABLE)
     def _mode(self,value): self.state.arbiter.mode=ConnectionMode(value)
     def _set_details(self, details, values):
         for key,label in details.items(): label.setText(values.get(key,'—'))

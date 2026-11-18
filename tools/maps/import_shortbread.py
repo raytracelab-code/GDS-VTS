@@ -17,6 +17,7 @@ import urllib.request
 
 PROJECT = Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(PROJECT))
+from app.core.compat import is_relative_to
 from app.nav.offline_maps.manager import checksum
 
 REGIONS = {
@@ -55,7 +56,7 @@ def discover(page):
 
 def download(page, sources):
     sources=Path(sources).resolve()
-    if sources.is_relative_to(PROJECT):raise ValueError('Production MBTiles must remain outside the repository')
+    if is_relative_to(sources, PROJECT):raise ValueError('Production MBTiles must remain outside the repository')
     url=discover(page)
     name=Path(urllib.parse.urlsplit(url).path).name
     target=sources/name;receipt=Path(str(target)+'.source.json')
@@ -99,14 +100,15 @@ def raw_inspect(path):
     finally:db.close()
 
 
-def install_asset(path, region, name, details=()):
+def install_asset(path, region, name, details=(), regional=False):
     """Copy unchanged source databases into a validated, atomically installed package."""
+    if not re.fullmatch('[A-Za-z0-9][A-Za-z0-9._-]{0,79}',region):raise ValueError('Invalid regional package ID')
     from app.nav.offline_maps.manager import PackageManager, validate_package
     from app.nav.offline_maps.mbtiles import MBTiles
     from app.nav.offline_maps.schemas import vector_schema
     from tools.maps.build_southeast_asia import inspect_tiles
     path=Path(path).resolve(strict=True)
-    if path.is_relative_to(PROJECT):raise ValueError('Production source must remain outside the repository')
+    if is_relative_to(path, PROJECT):raise ValueError('Production source must remain outside the repository')
     receipt=json.loads(Path(str(path)+'.source.json').read_text(encoding='utf-8'))
     official(receipt['url']);official(receipt['page'])
     if checksum(path)!=receipt['sha256']:raise ValueError('Downloaded source checksum mismatch')
@@ -114,11 +116,18 @@ def install_asset(path, region, name, details=()):
     stamp=parsedate_to_datetime(headers['last-modified']).astimezone(timezone.utc)
     revision='shortbread-1.0-'+stamp.strftime('%Y%m%dT%H%M%SZ')+'-'+receipt['sha256'][:12]
     if details:
-        if any(Path(p).resolve().is_relative_to(PROJECT) for p in details):raise ValueError('Production detail sources must remain outside the repository')
+        if any(is_relative_to(Path(p).resolve(), PROJECT) for p in details):raise ValueError('Production detail sources must remain outside the repository')
         fingerprint=hashlib.sha256(''.join(checksum(p) for p in details).encode()).hexdigest()[:8]
         revision+='-d'+fingerprint
     root=path.parent.parent/'packages'/region/revision
+    if regional:
+        from app.nav.offline_maps.regions import cache_root
+        root=cache_root().parent/'packages'/region/revision
     sources={'basemap':path,**{f'detail-{i}':Path(p).resolve(strict=True) for i,p in enumerate(details)}}
+    if regional:
+        from app.nav.offline_maps.regions import MARGIN
+        if shutil.disk_usage(path.parent).free < sum(p.stat().st_size for p in sources.values())*2+MARGIN:
+            raise ValueError('30 GiB disk reserve would be violated by package staging')
     if shutil.disk_usage(path.parent).free < sum(p.stat().st_size for p in sources.values())*3+1024**3:
         raise ValueError('Insufficient free storage for package staging and installation')
     if not root.exists():
@@ -146,7 +155,7 @@ def install_asset(path, region, name, details=()):
         manifest['checksums']['source.json']=checksum(root/'source.json')
         (root/'manifest.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False),encoding='utf-8')
     package=validate_package(root)
-    installed=PackageManager().install(root)
+    installed=PackageManager().install_region(root) if regional else PackageManager().install(root)
     return {'package_path':str(package.root),'installed_path':str(installed.root),
             'manifest':installed.manifest,'source_unchanged':checksum(path)==receipt['sha256']}
 

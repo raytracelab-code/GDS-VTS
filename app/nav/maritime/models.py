@@ -1,8 +1,9 @@
 """Validated canonical records. No provider payload is passed directly to the map."""
+from __future__ import annotations
 from copy import deepcopy
 from dataclasses import dataclass, replace
 from datetime import datetime, timezone
-from enum import StrEnum
+from app.core.compat import StrEnum
 import json
 import math
 

@@ -64,8 +64,8 @@ def xyz_to_tms(z, x, y):
 
 def valid_raster(data, fmt):
     """Decode with the same image codecs as NAV, after bounding allocation."""
-    from PySide6.QtCore import QByteArray, QBuffer, QIODevice
-    from PySide6.QtGui import QImageReader
+    from app.qt.QtCore import QByteArray, QBuffer, QIODevice
+    from app.qt.QtGui import QImageReader
 
     if fmt == 'png' and not (data.startswith(b'\x89PNG\r\n\x1a\n') and data.endswith(b'\x00\x00\x00\x00IEND\xaeB`\x82')):
         return False

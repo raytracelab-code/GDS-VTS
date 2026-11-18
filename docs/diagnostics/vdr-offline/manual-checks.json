@@ -1,0 +1,17 @@
+{
+  "launch": ".\\.venv\\Scripts\\python.exe -u main.py",
+  "application": "normal MainWindow; no fixture replacement",
+  "telemetry": "NO_SOURCE; no USB or BLE connected",
+  "checks": [
+    "Configure to VDR by physical rail click",
+    "VDR active rail styling and reference workspace visible",
+    "Steps and Weather section selection",
+    "Previous report date then return to today",
+    "Safe captain edit, autosave, Undo, Redo, Undo to original blank",
+    "Scroll mode",
+    "Configure and NAV rail routing, then return to VDR",
+    "VJR remained visibly disabled"
+  ],
+  "testValueRestored": true,
+  "productionDemoDataInserted": false
+}

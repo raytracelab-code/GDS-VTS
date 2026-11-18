@@ -3,6 +3,7 @@
 https://gml.noaa.gov/grad/solcalc/solareqns.PDF
 No timezone, network, OS theme or display brightness dependency.
 """
+from app.core.compat import remove_suffix
 import calendar
 from datetime import datetime, timezone, timedelta
 import math
@@ -68,7 +69,7 @@ def canonical_utc(frame, now, live=False):
                 pass
         if date is None:
             raise ValueError()
-        raw = str(frame.utc).removesuffix('Z')
+        raw = remove_suffix(str(frame.utc), 'Z')
         fmt = '%H:%M:%S' if ':' in raw else '%H%M%S'
         clock = datetime.strptime(raw, fmt + ('.%f' if '.' in raw else '')).time()
         instant = datetime.combine(date, clock, timezone.utc) + timedelta(seconds=age)

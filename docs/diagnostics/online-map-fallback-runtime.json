@@ -1,0 +1,137 @@
+{
+  "scenes": [
+    {
+      "ready": true,
+      "status": "MAP / ONLINE UNAVAILABLE / LOCAL OVERLAYS ACTIVE",
+      "center": {
+        "lng": 104,
+        "lat": 5.5
+      },
+      "zoom": 8,
+      "loaded": true,
+      "tiles_loaded": true,
+      "palette": {
+        "effective_state": "NIGHT"
+      },
+      "basemap_rendered": 0,
+      "gis_rendered": 390,
+      "platforms": 29,
+      "pipelines": 127,
+      "fields": 87,
+      "pipeline_glow": 0.19,
+      "source_ids": [
+        "track",
+        "heading-vector",
+        "cog-vector",
+        "track-start",
+        "site-boundary",
+        "pipelines",
+        "anchor-patterns",
+        "survey-areas",
+        "operational-zones",
+        "spatial-selection",
+        "maritime-vessels",
+        "maritime-offshore",
+        "maritime-aton",
+        "maritime-ports",
+        "maritime-routes",
+        "maritime-anchorages",
+        "maritime-restricted",
+        "maritime-subsea",
+        "maritime-hazards",
+        "maritime-bathymetry",
+        "maritime-warnings",
+        "maritime-metocean",
+        "maritime-basins",
+        "maritime-development_areas",
+        "maritime-geophysical_surveys",
+        "maritime-offshore_wells",
+        "maritime-oil_gas_fields",
+        "maritime-petroleum_blocks",
+        "maritime-seismic_surveys",
+        "maritime-selection",
+        "gis-malaysia_basin",
+        "gis-malaysia_awarded_block",
+        "gis-malaysia_open_block",
+        "gis-malaysia_seismic_3d",
+        "gis-malaysia_ftg",
+        "gis-malaysia_fields_all",
+        "gis-malaysia_production_within_psc_area",
+        "gis-malaysia_pre_development_psc",
+        "gis-malaysia_development_psc",
+        "gis-malaysia_abandoned_psc",
+        "gis-malaysia_ceased_psc",
+        "gis-malaysia_pipeline",
+        "gis-malaysia_well_location",
+        "gis-malaysia_platform",
+        "gis-malaysia_platforms_134",
+        "gis-malaysia_platforms_3",
+        "gis-malaysia_platforms_34",
+        "gis-malaysia_platforms_496",
+        "squall-current",
+        "squall-direction",
+        "squall-trajectories",
+        "squall-impact-zones",
+        "squall-surveillance-zones",
+        "squall-prediction-points",
+        "squall-selection",
+        "reference-gebco"
+      ],
+      "camera_bounds": {
+        "_sw": {
+          "lng": 102.79974365234432,
+          "lat": 4.729921921365573
+        },
+        "_ne": {
+          "lng": 105.2002563476571,
+          "lat": 6.269082775031507
+        }
+      },
+      "scene": "local-fallback"
+    }
+  ],
+  "config": {
+    "installed": false,
+    "allow_online_fallback": false,
+    "status": "MAP \u00b7 ONLINE \u00b7 CONNECTING",
+    "style": {
+      "version": 8,
+      "name": "GDS Maritime offline",
+      "glyphs": "gds://map/assets/glyphs/{fontstack}/{range}.pbf",
+      "sources": {},
+      "layers": [
+        {
+          "id": "offline-background",
+          "type": "background",
+          "paint": {
+            "background-color": "#cddfe3"
+          },
+          "metadata": {
+            "gds:owner": "basemap",
+            "gds:role": "WATER"
+          }
+        }
+      ]
+    },
+    "tiles": {},
+    "preferred_source": "online",
+    "online_style_url": "https://tiles.openfreemap.org/styles/liberty",
+    "primary_region": [
+      "Bangladesh",
+      "Myanmar",
+      "Thailand",
+      "Laos",
+      "Cambodia",
+      "Vietnam",
+      "Malaysia",
+      "Singapore",
+      "Brunei",
+      "Indonesia",
+      "Philippines"
+    ],
+    "map_view": "MARINE"
+  },
+  "ready_seconds": 15.0,
+  "elapsed_seconds": 25.08,
+  "offline_readers": 0
+}

@@ -1,0 +1,8 @@
+{
+  "protected_files_checked": 100,
+  "protected_files_changed": [],
+  "authorized_task_changes_excluded": [
+    "app/vdr/pdf.py"
+  ],
+  "result": "PASS"
+}

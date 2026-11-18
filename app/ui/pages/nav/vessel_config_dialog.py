@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QDialog,QFormLayout,QLineEdit,QDoubleSpinBox,QComboBox,QDialogButtonBox,QLabel
+from app.qt.QtWidgets import QDialog,QFormLayout,QLineEdit,QDoubleSpinBox,QComboBox,QDialogButtonBox,QLabel
 from app.nav.vessel_config import VesselConfig
 class VesselConfigDialog(QDialog):
  def __init__(self,config,parent=None):

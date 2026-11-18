@@ -4,6 +4,7 @@ import math
 from .base import SourceAdapter,intersects_area
 from .provider_common import bbox_parts,canonical_feature,ProviderUnavailable
 from ..models import utcnow,MaritimeDataError
+from app.core.platform_capabilities import copernicus_available, COPERNICUS_UNAVAILABLE
 
 STANDARD_NAMES={
  'sea_surface_wave_significant_height':'wave_height_m','sea_surface_wave_from_direction':'wave_direction_deg',
@@ -35,6 +36,7 @@ class CopernicusAdapter(SourceAdapter):
         self.config=config;self.product=product;self.dataset_id=dataset_id;self._username=username;self._password=password
     def fetch(self,area):
         if not self.dataset_id or not self._username or not self._password:raise ProviderUnavailable('NOT_CONFIGURED')
+        if not copernicus_available():raise ProviderUnavailable(COPERNICUS_UNAVAILABLE)
         import copernicusmarine
         objects=[];now=utcnow()
         for w,s,e,n in bbox_parts(area):

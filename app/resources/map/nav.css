@@ -1,3 +1,29 @@
-html,body,#map{margin:0;width:100%;height:100%;background:#dce4eb;font-family:Segoe UI}#map-status{position:absolute;right:12px;bottom:12px;background:rgba(255,255,255,.92);color:#1e3a5f;padding:7px 10px;border-radius:7px;font-size:11px}.vessel{color:#1e3a5f;font-size:28px;text-shadow:0 1px 2px #fff}
-
-.vessel svg path{fill:var(--vessel-color,#1e3a5f)}
+:root{--surface:#121a24;--border:#344454;--text:#b7cad5;--accent:#2dd4bf}
+html,body,#map{margin:0;width:100%;height:100%;background:#101f29;font-family:Inter,'Segoe UI',sans-serif;overflow:hidden}
+/* Qt owns action controls. The web surface owns only geographic readouts. */
+#map-status{position:absolute;left:16px;bottom:12px;max-width:calc(100% - 260px);color:#a7c4ca;background:rgba(18,26,36,.9);border:1px solid var(--border);border-radius:8px;padding:5px 9px;font-size:9px;letter-spacing:.5px;pointer-events:none}
+#map-status:empty{display:none}
+.vessel{color:#83ddcb;font-size:28px}
+.vessel svg path{fill:var(--vessel-color,#167a73)}
+.vessel svg{overflow:visible;filter:drop-shadow(0 0 var(--vessel-glow,0px) var(--vessel-glow-color,#8dbfb3))}
+#geographic-hud{position:absolute;right:16px;bottom:48px;display:flex;align-items:center;gap:14px;padding:11px 13px;color:var(--text);background:rgba(18,26,36,.94);border:1px solid var(--border);border-radius:14px;pointer-events:none;box-shadow:0 3px 10px #07101c30}
+.hud-coordinates{font:10px/1.9 'JetBrains Mono','Cascadia Mono',monospace;letter-spacing:.4px;min-width:110px}
+.hud-compass{height:54px;width:34px;display:flex;flex-direction:column;align-items:center;gap:7px;color:#8fcabd;font-size:9px}
+.compass-needle{display:block;transform-origin:center;color:#b7d6d2;font-size:21px}
+.maplibregl-ctrl-bottom-right{right:16px;bottom:150px}
+.maplibregl-ctrl-bottom-right .maplibregl-ctrl{margin:0}
+.maplibregl-ctrl-group{background:#16212d;border:1px solid var(--border);border-radius:13px;overflow:hidden;box-shadow:0 3px 10px #07101c30}
+.maplibregl-ctrl-group button{width:35px;height:35px}
+.maplibregl-ctrl-group button+button{border-color:var(--border)}
+.maplibregl-ctrl-group button:hover{background:#294052}
+.maplibregl-ctrl-group .maplibregl-ctrl-icon{filter:invert(.83)}
+.maplibregl-ctrl-bottom-left{left:auto;right:30px;bottom:26px}
+.maplibregl-ctrl-scale{background:rgba(18,26,36,.9);color:#a8c4cb;border-color:#74959e;font:10px 'JetBrains Mono',monospace;margin:0!important;text-transform:uppercase}
+.maplibregl-ctrl-attrib{position:fixed;right:16px;bottom:3px;background:rgba(18,26,36,.85)!important;color:#8195a3;font-size:9px;line-height:16px;border-radius:5px}
+.maplibregl-ctrl-attrib a{color:#92aab7}
+.maplibregl-ctrl-attrib-button{filter:invert(.75)}
+.maplibregl-ctrl-attrib.maplibregl-compact{position:fixed;right:16px;bottom:3px;margin:0;min-height:16px}
+body.satellite-active .maplibregl-ctrl-attrib-inner{display:block}
+body.satellite-active .maplibregl-ctrl-attrib{max-width:calc(100% - 32px);height:auto}
+body.satellite-active .maplibregl-ctrl-attrib-inner,body.satellite-active .maplibregl-ctrl-attrib-inner a{color:#a9bec9}
+@media(max-width:700px){#geographic-hud{right:10px;bottom:44px;padding:8px;gap:7px}.hud-coordinates{font-size:9px;min-width:100px}#map-status{max-width:calc(100% - 230px);font-size:8px}.maplibregl-ctrl-attrib{max-width:70%;font-size:8px}}

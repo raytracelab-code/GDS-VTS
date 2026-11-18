@@ -1,0 +1,19 @@
+{
+  "protected_files_checked": 101,
+  "protected_files_changed": [],
+  "authorized_protected_set_change": "sections.py uses shared fuel predicate",
+  "template_sha256": "94b92a23932300dd7795cbe86a11fdec4ce3b6e2158df259994dea98d2521161",
+  "changed_ooxml_parts": [
+    "xl/worksheets/sheet1.xml",
+    "xl/worksheets/sheet3.xml",
+    "xl/worksheets/sheet4.xml",
+    "xl/worksheets/sheet5.xml",
+    "xl/worksheets/sheet6.xml"
+  ],
+  "guide_xml_identical": true,
+  "baseline": "608 passed in 159.90s",
+  "focused": "66 passed in 41.45s (28 Excel + 38 existing VDR)",
+  "final": "636 passed in 139.19s",
+  "native_runtime_export_created": true,
+  "runtime_fixture_removed": true
+}
