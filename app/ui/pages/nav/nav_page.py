@@ -1,7 +1,9 @@
 from pathlib import Path
 import logging
+import time
 from app.qt.QtCore import QUrl,QSettings,QTimer,Qt
 from app.qt import exec_qt
+from app.ui import dialogs
 from app.qt.QtGui import QColor
 from app.qt.QtWidgets import QSizePolicy,QComboBox
 from app.qt.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,QFrame,QCheckBox,QFileDialog,QMessageBox,QScrollArea
@@ -27,7 +29,8 @@ class NavMapPage(QWebEnginePage):
 class NavPage(QWidget,FloatingControls):
  # Keep the native QObject base first for Shiboken's object layout. Explicitly
  # delegate the mixin's virtuals, which QWidget would otherwise shadow.
- resizeEvent=FloatingControls.resizeEvent
+ def resizeEvent(self,event):
+  FloatingControls.resizeEvent(self,event);self._position_renderer_overlay()
  eventFilter=FloatingControls.eventFilter
  def shutdown_webengine(self):
   """Destroy pages before their profile while QApplication is still alive."""
@@ -78,12 +81,14 @@ class NavPage(QWidget,FloatingControls):
   self.web_channel.registerObject('bridge',self.web_bridge)
   self.web.page().setWebChannel(self.web_channel)
   self.web.loadFinished.connect(self._map_loaded)
+  self._setup_renderer_health()
   from app.qt import LEGACY
   if LEGACY:
    from app.nav.legacy_resources import LegacyResourceServer
    self._gds_scheme_handler._legacy_server=LegacyResourceServer(self._gds_scheme_handler)
-   self.web.setUrl(QUrl(self._gds_scheme_handler._legacy_server.url))
-  else:self.web.setUrl(QUrl('gds://map/index.html'))
+   self._map_url=self._gds_scheme_handler._legacy_server.url
+  else:self._map_url='gds://map/index.html'
+  self.web.setUrl(QUrl(self._map_url))
   self._setup_events()
   self._setup_maritime()
   self._setup_offline_maps()
@@ -119,7 +124,7 @@ class NavPage(QWidget,FloatingControls):
   def changed():
    config=self._browser_map_config(self._gds_scheme_handler.reload_packages());self.bridge.offline_config=config
    self.bridge.offlineConfigChanged.emit(config)
-  exec_qt(MapRegionsDialog(self,changed=changed,release=self._gds_scheme_handler.regional.pause))
+  dialogs.exec_dialog(MapRegionsDialog(self,changed=changed,release=self._gds_scheme_handler.regional.pause),self)
  def _browser_map_config(self,config):
   server=getattr(self._gds_scheme_handler,'_legacy_server',None)
   return server.browser_config(config) if server else config
@@ -146,12 +151,14 @@ class NavPage(QWidget,FloatingControls):
   self.spatial.spatialStateChanged.connect(lambda _:self.bridge.publishEventState())
   self._update_events(self.bridge.getEventState())
  def _update_events(self,payload):
-  # GDS-AUDIT-021: no production squall feed exists yet, so an empty list must not read as an all-clear.
-  if payload['events']:self._squall_feed_seen=True
-  self.event_count.setText(f'ACTIVE EVENTS  {payload["active_count"]}' if payload['active_count'] else
-                           'No active events' if getattr(self,'_squall_feed_seen',False) else 'Squall feed NOT CONNECTED · no warnings received')
-  self.event_count.setToolTip('Squall warnings appear here only when a squall event feed delivers them. '
-                              'No feed is connected in this build, so an empty list is not an all-clear.')
+  # GDS-AUDIT-021: the feed state decides how the list may be read; an empty list is an all-clear only when LIVE.
+  from app.nav.presentation import squall_feed_text
+  text,tooltip,state=squall_feed_text(payload.get('feed'),payload['active_count'])
+  if self.event_count.text()!=text:self.event_count.setText(text)
+  self.event_count.setToolTip(tooltip)
+  if self.event_count.property('feed')!=state:
+   self.event_count.setProperty('feed',state);self.event_count.style().unpolish(self.event_count);self.event_count.style().polish(self.event_count)
+  self._update_squall_alert(payload)
   ids=[event['event_id'] for event in payload['events']]
   if list(self._event_buttons)!=ids:
    while self.event_cards.count():
@@ -172,14 +179,86 @@ class NavPage(QWidget,FloatingControls):
   if hasattr(self,'_sync_inspector'):self._sync_inspector(payload.get('selected_event_id'))
  def _map_loaded(self, ok):
   print(f'NAV LOAD FINISHED: {ok}',flush=True)
+  self.renderer_health.load_finished(ok,time.monotonic());self._show_renderer_health()
   if ok:self._send_map_state()
+ # ---- GDS-AUDIT-019: renderer / map failure detection and retry --------------------------
+ def _setup_renderer_health(self):
+  from app.nav.renderer_health import RendererHealth
+  self.renderer_health=RendererHealth()
+  page=self.web.page()
+  page.loadStarted.connect(lambda:self.renderer_health.start_load(time.monotonic()))
+  # Available on QWebEnginePage in both Qt5 (PySide2) and Qt6 (PySide6).
+  page.renderProcessTerminated.connect(self._renderer_terminated)
+  self.renderer_overlay=QFrame(self);self.renderer_overlay.setObjectName('rendererOverlay')
+  ol=QVBoxLayout(self.renderer_overlay);ol.setContentsMargins(28,24,28,24);ol.setSpacing(10)
+  self.renderer_title=QLabel('');self.renderer_title.setObjectName('rendererTitle');ol.addWidget(self.renderer_title)
+  self.renderer_message=QLabel('');self.renderer_message.setObjectName('rendererMessage');self.renderer_message.setWordWrap(True);ol.addWidget(self.renderer_message)
+  self.renderer_retry=QPushButton('Retry map');self.renderer_retry.setObjectName('rendererRetry');self.renderer_retry.clicked.connect(self.retry_renderer)
+  ol.addWidget(self.renderer_retry,0,Qt.AlignmentFlag.AlignLeft)
+  self.renderer_overlay.setStyleSheet('#rendererOverlay{background:rgba(10,22,40,235);border:1px solid #3b5573;border-radius:14px;}'
+   '#rendererTitle{color:#ffffff;font-size:18px;font-weight:700;}#rendererMessage{color:#c5d1de;font-size:13px;}'
+   '#rendererRetry{background:#2dd4bf;color:#0a1628;border:0;border-radius:8px;padding:8px 18px;font-weight:700;min-height:22px;}')
+  self.renderer_overlay.hide()
+  self.renderer_timer=QTimer(self);self.renderer_timer.setInterval(2000)
+  self.renderer_timer.timeout.connect(lambda:(self.renderer_health.check(time.monotonic()),self._show_renderer_health()))
+  self.renderer_timer.start()
+ def _update_squall_alert(self,payload):
+  """Top-level squall alert over the map (GDS-AUDIT-021); also read by the main window for the NAV rail."""
+  from app.nav.presentation import squall_alert_text
+  text,level=squall_alert_text(payload)
+  self.squall_alert_level=level
+  if not hasattr(self,'squall_alert'):
+   self.squall_alert=QLabel(self);self.squall_alert.setObjectName('squallAlert');self.squall_alert.setWordWrap(True)
+   self.squall_alert.setStyleSheet('#squallAlert{background:rgba(120,24,24,235);color:#fff;border:1px solid #ef4444;border-radius:10px;padding:10px 16px;font-weight:700;font-size:13px;}'
+    '#squallAlert[level="SURVEILLANCE"]{background:rgba(120,82,10,235);border-color:#d9a441;}')
+  if self.squall_alert.text()!=text:self.squall_alert.setText(text)
+  if self.squall_alert.property('level')!=level:
+   self.squall_alert.setProperty('level',level);self.squall_alert.style().unpolish(self.squall_alert);self.squall_alert.style().polish(self.squall_alert)
+  self.squall_alert.setVisible(bool(level))
+  if level:
+   w=min(620,max(260,self.width()-80));self.squall_alert.setFixedWidth(w);self.squall_alert.adjustSize()
+   self.squall_alert.move(max(16,(self.width()-w)//2),140);self.squall_alert.raise_()
+ def _renderer_terminated(self,status,exit_code):
+  name=getattr(status,'name',str(status))
+  if isinstance(name,bytes):name=name.decode('ascii','replace')  # PySide2 returns enum names as bytes
+  log.warning('NAV map renderer terminated: %s exit=%s',name,exit_code)
+  self.renderer_health.renderer_terminated(name,exit_code);self._show_renderer_health()
+ def _show_renderer_health(self):
+  if not hasattr(self,'renderer_overlay'):return
+  message=self.renderer_health.message()
+  if message:
+   self.renderer_title.setText(message[0]);self.renderer_message.setText(message[1])
+   self.renderer_overlay.setToolTip('Technical detail: '+self.renderer_health.detail)
+   self.renderer_retry.setEnabled(True);self.renderer_retry.setText('Retry map')
+   self.map_package_status.setText('MAP / '+self.renderer_health.state.replace('_',' ')+' / RETRY AVAILABLE')
+   if hasattr(self,'online_status'):self.online_status.setText('MAP UNAVAILABLE')
+   self._position_renderer_overlay();self.renderer_overlay.show();self.renderer_overlay.raise_()
+  else:self.renderer_overlay.hide()
+ def _position_renderer_overlay(self):
+  if not hasattr(self,'renderer_overlay'):return
+  w=min(520,max(280,self.width()-64));self.renderer_overlay.setFixedWidth(w);self.renderer_overlay.adjustSize()
+  self.renderer_overlay.move(max(16,(self.width()-w)//2),max(16,(self.height()-self.renderer_overlay.height())//2))
+ def retry_renderer(self):
+  """Reload the same view/page/profile (no new WebEngine objects); a crashed renderer restarts on load."""
+  if not self.renderer_health.retry(time.monotonic()):return False
+  self.renderer_retry.setEnabled(False);self.renderer_retry.setText('Retrying…')
+  self.map_package_status.setText('MAP / RESTARTING')
+  self.web.setUrl(QUrl(self._map_url));return True
  def _bridge_command(self,name):
   if name=='ready':self._send_map_state()
+  elif name=='renderer-ok':self.renderer_health.map_ready();self._show_renderer_health()
+  elif name.startswith('renderer-webgl'):self.renderer_health.webgl_failed(name);self._show_renderer_health()
   elif name=='online-unavailable':self._use_offline_fallback()
   elif name=='online-available':self.retry_map()
  def _send_map_state(self):
   self.bridge.spatialStateChanged.emit(self.spatial.payload());self.bridge.eventStateChanged.emit(self.bridge.getEventState());self.bridge.publishMaritimeState()
-  for name,checkbox in self.layer_checks.items():self.set_layer_visibility(name,checkbox.isChecked())
+  # Each per-layer publish rebuilds the full maritime render state on the GUI thread; with GIS
+  # data loaded that blocked a map reload for ~27 s. Apply all layers, then publish once.
+  self.bridge._batch_visibility=True
+  try:
+   for name,checkbox in self.layer_checks.items():self.set_layer_visibility(name,checkbox.isChecked())
+  finally:self.bridge._batch_visibility=False
+  if self.layer_checks and getattr(self.bridge,'maritime_service',None):self.bridge.publishMaritimeState()
   # A reloaded map surface gets the last known vessel/track again, with its honest freshness.
   if self.vessel.latitude is not None and self.state.latest_frame is not None:
    from datetime import datetime,timezone
@@ -286,7 +365,11 @@ class NavPage(QWidget,FloatingControls):
   fit_project=QPushButton('Fit spatial data');fit_project.setObjectName('secondaryButton');fit_project.clicked.connect(lambda:self.command('FIT SPATIAL DATA'));project.content.addWidget(fit_project)
   import_button=QPushButton('Import spatial package');import_button.setObjectName('secondaryButton');import_button.clicked.connect(self.import_spatial_package);project.content.addWidget(import_button);self._update_spatial_summary()
   squall_row=QHBoxLayout();squall_label=QLabel('SQUALL');squall_label.setObjectName('cardTitle');squall_row.addWidget(squall_label)
-  self.event_count=QLabel('No active events');self.event_count.setObjectName('navMuted');squall_row.addWidget(self.event_count,1,Qt.AlignmentFlag.AlignRight);l.addLayout(squall_row)
+  self.event_count=QLabel('SQUALL PROVIDER UNAVAILABLE');self.event_count.setObjectName('navMuted');self.event_count.setWordWrap(True)
+  self.event_count.setStyleSheet('QLabel[feed="STALE"],QLabel[feed="PROVIDER_UNAVAILABLE"]{color:#d9a441;font-weight:600;}QLabel[feed="LIVE"]{color:#5fd3c0;}')
+  squall_row.addStretch();l.addLayout(squall_row)
+  # Feed state and last update on their own full-width line so the two-line text never clips.
+  self.event_count.setSizePolicy(QSizePolicy.Policy.Preferred,QSizePolicy.Policy.Minimum);l.addWidget(self.event_count)
   self.event_cards=QVBoxLayout();self.event_cards.setSpacing(4);l.addLayout(self.event_cards)
   self.sources_section=group('DATA SOURCES','sources',False);self.source_info=SourceStatusPanel();self.sources_section.content.addWidget(self.source_info)
   self.privacy_note=QLabel('External services (online basemap, OpenStreetMap Overpass, GEBCO) receive map-area requests only. '
@@ -328,7 +411,7 @@ class NavPage(QWidget,FloatingControls):
    for mode in ('2D','3D'):self.control_buttons[mode].setChecked(mode==name)
   if name=='VESSEL CONFIG':
    d=VesselConfigDialog(self.config,self)
-   if exec_qt(d): d.apply()
+   if dialogs.exec_dialog(d,self): d.apply()
   elif name=='FOLLOW':
    enabled=self.follow.toggle();self.follow_button.setChecked(enabled);self.follow_button.setToolTip('Follow vessel · '+('On' if enabled else 'Off'));self.web.page().runJavaScript(f'window.navMap&&navMap.setFollow({str(enabled).lower()})')
    if hasattr(self,'palette'):self.palette.update(follow=enabled)
@@ -365,13 +448,15 @@ class NavPage(QWidget,FloatingControls):
   path,_=QFileDialog.getOpenFileName(self,'Import Spatial Package','','GDS Spatial Package (*.gdsspatial)')
   if not path:return
   try:
-   state=self.spatial.import_package(path);self._update_spatial_summary();QTimer.singleShot(0,lambda:self.command('FIT SPATIAL DATA'));QMessageBox.information(self,'Spatial package activated',f'{state.metadata["name"]}\nRevision {state.metadata["revision"]}\nFeatures {state.feature_counts["total"]}')
-  except Exception as error: QMessageBox.warning(self,'Invalid spatial package',str(error))
+   state=self.spatial.import_package(path);self._update_spatial_summary();QTimer.singleShot(0,lambda:self.command('FIT SPATIAL DATA'));dialogs.notify(self,'Spatial package activated',kind='information',text=f'{state.metadata["name"]}\nRevision {state.metadata["revision"]}\nFeatures {state.feature_counts["total"]}')
+  except Exception as error: dialogs.notify(self,'Spatial package not imported','The package could not be imported. The active spatial data is unchanged.',details=str(error))
  def refresh(self):
   f=self.state.latest_frame;self.status.setText(f'● {self.state.telemetry_status.value}')
   if hasattr(self,'palette'):self.palette.update(follow=self.follow.enabled)
   from datetime import datetime,timezone
   freshness,age=telemetry_freshness(f,datetime.now(timezone.utc))
+  state=getattr(self.bridge,'_event_render_state',None)
+  if state is not None and self.vessel.latitude is not None:state.vessel_position=(self.vessel.latitude,self.vessel.longitude)
   if f and f.valid and self.vessel.update(f,self.config):
    if self.maritime_runtime:self.maritime_runtime.own_position(self.vessel.latitude,self.vessel.longitude)
    from app.nav.track_manager import TrackPoint

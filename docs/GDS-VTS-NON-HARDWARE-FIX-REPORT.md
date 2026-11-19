@@ -46,11 +46,11 @@ Both baseline logs are kept in `docs/evidence/non-hardware-fixes/baseline/`.
 | ID | Issue | Status | What was done / what remains |
 |---|---|---|---|
 | 004 | Finalize passes but Excel export fails | **FIXED** | One shared check (`app/vdr/validation.py::final_issues`) is used by Finalize, Excel and PDF. It also runs a dry run of the real Excel cell mapping at Finalize. The UI now limits transfers to the template's capacity (2 fuel, 1 for other items). Blocked Finalize shows every issue grouped by section with a **Go** button; Excel errors list every issue. |
-| 005 | A keystroke silently un-finalizes a report | **PARTIALLY FIXED** | A finalized report is read-only (editors locked, edits ignored). **Reopen report** asks for confirmation. *Remaining:* no "reopened by/at" audit record and no "Rev N" in exports. |
+| 005 | A keystroke silently un-finalizes a report | **FIXED** (second pass) | A finalized report is read-only, and **Reopen report** asks for confirmation. Each report records last modified, revision (finalize count) and reopen count; these are stored as `reportActivity` in the same `reports.json`. **VDR → Previous reports…** lists the saved reports newest first: date, Report No., vessel, status (DRAFT / FINALIZED · REV n / REOPENED · DRAFT / UNREADABLE · SET ASIDE), last modified. It has search and an empty state. Opening a report navigates only. **VJR → Voyage history…** lists archived journeys and can make one current (a safe swap: the current journey is archived first). *Remaining:* no user identity on reopen (the app has no user accounts); the revision is not printed on exports (the template has no cell for it). Evidence: `evidence/remaining-p1-fixes/runtime/01–04`. |
 | 006 | TO = 2400 deletes later activity rows | **FIXED** | Only *empty* trailing rows are removed. Logged rows are kept, marked invalid, and a banner explains what to do. |
 | 007 | Comma decimal "2,5" read as 25 | **PARTIALLY FIXED** | VDR accepts a comma only as a strict thousands separator; "2,5" and "1.000,5" are rejected. *Remaining:* plausibility ranges (e.g. draft 0–15 m); VJR's message for a rejected comma is unchanged. |
 | 008 | Missed day gives a blank report | **FIXED** | A new day rolls over from the most recent earlier report. The notice gives the source date and the gap length. |
-| 009 | PDF crashes on long cells or invalid imports | **PARTIALLY FIXED** | PDF uses the safe number parser and an atomic write. A layout overflow gives a plain-language message, and the 1,000-character activity limit keeps cells within a page. Imported "finalized" reports are re-checked and imported as drafts if invalid. *Remaining:* table rows still cannot split across pages. |
+| 009 | PDF crashes on long cells or invalid imports | **FIXED** (second pass) | Every VDR PDF table now uses ReportLab `splitInRow=1` with `repeatRows=1`. A row taller than the remaining page continues on the next page, the header repeats, and no text is lost or duplicated (tested with a 900-word cell). The crew table gains the Comments column (029). VJR has no PDF export, so not applicable. Evidence: `evidence/remaining-p1-fixes/pdf/01–05*.pdf`, `03_render-p1..3.png`. |
 | 010 | VJR has no required fields or date-order checks | **FIXED** | Required: Vessel Name (from Configure), Departure Date, Departure Location. Ordering: ETA ≥ departure, actual arrival ≥ departure, arrival report ≥ departure report, progress rows within the voyage, no duplicate progress timestamps. Crew working days limited to 90. *Remaining:* no `*` markers in the VJR UI (056). |
 | 011 | VJR has no "New voyage" | **FIXED** | **New voyage…** asks for confirmation, archives the journey to `vjr/archive/journey-<time>.json` (atomic), and starts a new journey keeping the crew and contractor lists. Undo restores the previous journey. *Not done:* a browsable list of past voyages. |
 | 012 | Live Telemetry panel never updates | **FIXED** (software) | The panel is refreshed on every 500 ms tick, with units. Zero is shown as 0 (e.g. "0.0 kn", "000°"). Values are dimmed and labelled when telemetry is STALE or LOST, and cleared with no source. *Pending:* check on a real device. |
@@ -60,9 +60,9 @@ Both baseline logs are kept in `docs/evidence/non-hardware-fixes/baseline/`.
 | 016 | NAV shows zero as "—"; invents a north heading | **FIXED** | `is None` checks throughout. A missing heading is sent as `null` and drawn as a neutral, unrotated marker labelled "HDG UNKNOWN"; COG is used and labelled when present. |
 | 017 | No stale or lost telemetry state on NAV | **FIXED** | LIVE / STALE / NO DATA from the last frame time. Bottom bar shows "TELEMETRY STALE · last update 42 s ago" (amber) and "TRACK PAUSED"; marker greyed. Text updates at most once a second. *Unverified:* WebGL rendering of the greyed marker (offscreen). |
 | 018 | No internet at startup: blank map; regions dialog unreachable | **PARTIALLY FIXED** | The online map retries with backoff (10 s doubling to 5 min) and recovers without a restart; status says RETRYING. **Retry online map** and **Map regions…** buttons were added. Switching to installed offline regions while offline is implemented, but tested only in the JavaScript harness. *Unverified* in a real browser or a real outage. |
-| 019 | WebGL/renderer failure undetected | **NOT FIXED** | Not attempted. Next item for NAV. |
+| 019 | WebGL/renderer failure undetected | **FIXED** (second pass) | `app/nav/renderer_health.py` and `NavPage` detect: page load failure (`loadFinished(False)`); render-process termination (`QWebEnginePage.renderProcessTerminated`, Qt5 and Qt6); WebGL start failure and context loss (reported by `nav.js`); a blank map (no style 30 s after load). A plain-language overlay offers **Retry map**, which reloads the same view, page and profile: no new WebEngine objects, and repeated retries are ignored while loading. **Verified with a real renderer crash (`chrome://crash`) on both runtimes:** detected in 0.17 s (modern) / 1.71 s (legacy); recovered in 0.45 s / 5.49 s; one `QWebEngineView` after 5 failure/retry cycles; no `QtWebEngineProcess` left after exit. *Fixed while testing:* map reloads blocked the GUI for ~27 s, because every layer re-published the full maritime state. They now publish once; in-app recovery went from 28 s to 2.8 s. *Deferred, cross-OS test required:* a software-GL fallback flag and lazy WebEngine loading for the legacy build. |
 | 020 | Track unbounded and rebuilt every frame | **FIXED** | At most 6,000 points are kept (newest 1,800 at full resolution, older thinned). Distance is a running total, so it is unchanged. |
-| 021 | "No active events" reads as an all-clear | **PARTIALLY FIXED** | Until a squall feed has delivered data, the panel says **"Squall feed NOT CONNECTED · no warnings received"**, with an explanatory tooltip. *Remaining:* evaluating impact against own position, an ETA countdown, and a top-level alert (needs a real feed). |
+| 021 | "No active events" reads as an all-clear | **PARTIALLY FIXED** (second pass: everything except a real provider) | Feed states LIVE / STALE / NO DATA / PROVIDER UNAVAILABLE, with last-update time (receipt time). On provider failure, events are marked STALE immediately and expire normally, which clears their shapes. Recovery needs no restart. ETA counts down. Impact is judged against the own vessel's position. A top-level alert banner shows, plus **NAV ⚠** on the rail. See [`nav-squall-feed.md`](nav-squall-feed.md). *Remaining:* **no real squall provider exists** (a product/contract decision); the adapter interface is ready. Evidence: `evidence/remaining-p1-fixes/runtime/05–07b`. |
 | 022 | Exact vessel position sent to Overpass | **FIXED** | Overpass, AIS, Copernicus, BOEM/EMODnet and generic feeds receive a generalised area: centred on a 0.5° grid, with a wider radius so coverage is kept. Opt-out with `GDS_OVERPASS_ENABLED=false`. Disclosure under Layers → DATA SOURCES and in [`nav-external-data-privacy.md`](nav-external-data-privacy.md). |
 | 023 | Shutdown blocks on a stalled provider (32 s) | **FIXED** | Daemon network workers and a close that waits at most 2 s. Cache writes are atomic, so abandoning a request is safe. Every remote call has a timeout; Copernicus is capped at 120 s. **Measured with a local server that never answers:** 32.30 s → **2.01 s** (modern), 32.28 s → **2.01 s** (legacy). |
 | 024 | Legacy shapely access violation during GIS load | **DEFERRED — CROSS-OS TEST REQUIRED** | Not reproducible in the test environments. GIS loading now runs on its own single thread (a side effect of the 023 work), which may reduce exposure, but this is **not verified**. Needs a real Windows 7/8 machine with software rendering. |
@@ -237,15 +237,39 @@ The first version of the runtime check script wrote **test vessel identity value
 - **Removal:** the automated removal was blocked by the session's safety rules. Remove it manually with `Remove-Item 'HKCU:\Software\GDS\VTS\vessel'`, or clear the fields in Configure → Vessel & Client.
 - **Already fixed:** the script now writes only to a temporary INI file.
 
+## 7b. Second pass: remaining P1 items (005, 009, 019, 021)
+
+Starting point: commit `5698673`. Baseline: modern **801 passed**; legacy **800 passed, 1 skipped** (`evidence/remaining-p1-fixes/baseline/`).
+
+| Item | Result | Main evidence |
+|---|---|---|
+| 019 renderer failure | FIXED | `renderer/renderer_stress.py` and outputs (real `chrome://crash`), `tests/test_remaining_p1.py`, `tests/nav_renderer_runtime.cjs` |
+| 005 history / reopen | FIXED | `runtime/01_vdr_previous_reports.png`, `02_…search.png`, `03_vdr_opened_old_finalized_readonly.png`, `04_vjr_voyage_history.png` |
+| 009 PDF row split | FIXED | `pdf/03_single_row_crosses_pages.pdf` and `03_render-p2.png` (header repeated, row continued) |
+| 021 squall feed | PARTIALLY FIXED (no real provider) | `runtime/05`–`07b`, `docs/nav-squall-feed.md` |
+
+**Final tests (second pass):** modern **824 passed**, legacy **823 passed, 1 skipped**; `compileall` passes on both runtimes (`evidence/remaining-p1-fixes/final/`).
+
+**Conclusion of the second pass:** **C. REMAINING P1 SOFTWARE ISSUES PARTIALLY COMPLETE.** 005, 009 and 019 are fixed. 021 is complete except for a real squall provider, which does not exist yet.
+
+**Measured:**
+
+| Measurement | Result |
+|---|---|
+| Renderer crash detection | 0.17 s (modern) / 1.7 s (legacy) |
+| Recovery, standalone | 0.45 s / 5.5 s |
+| Recovery inside the full app, with GIS and a vessel | 2.8 s (was 28 s before the publish fix) / 6.8 s |
+| History filtering | under 1 ms |
+| PDF with a cell longer than a page | ~0.3 s |
+| Shutdown after a renderer failure | 0.02 s / 0.12 s |
+
 ## 8. Remaining non-hardware defects (honest list)
 
-- **P1, not fixed:**
-  - 019: WebGL/renderer failure is still undetected.
 - **P1, partially fixed:**
-  - 005: no reopen audit trail or revision number.
-  - 009: PDF rows cannot split across pages.
-  - 018: real-browser offline fallback unverified.
-  - 021: no squall feed or own-position impact.
+  - 007: plausibility ranges are not added.
+  - 018: the real-browser offline fallback is unverified.
+  - 021: no real squall provider exists (the interface is ready).
+- **Deferred:** legacy software-GL fallback and lazy WebEngine loading (019 follow-up, needs a Windows 7/8 machine).
 - **P2/P3:** see §2. The main ones are VJR entry efficiency (026), undo/autosave granularity (031), weather entry (032), template drop-downs (036), Settings page (044) and diagnosability (048).
 
 ## 9. Conclusion

@@ -32,7 +32,8 @@ function context(fetchImpl,timers,interactions){
  const run=s=>vm.runInContext(s,ctx);
  for(const file of ['offline.js','nav.js'])run(fs.readFileSync('app/resources/map/'+file,'utf8'));
  run('offlineConfig=payload.config');
- ctx.bridge={mapInteraction:n=>interactions.push(n),reportMapStatus(){}};
+ // Renderer-health messages (renderer-*) are covered by nav_renderer_runtime.cjs.
+ ctx.bridge={mapInteraction:n=>{if(!n.startsWith('renderer-'))interactions.push(n)},reportMapStatus(){}};
  run('bridge=globalThis.bridge');
  return {run,status};
 }

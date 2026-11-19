@@ -8,6 +8,7 @@ from app.qt.QtGui import QColor, QFont, QKeySequence, QShortcut
 from app.qt.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog, QFrame, QLayout, QPushButton, QTableWidget,
     QHBoxLayout, QLineEdit, QMessageBox, QScrollArea, QTableWidgetItem, QVBoxLayout, QWidget)
 from app.core.vessel_identity import load_identity
+from app.ui import dialogs
 from app.vdr.model import (SECTIONS, blank_row, calculate, carry_forward_status, derive_location_durations, field_limit, fmt, hhmm,
     hse_perfect_days, number, report_number, reset_carry_forward, tour_days, validate)
 from app.ui.theme import COLORS, FONT_BODY, FONT_DATA
@@ -67,7 +68,7 @@ class VdrPage(QWidget, Sections):
 
     def show_banner(self, text, level='warning'):
         self.banner.setProperty('level', level); self.banner.style().unpolish(self.banner); self.banner.style().polish(self.banner)
-        self.banner_text.setText(text); self.banner_text.setToolTip(str(self.store.path)); self.banner.show()
+        self.banner_text.setText(dialogs.wrap_long_tokens(text)); self.banner_text.setToolTip(str(self.store.path)); self.banner.show()
 
     def open_data_folder(self):
         from app.qt.QtGui import QDesktopServices
@@ -117,6 +118,8 @@ class VdrPage(QWidget, Sections):
         dyl.addWidget(self.day_label); dyl.addWidget(self.day_info); dl.addWidget(day, 1)
         self.next_day = button('›', lambda: self.navigate_date(1)); self.next_day.setFixedSize(28, 34); self.next_day.setToolTip('Next day')
         dl.addWidget(self.next_day); side.addWidget(dates)
+        self.history_button = button('Previous reports…', self.show_history); self.history_button.setToolTip('List saved reports, newest first, and open one')
+        self.history_button.setAccessibleName('Previous reports'); side.addWidget(self.history_button)
         toggle, tl = box(True)
         self.scroll_button = button('SCROLL', lambda: self.set_mode('scroll'), check=True)
         self.steps_button = button('STEPS', lambda: self.set_mode('steps'), check=True)
@@ -130,7 +133,7 @@ class VdrPage(QWidget, Sections):
         keyboard.setWordWrap(True); side.addWidget(keyboard)
         legend = label('White cell — manual entry\nShaded cell — computed\nDark highlight — needs attention')
         legend.setWordWrap(True); side.addWidget(legend)
-        sidebar.setFixedHeight(645)
+        sidebar.setFixedHeight(690)
         scroll.setWidget(sidebar); layout.addWidget(scroll); self.sidebar = sidebar
 
     def _rebuild(self):
@@ -415,33 +418,59 @@ class VdrPage(QWidget, Sections):
         self._changed()
         return self.flush_save()
 
+    def show_history(self):
+        """Previous reports from the existing store; opening one only navigates (never modifies it)."""
+        from .history_dialog import ReportHistoryDialog
+        self.flush_save()
+        dialog = ReportHistoryDialog(self.store.history(self.identity_provider()), self.store.current, self)
+        if dialogs.exec_dialog(dialog, self) and dialog.selected_day:
+            self.select_date(dialog.selected_day)
+        return dialog.selected_day
+
     def reopen(self):
-        """Finalized reports are read-only; returning to draft is explicit and confirmed."""
-        answer = QMessageBox.question(self, 'Reopen report?',
-            f'Reopen the finalized report for {self.store.current}?\n\nIt returns to DRAFT so it can be edited. '
-            'Exported files already sent are not changed. Finalize it again before exporting.')
-        if answer != QMessageBox.StandardButton.Yes:
+        """Finalized reports are read-only; returning to draft is explicit and confirmed (Cancel is the default)."""
+        day = QDate.fromString(self.store.current, 'yyyy-MM-dd').toString('dd MMM yyyy')
+        number = report_number(self.report, self.identity_provider())
+        status = self.store.status(self.store.current)
+        revision = int(self.store.activity.get(self.store.current, {}).get('revision', 1) or 1)
+        text = (f'Report {day}' + (f' · Report No. {number}' if number and number >= 1 else '') + f' · currently {status}.\n\n'
+                'Reopening makes this report an editable DRAFT. Files you already exported or sent are not changed.\n\n'
+                f'When you finalize it again it becomes REV {revision + 1}.')
+        if not dialogs.confirm(self, 'Reopen finalized report?', text, 'Reopen report', destructive=True):
             return False
         self.store.reopen(); self._rebuild(); self._changed()
         return True
 
-    def show_errors(self, errors, title=None):
-        title = title or f'Cannot finalize — {len(errors)} issue(s) to fix'
-        dialog = QDialog(self); dialog.setWindowTitle(title); dialog.resize(600, 520)
-        dialog.setStyleSheet(VALIDATION_STYLE)
-        layout = QVBoxLayout(dialog); layout.addWidget(label(title, 'validationTitle'))
-        hint = label('Each item says what to fix. Press Go to jump to that section; the report stays a draft until every item is fixed.')
-        hint.setWordWrap(True); layout.addWidget(hint)
-        scroll = QScrollArea(); scroll.setWidgetResizable(True); contents, cl = box(gap=8)
-        for section in sorted({e['s'] for e in errors}):
-            group = [e for e in errors if e['s'] == section]
-            heading, hl = box(True, gap=12); hl.addWidget(label(f"{group[0]['sec'].upper()} · {len(group)}", 'blockTitle'), 1)
-            def go(checked=False, section=section):
-                dialog.accept(); self.go_section(section)
-            hl.addWidget(button('Go', go)); cl.addWidget(heading)
-            for error in group:
-                text = label('• ' + error['msg']); text.setWordWrap(True); cl.addWidget(text)
-        cl.addStretch(); scroll.setWidget(contents); layout.addWidget(scroll); layout.addWidget(button('Close', dialog.reject)); exec_qt(dialog)
+    def open_vessel_client(self):
+        """Go to Configure → Vessel & Client (only available inside the main window)."""
+        window = self.window()
+        if hasattr(window, 'tabs') and hasattr(window, 'navigate'):
+            window.tabs._select(window.navigate, 'Configure')
+            identity = getattr(getattr(window, 'configure', None), 'identity', None)
+            if identity is not None:
+                missing = next((k for k in ('vessel', 'hireDate') if not identity.values().get(k)), 'vessel')
+                identity.inputs[missing].setFocus()
+
+    def issue_groups(self, errors):
+        """Group finalize/import issues by where the user fixes them, not by internal section codes."""
+        from app.core.vessel_identity import report_identity_issues
+        identity_messages = set(report_identity_issues(self.identity_provider(), self.store.current))
+        groups, in_window = [], hasattr(self.window(), 'navigate')
+        configure = [e['msg'] for e in errors if e['msg'] in identity_messages]
+        if configure:
+            groups.append(dict(title='Vessel & Client (Configure)', items=configure,
+                               action='Open Vessel & Client' if in_window else None, callback=self.open_vessel_client))
+        for section in sorted({e['s'] for e in errors if e['msg'] not in identity_messages}):
+            items = [e['msg'] for e in errors if e['s'] == section and e['msg'] not in identity_messages]
+            name = SECTIONS[section]
+            groups.append(dict(title=name, items=items, action=f'Go to {name}', callback=lambda s=section: self.go_section(s)))
+        return groups
+
+    def show_errors(self, errors, title=None, intro=None):
+        dialog = dialogs.IssuesDialog(self, title or 'Complete these items before finalizing',
+            intro or f'The report stays a DRAFT until the {len(errors)} item(s) below are completed.', self.issue_groups(errors))
+        dialogs.exec_dialog(dialog, self)
+        return dialog
 
     def _export_report(self):
         """The report as exported: identity always comes from Configure (single source)."""
@@ -460,9 +489,10 @@ class VdrPage(QWidget, Sections):
                 from app.vdr.pdf import export_pdf
                 export_pdf(self._export_report(), path); self.saved.setText('PDF downloaded')
             except Exception as error:
-                QMessageBox.warning(self, 'PDF not created',
-                    f'The PDF could not be created. Your report data is safe and unchanged.\n\n{error}\n\n'
-                    'If the file is open in a PDF viewer, close it and try again, or choose another folder.')
+                dialogs.notify(self, 'PDF not created',
+                    'The PDF could not be created. Your report data is safe and unchanged.\n\n'
+                    'If the file is open in a PDF viewer, close it and try again, or choose another folder.',
+                    details=f'{error}\n\nDestination: {path}')
 
     def import_report(self):
         path, _ = QFileDialog.getOpenFileName(self, 'Import VDR report', '', 'PDF reports (*.pdf)')
@@ -471,16 +501,18 @@ class VdrPage(QWidget, Sections):
         try:
             from app.vdr.pdf import import_pdf
             report = import_pdf(path); day = report['meta']['date']
-            if day in self.store.reports and not self.store.is_untouched(day) and QMessageBox.question(self, 'Replace report?', f'Replace the existing report for {day}? Undo remains available.') != QMessageBox.StandardButton.Yes:
+            if day in self.store.reports and not self.store.is_untouched(day) and not dialogs.confirm(self, 'Replace existing report?',
+                    f'A report for {day} already exists. Importing replaces it with the report from the PDF.\n\nUndo (Ctrl+Z) remains available.',
+                    'Replace report', destructive=True):
                 return
             issues = self.store.import_report(report, identity=self.identity_provider()); self.step = 0; self._rebuild()
             if self.flush_save():
                 self.saved.setText('Imported report for '+day)
             if issues:
-                self.show_errors(issues, f'Imported as DRAFT — {len(issues)} issue(s) must be fixed before it can be finalized')
+                self.show_errors(issues, 'Imported as a draft', f'The imported report needs {len(issues)} correction(s) before it can be finalized again.')
         except (OSError, ValueError) as error:
-            QMessageBox.warning(self, 'Import failed', f'The PDF could not be imported. No report was changed.\n\n{error}\n\n'
-                                'Choose a PDF that was downloaded from GDS VTS (Download PDF).')
+            dialogs.notify(self, 'Import failed', 'The PDF could not be imported. No report was changed.\n\n'
+                           'Choose a PDF that was downloaded from GDS VTS (Download PDF).', details=f'{error}\n\nFile: {path}')
 
     def download_excel(self):
         if not self.report['finalized']:
@@ -499,7 +531,14 @@ class VdrPage(QWidget, Sections):
             VdrExcelExporter().export(self.report, path, identity=identity)
             self.saved.setText('Excel report downloaded')
         except Exception as error:
-            QMessageBox.warning(self, 'Excel export failed', f'The Excel file was not created. Your report data is safe and unchanged.\n\n{error}')
+            lines = [line for line in str(error).splitlines() if line.strip().startswith('•')]
+            if lines:  # multi-issue export result: structured, grouped, scrollable
+                dialogs.exec_dialog(dialogs.IssuesDialog(self, 'Excel file not created',
+                    'Your report data is safe and unchanged. Reopen the report, correct these items, then finalize again.',
+                    dialogs.issues_from_lines(lines)), self)
+            else:
+                dialogs.notify(self, 'Excel file not created', 'The Excel file was not created. Your report data is safe and unchanged.\n\n'
+                               'If the file is open in Excel, close it and try again, or choose another folder.', details=f'{error}\n\nDestination: {path}')
 
     def _apply_read_only(self):
         """A finalized report is locked; only Reopen report makes it editable again."""

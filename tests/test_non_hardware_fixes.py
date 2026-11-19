@@ -276,7 +276,7 @@ def test_finalized_report_is_read_only_until_reopened(qtbot, tmp_path, monkeypat
     assert page.finalize() and page.report['finalized']
     assert page.editors[('meta', 'captain')].isReadOnly() and page.finalize_button.text() == 'Reopen report'
     page.edit(('meta', 'captain'), 'typo'); assert page.report['finalized'] and page.report['meta']['captain'] == 'Test Captain'
-    monkeypatch.setattr(workspace.QMessageBox, 'question', lambda *a, **k: workspace.QMessageBox.StandardButton.Yes)
+    monkeypatch.setattr('app.ui.dialogs.confirm', lambda *a, **k: True)
     assert page.finalize()  # Reopen
     assert not page.report['finalized'] and not page.editors[('meta', 'captain')].isReadOnly()
 
@@ -351,7 +351,7 @@ def test_vjr_new_voyage_archives_and_keeps_crew(qtbot, tmp_path, monkeypatch):
     from vjr_fixture import full_report
     store = VjrStore(tmp_path/'vjr'/'report.json'); store.mutate(lambda r: (r.clear(), r.update(full_report())))
     page = VjrPage(store, identity_provider=lambda: {}); qtbot.addWidget(page)
-    monkeypatch.setattr(vjr_workspace.QMessageBox, 'question', lambda *a, **k: vjr_workspace.QMessageBox.StandardButton.Yes)
+    monkeypatch.setattr('app.ui.dialogs.confirm', lambda *a, **k: True)
     assert page.new_voyage()
     archived = list((tmp_path/'vjr'/'archive').glob('journey-*.json'))
     assert len(archived) == 1 and json.loads(archived[0].read_text(encoding='utf-8'))['departure']['departure_location'] == 'Supply Base'
@@ -364,7 +364,7 @@ def test_squall_list_never_reads_as_all_clear_without_feed():
     import inspect
     from app.ui.pages.nav import nav_page
     source = inspect.getsource(nav_page.NavPage._update_events)
-    assert 'Squall feed NOT CONNECTED' in source
+    assert 'squall_feed_text' in source  # superseded by feed states (tests/test_remaining_p1.py)
 
 
 def test_untouched_day_rebuilds_when_an_earlier_report_appears(tmp_path):

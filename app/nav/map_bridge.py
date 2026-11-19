@@ -83,7 +83,9 @@ class MapBridge(QObject):
     @Slot(str,bool)
     def setMaritimeVisibility(self,category,visible):
         if self.maritime_service:
-            self.maritime_service.set_visibility(category,visible);self.publishMaritimeState()
+            self.maritime_service.set_visibility(category,visible)
+            # Restoring every layer after a map (re)load publishes once, not once per layer.
+            if not getattr(self,'_batch_visibility',False):self.publishMaritimeState()
     @Slot(float,float,float,float)
     def reportMaritimeViewport(self,west,south,east,north):
         from app.nav.maritime.models import number,MaritimeDataError
@@ -94,7 +96,11 @@ class MapBridge(QObject):
     def publishEventState(self):
         payload=self.getEventState()
         # Age labels/clock alone must not resend full event geometry each tick.
-        signature={**payload,'updated_at':None,'events':[{**e,'age_label':None} for e in payload['events']]}
+        # Per-second countdown values and feed age only matter when their visible label changes.
+        geojson=dict(payload['geojson']);points=geojson.get('prediction_points') or {'features':[]}
+        geojson['prediction_points']={**points,'features':[{**f,'properties':{**f['properties'],'eta_seconds':None}} for f in points['features']]}
+        feed=payload.get('feed');feed={**feed,'age_seconds':None} if isinstance(feed,dict) else feed
+        signature={**payload,'updated_at':None,'geojson':geojson,'feed':feed,'events':[{**e,'age_label':None} for e in payload['events']]}
         if signature!=self._last_event_signature:
             self._last_event_signature=signature
             self.eventStateChanged.emit(payload)
@@ -109,7 +115,8 @@ class MapBridge(QObject):
             self._event_render_state.clear_event_selection();self.eventSelectionCleared.emit();self.publishEventState()
     @Slot(result=dict)
     def getEventState(self):
-        return self._event_render_state.payload() if self._event_render_state else {'events':[],'active_count':0,'selected_event_id':None,'updated_at':None,'geojson':{key:{'type':'FeatureCollection','features':[]} for key in ('current','direction','trajectories','impact_zones','surveillance_zones','prediction_points','selection')}}
+        return self._event_render_state.payload() if self._event_render_state else {'events':[],'active_count':0,'selected_event_id':None,'updated_at':None,'geojson':{key:{'type':'FeatureCollection','features':[]} for key in ('current','direction','trajectories','impact_zones','surveillance_zones','prediction_points','selection')},
+            'feed':{'state':'PROVIDER UNAVAILABLE','provider':None,'last_update':None,'age_seconds':None,'detail':'No squall provider is configured in this build'}}
     @Slot()
     def mapReady(self): self.commandRequested.emit('ready')
     @Slot(str)

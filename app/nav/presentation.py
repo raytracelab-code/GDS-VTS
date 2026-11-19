@@ -42,3 +42,37 @@ def readout_text(vessel,frame,freshness,age):
  heading=format_angle(frame.heading) if frame.heading is not None else 'UNKNOWN'+(' (marker by COG)' if frame.cog is not None else '')
  return (f'POSITION\n{vessel.latitude:.6f}, {vessel.longitude:.6f}\n\nSOG\n{format_speed(frame.speed_knots)}\n\nCOG\n{format_angle(frame.cog)}'
          f'\n\nHEADING\n{heading}\n\nSOURCE\n{frame.source or "—"}\n\nSTATUS\n{freshness}\n\nLAST UPDATE\n{format_age(age)}')
+def squall_feed_text(feed,active_count):
+ """(label, tooltip, state) for the squall panel. Never presents an empty list as an all-clear
+ unless the feed is LIVE; never presents STALE warnings as current."""
+ feed=feed or {'state':'PROVIDER UNAVAILABLE','age_seconds':None,'detail':'No squall provider is configured in this build'}
+ state=feed.get('state','PROVIDER UNAVAILABLE');age=feed.get('age_seconds')
+ events=f'ACTIVE EVENTS  {active_count}' if active_count else 'No active events'
+ if state=='LIVE':
+  text=f'SQUALL FEED LIVE · updated {format_age(age)}\n{events}'
+  tip='Squall warnings are being received. An empty list means no active warnings from the feed.'
+ elif state=='STALE':
+  text=f'SQUALL FEED STALE · last update {format_age(age)}\n{events} — may be out of date'
+  tip='No squall message has arrived recently. Warnings shown are the last received and may be out of date.'
+ elif state=='NO DATA':
+  text=f'SQUALL FEED CONNECTED · no data yet\n{events}'
+  tip='The squall provider is connected but has not sent any message yet.'
+ else:
+  text='SQUALL PROVIDER UNAVAILABLE · no warnings are being received'+(f'\n{events} (last received, not current)' if active_count else '')
+  tip=(feed.get('detail') or 'The squall provider is unavailable.')+'. An empty list is NOT an all-clear.'
+ return text,tip,state.replace(' ','_')
+def squall_alert_text(payload):
+ """(text, level) for the top-level squall alert. level is 'IMPACT', 'SURVEILLANCE' or '' (no alert).
+ Warnings from a feed that is not LIVE are labelled as last-received data."""
+ events=[e for e in (payload or {}).get('events',[]) if e.get('impact_state') in ('IMPACT','SURVEILLANCE')]
+ if not events:return '',''
+ level='IMPACT' if any(e['impact_state']=='IMPACT' for e in events) else 'SURVEILLANCE'
+ top=next(e for e in events if e['impact_state']==level)
+ where='own vessel' if top.get('impact_reason')=='own vessel' else 'project site'
+ zone='impact zone' if level=='IMPACT' else 'surveillance zone'
+ eta=top.get('eta_label') or '—'
+ text=f'⚠ SQUALL {level} · {top["event_id"]} · {where} inside {zone}'+(f' · ETA {eta}' if eta not in ('—','') else '')
+ if len(events)>1:text+=f' · +{len(events)-1} more'
+ feed=((payload or {}).get('feed') or {}).get('state')
+ if feed!='LIVE' or top.get('status')!='ACTIVE':text+=' · LAST RECEIVED DATA, feed '+(feed or 'unknown')
+ return text,level

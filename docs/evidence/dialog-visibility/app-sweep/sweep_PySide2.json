@@ -1,0 +1,207 @@
+{
+ "api": "PySide2",
+ "screen": [
+  1920,
+  1020
+ ],
+ "dialogs": [
+  {
+   "name": "01_vdr_finalize_validation",
+   "title": "Complete these items before finalizing",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -1,
+    -19
+   ],
+   "size": [
+    622,
+    599
+   ],
+   "buttons": [
+    "Open Vessel & Client",
+    "Go to Report & HSE",
+    "Go to Weather",
+    "Go to Activity log",
+    "Go to Core crew",
+    "Close"
+   ],
+   "clipped": []
+  },
+  {
+   "name": "02_vdr_previous_reports",
+   "title": "Previous reports",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -1,
+    -19
+   ],
+   "size": [
+    762,
+    559
+   ],
+   "buttons": [
+    "Open report",
+    "Close"
+   ],
+   "clipped": []
+  },
+  {
+   "name": "03_vdr_reopen_confirmation",
+   "title": "Reopen finalized report?",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -49,
+    -19
+   ],
+   "size": [
+    502,
+    226
+   ],
+   "buttons": [
+    "Reopen report",
+    "Cancel"
+   ],
+   "clipped": [],
+   "still_finalized_after_esc": true
+  },
+  {
+   "name": "04_vjr_excel_validation",
+   "title": "Complete these items before downloading Excel",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -1,
+    -19
+   ],
+   "size": [
+    622,
+    327
+   ],
+   "buttons": [
+    "Go to Departure report",
+    "Close"
+   ],
+   "clipped": []
+  },
+  {
+   "name": "05_vjr_new_voyage",
+   "title": "Start a new voyage?",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -28,
+    -11
+   ],
+   "size": [
+    502,
+    226
+   ],
+   "buttons": [
+    "Start new voyage",
+    "Cancel"
+   ],
+   "clipped": []
+  },
+  {
+   "name": "06_vjr_voyage_history",
+   "title": "Voyage history",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -1,
+    -19
+   ],
+   "size": [
+    862,
+    559
+   ],
+   "buttons": [
+    "Make this the current journey\u2026",
+    "Close"
+   ],
+   "clipped": []
+  },
+  {
+   "name": "07_vjr_photo_help",
+   "title": "Local network upload",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -52,
+    -2
+   ],
+   "size": [
+    502,
+    277
+   ],
+   "buttons": [
+    "OK"
+   ],
+   "clipped": []
+  },
+  {
+   "name": "08_nav_map_regions",
+   "title": "OFFLINE MAP REGIONS",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -1,
+    -19
+   ],
+   "size": [
+    762,
+    509
+   ],
+   "buttons": [
+    "Install / update",
+    "Enable",
+    "Disable",
+    "Rollback",
+    "Remove",
+    "Check for map updates",
+    "Close"
+   ],
+   "clipped": []
+  },
+  {
+   "name": "09_nav_vessel_config",
+   "title": "Vessel Configuration",
+   "modal": true,
+   "parent_is_main": true,
+   "active": true,
+   "inside_screen": true,
+   "centre_offset": [
+    -1,
+    -19
+   ],
+   "size": [
+    348,
+    371
+   ],
+   "buttons": [
+    "Save",
+    "Cancel"
+   ],
+   "clipped": []
+  }
+ ]
+}

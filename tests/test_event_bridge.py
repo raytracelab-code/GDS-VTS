@@ -135,7 +135,7 @@ def test_payload_geometry_and_json(integration):
  _,s,b,out,_=integration
  s.ingest_mapping(message(impact_radius_nm=2,surveillance_radius_nm=5,predicted_path=[{'latitude':.1,'longitude':.1,'eta_seconds':300}]))
  p=b.getEventState();json.dumps(p,allow_nan=False)
- assert set(p)=={'events','active_count','selected_event_id','updated_at','geojson'}
+ assert set(p)=={'events','active_count','selected_event_id','updated_at','geojson','feed'}
  for name,c in p['geojson'].items():
   assert c['type']=='FeatureCollection'
   for f in c['features']:assert f['geometry'] and f['properties']['event_id']=='SQ-001'

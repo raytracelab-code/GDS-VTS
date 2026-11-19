@@ -19,4 +19,8 @@ def _no_unexpected_modal_dialogs(monkeypatch):
 
     for name in ('question', 'warning', 'information', 'critical'):
         monkeypatch.setattr(QMessageBox, name, unexpected)
+    # Every application dialog goes through app.ui.dialogs; an unexpected one fails instead of hanging.
+    from app.ui import dialogs
+    for name in ('exec_dialog', 'notify', 'confirm'):
+        monkeypatch.setattr(dialogs, name, unexpected)
     yield

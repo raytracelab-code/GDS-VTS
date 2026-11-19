@@ -1,0 +1,13 @@
+Qt API PySide2; initial map state=OK; overlay visible=False
+load failure -> state=LOAD_FAILED title='Map failed to load' overlay=True
+retry after load failure -> state=OK in 6.33 s; overlay=False
+renderer crash -> state=RENDERER_STOPPED detected in 1.71 s detail='render process terminated: CrashedTerminationStatus (exit code -1073741819)'
+retry accepted=True; immediate second retry ignored=True
+renderer recovery -> state=OK in 5.49 s
+cycle 1: failed->retry->OK in 5.49 s
+cycle 2: failed->retry->OK in 5.55 s
+cycle 3: failed->retry->OK in 6.09 s
+QWebEngineView objects after all retries: 1; retries=5 failures=5
+QtWebEngineProcess before page=0, while running=2
+shutdown after failure: 0.12 s, no exception
+QtWebEngineProcess after shutdown (this process alive): 1

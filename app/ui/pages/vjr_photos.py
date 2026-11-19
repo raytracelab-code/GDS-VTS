@@ -2,6 +2,7 @@
 from io import BytesIO
 import logging
 import math
+from app.ui import dialogs
 import uuid
 import qrcode
 from qrcode.image.pil import PilImage
@@ -137,7 +138,7 @@ class PhotoCard(QFrame):
         self.generate_button = QPushButton('Generate QR'); self.generate_button.clicked.connect(self.generate); actions.addWidget(self.generate_button)
         self.cancel_button = QPushButton('Cancel'); self.cancel_button.clicked.connect(lambda:self.controller.cancel(self.slot)); actions.addWidget(self.cancel_button)
         self.delete_button = QPushButton('Delete Photo'); self.delete_button.setObjectName('deleteRow'); self.delete_button.clicked.connect(self.delete); actions.addWidget(self.delete_button)
-        actions.addStretch(); help_button = QPushButton("Can't connect?"); help_button.clicked.connect(lambda:QMessageBox.information(self,'Local network upload',HELP)); actions.addWidget(help_button)
+        actions.addStretch(); help_button = QPushButton("Can't connect?"); help_button.clicked.connect(lambda:dialogs.notify(self,'Local network upload',HELP,kind='information')); actions.addWidget(help_button)
         layout.addLayout(actions)
         controller.changed.connect(self.changed)
         self.refresh_networks(); self.refresh()
@@ -166,9 +167,8 @@ class PhotoCard(QFrame):
         self.refresh()
 
     def delete(self):
-        result = QMessageBox.question(self,'Delete VJR photo','Delete this photo from the current report?',
-            QMessageBox.StandardButton.Yes|QMessageBox.StandardButton.No,QMessageBox.StandardButton.No)
-        if result==QMessageBox.StandardButton.Yes:
+        if dialogs.confirm(self,'Delete this photo?','The photo is removed from the current report. Undo (Ctrl+Z) can restore it.',
+                           'Delete photo',destructive=True):
             try:
                 self.controller.delete(self.slot)
             except OSError:

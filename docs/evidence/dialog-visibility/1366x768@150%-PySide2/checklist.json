@@ -1,0 +1,214 @@
+{
+ "screen": [
+  910,
+  472
+ ],
+ "scale": 1.5,
+ "api": "PySide2",
+ "dialogs": [
+  {
+   "dialog": "01_finalize_validation",
+   "geometry": [
+    149,
+    22,
+    622,
+    429
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "02_vdr_previous_reports",
+   "geometry": [
+    79,
+    22,
+    762,
+    429
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "03_vdr_previous_reports_empty",
+   "geometry": [
+    79,
+    22,
+    762,
+    429
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "04_vdr_reopen_confirmation",
+   "geometry": [
+    179,
+    127,
+    502,
+    219
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "05_vdr_import_replace",
+   "geometry": [
+    185,
+    145,
+    502,
+    183
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "06_pdf_export_error_long_path",
+   "geometry": [
+    299,
+    136,
+    502,
+    183
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "07_vdr_excel_multi_error",
+   "geometry": [
+    149,
+    22,
+    622,
+    429
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "08_storage_save_failed",
+   "geometry": [
+    296,
+    127,
+    502,
+    183
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "09_vjr_voyage_history",
+   "geometry": [
+    42,
+    22,
+    837,
+    429
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "10_vjr_new_voyage",
+   "geometry": [
+    179,
+    127,
+    502,
+    219
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "11_vjr_validation_before_excel",
+   "geometry": [
+    149,
+    32,
+    622,
+    408
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "12_vjr_photo_help",
+   "geometry": [
+    179,
+    118,
+    502,
+    255
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "13_vjr_photo_delete",
+   "geometry": [
+    304,
+    163,
+    502,
+    147
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "14_nav_map_regions",
+   "geometry": [
+    79,
+    22,
+    762,
+    429
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "15_nav_remove_region",
+   "geometry": [
+    301,
+    154,
+    502,
+    147
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "16_nav_vessel_config",
+   "geometry": [
+    289,
+    57,
+    343,
+    359
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  },
+  {
+   "dialog": "17_nav_spatial_import_error",
+   "geometry": [
+    299,
+    163,
+    502,
+    147
+   ],
+   "fits_screen": true,
+   "footer_visible": true,
+   "clipped": []
+  }
+ ]
+}

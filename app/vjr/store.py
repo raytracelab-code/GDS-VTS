@@ -10,6 +10,7 @@ from datetime import datetime
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import tempfile
 import time
@@ -92,7 +93,10 @@ class VjrStore:
         """Write the current journey to vjr/archive/<timestamp>.json (atomic) and return the path."""
         folder = self.path.parent/'archive'
         folder.mkdir(parents=True, exist_ok=True)
-        target = folder/('journey-' + datetime.now().strftime('%Y%m%d-%H%M%S') + '.json')
+        stamp = datetime.now().strftime('%Y%m%d-%H%M%S')
+        target, n = folder/('journey-' + stamp + '.json'), 1
+        while target.exists():  # never overwrite an earlier archive made in the same second
+            n += 1; target = folder/(f'journey-{stamp}-{n}.json')
         fd, temp = tempfile.mkstemp(prefix='.vjr-archive-', suffix='.json', dir=str(folder))
         try:
             with os.fdopen(fd, 'w', encoding='utf-8') as stream:
@@ -102,6 +106,40 @@ class VjrStore:
             if os.path.exists(temp):
                 os.unlink(temp)
         return target
+
+    def archived_journeys(self):
+        """Archived voyages for Voyage History, newest archive first (ordered by the archive
+        timestamp in the file name, never by file-system order). Reads vjr/archive only."""
+        folder = self.path.parent/'archive'
+        rows = []
+        for path in folder.glob('journey-*.json') if folder.is_dir() else []:
+            match = re.fullmatch(r'journey-(\d{8}-\d{6})(?:-(\d+))?\.json', path.name)
+            if not match:
+                continue
+            archived = datetime.strptime(match.group(1), '%Y%m%d-%H%M%S')
+            row = dict(path=path, archived=archived, sequence=int(match.group(2) or 1))
+            try:
+                report = self._read(path)
+                departure, arrival = report['departure'], report['arrival']
+                row.update(readable=True, vessel=report['meta'].get('vessel', ''), departure_date=departure.get('departure_date', ''),
+                           departure_location=departure.get('departure_location', ''),
+                           destination=departure.get('destination', ''), status=journey_status(report))
+            except (OSError, ValueError, TypeError, KeyError) as error:
+                row.update(readable=False, vessel='', departure_date='', departure_location='', destination='',
+                           status='UNREADABLE', error=str(error))
+            rows.append(row)
+        return sorted(rows, key=lambda r: (r['archived'], r['sequence']), reverse=True)
+
+    def restore_archived(self, path):
+        """Swap: archive the current journey, make ``path`` current, remove ``path`` from the
+        archive. Both journeys stay on disk. Undo history is cleared (stated in the UI)."""
+        restored = self._read(Path(path))
+        archived = self.archive()
+        self.save(restored)
+        self.report = restored
+        self.undo_stack.clear(); self.redo_stack.clear()
+        os.unlink(str(path))
+        return archived
 
     def _backup(self, force=False):
         if not self.path.exists() or (not force and time.time() - self._last_backup < BACKUP_INTERVAL):
@@ -141,3 +179,12 @@ class VjrStore:
         finally:
             if temp and os.path.exists(temp):
                 os.unlink(temp)
+
+
+def journey_status(report):
+    """Completion state shown in Voyage History."""
+    if report['arrival'].get('arrival_date') or report['arrival'].get('report_date'):
+        return 'ARRIVED'
+    if report['departure'].get('departure_date'):
+        return 'UNDER WAY'
+    return 'NOT STARTED'

@@ -25,6 +25,11 @@ import time
 from .model import apply_carry_forward, new_report, normalize, rollover
 
 BACKUP_SUFFIX = '.bak'
+ACTIVITY_KEYS = ('modifiedAt', 'revision', 'reopenedAt', 'reopenCount')
+
+
+def _now():
+    return datetime.now(timezone.utc).isoformat(timespec='seconds')
 BACKUP_INTERVAL = 15 * 60
 MAX_STORE_BYTES = 32 * 1024 * 1024
 
@@ -49,6 +54,7 @@ class ReportStore:
         self.notices = []             # user-facing recovery notices (shown as a banner)
         self._auto = {}               # day -> id() of an auto-created, never-edited report (derived, not persisted)
         self._last_backup = 0.0
+        self.activity = {}            # day -> {modifiedAt, revision, reopenedAt, reopenCount}; persisted as 'reportActivity'
         self._load()
         self.select(self.today)
 
@@ -106,6 +112,10 @@ class ReportStore:
                                     f'{kept} A new empty report file is being used. Contact support to recover data from the damaged copy.')
         self.layout = 'steps' if data.get('layout') == 'steps' else 'scroll'
         self.custom_ranks = [s for s in data.get('customRanks', []) if isinstance(s, str)]
+        activity = data.get('reportActivity', {})
+        if isinstance(activity, dict):
+            self.activity = {str(day): {k: v for k, v in value.items() if k in ACTIVITY_KEYS and isinstance(v, (str, int))}
+                             for day, value in activity.items() if isinstance(value, dict)}
         if self.quarantined:
             days = ', '.join(sorted(self.quarantined)[:6])
             self.notices.append(f'{len(self.quarantined)} stored report(s) could not be read and were set aside ({days}). '
@@ -167,6 +177,7 @@ class ReportStore:
         self.undo_stack = self.undo_stack[-100:]
         self.redo_stack.clear()
         self.reports[self.current] = updated
+        self._record(self.current, modifiedAt=_now())
         self._auto.pop(self.current, None)
 
     def _history(self, source, destination):
@@ -194,12 +205,46 @@ class ReportStore:
         snapshot = {k: v for k, v in (identity or {}).items() if isinstance(v, str)}
         self.mutate(lambda r: r.update(finalized=True, finalizedAt=datetime.now(timezone.utc).isoformat(),
                                        identity=snapshot), finalized=True)
+        self._record(self.current, revision=int(self.activity.get(self.current, {}).get('revision', 0)) + 1)
         return []
 
     def reopen(self):
         """Explicit, recorded return to draft (the only way a finalized report changes)."""
         if self.report['finalized']:
             self.mutate(lambda r: r.update(finalized=False, finalizedAt=''))
+            entry = self.activity.get(self.current, {})
+            self._record(self.current, reopenedAt=_now(), reopenCount=int(entry.get('reopenCount', 0)) + 1)
+
+    def _record(self, day, **values):
+        self.activity.setdefault(day, {}).update(values)
+
+    def status(self, day):
+        """DRAFT, FINALIZED (Rev n when finalized again after a reopen) or REOPENED (draft after reopen)."""
+        report, entry = self.reports[day], self.activity.get(day, {})
+        if report['finalized']:
+            revision = int(entry.get('revision', 1) or 1)
+            return 'FINALIZED' + (f' · REV {revision}' if revision > 1 else '')
+        return 'REOPENED · DRAFT' if entry.get('reopenCount') else 'DRAFT'
+
+    def history(self, identity=None):
+        """Stored reports for the History view, newest report date first. Reads this store only."""
+        from .model import report_number
+        identity = self.identity if identity is None else identity
+        rows = []
+        for day, report in self.reports.items():
+            if self.is_untouched(day):
+                continue
+            entry = self.activity.get(day, {})
+            snapshot = report.get('identity') or {}
+            vessel = (snapshot.get('vessel') if report['finalized'] else '') or (identity or {}).get('vessel', '')
+            number = report_number(report, identity or {})
+            rows.append(dict(day=day, report_no=str(number) if number is not None and number >= 1 else '—', vessel=vessel or '—',
+                             status=self.status(day), modified=entry.get('modifiedAt') or report.get('finalizedAt') or '',
+                             openable=True))
+        for day, item in self.quarantined.items():
+            rows.append(dict(day=str(day), report_no='—', vessel='—', status='UNREADABLE · SET ASIDE', modified='',
+                             openable=False, error=str(item.get('error', '')) if isinstance(item, dict) else ''))
+        return sorted(rows, key=lambda row: row['day'], reverse=True)
 
     def import_report(self, report, identity=None):
         """Import a report. A report marked finalized is re-validated; if it would
@@ -251,6 +296,7 @@ class ReportStore:
                        layout=self.layout, customRanks=self.custom_ranks)
         if self.quarantined:
             payload['quarantined'] = self.quarantined
+        payload['reportActivity'] = {day: value for day, value in self.activity.items() if day in persisted}
         temp = None
         try:
             self.path.parent.mkdir(parents=True, exist_ok=True)

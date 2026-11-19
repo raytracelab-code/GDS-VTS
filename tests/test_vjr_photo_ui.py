@@ -42,7 +42,7 @@ def test_generate_wait_upload_preview_restart_replace_delete(photo_ui,qtbot,monk
     card.generate_button.click(); _,replacement=controller.state(SLOTS[0])
     assert replacement.token!=session.token and store.report['photos'][SLOTS[0]]==reference
     card.cancel_button.click(); assert store.report['photos'][SLOTS[0]]==reference
-    monkeypatch.setattr(QMessageBox,'question',lambda *args:QMessageBox.StandardButton.Yes)
+    monkeypatch.setattr('app.ui.dialogs.confirm', lambda *a, **k: True)
     card.delete_button.click()
     assert SLOTS[0] not in store.report['photos'] and not card.preview.isVisible()
     assert 'No photo uploaded' in card.status.text()

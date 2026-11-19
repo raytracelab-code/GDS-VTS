@@ -188,7 +188,7 @@ def test_ui_undo_redo_save_finalize_download(page, monkeypatch):
     assert page.finalize() and page.download_button.isEnabled() and page.finalize_button.text() == 'Reopen report'
     page.edit(('meta', 'captain'), ''); assert page.report['finalized']  # finalized reports are read-only (GDS-AUDIT-005)
     from app.ui.pages.vdr import workspace
-    monkeypatch.setattr(workspace.QMessageBox, 'question', lambda *a: workspace.QMessageBox.StandardButton.Yes)
+    monkeypatch.setattr('app.ui.dialogs.confirm', lambda *a, **k: True)
     assert page.finalize() and not page.report['finalized']  # explicit, confirmed Reopen
     page.edit(('meta', 'captain'), '')
     errors = []; monkeypatch.setattr(page, 'show_errors', lambda e: errors.extend(e))
@@ -226,7 +226,7 @@ def test_ui_pdf_download_and_import_actions(page, tmp_path, monkeypatch):
     page.finalize(); path = tmp_path/'download.pdf'
     monkeypatch.setattr(workspace.QFileDialog, 'getSaveFileName', lambda *a: (str(path), 'PDF'))
     page.download(); assert path.exists()
-    monkeypatch.setattr(workspace.QMessageBox, 'question', lambda *a: workspace.QMessageBox.StandardButton.Yes)
+    monkeypatch.setattr('app.ui.dialogs.confirm', lambda *a, **k: True)
     page.finalize()  # Reopen (confirmed) before editing a finalized report
     page.edit(('meta', 'captain'), 'Different')
     monkeypatch.setattr(workspace.QFileDialog, 'getOpenFileName', lambda *a: (str(path), 'PDF'))

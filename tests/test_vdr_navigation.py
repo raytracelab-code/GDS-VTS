@@ -126,7 +126,7 @@ def test_offline_vdr_validation_finalize_pdf_export_import(shell, qtbot, tmp_pat
     vdr.download(); assert path.exists()
     vdr.edit(('meta', 'captain'), 'Changed')
     monkeypatch.setattr(workspace.QFileDialog, 'getOpenFileName', lambda *a: (str(path), 'PDF'))
-    monkeypatch.setattr(workspace.QMessageBox, 'question', lambda *a: workspace.QMessageBox.StandardButton.Yes)
+    monkeypatch.setattr('app.ui.dialogs.confirm', lambda *a, **k: True)
     vdr.import_report()
     assert vdr.report['meta']['captain'] == 'Test Captain' and vdr.report['finalized']
     assert state.telemetry_status is TelemetryStatus.NO_SOURCE

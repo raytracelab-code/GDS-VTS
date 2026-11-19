@@ -264,7 +264,7 @@ def test_ui_gate_save_cancel_success_and_error(qtbot,tmp_path,monkeypatch):
     p.excel_button.click();assert path.exists() and p.saved.text()=='Excel report downloaded'
     assert load_workbook(path,data_only=True)['VDR']['E12'].value=='Configured Vessel'
     assert p.report==before
-    errors=[];monkeypatch.setattr(workspace.QMessageBox,'warning',lambda *a:errors.append(a[-1]))
+    errors=[];monkeypatch.setattr('app.ui.dialogs.notify',lambda *a,**k:errors.append(k.get('details','')))
     monkeypatch.setattr(workspace.QFileDialog,'getSaveFileName',lambda *a:(str(tmp_path/'missing/out.xlsx'),''))
     p.download_excel();assert errors and 'Cannot save' in errors[-1]
     p.save_timer.stop()

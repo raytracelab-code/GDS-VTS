@@ -1,0 +1,22 @@
+screenshot 01_vdr_previous_reports.png
+screenshot 02_vdr_previous_reports_search.png
+VDR history rows=[('2026-11-18', 'REOPENED · DRAFT'), ('2026-11-17', 'DRAFT'), ('2026-11-16', 'FINALIZED · REV 2')]
+VDR history open+render 1263 ms (filter 0.3 ms); opened 2026-11-16; finalized=True read-only=True button='Reopen report'
+screenshot 03_vdr_opened_old_finalized_readonly.png
+screenshot 04_vjr_voyage_history.png
+VJR voyage history rows=[('Supply Base', 'ARRIVED')]
+squall (no provider): 'SQUALL PROVIDER UNAVAILABLE · no warnings are being received'
+screenshot 05_nav_squall_provider_unavailable.png
+squall (fixture message): 'SQUALL FEED LIVE · updated 0 s ago\nACTIVE EVENTS  1'
+screenshot 06_nav_squall_feed_live.png
+squall (no message for 200 s): 'SQUALL FEED STALE · last update 3 min 22 s ago\nACTIVE EVENTS  1 — may be out of date'
+squall (provider failed): 'SQUALL PROVIDER UNAVAILABLE · no warnings are being received\nACTIVE EVENTS  1 (last received, not current)'; events=[('SQ-TEST', 'STALE')]
+screenshot 07_nav_squall_provider_failed_stale.png
+squall (recovered): 'SQUALL FEED LIVE · updated 0 s ago\nACTIVE EVENTS  1'
+vessel 5.3,103.21666666666667; squall alert: '⚠ SQUALL IMPACT · SQ-TEST · own vessel inside impact zone · ETA 9 min'; rail button: 'NAV ⚠'
+screenshot 07b_nav_squall_impact_alert_own_vessel.png
+renderer crash in app -> RENDERER_STOPPED; overlay=True
+screenshot 08_nav_renderer_stopped_in_app.png
+renderer retry in app -> OK in 6.81 s; overlay=False
+PDF with a row longer than a page: 302 ms
+shutdown 0.14 s

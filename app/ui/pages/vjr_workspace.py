@@ -9,6 +9,7 @@ from app.qt.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, Q
 from app.vjr.schema import META, GENERAL, DEPARTURE, ARRIVAL, TABLES, DECK, INVENTORY, CAPACITIES, COMPASS
 from app.vjr.model import blank_row, with_identity, arrival_fields
 from app.core.vessel_identity import load_identity
+from app.ui import dialogs
 from app.vjr.store import VjrStore
 from app.vjr.validation import validate, validate_value
 from app.vjr.calculations import working_days, deck_values, deck_totals
@@ -135,6 +136,8 @@ class VjrPage(QWidget):
             button.setObjectName('sectionNav'); button.setCheckable(True); button.setAutoExclusive(True)
             side.addWidget(button); self.nav_buttons.append(button)
         side.addSpacing(12)
+        self.history_button = self.button('Voyage history…',self.show_voyage_history)
+        self.history_button.setToolTip('Archived voyages, newest first'); side.addWidget(self.history_button)
         self.nav_summary = QLabel(); self.nav_summary.setObjectName('navSummary'); self.nav_summary.setWordWrap(True)
         side.addWidget(self.nav_summary); side.addStretch()
         legend = QLabel('White fields are editable.\nTinted fields are linked or calculated.')
@@ -143,7 +146,7 @@ class VjrPage(QWidget):
         content = QVBoxLayout(); content.setSpacing(12); workspace.addLayout(content,1)
         self.storage_notice = QLabel(); self.storage_notice.setObjectName('storageNotice'); self.storage_notice.setWordWrap(True)
         self.storage_notice.setVisible(bool(self.store.notices or self.store.load_error))
-        self.storage_notice.setText(self.store.load_error or '\n\n'.join(self.store.notices)); content.addWidget(self.storage_notice)
+        self.storage_notice.setText(dialogs.wrap_long_tokens(self.store.load_error or '\n\n'.join(self.store.notices))); content.addWidget(self.storage_notice)
         self.errors = QLabel(); self.errors.setObjectName('validationNotice'); self.errors.setWordWrap(True); content.addWidget(self.errors)
         self.tabs = QTabWidget(); self.tabs.setObjectName('sectionPages'); self.tabs.tabBar().hide()
         self.tabs.setStyleSheet('QTabWidget::pane {border:0;}')
@@ -197,7 +200,7 @@ class VjrPage(QWidget):
         text = str(error)
         if not text.startswith(('Not saved','Could not load')):
             text = f'Not saved: {text}. Your previously saved journey is safe; your next edit retries.'
-        self.storage_notice.setText(text); self.storage_notice.show()
+        self.storage_notice.setText(dialogs.wrap_long_tokens(text)); self.storage_notice.show()
 
     def flush_save(self):
         try:
@@ -567,12 +570,25 @@ class VjrPage(QWidget):
             if error:
                 error.setText(message); error.setVisible(bool(issue))
 
+    def show_voyage_history(self):
+        from .vjr_history import VoyageHistoryDialog
+        from app.qt import exec_qt
+        self.flush_save()
+        dialog = VoyageHistoryDialog(self.store, self)
+        dialogs.exec_dialog(dialog, self)
+        if dialog.restored:
+            self.rebuild(); self.saved.setText('Voyage restored · previous journey archived as '+dialog.restored.name)
+        return dialog
+
     def new_voyage(self):
         """GDS-AUDIT-011: archive the current journey and start a fresh one."""
-        answer = QMessageBox.question(self,'Start a new voyage?',
-            'The current journey is archived (kept unchanged in the VJR archive folder) and a new, empty journey starts.\n\n'
-            'The crew and contractor lists are carried over. Undo (Ctrl+Z) restores the previous journey.')
-        if answer != QMessageBox.StandardButton.Yes:
+        current = self.store.report['departure']
+        route = ' → '.join(v for v in (current.get('departure_location'), current.get('destination')) if v) or 'the current journey'
+        if not dialogs.confirm(self, 'Start a new voyage?',
+                f'• {route} is archived unchanged (open it again from Voyage history).\n'
+                '• The crew and contractor lists are kept for the new voyage.\n'
+                '• A new, empty journey becomes the current journey.\n\n'
+                'Undo (Ctrl+Z) restores the previous journey.', 'Start new voyage'):
             return False
         try:
             archived = self.store.archive()
@@ -595,7 +611,7 @@ class VjrPage(QWidget):
             focused.clearFocus()
         report = self.report; issues = validate(report)
         if issues:
-            QMessageBox.warning(self,'VJR validation','\n'.join(issues[:20])); return
+            self.show_issues(issues); return
         name = suggested_filename(report['meta']['vessel'],report['departure']['departure_date'])
         destination,_ = QFileDialog.getSaveFileName(self,'Download VJR Excel',name,'Excel Workbook (*.xlsx)')
         if not destination:
@@ -605,4 +621,22 @@ class VjrPage(QWidget):
         try:
             VjrExcelExporter(photo_root=self.photo_controller.storage.root).export(report,destination); self.saved.setText('Saved · Excel downloaded')
         except (ExcelExportError,OSError,ValueError) as error:
-            QMessageBox.warning(self,'VJR Excel export',str(error))
+            dialogs.notify(self,'Excel file not created','The VJR Excel file was not created. Your journey data is safe and unchanged.\n\n'
+                           'If the file is open in Excel, close it and try again, or choose another folder.',details=f'{error}\n\nDestination: {destination}')
+
+    SECTION_OF = dict(meta=0, crew=1, contractors=2, waypoints=3, departure=4, arrival=5, progress=6)
+    SECTION_NAMES = ('Report information','Core crew','Contractors','Waypoint plan','Departure report','Arrival report','Voyage progress')
+
+    def show_issues(self, issues):
+        """Validation issues grouped by VJR section, each with one Go action (scrollable, fixed footer)."""
+        import re as _re
+        grouped = {}
+        for issue in issues:
+            key = _re.match(r'[a-z_]+', issue); section = self.SECTION_OF.get(key.group(0) if key else '', 0)
+            grouped.setdefault(section, []).append(issue.split(': ', 1)[-1])
+        groups = [dict(title=self.SECTION_NAMES[s], items=grouped[s], action='Go to '+self.SECTION_NAMES[s],
+                       callback=lambda s=s: self.tabs.setCurrentIndex(s)) for s in sorted(grouped)]
+        dialog = dialogs.IssuesDialog(self, 'Complete these items before downloading Excel',
+            f'{len(issues)} item(s) must be corrected. Your journey is saved; nothing has been exported.', groups)
+        dialogs.exec_dialog(dialog, self)
+        return dialog

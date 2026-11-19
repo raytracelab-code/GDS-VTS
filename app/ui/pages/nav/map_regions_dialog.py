@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 from app.qt.QtCore import QProcess,Qt
 from app.qt.QtWidgets import QDialog,QVBoxLayout,QHBoxLayout,QLabel,QTreeWidget,QTreeWidgetItem,QPushButton,QMessageBox
+from app.ui import dialogs
 from app.nav.offline_maps.manager import PackageManager,MapPackageError
 from app.nav.offline_maps.regions import cache_root
 
@@ -30,6 +31,7 @@ class MapRegionsDialog(QDialog):
         self.buttons=[]
         for caption,callback in [('Install / update',self.install),('Enable',lambda:self.toggle(True)),('Disable',lambda:self.toggle(False)),('Rollback',self.rollback),('Remove',self.remove),('Check for map updates',self.check_updates)]:
             button=QPushButton(caption);button.clicked.connect(callback);bar.addWidget(button);self.buttons.append(button)
+        bar.addStretch();self.close_button=QPushButton('Close');self.close_button.clicked.connect(self.reject);bar.addWidget(self.close_button)
         self.process=QProcess(self);self.process.setProcessChannelMode(QProcess.ProcessChannelMode.MergedChannels)
         self.process.readyReadStandardOutput.connect(self.output);self.process.finished.connect(self.finished)
         self.process.errorOccurred.connect(lambda _:self.finished(1))
@@ -100,12 +102,13 @@ class MapRegionsDialog(QDialog):
             if self.changed:self.changed()
         except (MapPackageError,OSError) as error:
             if self.changed:self.changed()
-            QMessageBox.warning(self,'Offline map regions',str(error))
+            dialogs.notify(self,'Offline map regions','The map region operation did not complete. Installed regions are unchanged.',details=str(error))
 
     def toggle(self,enabled):self.mutate(lambda key:self.manager.set_region_enabled(key,enabled))
     def rollback(self):self.mutate(self.manager.rollback_region)
     def remove(self):
-        if self.key() and QMessageBox.question(self,'Remove regional map','Remove this installed region and its previous revision?')==QMessageBox.StandardButton.Yes:
+        if self.key() and dialogs.confirm(self,'Remove this map region?','The installed region and its previous revision are deleted from this computer. '
+                                          'You can install it again later.','Remove region',destructive=True):
             self.mutate(self.manager.remove_region)
 
     def closeEvent(self,event):

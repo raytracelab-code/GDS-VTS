@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
         identity_panel=getattr(self.configure,'identity',None)
         if identity_panel is not None: identity_panel.identityChanged.connect(self._identity_changed)
         self.timer=QTimer(self); self.timer.timeout.connect(self.refresh); self.timer.start(500)
-        self.event_timer=QTimer(self); self.event_timer.timeout.connect(self.squall_event_service.evaluate_time); self.event_timer.timeout.connect(lambda:self.nav._update_events(self.nav.bridge.getEventState())); self.event_timer.start(1000)
+        self.event_timer=QTimer(self); self.event_timer.timeout.connect(self.squall_event_service.evaluate_time); self.event_timer.timeout.connect(lambda:self.nav._update_events(self.nav.bridge.getEventState())); self.event_timer.timeout.connect(lambda:self.nav.bridge.publishEventState()); self.event_timer.start(1000)
     def _identity_changed(self,_identity):
         # VDR/VJR read Configure on every refresh; repaint them so no stale identity is shown.
         for page,method in ((self.vdr,'refresh_values'),(self.vjr,'refresh')):
@@ -35,6 +35,13 @@ class MainWindow(QMainWindow):
         # VDR, VJR and NAV carry their own title bars; the global header is shown on Configure only.
         self.header.setVisible(name=='Configure')
         self.stack.setCurrentIndex({'Configure':0,'VDR':1,'VJR':2,'Nav':3}[name])
+    def showEvent(self,event):
+        super().showEvent(event)
+        if not getattr(self,'_placed',False):
+            # First show: keep the whole window on a connected screen and inside its usable area (taskbar excluded).
+            self._placed=True
+            from app.ui.dialogs import ensure_visible_window
+            if not self.isMaximized() and not self.isFullScreen(): ensure_visible_window(self)
     def closeEvent(self,event):
         self.timer.stop();self.event_timer.stop()
         # Release COM ports / BLE links so a relaunch never finds the port held by this process.
@@ -49,3 +56,6 @@ class MainWindow(QMainWindow):
     def ingest_squall_json(self,text): return self.squall_event_service.ingest_json(text)
     def refresh(self):
         self.state.tick(); self.configure.refresh(); self.nav.refresh(); status=self.state.telemetry_status; self.header.status.setText(f'●  {status.value}' + (f' · {self.state.active_source.value}' if self.state.active_source else '')); self.app_state.observe_status(status); self.tabs.set_locked(self.app_state.modules_unlocked)
+        # GDS-AUDIT-021: a squall alert is visible from every page through the NAV rail button.
+        level=getattr(self.nav,'squall_alert_level','')
+        if level: self.tabs.buttons['Nav'].setText('NAV ⚠'); self.tabs.buttons['Nav'].setToolTip(f'NAV — squall {level.lower()} alert')

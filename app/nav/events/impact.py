@@ -34,6 +34,22 @@ def site_polygons(state):
   if geometry['type']=='Polygon':result.append(geometry['coordinates'])
   elif geometry['type']=='MultiPolygon':result.extend(geometry['coordinates'])
  return result
+def distance_nm(lat1,lon1,lat2,lon2):
+ """Great-circle distance in nautical miles."""
+ from math import asin,cos,radians,sin,sqrt
+ p1,p2=radians(lat1),radians(lat2);dp,dl=p2-p1,radians(lon2-lon1)
+ return 2*3440.065*asin(sqrt(sin(dp/2)**2+cos(p1)*cos(p2)*sin(dl/2)**2))
+def evaluate_vessel(event,position):
+ """GDS-AUDIT-021: judge the event against the own vessel's last known position.
+ IMPACT when the vessel is within the impact radius of the current or any predicted position,
+ SURVEILLANCE when within the surveillance radius. NONE without a position (never invented)."""
+ if not position or position[0] is None or position[1] is None:return ImpactState.NONE
+ lat,lon=position
+ points=[(event.latitude,event.longitude)]+[(p.latitude,p.longitude) for p in event.predicted_path]
+ nearest=min(distance_nm(lat,lon,a,b) for a,b in points)
+ if event.impact_radius_nm and nearest<=event.impact_radius_nm:return ImpactState.IMPACT
+ if event.surveillance_radius_nm and distance_nm(lat,lon,event.latitude,event.longitude)<=event.surveillance_radius_nm:return ImpactState.SURVEILLANCE
+ return ImpactState.NONE
 def evaluate(event,site_boundary):
  """Accept normalized SpatialState or legacy Polygon coordinate arrays."""
  polygons=site_polygons(site_boundary) if hasattr(site_boundary,'collections') or site_boundary is None else ([site_boundary] if site_boundary and isinstance(site_boundary[0][0][0],(int,float)) else site_boundary)

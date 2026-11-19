@@ -80,7 +80,10 @@ def export_pdf(report, path):
             values.append(['No entries'] + ['']*(len(headers)-1))
         result = Table([[paragraph(v) for v in row] for row in values],
                        colWidths=[width*v/sum(widths) for v in widths] if widths else None,
-                       repeatRows=1 if headers else 0, hAlign='LEFT')
+                       repeatRows=1 if headers else 0, hAlign='LEFT',
+                       # GDS-AUDIT-009: a row taller than the remaining page continues on the next
+                       # page (cell text split between lines) and the header row repeats.
+                       splitInRow=1)
         styles = [('GRID', (0, 0), (-1, -1), .4, colors.HexColor('#D6D6D6')),
                   ('VALIGN', (0, 0), (-1, -1), 'TOP'), ('LEFTPADDING', (0, 0), (-1, -1), 5),
                   ('RIGHTPADDING', (0, 0), (-1, -1), 5), ('TOPPADDING', (0, 0), (-1, -1), 5),
@@ -132,10 +135,10 @@ def export_pdf(report, path):
     section('6 · Core crew · Tour of duty')
     catalogs = json.loads((ASSETS/'catalogs.json').read_text(encoding='utf-8'))
     countries = {v:k for k,v in catalogs['countryCodes'].items()}
-    table(['#', 'Name', 'Rank', 'Nationality', 'Age', 'IC / Passport', 'Sign-on', 'Days'],
+    table(['#', 'Name', 'Rank', 'Nationality', 'Age', 'IC / Passport', 'Sign-on', 'Days', 'Comments'],
           [[str(i+1), r['name'], r['rank'], countries.get(r['nat'], r['nat']), r['age'], r['ic'], r['signon'],
-            str(tour_days(r['signon'], m['date']) or '')] for i,r in enumerate(report['crew']) if r['name'].strip()],
-          [.4, 1.8, 1.3, 1.2, .5, 1.4, 1.3, .5])
+            str(tour_days(r['signon'], m['date']) or ''), r['comments']] for i,r in enumerate(report['crew']) if r['name'].strip()],
+          [.4, 1.6, 1.2, 1.1, .5, 1.3, 1.2, .5, 1.8])
     section('7 · Contractors')
     table(['#', 'Name', 'Vendor', 'Nationality', 'Age', 'IC / Passport'],
           [[str(i+1), r['name'], r['vendor'], countries.get(r['nat'], r['nat']), r['age'], r['ic']]
