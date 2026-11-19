@@ -1,0 +1,31 @@
+{
+  "xlsx_reopened": true,
+  "sheets": [
+    "GDS Meta",
+    "VDR GUIDE",
+    "VDR",
+    "CORE-CREW",
+    "CONTRACTORS",
+    "FLEET MANAGEMENT"
+  ],
+  "captain_cell": "VDR!J12",
+  "vdr_guide_byte_identical": true,
+  "nonworksheet_parts_byte_identical": 33,
+  "stale_configured_vessel_cleared": true,
+  "ref_errors": 0,
+  "source_and_packaged_template_sha256": "94b92a23932300dd7795cbe86a11fdec4ce3b6e2158df259994dea98d2521161",
+  "pdf_reimported": true,
+  "pdf_finalized": true,
+  "pdf_validation_errors": 0,
+  "pdf_pages": 6,
+  "files": {
+    "packaged-vdr.xlsx": {
+      "bytes": 135745,
+      "sha256": "e5d1a51fe56b8544fe230cd04a52fcbafd075b2c39317e87bc945b152ecfea64"
+    },
+    "packaged-vdr.pdf": {
+      "bytes": 45435,
+      "sha256": "0f77e9305a07183711cda9aaaf11efd467dfba97526cf11603e60375edaf9e80"
+    }
+  }
+}

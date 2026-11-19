@@ -13,7 +13,7 @@ class RedactedStream:
         text=str(text)
         for key,value in os.environ.items():
             if value and (key=='USERPROFILE' or any(word in key.upper() for word in ('TOKEN','PASSWORD','SECRET','API_KEY'))):
-                text=text.replace(value,'[redacted]')
+                text=text.replace(value,'[redacted]').replace(value.replace('\\','/'),'[redacted]')
         text=re.sub(r'(https?://[^\s?]+)\?[^\s]+',r'\1?[redacted]',text)
         return self.stream.write(text)
     def flush(self):self.stream.flush()
@@ -28,6 +28,7 @@ try:
         if old.exists():old.unlink()
         target.replace(old)
     raw=target.open('a',encoding='utf-8',buffering=1)
+    faulthandler.enable(file=raw)
     sys.stdout=sys.stderr=RedactedStream(raw)
     print('GDS VTS frozen startup; Python '+sys.version.split()[0])
     def uncaught(kind,value,tb):

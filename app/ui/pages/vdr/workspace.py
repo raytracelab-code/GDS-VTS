@@ -1,5 +1,6 @@
 """VDR workspace controller. One Python store backs every section and export."""
 from app.core.compat import remove_suffix
+from app.qt import exec_qt
 from datetime import date, timedelta
 from pathlib import Path
 from app.qt.QtCore import QDate, QEvent, QEasingCurve, QPropertyAnimation, QSettings, QStandardPaths, Qt, QTimer
@@ -363,7 +364,7 @@ class VdrPage(QWidget, Sections):
             def go(checked=False, section=error['s']):
                 dialog.accept(); self.go_section(section)
             rl.addWidget(button('Go', go)); cl.addWidget(row)
-        cl.addStretch(); scroll.setWidget(contents); layout.addWidget(scroll); layout.addWidget(button('Close', dialog.reject)); dialog.exec()
+        cl.addStretch(); scroll.setWidget(contents); layout.addWidget(scroll); layout.addWidget(button('Close', dialog.reject)); exec_qt(dialog)
 
     def download(self):
         if not self.report['finalized']:

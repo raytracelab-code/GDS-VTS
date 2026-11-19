@@ -5,7 +5,11 @@ $ErrorActionPreference='Stop'
 $failures=New-Object System.Collections.Generic.List[string]
 $os=Get-WmiObject Win32_OperatingSystem
 $version=[version]$os.Version
-if (-not [Environment]::Is64BitOperatingSystem) { $failures.Add('64-bit Windows is required.') }
+$nativeArchitecture=$env:PROCESSOR_ARCHITEW6432
+if (-not $nativeArchitecture) { $nativeArchitecture=$env:PROCESSOR_ARCHITECTURE }
+# Windows 7's stock PowerShell can use .NET 2, which has no
+# Environment.Is64BitOperatingSystem property.
+if ($nativeArchitecture -ne 'AMD64') { $failures.Add('Windows x64 (AMD64) is required.') }
 if ($version -lt [version]'6.1' -or ($version.Major -eq 6 -and $version.Minor -eq 1 -and $os.ServicePackMajorVersion -lt 1)) {
     $failures.Add('Windows 7 SP1 or later is required.')
 }
@@ -42,4 +46,4 @@ if ($failures.Count) {
     exit 1
 }
 Write-Host 'Basic Windows prerequisites detected. This check does not certify OS runtime compatibility.'
-if ($Launch) { Start-Process -FilePath (Join-Path $PSScriptRoot 'GDS VTS.exe') -WorkingDirectory $PSScriptRoot -WindowStyle Hidden }
+if ($Launch) { Start-Process -FilePath (Join-Path $PSScriptRoot 'GDS VTS.exe') -WorkingDirectory $PSScriptRoot }

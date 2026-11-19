@@ -1,0 +1,21 @@
+ app/nav/legacy_resources.py                       |   16 +-
+ app/nav/maritime/adapters/overpass.py             |    7 +
+ app/nav/maritime/runtime.py                       |    4 +-
+ app/qt/__init__.py                                |   20 +-
+ app/ui/main_window.py                             |    1 +
+ app/ui/pages/nav/floating_controls.py             |   21 +-
+ app/ui/pages/nav/nav_page.py                      |   48 +-
+ app/ui/pages/vdr/date_picker.py                   |    4 +-
+ app/ui/pages/vdr/workspace.py                     |    3 +-
+ docs/evidence/windows-compatibility/pe-audit.json | 5003 +++++++++++----------
+ docs/windows-compatibility.md                     |   28 +-
+ gds_vts.spec                                      |    6 +-
+ gds_vts_win7.spec                                 |    6 +-
+ main.py                                           |   31 +-
+ packaging/startup_log.py                          |    3 +-
+ scripts/Check-WindowsPrerequisites.ps1            |    8 +-
+ scripts/build_windows_compat.ps1                  |    2 +
+ tests/offline_webengine_probe.py                  |   32 +-
+ tests/test_windows_compatibility.py               |   62 +
+ tools/windows/audit_distribution.py               |   11 +-
+ 20 files changed, 2770 insertions(+), 2546 deletions(-)

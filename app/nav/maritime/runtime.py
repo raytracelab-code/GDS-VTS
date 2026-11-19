@@ -210,10 +210,10 @@ class MaritimeRuntime(QObject):
         self.service.set_source(key, state, error=error, cached=cached, success=error is None and not cached)
         log.info('MARITIME SOURCE %s %s objects=%s error=%s', key.upper(), state,sum(o.source==key for o in self.service.render_snapshot()),error or 'NONE')
 
-    def close(self):
+    def close(self,wait=False):
         self._closed = True; self.timer.stop()
         if self.aisstream:self.aisstream.stop()
         if self.malaysia_gis:self.malaysia_gis.stop()
         for adapter in self.adapters.values():
             adapter.stop()
-        self.executor.shutdown(wait=False, cancel_futures=True)
+        self.executor.shutdown(wait=wait, cancel_futures=True)

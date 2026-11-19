@@ -1,7 +1,11 @@
 # Build with: pyinstaller gds_vts.spec
 from PyInstaller.utils.hooks import collect_submodules
+from pathlib import Path
+root=Path(SPECPATH)
+gis_data=[(str(p),str(p.parent.relative_to(root))) for p in (root/'data/maritime/malaysia').rglob('*')
+          if p.is_file() and p.suffix in ('.geojson','.json') and not p.name.startswith('._') and '__MACOSX' not in p.parts]
 
-a = Analysis(['main.py'], pathex=[], binaries=[], datas=[('app/resources', 'app/resources')],
+a = Analysis(['main.py'], pathex=[], binaries=[], datas=[('app/resources', 'app/resources')]+gis_data,
              hiddenimports=collect_submodules('openpyxl')+['PySide6.'+n for n in ('QtCore','QtGui','QtWidgets','QtSvg','QtSvgWidgets','QtWebChannel','QtWebEngineCore','QtWebEngineWidgets')]+['shiboken6'], hookspath=[], hooksconfig={}, runtime_hooks=['packaging/startup_log.py'], excludes=['PySide2','shiboken2'])
 pyz = PYZ(a.pure)
 exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name='GDS VTS', debug=False,

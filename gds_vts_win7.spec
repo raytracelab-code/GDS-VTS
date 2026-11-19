@@ -7,12 +7,16 @@ from PyInstaller.building.datastruct import TOC
 if sys.version_info[:3] != (3,8,10) or struct.calcsize('P') != 8:
     raise RuntimeError('Use CPython 3.8.10 AMD64 in .venv-win7')
 root=Path(SPECPATH)
+gis=root/'data/maritime/malaysia'
+gis_data=[(str(p),str(p.parent.relative_to(root))) for p in gis.rglob('*')
+          if p.is_file() and p.suffix in ('.geojson','.json') and not p.name.startswith('._') and '__MACOSX' not in p.parts]
 import shapely
 libs=Path(shapely.__file__).parent.parent/'shapely.libs'
 binaries=[(str(path),'shapely.libs') for path in libs.glob('*.dll')]
 hidden=['PySide2.'+name for name in ('QtCore','QtGui','QtWidgets','QtSvg','QtWebChannel','QtWebEngine','QtWebEngineCore','QtWebEngineWidgets')]
 hidden+=['shiboken2','shapely._geos']+collect_submodules('openpyxl')
-a=Analysis(['main.py'],pathex=[str(root)],binaries=binaries,datas=[('app/resources','app/resources')],
+a=Analysis(['main.py'],pathex=[str(root)],binaries=binaries,
+ datas=[('app/resources','app/resources')]+gis_data,
  hiddenimports=hidden,hookspath=[],runtime_hooks=['packaging/startup_log.py'],
  excludes=['PySide6','shiboken6','copernicusmarine','xarray','pandas','pytest','tkinter','matplotlib'])
 # Never inherit the build host's newer VC runtime (14.50 imports Win8+ APIs).

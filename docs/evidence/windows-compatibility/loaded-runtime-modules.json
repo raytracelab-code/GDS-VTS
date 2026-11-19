@@ -1,0 +1,167 @@
+[
+    {
+        "Module":  "python38.dll",
+        "Version":  "3.8.10",
+        "Bundled":  true
+    },
+    {
+        "Module":  "python3.DLL",
+        "Version":  "3.8.10",
+        "Bundled":  true
+    },
+    {
+        "Module":  "shiboken2.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "shiboken2.abi3.dll",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtCore.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "pyside2.abi3.dll",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Core.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Qml.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Network.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtGui.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Gui.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtWidgets.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Widgets.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtSvg.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Svg.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtWebChannel.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5WebChannel.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtWebEngine.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5WebEngine.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Quick.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5WebEngineCore.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5QmlModels.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Positioning.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtWebEngineWidgets.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5WebEngineWidgets.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5QuickWidgets.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5PrintSupport.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtNetwork.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtWebEngineCore.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "QtPrintSupport.pyd",
+        "Version":  null,
+        "Bundled":  true
+    },
+    {
+        "Module":  "Qt5Pdf.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "qtga.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    },
+    {
+        "Module":  "qtiff.dll",
+        "Version":  "5.15.2.0",
+        "Bundled":  true
+    }
+]

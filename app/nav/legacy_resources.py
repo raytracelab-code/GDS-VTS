@@ -21,10 +21,13 @@ class LegacyResourceServer:
         resource=QFile(':/qtwebchannel/qwebchannel.js')
         if not resource.open(QIODevice.OpenModeFlag.ReadOnly):
             raise RuntimeError('Qt WebChannel JavaScript resource is unavailable')
-        self.webchannel=bytes(resource.readAll());resource.close()
+        from .legacy_bridge import browser_adapter
+        self.webchannel=bytes(resource.readAll())+browser_adapter();resource.close()
         self.token = secrets.token_urlsafe(24)
         owner = self
         class Request(BaseHTTPRequestHandler):
+            def setup(self):
+                super().setup();self.connection.settimeout(5)
             def log_message(self, *args):
                 pass
 
@@ -47,9 +50,9 @@ class LegacyResourceServer:
                 self.send_header('Cache-Control','no-store')
                 self.end_headers()
                 try:self.wfile.write(payload)
-                except (BrokenPipeError,ConnectionResetError):pass
+                except (BrokenPipeError,ConnectionResetError,TimeoutError):pass
         self.server = ThreadingHTTPServer(('127.0.0.1',0),Request)
-        self.server.daemon_threads = True
+        self.server.daemon_threads = False
         self.authority = '127.0.0.1:'+str(self.server.server_port)
         self.origin = 'http://'+self.authority
         self.base = self.origin+'/'+self.token+'/'
@@ -102,6 +105,13 @@ if(!Array.prototype.at)Object.defineProperty(Array.prototype,'at',{value:functio
 if(!Object.hasOwn)Object.hasOwn=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
 })();</script>'''.replace('BASE',json.dumps(self.base))
         return payload.replace(b'<head>',b'<head>'+script.encode('utf-8'),1)
+
+    def browser_config(self,value):
+        """Normalize bridge URLs too: MapLibre workers have a separate Fetch."""
+        if isinstance(value,str):return self.base+value[6:] if value.startswith('gds://') else value
+        if isinstance(value,dict):return {key:self.browser_config(item) for key,item in value.items()}
+        if isinstance(value,(list,tuple)):return [self.browser_config(item) for item in value]
+        return value
 
     def close(self):
         self.server.shutdown();self.server.server_close();self.thread.join(timeout=2)

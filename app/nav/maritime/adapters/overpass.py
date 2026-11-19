@@ -106,6 +106,8 @@ def geometry(element):
 class OverpassAdapter(SourceAdapter):
     def __init__(self,config,fallbacks=(),clock=time.monotonic):
         self.config=config;self.clock=clock;self._cooldown={};self._preferred=config.endpoint
+        from threading import Event
+        self._stopped=Event()
         self.endpoints=list(dict.fromkeys([config.endpoint]+list(fallbacks)[:2]))
         for endpoint in self.endpoints:query_url(endpoint,{})
     def fetch(self,area):
@@ -114,6 +116,7 @@ class OverpassAdapter(SourceAdapter):
         if not available:raise ProviderRequestError('PROVIDER BACKOFF',min(self._cooldown.values())-now)
         last=None
         for endpoint in available[:2]:
+            if self._stopped.is_set():raise ProviderRequestError('DISABLED')
             try:
                 payload=request_json(endpoint,data=urlencode({'data':query(area)}).encode(),headers={'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'})
                 objects=self.normalize(payload,area);self._preferred=endpoint
@@ -123,6 +126,10 @@ class OverpassAdapter(SourceAdapter):
                 # Respect explicit rate limiting; do not evade 429 by hopping hosts.
                 if error.state in ('HTTP 400','HTTP 401','HTTP 403','HTTP 429'):raise
         raise last
+    def stop(self):
+        # A closing application must not start a second network request after
+        # an in-flight request returns. Existing I/O keeps its finite timeout.
+        self._stopped.set()
     def normalize(self,payload,area):
         if not isinstance(payload,dict) or not isinstance(payload.get('elements'),list) or payload.get('remark'):
             raise MaritimeDataError('invalid or incomplete Overpass response')

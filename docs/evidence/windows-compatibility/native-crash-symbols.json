@@ -1,0 +1,7 @@
+{
+  "source": "Official matching CPython 3.8.10 AMD64 core_pdb.msi",
+  "python38.dll+0x90247": "dict_traverse",
+  "python38.dll+0x67b75": "subtype_dealloc",
+  "python38.dll+0xb4053": "func_dealloc",
+  "boundary": "Native Qt5 WebChannel dictionary transport; raw dumps are not shipped."
+}

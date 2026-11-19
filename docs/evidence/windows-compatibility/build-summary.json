@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-19",
+  "host": "Windows 11 Home x64 10.0.26200",
+  "source_snapshot": "7aa95eed6b371f4c28e47e4d237b8beefba878bb",
+  "build_python": "3.8.10 AMD64",
+  "binding": "PySide2 5.15.2.1",
+  "qt_runtime": "5.15.2",
+  "qt_webengine_dll_version": "5.15.2.0",
+  "pyinstaller": "4.10",
+  "pyqt5": null,
+  "pyqtwebengine": null,
+  "exe": "dist/GDS VTS/GDS VTS.exe",
+  "exe_bytes": 6219921,
+  "exe_sha256": "afd6556e65c68f5a4aa00539fb2d25dfccb599b9d260c628933ed34348411546",
+  "distribution_requires_entire_folder": true,
+  "normal_pytest": "653 passed in 209.02s",
+  "legacy_pytest": "652 passed, 1 skipped in 343.50s",
+  "final_cycles": {
+    "source-default-network-failure": {
+      "cycles": 10,
+      "all_exit_zero": true
+    },
+    "packaged-default-network-failure": {
+      "cycles": 10,
+      "all_exit_zero": true
+    },
+    "source-default": {
+      "cycles": 3,
+      "all_exit_zero": true
+    }
+  },
+  "minimal_cycles": 30,
+  "compileall_normal": "PASS",
+  "compileall_legacy": "PASS",
+  "commits_created": false
+}

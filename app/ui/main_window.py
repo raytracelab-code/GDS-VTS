@@ -28,6 +28,7 @@ class MainWindow(QMainWindow):
         self.header.setVisible(name not in ('Nav','VDR'))
         self.stack.setCurrentIndex({'Configure':0,'VDR':1,'VJR':2,'Nav':3}[name])
     def closeEvent(self,event):
+        self.timer.stop();self.event_timer.stop()
         self.maritime_runtime.close()
         super().closeEvent(event)
     def ingest_squall_event(self,payload): return self.squall_event_service.ingest_mapping(payload)

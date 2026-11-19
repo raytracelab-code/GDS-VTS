@@ -1,0 +1,16 @@
+[
+  {
+    "cycle": 1,
+    "pid": 25712,
+    "exit_code": 0,
+    "timeout": false,
+    "seconds": 43.72
+  },
+  {
+    "cycle": 2,
+    "pid": 13288,
+    "exit_code": 3221225477,
+    "timeout": false,
+    "seconds": 15.03
+  }
+]

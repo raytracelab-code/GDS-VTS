@@ -1,6 +1,7 @@
 from pathlib import Path
 import logging
 from app.qt.QtCore import QUrl,QSettings,QTimer,Qt
+from app.qt import exec_qt
 from app.qt.QtGui import QColor
 from app.qt.QtWidgets import QSizePolicy,QComboBox
 from app.qt.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QGridLayout,QLabel,QPushButton,QFrame,QCheckBox,QFileDialog,QMessageBox,QScrollArea
@@ -23,7 +24,26 @@ from app.nav.maritime.render_state import LAYER_GROUPS, GIS_GROUPS, GIS_DEFAULTS
 log=logging.getLogger(__name__)
 class NavMapPage(QWebEnginePage):
  def javaScriptConsoleMessage(self,l,m,line,s): print(f'NAV JS [{l}] {s}:{line} {m}',flush=True)
-class NavPage(FloatingControls,QWidget):
+class NavPage(QWidget,FloatingControls):
+ # Keep the native QObject base first for Shiboken's object layout. Explicitly
+ # delegate the mixin's virtuals, which QWidget would otherwise shadow.
+ resizeEvent=FloatingControls.resizeEvent
+ eventFilter=FloatingControls.eventFilter
+ def shutdown_webengine(self):
+  """Destroy pages before their profile while QApplication is still alive."""
+  if getattr(self,'_web_closed',False):return
+  self._web_closed=True
+  from app.qt.QtCore import QCoreApplication,QEvent
+  for timer in self.findChildren(QTimer):timer.stop()
+  if self.squall_event_service is not None:self.squall_event_service.remove_listener(self._on_squall_event_state_changed)
+  self.web.stop()
+  page=self.web.page();page.setWebChannel(None)
+  self.web_profile.removeAllUrlSchemeHandlers()
+  self._gds_scheme_handler.close()
+  # deleteLater after app.exec returns otherwise never reaches a running loop.
+  # Drain only deferred destruction; do not dispatch new network/UI callbacks.
+  for obj in (page,self.web,self.web_profile):
+   obj.deleteLater();QCoreApplication.sendPostedEvents(None,QEvent.DeferredDelete)
  def __init__(self,state,squall_event_service=None,maritime_runtime=None):
   self.maritime_runtime=maritime_runtime
   print('NAVPY 1: entered',flush=True)
@@ -39,7 +59,7 @@ class NavPage(FloatingControls,QWidget):
   settings.setAttribute(a.JavascriptEnabled,True);settings.setAttribute(a.WebGLEnabled,True)
   self._gds_scheme_handler=GdsMapSchemeHandler(self.web)
   self.web_profile.installUrlSchemeHandler(b'gds',self._gds_scheme_handler)
-  self.bridge=MapBridge(self.squall_event_service,maritime_service=maritime_runtime.service if maritime_runtime else None)
+  self.bridge=MapBridge(self.squall_event_service,parent=self.web.page(),maritime_service=maritime_runtime.service if maritime_runtime else None)
   self.trackbar=QLabel('TRACK IDLE')
   self._init_floating()
   if self.squall_event_service is not None:
@@ -47,7 +67,16 @@ class NavPage(FloatingControls,QWidget):
     self._on_squall_event_state_changed
    )
   self.spatial.spatialStateChanged.connect(self.bridge.spatialStateChanged);self.spatial.selectedSpatialFeatureChanged.connect(self.bridge.selectedSpatialFeatureChanged);self.spatial.selectedSpatialFeatureChanged.connect(self._show_feature_info);self.bridge.spatialFeatureClicked.connect(self._select_spatial_feature);self.bridge.spatialViewChanged.connect(self._set_spatial_view_hint)
-  channel=QWebChannel(self.web.page());channel.registerObject('bridge',self.bridge);self.web.page().setWebChannel(channel)
+  # Retain both wrappers for the lifetime of the page. In Qt5 the channel's
+  # registered Python meta-object must not outlive its Python binding wrapper.
+  self.web_channel=QWebChannel(self.web.page())
+  from app.qt import LEGACY
+  self.web_bridge=self.bridge
+  if LEGACY:
+   from app.nav.legacy_bridge import LegacyWebBridge
+   self.web_bridge=LegacyWebBridge(self.bridge,self.web.page())
+  self.web_channel.registerObject('bridge',self.web_bridge)
+  self.web.page().setWebChannel(self.web_channel)
   self.web.loadFinished.connect(self._map_loaded)
   from app.qt import LEGACY
   if LEGACY:
@@ -60,7 +89,7 @@ class NavPage(FloatingControls,QWidget):
   self._setup_offline_maps()
  def _setup_offline_maps(self):
   from app.nav.offline_maps.controller import PaletteController
-  self.bridge.offline_config=self._gds_scheme_handler.config
+  self.bridge.offline_config=self._browser_map_config(self._gds_scheme_handler.config)
   self.bridge.offline_config['map_view']='MARINE' if self.bridge.offline_config.get('preferred_source')=='online' else QSettings('GDS','VTS').value('nav/map_view','MARINE')
   self.bridge.basemapStateChanged.connect(self._basemap_state_changed)
   self.palette=PaletteController(self.state,self)
@@ -88,11 +117,16 @@ class NavPage(FloatingControls,QWidget):
  def _map_regions(self):
   from .map_regions_dialog import MapRegionsDialog
   def changed():
-   config=self._gds_scheme_handler.reload_packages();self.bridge.offline_config=config
+   config=self._browser_map_config(self._gds_scheme_handler.reload_packages());self.bridge.offline_config=config
    self.bridge.offlineConfigChanged.emit(config)
-  MapRegionsDialog(self,changed=changed,release=self._gds_scheme_handler.regional.pause).exec()
+  exec_qt(MapRegionsDialog(self,changed=changed,release=self._gds_scheme_handler.regional.pause))
+ def _browser_map_config(self,config):
+  server=getattr(self._gds_scheme_handler,'_legacy_server',None)
+  return server.browser_config(config) if server else config
  def showEvent(self,event):
   super().showEvent(event)
+  from app.qt import LEGACY
+  if LEGACY and getattr(self,'_floating',False):QTimer.singleShot(0,self._install_local_input_filters)
   if hasattr(self,'web'):QTimer.singleShot(0,lambda:self.web.page().runJavaScript('window.navMap&&navMap.resize()'))
  def _palette_changed(self,payload):
   self.bridge.palette_state=payload;self.bridge.paletteChanged.emit(payload)
@@ -239,7 +273,7 @@ class NavPage(FloatingControls,QWidget):
    for mode in ('2D','3D'):self.control_buttons[mode].setChecked(mode==name)
   if name=='VESSEL CONFIG':
    d=VesselConfigDialog(self.config,self)
-   if d.exec(): d.apply()
+   if exec_qt(d): d.apply()
   elif name=='FOLLOW':
    enabled=self.follow.toggle();self.follow_button.setChecked(enabled);self.follow_button.setToolTip('Follow vessel · '+('On' if enabled else 'Off'));self.web.page().runJavaScript(f'window.navMap&&navMap.setFollow({str(enabled).lower()})')
    if hasattr(self,'palette'):self.palette.update(follow=enabled)

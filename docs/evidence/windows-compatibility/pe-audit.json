@@ -1,2502 +1,2503 @@
-{
-  "warning": "Static inspection cannot prove Windows 7 compatibility; real-OS tests required.",
-  "pe_files": [
-    {
-      "path": "_asyncio.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6e25aa5931f175b971dfd05aab7a24cef29edd8f4b524341c414d0577c07a200",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_bz2.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ce4ef8ed1e72c1d3a6082d500a17a009eb6e8ed15022bf3b68a22291858feced",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_ctypes.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "820e840759eed12e19f3c485fd819b065b49d9dc704ae3599a63077416d63324",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_decimal.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "30eea56a4d1dd78f9d65fcb6168ab189cfa8098c38aad47ee770756a056749ca",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_elementtree.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "00d68d3879ab410601e7e8fb2348d4995cec2ee78b3a07ea59520d35f9953bb4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_hashlib.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a30cf1a40e0b09610e34be187f1396ac5a44dcfb27bc7ff9b450d1318b694c1b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_lzma.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "9209ccc60115727b192bf7771551040ca6fdd50f9bf8c3d2eacbfd424e8245e4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_multiprocessing.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "54c28dcf2f2a72fc854f49c76fb021bbf2b53675fe5b5ed021c61efe9467197b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_overlapped.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5f92c163b9fe6abb0f8b106a972f6a86f84271b2e32c67f95737387c85719837",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_queue.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "67e4e888559ea2c62ff267b58d7a7e95c2ec361703b5aa232aa8b2a1f96a2051",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_socket.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "87832a3b89e2ada8f704a8f066013660d591d9ce01ce901cc57a3b973f0858ba",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_sqlite3.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "9ae23d679a929d47b252ce14c9b2763a2913bbf17b0f52a8fd4b47aba0def0a2",
-      "modern_api_imports": []
-    },
-    {
-      "path": "_ssl.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0a721fc230eca278a69a2006e13dfa00e698274281378d4df35227e1f68ea3e0",
-      "modern_api_imports": []
-    },
-    {
-      "path": "bleak_winrt\\_winrt.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "cf7eaca4a6fd9ac116c2bb7a8f2a8b841b0b12b93accf67e0dadd8d3f4f3a7c5",
-      "modern_api_imports": []
-    },
-    {
-      "path": "d3dcompiler_47.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "8c88c162010a8d6b80f2c0433d4ce973ce626afcbc8da5be68bfa2ba68341eba",
-      "modern_api_imports": []
-    },
-    {
-      "path": "GDS VTS.exe",
-      "machine": "0x8664",
-      "subsystem_version": [
-        5,
-        2
-      ],
-      "sha256": "d6fef0fb49305e0fff8b87806cab71385e1bba7e7d4f1675ef9d8de4b5140d24",
-      "modern_api_imports": []
-    },
-    {
-      "path": "google\\_upb\\_message.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        5,
-        2
-      ],
-      "sha256": "2f35163a35aa5bd7a80f7cf4e78ba4c526e6dc4dcdea153a845ef139896728f2",
-      "modern_api_imports": []
-    },
-    {
-      "path": "libcrypto-1_1.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "296426e7ce11bc3d1cfa9f2aeb42f60c974da4af3b3efbeb0ba40e92e5299fdf",
-      "modern_api_imports": []
-    },
-    {
-      "path": "libEGL.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f3303efd4b4957c85cb2f29a6ecd69261f6af6140c4c6cb9f13bd11a944915cd",
-      "modern_api_imports": []
-    },
-    {
-      "path": "libffi-7.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f60dd9f2fcbd495674dfc1555effb710eb081fc7d4cae5fa58c438ab50405081",
-      "modern_api_imports": []
-    },
-    {
-      "path": "libGLESv2.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "94e3c9f72345005f0eba3347c9c5143f181a75ed80262fba43982e129add32e4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        5,
-        2
-      ],
-      "sha256": "11a93392223c01159d2a572a478aea974d8dd39df4e2aa20a304dc68abda3382",
-      "modern_api_imports": []
-    },
-    {
-      "path": "libssl-1_1.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "fddd0da02dcd41786e9aa04ba17ba391ce39dae6b1f54cfa1e2bb55bc753fce9",
-      "modern_api_imports": []
-    },
-    {
-      "path": "MSVCP140.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f87819ae8c6f7c90d3237a1abb9809e8cba9dcd0c80ac3f0969a5e68ef652ca4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "MSVCP140_1.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b05f3dfd4e999c3e110219fb59151cbaa322757f4f3ce52b64dddc853e5c105c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\core\\_multiarray_tests.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0655ad3fd2bfc76e7b83658ac80cdfbe89cd99c85f88234454615b6efc6e4ab0",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\core\\_multiarray_umath.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "87d72390c416f3a3112d5a9c4589d4c822f3dba7fb2750265f7c92cc010c5268",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\fft\\_pocketfft_internal.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "d37752be90e0e51d98d20b19868cfee9a8145699c6bb0dd975b7e6c864874a54",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\linalg\\_umath_linalg.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "1652b21e65a6a09e2917cbd7d82a10310161bd2bf62eeb28089616a1d3120662",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\linalg\\lapack_lite.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5e9581ab74c699272014d091bff02904e4c266fb1f458b2b348f615e0a624bbf",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\_bounded_integers.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0b3abbf0b2ecc55fc3d12a2c9ff93b8623b5d290ef2716bd05db7997ed08d9b7",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\_common.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "85a0c86d55bb43d8bbb582616fc965f93ac643959b5d51794e73daec4dd9aaef",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\_generator.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "04a75f712c6cdc34522f8a684e4b3ba90ef4e0265807b656fc750b09cf984737",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\_mt19937.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "8e014dc38f0562f34b98b6a52621ecac222dd44f0162a159e5a8f3ff8302ff28",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\_pcg64.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2a4b1ccbf69578e52a10ce01043f2f8c395c5574bce32be25785229e61641c5c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\_philox.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a0e01224d3d26d4df2a18c73465f535918ec2281f0987b6d38ec753cb9eb5a0a",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\_sfc64.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0c5edae80f634924ab5d22de329253598e58bacd82b0cbc27a766a19689b2d06",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\bit_generator.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "8f31964ad0b1b62815c1b7e2aaf5a0c19da6b479028fb6907af87cba681cafe1",
-      "modern_api_imports": []
-    },
-    {
-      "path": "numpy\\random\\mtrand.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0c58c53cfac37b1d976ae400fb5cf8930b7cc5f853947e6f96775d269f98902f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "opengl32sw.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "963641a718f9cae2705d5299eae9b7444e84e72ab3bef96a691510dd05fa1da4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PIL\\_imaging.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "524ec74736a2a6abef2b5c4d37410b040962b6d0e20bafc35ba3c2920bcab528",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PIL\\_imagingcms.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "904fa9506830dd085afb747570246f4cd0103fc23a7af17bc5153b4c3d308bc1",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PIL\\_imagingtk.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "bd02578ac59770a7ab600db99969d4a472d870ed322935accccbf8528880719e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PIL\\_webp.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "59b1d78ae87845a23063b248ec7d82b8ab42ebb606ce87e85cbf76a5fc57a755",
-      "modern_api_imports": []
-    },
-    {
-      "path": "pyclipper\\_pyclipper.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "05bb254c1c09fd5880d135f7b38f31dfb68bc50e734b603e2262aeec2952f3d3",
-      "modern_api_imports": []
-    },
-    {
-      "path": "pyexpat.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5caf51f12406bdb980db1361fab79c51be8cac0a2a0071a083adf4d84f423e95",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\bearer\\qgenericbearer.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2d77d69816777c6b7c68d82cf6be5d8e2adda80d9050df831b946befda93ab28",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\iconengines\\qsvgicon.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6948741c5975c3c6bd4dd0537d738e23feda834a2af8b0e3e6c0bd1d92043b55",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qgif.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4e2d82a4c7a9df94401cebe65e504ae68e3b0c2c8bfed242f77019f67d35bc10",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qicns.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "378ad6111b6b7b45d7350bee499a596152dde13f659e7de33612826fcc80ffd1",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qico.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f472c9d9f651a044ce63659dc612632e2c7efaef35421e205931bbc21d68f54e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qjpeg.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2b5c049f40929b9c2921643975877e1e948b188b340f45e956e1d32fe9ffc9a0",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qpdf.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "884a6ea0b0d243627eb5c414ef52e8000abce5c22bd8bfb40b7c2d4a3c66391d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qsvg.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "323f52f1275698370b929e1fe2b27813bebce6cf4b7c9a4e573472671d64c5f0",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qtga.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "be3c1d8c84cc9cc223e79a30e24d887dd65a12042fa8a5dd4b01e29bb61f313b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qtiff.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "cda1763cd0ffd9eefe804ee2f299934758c5f7d947375d8547a9cdd70fd99e34",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qwbmp.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5bae9155e4856cd66f86a9eda71519d26603d6f6e6cd2d2e96fbc481b9ed259b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\imageformats\\qwebp.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ea9e97d98f5a803830138c833d302f3a12aef9e9b39ec6dff78133fbf2207080",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4776be17fd95a6ac6fee5f3ba7e57868cbde956c372e392b09b1fc1d0a957868",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\platforms\\qdirect2d.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a1b1860501ca29892a8411987f489590083c0f720f23626c766bd196dd31cf25",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\platforms\\qminimal.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2fff09c466bf9d5e91532bc92c8b4e18809b7e4e6ab32e9cbd2fa99578f152c4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\platforms\\qoffscreen.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0fe9b82b3c56029fbe2db4d1d91670ae1b1b5e67c1944c729f3edfb32d3af068",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\platforms\\qwebgl.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "284e3b9d592cb959bce5a8959c68781b79e966127da97683142671d8174fecc6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\platforms\\qwindows.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "9a91d16703f11e8fcac85537d03e2b34bbbb54001e681ea4e310e5ed5840674b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\platformthemes\\qxdgdesktopportal.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "647971a49bbcf8ef3d1b321baaa58cbe58ddd342f1de4e0511fb7600f75f24c5",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\position\\qtposition_positionpoll.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0b32576ecfe9ce29a5699febb82cfbd967532832b450f83a83ad107d1575e308",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\position\\qtposition_serialnmea.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "35ce840c51427a959ba1176fc0861e3ae3b9a0f3177f9f07422d2cf6c0835355",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\position\\qtposition_winrt.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "019c98432d35dae515ef2e8cd615d5a4160b77ba7391d7147591a320ecaffabf",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\printsupport\\windowsprintersupport.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a3f03a96945af09e8932a4922c0255160d6165b7aca34a4e77d005106c50cda8",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_debugger.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "59bfb78e1e47b2798aec9e7c8929c8eec2bff36a3c866953e12e6e7eaf16e2ce",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_inspector.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4b66092df3466f65d9ee866af9853a8fb472d148eac37a4835a7e7592514a8b6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_local.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "31117909375d6028914e2be7dc2efa64e1de3ff6fb9e0864db20a8596d22609b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_messages.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c67c9074203e2c28c83779817398ae97cac25cd0da82f6d991b869b31b7cfd2b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_native.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "1fb610fc0951a49cbfce71ef6f84e2d2bd91b4d735b811a791900cf2f8ad73e8",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_nativedebugger.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "da978d5ecab56d15cfc154ac65328217e1065eb3b3c00d0a16be8339a1ce2b4f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_preview.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "bcd1bf9e2a03b5cab14c8119caff57447193363ed80fe288fd4f53979d2f7554",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_profiler.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2908e9014376909e27b3f62cba7f3f65e16c1e66f376b54bb5baab80b3b6667d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_quickprofiler.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4dd0660a18e26b98847dc98a3db2982947ab6761ea11b341219111d1e1b3295f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_server.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "7388cbba48d5c374abbe2e51ad75253be5e3ee57d019c24909ee8f929fe50aab",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\qmltooling\\qmldbg_tcp.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f0a8b8a193416b92df87b1847878d31b4751b36718c2a71145b33a61f9296944",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\scenegraph\\qsgd3d12backend.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f113b016d7e9f13c2b0f24238a82ccb111e91088801cdc44a6d9c087e2a1afc1",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\plugins\\styles\\qwindowsvistastyle.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f99524b208dceb5e3d1161368eef1b72a15ec50ed39d9c38d3220dcdff51d476",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\animation\\labsanimationplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b408a64ef301c18fd19b7aa94fd3a398378e643589577174c6c119af7709ff7f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\calendar\\qtlabscalendarplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "fde7ab30c8b535ec62e913a5e7358a917d48f57e1b0d097de320f047b73af0b1",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\folderlistmodel\\qmlfolderlistmodelplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "66ddc275baa58dac62533d39993868e46db2d8898cfe7fa9963ada3e5fe3c925",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\location\\locationlabsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ca087c9af91e9b2b5a6261823e98dc5e65ece263c5eac49406023fdb3d8968a6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\lottieqt\\lottieqtplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "7ac2f16542a8928fe14f93ff7d67525ef77a2e84da28d7051621e44b69a091b8",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\platform\\qtlabsplatformplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6719a3f740b78d34e993415280b698050dbd43bcebe8da7865c74ef77d5fc545",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\qmlmodels\\labsmodelsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "e64dd1b261a33f3ad54e440926416e0c76d356527cf98fb73750e2e96ffb4c6c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\settings\\qmlsettingsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4be8b9f160b9617edc0009c98d331224b197f85a292730b685faf27f202d29d8",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\sharedimage\\sharedimageplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "55dc612f9ac656d0df9d49d4fdf22a470857e4344a0ad05f999a1f23eb7c7451",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt\\labs\\wavefrontmesh\\qmlwavefrontmeshplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "8df8c5b973c66d13f8f10158ddbe26cd19e98248110343d486a3a0db8ca6cd64",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt3D\\Animation\\quick3danimationplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c0ab901dc84b21d5aa1670e030470b1d1b37b16fa9d27337cc71ef89a88efd68",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt3D\\Core\\quick3dcoreplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "37858387007f18534cee750ebaa27dc7ec5e2b6064f1a00f482c49d68619662e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt3D\\Extras\\quick3dextrasplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "8711d5441cf355040f2fd86bfe26e8e80bb9c595c8e13455bd644b63c3cfb83c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt3D\\Input\\quick3dinputplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5f625033ceea17ade0ed1370d5f3b9daed5a2f6ec977ba31da0704fa2d34ac52",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt3D\\Logic\\quick3dlogicplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "58d29c9838bcc3b5d17e4229253099f4e5fb158602efd10e82887694be54b8a8",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\Qt3D\\Render\\quick3drenderplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "29bb62ddd247fb0b0695a2b3028a75540c74164728edc66ca3280c966d5fdb8c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtBluetooth\\declarative_bluetooth.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "065782e3869bf567fd9b4945bc61b71db6018d1a365c665372dc06e8f146c0ba",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtCharts\\qtchartsqml2.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b3b5057f7d5245d6745480e55d975f5c46a65771e530ff79da65ed28d25b31ac",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtDataVisualization\\datavisualizationqml2.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c07eff54e2f6ad1a3de89d27770dcd6cd21d753c2ee2a15131e6353786371387",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtGamepad\\declarative_gamepad.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "587d5c16607ea96897f1b5b49228ff5f2b46024b527f764b40a3e2fc07ff7d82",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtGraphicalEffects\\private\\qtgraphicaleffectsprivate.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "fe61539bfdaf4200e543c7d6679191cc9b908e01be704a27c648b806d8891d10",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtGraphicalEffects\\qtgraphicaleffectsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "eb4561fedcb5832023fe218839c76136d3192810a1da209e66f573fb3721182e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtLocation\\declarative_location.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "885242e5af6558a5811fe28565a212bae4adecaf0bde8bb231356c7c528aa6e6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtMultimedia\\declarative_multimedia.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "08f24147c9d478afca44dccc1e23c77f794b76a9e4a86fbd08b451dd73d6eefb",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtNfc\\declarative_nfc.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "fb66501eb25a2f94e2487ac6fc3dec94032aec5ac88f371e392d5fe5d939c433",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtPositioning\\declarative_positioning.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "d4b52473d75380c1045ce016239b49f40220d19bcfaf60ab6750a69322961772",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtPurchasing\\declarative_purchasing.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4b6488b4fa824f386d1944cfc7f7519606ea586b6265a327f288edd66df2f98c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQml\\Models.2\\modelsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "50aeba7235213f99f27390c8b8afcd2a6c9dd625c94086c46f58ef3438d5472f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQml\\qmlplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "73f42994a2b855512640a90a34e0bc21219ec8e84f9457f1a3183d29b7a472ac",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQml\\RemoteObjects\\qtqmlremoteobjects.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6f5dd3e64148c9f28283a50ae7604db70a4e487f7da5b67480eef1dbbeb69557",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQml\\StateMachine\\qtqmlstatemachine.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c8256a94ec4634f7be3be730eacd2b24a7d54ad74ab39c5d4483f246b4f88730",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQml\\WorkerScript.2\\workerscriptplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "efd3106749bac293d8356fbaab87c99f4348ebda0e2b81a3776691fd8547c010",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Controls\\qtquickcontrolsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "1ecc17018562c0746a1de00508d572a836e850db98d3feec4bf9c29e2044ff81",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Controls\\Styles\\Flat\\qtquickextrasflatplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a4be539aa32bf6e3f81cd2ff2506be2ebb56d9b8bf6689c13a5b05d26f6fa65e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Fusion\\qtquickcontrols2fusionstyleplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4a1d124c886b0bc2875d555908937cde75bd8e96815986fefb77d97c9ece955b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Imagine\\qtquickcontrols2imaginestyleplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a1dd1ba70165ec928be9929cf9a406242840779db30d085c6fdd84e131f714a6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Material\\qtquickcontrols2materialstyleplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ca4a30afbd361646bd13ffd90b75d226293b29192230805ec5c9392aae7bf1d6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Controls.2\\qtquickcontrols2plugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ccbb0a017c0a6d259385a5e910768eccdaa07255bc3ae835ddc6ca34c1af13bc",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Universal\\qtquickcontrols2universalstyleplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "51ef11ed93e4113af431a459d83226a407f1458bc60172b48450d15d9d28d413",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Dialogs\\dialogplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ba689dcb01283269e8ca036a3a729f9d817c334873b4363cd5867a08316419cc",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Dialogs\\Private\\dialogsprivateplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f83912ffbe358000e276410b5eff0dba608e4be9bb34d74b4638ed0b0e426093",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Extras\\qtquickextrasplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "3f6581969e0748c6d422376bcb994b9fc3ecb2147f018b222492aa0a1720c90c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Layouts\\qquicklayoutsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "31ddfa6238dc72e82deccfcf8abfc22ae93672a6c5ef4c0d3531ec28105ab7c1",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\LocalStorage\\qmllocalstorageplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "d49f1ac4447cf6b1c31f05a78d49ad7b7cc5bbc62e522e8fb708dd16f2f9bb93",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Particles.2\\particlesplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "973a43f05c26b636ad9595115ec8b22b3b8c7b52eee52a12ce98ce5f55eee05e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Pdf\\pdfplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "28acbf748846560e845246bc0cf185aa07335fca1a883e58c34ad185309a3e8d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\PrivateWidgets\\widgetsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b1e4dabcb1c10610539ffbdb9dcd6db259803b80dde2cc63de51e792a2ed3bb1",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Scene2D\\qtquickscene2dplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ae4e6bea7044a8acd85ae8af768804d234701745e0c26e8e890ac71ba04c7d81",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Scene3D\\qtquickscene3dplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b92a2b44603bb1a65eba84a8c722a7388e65891d5db7e3465bfa85262a0984cd",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Shapes\\qmlshapesplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c819b4ad7e09c8647136aa3070034fa80cd6b241ed3881f50b2e9419cb014dba",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Templates.2\\qtquicktemplates2plugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "7dd0659a10b05bccf82234b871bf3b652b65051693b1d23eeccdd9ad8a38684e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Timeline\\qtquicktimelineplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b9683428266a52a8b7b51686adb523ef9208e4cdcda2e564a8aac9685119d41b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\VirtualKeyboard\\qtquickvirtualkeyboardplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f358e606e29d4fbed2e27439b2a291cae2db45abaea68b70d2f60ea0375a7ecc",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\VirtualKeyboard\\Settings\\qtquickvirtualkeyboardsettingsplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "46682a4beb07a96501fbde1de7f04da5c9c0af0808c095792f408541c9ee62de",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\VirtualKeyboard\\Styles\\qtquickvirtualkeyboardstylesplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0c729a806603f7f87b5010fc2374c6a469e17e38b571c08b87b83396499e1f78",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\Window.2\\windowplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "89613acb0781423659d1f2c474946b8539cdfef548d54bb7f77e9a789faea46d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick\\XmlListModel\\qmlxmllistmodelplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b3d6b5571a9617fe9543039a265e082a52f0703a43cff0fb1e34eab90089c9de",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick.2\\qtquick2plugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "e81f7e7d9a507a180a48583c88bfd7229548182b8dbd2ea275b78169b93a17b8",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick3D\\Effects\\qtquick3deffectplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a9f7f01fee89b4a9ad8a16d179045c57355e807f5c965633e6d2901a43647347",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick3D\\Helpers\\qtquick3dhelpersplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4f3c6cb0e2801b7a458f3cb8d7a93d3e683a5df98ed3e47194faca5d11fa6407",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick3D\\Materials\\qtquick3dmaterialplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6bea812c62620307638ea67c580b19589880e57b27f4e0a346ccf8e7c00955dd",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtQuick3D\\qquick3dplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "468bb0dae75973b1bec7d52ae78d276955efcf45bcaf9296bfe9cccbf4673df6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtRemoteObjects\\qtremoteobjects.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "faca84b3172efe18404922527929e3855bc43c6c4bcb175628f5fb4bba54e83c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtScxml\\declarative_scxml.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "eee1ead7ceb0aca0ae64866a43304e4ef88c0188d90e41f8601446abd78ac088",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtSensors\\declarative_sensors.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "11f0c379b58a7c38c9f762087391465e3c858a422fb2cfe1c70d2be41afcfcc9",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtTest\\qmltestplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "18884455ba9881521ac470ce0bd778b56fa548bb3cc0127e1a2a8c1a76d8299a",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtWebChannel\\declarative_webchannel.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "40ab4a77e1e3062b541eeb898082c523b4c55c55d95aeb83bab6d616e6ac8711",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtWebEngine\\qtwebengineplugin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "20de1ce45b7ff60ab392a115ccef5f915a3cfa4ddbff300966cd39f9769b9591",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtWebSockets\\declarative_qmlwebsockets.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "11524d189f74c1f94c843004a255d2ab141fa40f2710a3d8fe0bbe4e65cb7444",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtWebView\\declarative_webview.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "35b88482a30a52d2e53fcf92b5263da1069257e7cfb245fad6b9e6bfe992842c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\qml\\QtWinExtras\\qml_winextras.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5613947f76fa7196dad6a9494cde8be58e3520f097372d9dfad1af7479a3c17a",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtCore.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "11c4b8859d2e1fd1bb315edb21112662c674d739992abc545afab894d3848cef",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtGui.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "bec878849cba1d0fc79e6d313e5b28e1da9b5ca903673a6634768f52df33bc4f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtNetwork.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ce289b3a1950693d33e47a47143ddb156e468907ebd3a2af8a3e8016e1ecc163",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtPositioning.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5de0b1d711699bcce1e682913762cf251ee5e411a4a458b4dff31e7b707baf2c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtPrintSupport.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "df8e47c3ded8ed5f20122585ec05da95a4f338c0f58adae8293a880de7a4545a",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtQml.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "270dcf6d359ac9fe64cf27864d2ce64fa5505bb25e1bcd1ab507cd23ff822193",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtQuick.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "d14ef3927b9ebb0c2f74094b5d8e25a0a39a60d5f312092ee78df9f92b102527",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtQuickWidgets.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "7bcc4f4023b6e3ccc0a89c20d0b48376d14968dfbbc4104cc56e4036cf58629a",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtSvg.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "39f65d11af932600aee7ef83f6b3a1613ff2518c80102d9968250e66254be8c6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtWebChannel.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f1d58b72202dadb975d1e9efff81f591c6a2020c04de9fe78b890c4d3fca9efb",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtWebEngine.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "69a721857d17f08aa457e0f1be441e37c4412508ecab5342b61e6165d261953f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtWebEngineCore.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2365eed5bd7e916492682da9780f7e4dfd2677c88ea53421d586f5698503095d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtWebEngineProcess.exe",
-      "machine": "0x8664",
-      "subsystem_version": [
-        5,
-        2
-      ],
-      "sha256": "d70a4f1e7cba33fa885e6edda7a26e585cc98c0b6f5676577527b02f5a33c084",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtWebEngineWidgets.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ec788ebd60d32feb3fe5f3d59ac9cb716d5d52ada6f7550587131bb70bb5147f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "PySide2\\QtWidgets.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a2c9c88fb848bebacf6889579e274c70c2eee86dd3f209d45e656d9248eff529",
-      "modern_api_imports": []
-    },
-    {
-      "path": "pyside2.abi3.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "3c2a5cc20fe1c00b5783f8c46f5d3cd64e9b9a8e4cb14ac12e4363b42b2b1bd2",
-      "modern_api_imports": []
-    },
-    {
-      "path": "python3.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "074b06ae1d0a0b5c26f0ce097c91e2f24a5d38b279849115495fc40c6c10117e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "python38.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2f3e368f5bcc1dda5e951682008a509751e6395f7328fd0f02c4e1a11f67c128",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DAnimation.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "3e5bad19a13061a994f689f211b9663f2c8fb7ec990663a423f5a75e6178695e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DCore.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "d828a971c884c3ecb16b93f8c3f71d592651f99409adf01b128c873e55b91f0f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DExtras.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ed3c6c6386b3c018ad6f5310c9f3852a99e92f3bd5bae6fd9bbc8c57153162e9",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DInput.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c6a7e607402440432c9958794e509474a2f3dd7c1c7864998789977c57f86b28",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DLogic.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "eebf693845b87d8fb1adacc58b062ffed03448396791c45acb6dcbd36913bd9b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DQuick.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "82560740d3d5831a9579618a0fda4dcf4a26d73bab0346774b0efe0126f1185f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DQuickAnimation.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "46578e99bed419c3c728de56db6940d5906d5d87cd17fd1eaed4b1a91fba70d9",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DQuickExtras.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "e96265d82469bf781568f08ad9248119a803fd2a861d6167625ac6bcf60de165",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DQuickInput.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "9b66b5b820a3d6b74fdaa4617c018ed2b9d89e21907d7df3e73f6bf0c71982a7",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DQuickRender.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a9c92db53aa1abc1af4f2be158806caf5765580ec73559a4f77250971d92306d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DQuickScene2D.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "79a8fcbfb2b1d3ba48da8f02667b56d15db0ebda7dc8d18d5b5b3f13d7250ef3",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt53DRender.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b92c116d86b19374befa84b41ff3614cabd57d1d0e8e3766ca483c677beca157",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Bluetooth.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5e5d7025065b4d42371b1ed3ca2c0a7ebb3122890c0c9d3ed5ee70b765244eb4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Bodymovin.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "93778d7d4aceb47ae2243410916b153f443e0dacd226f707acbf16b6f435d07c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Charts.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "78ddb9274157820766510d3adaedb3d74853bfc725bf6ecfa18e5e47ebfdd63c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Concurrent.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6571ccb1d963794ffd3ff94aa642ad516ec43cf55a3b38cbdd4f9554b94431af",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Core.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "420feba51d296a441c243b17cd5aaa9afd8c8c4bbb112d07820b5745be5e1928",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5DataVisualization.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "36928c06c5234837807cbaa660a24b6e44dd9e4aa8232d39374327224c68b555",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5DBus.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "448f0e27809b8049ee1d045f2308003541752308eac197fbe71ba14e9b80a273",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Gamepad.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "505e5df3fbb8c96715d67a5a0b37107404c09e77d1af07954c15055a7bac9e81",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Gui.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5d90e673766875c799cc3abb9e341f542e7cde630770394d6c114d91caff8ccb",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Location.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b15545b7dfb1f7742f2593822bc19c54a4ee2999293ae310ca308bbb2a7258fc",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Multimedia.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a1be63f9c645a39996a12d78d953f3d7375bd300a2bb5f69b7c8b768aa3f690c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5MultimediaQuick.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "11cee6a10d7820cb58ab4200e0c921a77b77d1dc1780437ba6469c824ee2b823",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Network.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c0d5fcf7ca747e93dc2650d102cc6cce90383e1fb47ff294806d09ddc46b10dd",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Nfc.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "925950039fb5dac84a01c91dccee864b972c5111a1f8b3fb1436b3ee22cef57d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Pdf.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        5,
-        2
-      ],
-      "sha256": "fd9e0abdbfc06223bbe1382d3d40976fe4a349854c09ceebef7db257bee0dc90",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Positioning.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "225776d513f840a0135e4f0dc69ff91a3345b6c0cc6d3800cef5c747131a743c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5PositioningQuick.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6367728ecae7f56255c98fb114835a9e136c0232a3e2cf479e5a15b354e232a3",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5PrintSupport.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "00463a98f364fcb6a2e690818fdc0186a7a7a01b57099185b4c06d934a432b8f",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Purchasing.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6652fb12a3e6e72279bb1fd2cdeb7a02dd2303917ce57f1a0c7c920a88ca92ca",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Qml.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "7393a8567258efb588a5911191d3537b6c280d919f51149166365a4932c1dace",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QmlModels.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "1044ed33385be04b57ab87923e011f3b13c268ff15f6072299c1b38a25b2565b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QmlWorkerScript.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "7eb7d298bb9486fa0091dfc3079cb0bc88767bee5abc0df830f5f1453ebeada6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Quick.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "32a496ed857cfc063c0098a11eddd4098e896b77a54f035dee9df18ceb98552d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Quick3D.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "bb8cfa6d58defb53d0d7c091c4d7d9e92db746bbb5bd340dc9d37607730b83e8",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Quick3DAssetImport.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "5cdfe150afb3f70fb7770b510dae9e9a0a958e165a98cfd3177e5913047887df",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Quick3DRender.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "becda05e4847ede8de06356a4fd9b7f6d404ecea7bf777970081723ac7ba3212",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Quick3DRuntimeRender.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "1ae2b2abb2e08dbe0d501c610559fdfaa83e93e013fa7fb85a8483e588d7e82c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Quick3DUtils.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b4cf8a7bfc712c41fe46df6d7bccf5c3cd477ab4e02a11caf6284310dd6e8fc0",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QuickControls2.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "dfb980fd6e1e0d94bbbe7ef365e0f9319f2abcd5e66445d6680865044168169d",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QuickParticles.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "a36662ad053b3068f842789bbceb3fd02a8c8f7525b21941411772b59d6cc4db",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QuickShapes.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "8403ea7f6bf062d5e303bc9f526bfcaa7a1ff627bb1720dc0b50d587f9983e1b",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QuickTemplates2.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "97ea065e1c033f81e77d63f5182c07f1e6bc2098fd5fc334cc35c827826c23ee",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QuickTest.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ee462869abf2f98871ba0f49a64ad0f843fbb4cb73f65b7a25f9280d732d23a6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5QuickWidgets.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "0e4f723d3bec20ca8ec60053b30e82fabf644a87678f95abcec2d9ca83ab5778",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5RemoteObjects.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "cb51b37855cd8a735dfea1b896d58b3eeb1999f2e1773b1a7e7db6780357d5fb",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Scxml.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "7f7b91b6b30df78af4b5c2ecebefecaae6325f95ec7e77676466b337f03ba8cf",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Sensors.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "ddce96c0a9229b05013d0d0c013d0f0d60c152cd2ef156877e90e9a286931917",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5SerialPort.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "363c496db033cb36d9bb2917ad2dc8b88f6acb47dbe760c8c40301db9bf369b5",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Sql.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "e939c43b08625d9eb220f030319a525bf83672103c127a9224f418f09f999621",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Svg.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "1112ea391351cc20cd4f3241dfcb9b8af26d4cac2cd78a7b53e593cf1daca55e",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Test.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "f5a33bd37b41061c8ef8800dcf2e1ddc3950accc8218508973560a3302295e4c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5VirtualKeyboard.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "05ce471e702e844a92098aaa8983698f1989764a4aa8a74ad9324a0e42b906ce",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5WebChannel.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6a841115f0b024251718cc2f3f83fe4575c8c40fab26fd17d86d5e751e9e1784",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5WebEngine.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "8224667dfab9ace13000c97745d7bb043fbe267dd2d5c598bda98c226dd35124",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5WebEngineCore.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        5,
-        2
-      ],
-      "sha256": "17ed7fd8ecc01f40552d3a10349eeaf1c145bd878445d955d54278747e6633e4",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5WebEngineWidgets.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6bc7b049f4cfe89c728133fe9f69f4b464037e482b0dd19d67ae7c88f50a1333",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5WebSockets.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "448901a39a33300028a06df2f16cf1eabd1bd31410b93ecd18d2fcb14b570bbb",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5WebView.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "bdfd61350082c7b5ba1d35dab8682369a748e93c5332aef8288f08f3ade5fae0",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5Widgets.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2be48fd4307f10a611a9349cbaef41af0d7dbc49e2c45af155e6b9207cf64622",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5WinExtras.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "10ed253703ecd4c9a203636aff8cf29dd8cd58380dec2d4ab92a046b29f8f717",
-      "modern_api_imports": []
-    },
-    {
-      "path": "Qt5XmlPatterns.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "2a5b6079f913719a4f3df8cbd7eaa68d069a23d44360d65f259db6697a67e925",
-      "modern_api_imports": []
-    },
-    {
-      "path": "select.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "fcc2e09a2355a5546922874fb4cac92ee00a33c0ed6adbc440d128d1e9f4ec28",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shapely\\_geometry_helpers.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4c4c99fe8dbcb69cac1b25236e9e08408af5f308012f3bf439df2e05f780e5e5",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shapely\\_geos.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "95dd4b0460b603c47ff62862a5bacc2d8c7040fee7ea3c5eea23a58b7f6e53bd",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shapely\\lib.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "993f25587fd7ee842792d954363627909e4711cbb0f8610d298652a70ee3c3c0",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shapely.libs\\geos-601667c569b99092781bd4af7fecde0b.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "9378a881755e9c767a3cee95071b92ad55068aea9b1840bcebbe289956c91258",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shapely.libs\\geos_c-2ec21252057a9a4d4390485e0e576a5a.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "012502442afe3edc0f92529ff9ac454575dcb52cd4b604a5bdd661e0ba9ce5e6",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shapely.libs\\msvcp140-4cdfd5d0df96900d509f170af6d4ba5f.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "1fb410e337f1efbbd824df41978c41933c5c5a316fde25af791ed1d7540e7362",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shapely.libs\\vcruntime140_1-8e75bc22155f33e267d2ce86e8d6adbf.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "47b235fdc5bfe0f1279ffce18f33efe4fda4058a05b5ec67a8d47fc9a41142ae",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shiboken2\\shiboken2.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "4161690265e3dadcd864178c089bb2d07795b46c43ddc2e88d251ce7f2374fdc",
-      "modern_api_imports": []
-    },
-    {
-      "path": "shiboken2.abi3.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "3a21d0ef5713f46bccebe6ff3e324a8ca1433417a39eded43790811a60e3206c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "sqlite3.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "53aa551e62267b887017a95fe14a610c2bb3b53c4be62ddc4dc3548df3720a68",
-      "modern_api_imports": []
-    },
-    {
-      "path": "unicodedata.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "d8091e62c74e1b2b648086f778c3c41ce01f09661a75ea207d3fea2cf26a8762",
-      "modern_api_imports": []
-    },
-    {
-      "path": "VCRUNTIME140.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "6a0850419432735a98e56857d5cfce97e9d58a947a9863ca6afadd1c7bcab27c",
-      "modern_api_imports": []
-    },
-    {
-      "path": "VCRUNTIME140_1.dll",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "b1d3b6b3cdeb5b7b8187767cd86100b76233e7bbb9acf56c64f8288f34b269ca",
-      "modern_api_imports": []
-    },
-    {
-      "path": "websockets\\speedups.cp38-win_amd64.pyd",
-      "machine": "0x8664",
-      "subsystem_version": [
-        6,
-        0
-      ],
-      "sha256": "c1b1df37c4225fa6f20f2d869b143f4e87171dbff679abfb5d72a3bce61a69ff",
-      "modern_api_imports": []
-    }
-  ],
-  "modern_api_candidates": [],
-  "file_count": 1759,
-  "bytes": 348057430,
-  "longest_path": [
-    126,
-    "PySide2\\qml\\QtQuick3D\\Materials\\designer\\PlasticStructuredRedEmissiveMaterialSpecifics.qml"
-  ]
+{
+  "warning": "Static inspection cannot prove Windows 7 compatibility; real-OS tests required.",
+  "pe_files": [
+    {
+      "path": "_asyncio.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6e25aa5931f175b971dfd05aab7a24cef29edd8f4b524341c414d0577c07a200",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_bz2.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ce4ef8ed1e72c1d3a6082d500a17a009eb6e8ed15022bf3b68a22291858feced",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_ctypes.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "820e840759eed12e19f3c485fd819b065b49d9dc704ae3599a63077416d63324",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_decimal.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "30eea56a4d1dd78f9d65fcb6168ab189cfa8098c38aad47ee770756a056749ca",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_elementtree.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "00d68d3879ab410601e7e8fb2348d4995cec2ee78b3a07ea59520d35f9953bb4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_hashlib.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a30cf1a40e0b09610e34be187f1396ac5a44dcfb27bc7ff9b450d1318b694c1b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_lzma.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "9209ccc60115727b192bf7771551040ca6fdd50f9bf8c3d2eacbfd424e8245e4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_multiprocessing.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "54c28dcf2f2a72fc854f49c76fb021bbf2b53675fe5b5ed021c61efe9467197b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_overlapped.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5f92c163b9fe6abb0f8b106a972f6a86f84271b2e32c67f95737387c85719837",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_queue.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "67e4e888559ea2c62ff267b58d7a7e95c2ec361703b5aa232aa8b2a1f96a2051",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_socket.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "87832a3b89e2ada8f704a8f066013660d591d9ce01ce901cc57a3b973f0858ba",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_sqlite3.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "9ae23d679a929d47b252ce14c9b2763a2913bbf17b0f52a8fd4b47aba0def0a2",
+      "modern_api_imports": []
+    },
+    {
+      "path": "_ssl.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0a721fc230eca278a69a2006e13dfa00e698274281378d4df35227e1f68ea3e0",
+      "modern_api_imports": []
+    },
+    {
+      "path": "bleak_winrt\\_winrt.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "cf7eaca4a6fd9ac116c2bb7a8f2a8b841b0b12b93accf67e0dadd8d3f4f3a7c5",
+      "modern_api_imports": []
+    },
+    {
+      "path": "d3dcompiler_47.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "8c88c162010a8d6b80f2c0433d4ce973ce626afcbc8da5be68bfa2ba68341eba",
+      "modern_api_imports": []
+    },
+    {
+      "path": "GDS VTS.exe",
+      "machine": "0x8664",
+      "subsystem_version": [
+        5,
+        2
+      ],
+      "sha256": "afd6556e65c68f5a4aa00539fb2d25dfccb599b9d260c628933ed34348411546",
+      "modern_api_imports": []
+    },
+    {
+      "path": "google\\_upb\\_message.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        5,
+        2
+      ],
+      "sha256": "2f35163a35aa5bd7a80f7cf4e78ba4c526e6dc4dcdea153a845ef139896728f2",
+      "modern_api_imports": []
+    },
+    {
+      "path": "libcrypto-1_1.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "296426e7ce11bc3d1cfa9f2aeb42f60c974da4af3b3efbeb0ba40e92e5299fdf",
+      "modern_api_imports": []
+    },
+    {
+      "path": "libEGL.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f3303efd4b4957c85cb2f29a6ecd69261f6af6140c4c6cb9f13bd11a944915cd",
+      "modern_api_imports": []
+    },
+    {
+      "path": "libffi-7.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f60dd9f2fcbd495674dfc1555effb710eb081fc7d4cae5fa58c438ab50405081",
+      "modern_api_imports": []
+    },
+    {
+      "path": "libGLESv2.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "94e3c9f72345005f0eba3347c9c5143f181a75ed80262fba43982e129add32e4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        5,
+        2
+      ],
+      "sha256": "11a93392223c01159d2a572a478aea974d8dd39df4e2aa20a304dc68abda3382",
+      "modern_api_imports": []
+    },
+    {
+      "path": "libssl-1_1.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "fddd0da02dcd41786e9aa04ba17ba391ce39dae6b1f54cfa1e2bb55bc753fce9",
+      "modern_api_imports": []
+    },
+    {
+      "path": "MSVCP140.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f87819ae8c6f7c90d3237a1abb9809e8cba9dcd0c80ac3f0969a5e68ef652ca4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "MSVCP140_1.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b05f3dfd4e999c3e110219fb59151cbaa322757f4f3ce52b64dddc853e5c105c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\core\\_multiarray_tests.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0655ad3fd2bfc76e7b83658ac80cdfbe89cd99c85f88234454615b6efc6e4ab0",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\core\\_multiarray_umath.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "87d72390c416f3a3112d5a9c4589d4c822f3dba7fb2750265f7c92cc010c5268",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\fft\\_pocketfft_internal.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "d37752be90e0e51d98d20b19868cfee9a8145699c6bb0dd975b7e6c864874a54",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\linalg\\_umath_linalg.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "1652b21e65a6a09e2917cbd7d82a10310161bd2bf62eeb28089616a1d3120662",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\linalg\\lapack_lite.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5e9581ab74c699272014d091bff02904e4c266fb1f458b2b348f615e0a624bbf",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\_bounded_integers.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0b3abbf0b2ecc55fc3d12a2c9ff93b8623b5d290ef2716bd05db7997ed08d9b7",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\_common.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "85a0c86d55bb43d8bbb582616fc965f93ac643959b5d51794e73daec4dd9aaef",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\_generator.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "04a75f712c6cdc34522f8a684e4b3ba90ef4e0265807b656fc750b09cf984737",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\_mt19937.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "8e014dc38f0562f34b98b6a52621ecac222dd44f0162a159e5a8f3ff8302ff28",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\_pcg64.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2a4b1ccbf69578e52a10ce01043f2f8c395c5574bce32be25785229e61641c5c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\_philox.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a0e01224d3d26d4df2a18c73465f535918ec2281f0987b6d38ec753cb9eb5a0a",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\_sfc64.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0c5edae80f634924ab5d22de329253598e58bacd82b0cbc27a766a19689b2d06",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\bit_generator.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "8f31964ad0b1b62815c1b7e2aaf5a0c19da6b479028fb6907af87cba681cafe1",
+      "modern_api_imports": []
+    },
+    {
+      "path": "numpy\\random\\mtrand.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0c58c53cfac37b1d976ae400fb5cf8930b7cc5f853947e6f96775d269f98902f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "opengl32sw.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "963641a718f9cae2705d5299eae9b7444e84e72ab3bef96a691510dd05fa1da4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PIL\\_imaging.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "524ec74736a2a6abef2b5c4d37410b040962b6d0e20bafc35ba3c2920bcab528",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PIL\\_imagingcms.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "904fa9506830dd085afb747570246f4cd0103fc23a7af17bc5153b4c3d308bc1",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PIL\\_imagingtk.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "bd02578ac59770a7ab600db99969d4a472d870ed322935accccbf8528880719e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PIL\\_webp.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "59b1d78ae87845a23063b248ec7d82b8ab42ebb606ce87e85cbf76a5fc57a755",
+      "modern_api_imports": []
+    },
+    {
+      "path": "pyclipper\\_pyclipper.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "05bb254c1c09fd5880d135f7b38f31dfb68bc50e734b603e2262aeec2952f3d3",
+      "modern_api_imports": []
+    },
+    {
+      "path": "pyexpat.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5caf51f12406bdb980db1361fab79c51be8cac0a2a0071a083adf4d84f423e95",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\bearer\\qgenericbearer.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2d77d69816777c6b7c68d82cf6be5d8e2adda80d9050df831b946befda93ab28",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\iconengines\\qsvgicon.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6948741c5975c3c6bd4dd0537d738e23feda834a2af8b0e3e6c0bd1d92043b55",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qgif.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4e2d82a4c7a9df94401cebe65e504ae68e3b0c2c8bfed242f77019f67d35bc10",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qicns.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "378ad6111b6b7b45d7350bee499a596152dde13f659e7de33612826fcc80ffd1",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qico.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f472c9d9f651a044ce63659dc612632e2c7efaef35421e205931bbc21d68f54e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qjpeg.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2b5c049f40929b9c2921643975877e1e948b188b340f45e956e1d32fe9ffc9a0",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qpdf.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "884a6ea0b0d243627eb5c414ef52e8000abce5c22bd8bfb40b7c2d4a3c66391d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qsvg.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "323f52f1275698370b929e1fe2b27813bebce6cf4b7c9a4e573472671d64c5f0",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qtga.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "be3c1d8c84cc9cc223e79a30e24d887dd65a12042fa8a5dd4b01e29bb61f313b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qtiff.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "cda1763cd0ffd9eefe804ee2f299934758c5f7d947375d8547a9cdd70fd99e34",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qwbmp.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5bae9155e4856cd66f86a9eda71519d26603d6f6e6cd2d2e96fbc481b9ed259b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\imageformats\\qwebp.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ea9e97d98f5a803830138c833d302f3a12aef9e9b39ec6dff78133fbf2207080",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4776be17fd95a6ac6fee5f3ba7e57868cbde956c372e392b09b1fc1d0a957868",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\platforms\\qdirect2d.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a1b1860501ca29892a8411987f489590083c0f720f23626c766bd196dd31cf25",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\platforms\\qminimal.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2fff09c466bf9d5e91532bc92c8b4e18809b7e4e6ab32e9cbd2fa99578f152c4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\platforms\\qoffscreen.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0fe9b82b3c56029fbe2db4d1d91670ae1b1b5e67c1944c729f3edfb32d3af068",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\platforms\\qwebgl.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "284e3b9d592cb959bce5a8959c68781b79e966127da97683142671d8174fecc6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\platforms\\qwindows.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "9a91d16703f11e8fcac85537d03e2b34bbbb54001e681ea4e310e5ed5840674b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\platformthemes\\qxdgdesktopportal.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "647971a49bbcf8ef3d1b321baaa58cbe58ddd342f1de4e0511fb7600f75f24c5",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\position\\qtposition_positionpoll.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0b32576ecfe9ce29a5699febb82cfbd967532832b450f83a83ad107d1575e308",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\position\\qtposition_serialnmea.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "35ce840c51427a959ba1176fc0861e3ae3b9a0f3177f9f07422d2cf6c0835355",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\position\\qtposition_winrt.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "019c98432d35dae515ef2e8cd615d5a4160b77ba7391d7147591a320ecaffabf",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\printsupport\\windowsprintersupport.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a3f03a96945af09e8932a4922c0255160d6165b7aca34a4e77d005106c50cda8",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_debugger.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "59bfb78e1e47b2798aec9e7c8929c8eec2bff36a3c866953e12e6e7eaf16e2ce",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_inspector.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4b66092df3466f65d9ee866af9853a8fb472d148eac37a4835a7e7592514a8b6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_local.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "31117909375d6028914e2be7dc2efa64e1de3ff6fb9e0864db20a8596d22609b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_messages.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c67c9074203e2c28c83779817398ae97cac25cd0da82f6d991b869b31b7cfd2b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_native.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "1fb610fc0951a49cbfce71ef6f84e2d2bd91b4d735b811a791900cf2f8ad73e8",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_nativedebugger.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "da978d5ecab56d15cfc154ac65328217e1065eb3b3c00d0a16be8339a1ce2b4f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_preview.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "bcd1bf9e2a03b5cab14c8119caff57447193363ed80fe288fd4f53979d2f7554",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_profiler.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2908e9014376909e27b3f62cba7f3f65e16c1e66f376b54bb5baab80b3b6667d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_quickprofiler.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4dd0660a18e26b98847dc98a3db2982947ab6761ea11b341219111d1e1b3295f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_server.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "7388cbba48d5c374abbe2e51ad75253be5e3ee57d019c24909ee8f929fe50aab",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\qmltooling\\qmldbg_tcp.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f0a8b8a193416b92df87b1847878d31b4751b36718c2a71145b33a61f9296944",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\scenegraph\\qsgd3d12backend.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f113b016d7e9f13c2b0f24238a82ccb111e91088801cdc44a6d9c087e2a1afc1",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\plugins\\styles\\qwindowsvistastyle.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f99524b208dceb5e3d1161368eef1b72a15ec50ed39d9c38d3220dcdff51d476",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\animation\\labsanimationplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b408a64ef301c18fd19b7aa94fd3a398378e643589577174c6c119af7709ff7f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\calendar\\qtlabscalendarplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "fde7ab30c8b535ec62e913a5e7358a917d48f57e1b0d097de320f047b73af0b1",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\folderlistmodel\\qmlfolderlistmodelplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "66ddc275baa58dac62533d39993868e46db2d8898cfe7fa9963ada3e5fe3c925",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\location\\locationlabsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ca087c9af91e9b2b5a6261823e98dc5e65ece263c5eac49406023fdb3d8968a6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\lottieqt\\lottieqtplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "7ac2f16542a8928fe14f93ff7d67525ef77a2e84da28d7051621e44b69a091b8",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\platform\\qtlabsplatformplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6719a3f740b78d34e993415280b698050dbd43bcebe8da7865c74ef77d5fc545",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\qmlmodels\\labsmodelsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "e64dd1b261a33f3ad54e440926416e0c76d356527cf98fb73750e2e96ffb4c6c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\settings\\qmlsettingsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4be8b9f160b9617edc0009c98d331224b197f85a292730b685faf27f202d29d8",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\sharedimage\\sharedimageplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "55dc612f9ac656d0df9d49d4fdf22a470857e4344a0ad05f999a1f23eb7c7451",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt\\labs\\wavefrontmesh\\qmlwavefrontmeshplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "8df8c5b973c66d13f8f10158ddbe26cd19e98248110343d486a3a0db8ca6cd64",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt3D\\Animation\\quick3danimationplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c0ab901dc84b21d5aa1670e030470b1d1b37b16fa9d27337cc71ef89a88efd68",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt3D\\Core\\quick3dcoreplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "37858387007f18534cee750ebaa27dc7ec5e2b6064f1a00f482c49d68619662e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt3D\\Extras\\quick3dextrasplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "8711d5441cf355040f2fd86bfe26e8e80bb9c595c8e13455bd644b63c3cfb83c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt3D\\Input\\quick3dinputplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5f625033ceea17ade0ed1370d5f3b9daed5a2f6ec977ba31da0704fa2d34ac52",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt3D\\Logic\\quick3dlogicplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "58d29c9838bcc3b5d17e4229253099f4e5fb158602efd10e82887694be54b8a8",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\Qt3D\\Render\\quick3drenderplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "29bb62ddd247fb0b0695a2b3028a75540c74164728edc66ca3280c966d5fdb8c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtBluetooth\\declarative_bluetooth.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "065782e3869bf567fd9b4945bc61b71db6018d1a365c665372dc06e8f146c0ba",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtCharts\\qtchartsqml2.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b3b5057f7d5245d6745480e55d975f5c46a65771e530ff79da65ed28d25b31ac",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtDataVisualization\\datavisualizationqml2.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c07eff54e2f6ad1a3de89d27770dcd6cd21d753c2ee2a15131e6353786371387",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtGamepad\\declarative_gamepad.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "587d5c16607ea96897f1b5b49228ff5f2b46024b527f764b40a3e2fc07ff7d82",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtGraphicalEffects\\private\\qtgraphicaleffectsprivate.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "fe61539bfdaf4200e543c7d6679191cc9b908e01be704a27c648b806d8891d10",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtGraphicalEffects\\qtgraphicaleffectsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "eb4561fedcb5832023fe218839c76136d3192810a1da209e66f573fb3721182e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtLocation\\declarative_location.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "885242e5af6558a5811fe28565a212bae4adecaf0bde8bb231356c7c528aa6e6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtMultimedia\\declarative_multimedia.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "08f24147c9d478afca44dccc1e23c77f794b76a9e4a86fbd08b451dd73d6eefb",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtNfc\\declarative_nfc.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "fb66501eb25a2f94e2487ac6fc3dec94032aec5ac88f371e392d5fe5d939c433",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtPositioning\\declarative_positioning.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "d4b52473d75380c1045ce016239b49f40220d19bcfaf60ab6750a69322961772",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtPurchasing\\declarative_purchasing.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4b6488b4fa824f386d1944cfc7f7519606ea586b6265a327f288edd66df2f98c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQml\\Models.2\\modelsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "50aeba7235213f99f27390c8b8afcd2a6c9dd625c94086c46f58ef3438d5472f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQml\\qmlplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "73f42994a2b855512640a90a34e0bc21219ec8e84f9457f1a3183d29b7a472ac",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQml\\RemoteObjects\\qtqmlremoteobjects.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6f5dd3e64148c9f28283a50ae7604db70a4e487f7da5b67480eef1dbbeb69557",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQml\\StateMachine\\qtqmlstatemachine.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c8256a94ec4634f7be3be730eacd2b24a7d54ad74ab39c5d4483f246b4f88730",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQml\\WorkerScript.2\\workerscriptplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "efd3106749bac293d8356fbaab87c99f4348ebda0e2b81a3776691fd8547c010",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Controls\\qtquickcontrolsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "1ecc17018562c0746a1de00508d572a836e850db98d3feec4bf9c29e2044ff81",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Controls\\Styles\\Flat\\qtquickextrasflatplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a4be539aa32bf6e3f81cd2ff2506be2ebb56d9b8bf6689c13a5b05d26f6fa65e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Fusion\\qtquickcontrols2fusionstyleplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4a1d124c886b0bc2875d555908937cde75bd8e96815986fefb77d97c9ece955b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Imagine\\qtquickcontrols2imaginestyleplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a1dd1ba70165ec928be9929cf9a406242840779db30d085c6fdd84e131f714a6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Material\\qtquickcontrols2materialstyleplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ca4a30afbd361646bd13ffd90b75d226293b29192230805ec5c9392aae7bf1d6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Controls.2\\qtquickcontrols2plugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ccbb0a017c0a6d259385a5e910768eccdaa07255bc3ae835ddc6ca34c1af13bc",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Controls.2\\Universal\\qtquickcontrols2universalstyleplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "51ef11ed93e4113af431a459d83226a407f1458bc60172b48450d15d9d28d413",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Dialogs\\dialogplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ba689dcb01283269e8ca036a3a729f9d817c334873b4363cd5867a08316419cc",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Dialogs\\Private\\dialogsprivateplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f83912ffbe358000e276410b5eff0dba608e4be9bb34d74b4638ed0b0e426093",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Extras\\qtquickextrasplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "3f6581969e0748c6d422376bcb994b9fc3ecb2147f018b222492aa0a1720c90c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Layouts\\qquicklayoutsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "31ddfa6238dc72e82deccfcf8abfc22ae93672a6c5ef4c0d3531ec28105ab7c1",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\LocalStorage\\qmllocalstorageplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "d49f1ac4447cf6b1c31f05a78d49ad7b7cc5bbc62e522e8fb708dd16f2f9bb93",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Particles.2\\particlesplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "973a43f05c26b636ad9595115ec8b22b3b8c7b52eee52a12ce98ce5f55eee05e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Pdf\\pdfplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "28acbf748846560e845246bc0cf185aa07335fca1a883e58c34ad185309a3e8d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\PrivateWidgets\\widgetsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b1e4dabcb1c10610539ffbdb9dcd6db259803b80dde2cc63de51e792a2ed3bb1",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Scene2D\\qtquickscene2dplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ae4e6bea7044a8acd85ae8af768804d234701745e0c26e8e890ac71ba04c7d81",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Scene3D\\qtquickscene3dplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b92a2b44603bb1a65eba84a8c722a7388e65891d5db7e3465bfa85262a0984cd",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Shapes\\qmlshapesplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c819b4ad7e09c8647136aa3070034fa80cd6b241ed3881f50b2e9419cb014dba",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Templates.2\\qtquicktemplates2plugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "7dd0659a10b05bccf82234b871bf3b652b65051693b1d23eeccdd9ad8a38684e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Timeline\\qtquicktimelineplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b9683428266a52a8b7b51686adb523ef9208e4cdcda2e564a8aac9685119d41b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\VirtualKeyboard\\qtquickvirtualkeyboardplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f358e606e29d4fbed2e27439b2a291cae2db45abaea68b70d2f60ea0375a7ecc",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\VirtualKeyboard\\Settings\\qtquickvirtualkeyboardsettingsplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "46682a4beb07a96501fbde1de7f04da5c9c0af0808c095792f408541c9ee62de",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\VirtualKeyboard\\Styles\\qtquickvirtualkeyboardstylesplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0c729a806603f7f87b5010fc2374c6a469e17e38b571c08b87b83396499e1f78",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\Window.2\\windowplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "89613acb0781423659d1f2c474946b8539cdfef548d54bb7f77e9a789faea46d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick\\XmlListModel\\qmlxmllistmodelplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b3d6b5571a9617fe9543039a265e082a52f0703a43cff0fb1e34eab90089c9de",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick.2\\qtquick2plugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "e81f7e7d9a507a180a48583c88bfd7229548182b8dbd2ea275b78169b93a17b8",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick3D\\Effects\\qtquick3deffectplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a9f7f01fee89b4a9ad8a16d179045c57355e807f5c965633e6d2901a43647347",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick3D\\Helpers\\qtquick3dhelpersplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4f3c6cb0e2801b7a458f3cb8d7a93d3e683a5df98ed3e47194faca5d11fa6407",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick3D\\Materials\\qtquick3dmaterialplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6bea812c62620307638ea67c580b19589880e57b27f4e0a346ccf8e7c00955dd",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtQuick3D\\qquick3dplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "468bb0dae75973b1bec7d52ae78d276955efcf45bcaf9296bfe9cccbf4673df6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtRemoteObjects\\qtremoteobjects.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "faca84b3172efe18404922527929e3855bc43c6c4bcb175628f5fb4bba54e83c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtScxml\\declarative_scxml.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "eee1ead7ceb0aca0ae64866a43304e4ef88c0188d90e41f8601446abd78ac088",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtSensors\\declarative_sensors.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "11f0c379b58a7c38c9f762087391465e3c858a422fb2cfe1c70d2be41afcfcc9",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtTest\\qmltestplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "18884455ba9881521ac470ce0bd778b56fa548bb3cc0127e1a2a8c1a76d8299a",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtWebChannel\\declarative_webchannel.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "40ab4a77e1e3062b541eeb898082c523b4c55c55d95aeb83bab6d616e6ac8711",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtWebEngine\\qtwebengineplugin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "20de1ce45b7ff60ab392a115ccef5f915a3cfa4ddbff300966cd39f9769b9591",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtWebSockets\\declarative_qmlwebsockets.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "11524d189f74c1f94c843004a255d2ab141fa40f2710a3d8fe0bbe4e65cb7444",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtWebView\\declarative_webview.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "35b88482a30a52d2e53fcf92b5263da1069257e7cfb245fad6b9e6bfe992842c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\qml\\QtWinExtras\\qml_winextras.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5613947f76fa7196dad6a9494cde8be58e3520f097372d9dfad1af7479a3c17a",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtCore.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "11c4b8859d2e1fd1bb315edb21112662c674d739992abc545afab894d3848cef",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtGui.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "bec878849cba1d0fc79e6d313e5b28e1da9b5ca903673a6634768f52df33bc4f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtNetwork.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ce289b3a1950693d33e47a47143ddb156e468907ebd3a2af8a3e8016e1ecc163",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtPositioning.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5de0b1d711699bcce1e682913762cf251ee5e411a4a458b4dff31e7b707baf2c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtPrintSupport.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "df8e47c3ded8ed5f20122585ec05da95a4f338c0f58adae8293a880de7a4545a",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtQml.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "270dcf6d359ac9fe64cf27864d2ce64fa5505bb25e1bcd1ab507cd23ff822193",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtQuick.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "d14ef3927b9ebb0c2f74094b5d8e25a0a39a60d5f312092ee78df9f92b102527",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtQuickWidgets.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "7bcc4f4023b6e3ccc0a89c20d0b48376d14968dfbbc4104cc56e4036cf58629a",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtSvg.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "39f65d11af932600aee7ef83f6b3a1613ff2518c80102d9968250e66254be8c6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtWebChannel.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f1d58b72202dadb975d1e9efff81f591c6a2020c04de9fe78b890c4d3fca9efb",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtWebEngine.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "69a721857d17f08aa457e0f1be441e37c4412508ecab5342b61e6165d261953f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtWebEngineCore.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2365eed5bd7e916492682da9780f7e4dfd2677c88ea53421d586f5698503095d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtWebEngineProcess.exe",
+      "machine": "0x8664",
+      "subsystem_version": [
+        5,
+        2
+      ],
+      "sha256": "d70a4f1e7cba33fa885e6edda7a26e585cc98c0b6f5676577527b02f5a33c084",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtWebEngineWidgets.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ec788ebd60d32feb3fe5f3d59ac9cb716d5d52ada6f7550587131bb70bb5147f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "PySide2\\QtWidgets.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a2c9c88fb848bebacf6889579e274c70c2eee86dd3f209d45e656d9248eff529",
+      "modern_api_imports": []
+    },
+    {
+      "path": "pyside2.abi3.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "3c2a5cc20fe1c00b5783f8c46f5d3cd64e9b9a8e4cb14ac12e4363b42b2b1bd2",
+      "modern_api_imports": []
+    },
+    {
+      "path": "python3.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "074b06ae1d0a0b5c26f0ce097c91e2f24a5d38b279849115495fc40c6c10117e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "python38.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2f3e368f5bcc1dda5e951682008a509751e6395f7328fd0f02c4e1a11f67c128",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DAnimation.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "3e5bad19a13061a994f689f211b9663f2c8fb7ec990663a423f5a75e6178695e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DCore.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "d828a971c884c3ecb16b93f8c3f71d592651f99409adf01b128c873e55b91f0f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DExtras.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ed3c6c6386b3c018ad6f5310c9f3852a99e92f3bd5bae6fd9bbc8c57153162e9",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DInput.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c6a7e607402440432c9958794e509474a2f3dd7c1c7864998789977c57f86b28",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DLogic.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "eebf693845b87d8fb1adacc58b062ffed03448396791c45acb6dcbd36913bd9b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DQuick.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "82560740d3d5831a9579618a0fda4dcf4a26d73bab0346774b0efe0126f1185f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DQuickAnimation.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "46578e99bed419c3c728de56db6940d5906d5d87cd17fd1eaed4b1a91fba70d9",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DQuickExtras.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "e96265d82469bf781568f08ad9248119a803fd2a861d6167625ac6bcf60de165",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DQuickInput.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "9b66b5b820a3d6b74fdaa4617c018ed2b9d89e21907d7df3e73f6bf0c71982a7",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DQuickRender.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a9c92db53aa1abc1af4f2be158806caf5765580ec73559a4f77250971d92306d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DQuickScene2D.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "79a8fcbfb2b1d3ba48da8f02667b56d15db0ebda7dc8d18d5b5b3f13d7250ef3",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt53DRender.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b92c116d86b19374befa84b41ff3614cabd57d1d0e8e3766ca483c677beca157",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Bluetooth.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5e5d7025065b4d42371b1ed3ca2c0a7ebb3122890c0c9d3ed5ee70b765244eb4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Bodymovin.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "93778d7d4aceb47ae2243410916b153f443e0dacd226f707acbf16b6f435d07c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Charts.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "78ddb9274157820766510d3adaedb3d74853bfc725bf6ecfa18e5e47ebfdd63c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Concurrent.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6571ccb1d963794ffd3ff94aa642ad516ec43cf55a3b38cbdd4f9554b94431af",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Core.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "420feba51d296a441c243b17cd5aaa9afd8c8c4bbb112d07820b5745be5e1928",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5DataVisualization.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "36928c06c5234837807cbaa660a24b6e44dd9e4aa8232d39374327224c68b555",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5DBus.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "448f0e27809b8049ee1d045f2308003541752308eac197fbe71ba14e9b80a273",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Gamepad.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "505e5df3fbb8c96715d67a5a0b37107404c09e77d1af07954c15055a7bac9e81",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Gui.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5d90e673766875c799cc3abb9e341f542e7cde630770394d6c114d91caff8ccb",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Location.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b15545b7dfb1f7742f2593822bc19c54a4ee2999293ae310ca308bbb2a7258fc",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Multimedia.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a1be63f9c645a39996a12d78d953f3d7375bd300a2bb5f69b7c8b768aa3f690c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5MultimediaQuick.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "11cee6a10d7820cb58ab4200e0c921a77b77d1dc1780437ba6469c824ee2b823",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Network.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c0d5fcf7ca747e93dc2650d102cc6cce90383e1fb47ff294806d09ddc46b10dd",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Nfc.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "925950039fb5dac84a01c91dccee864b972c5111a1f8b3fb1436b3ee22cef57d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Pdf.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        5,
+        2
+      ],
+      "sha256": "fd9e0abdbfc06223bbe1382d3d40976fe4a349854c09ceebef7db257bee0dc90",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Positioning.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "225776d513f840a0135e4f0dc69ff91a3345b6c0cc6d3800cef5c747131a743c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5PositioningQuick.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6367728ecae7f56255c98fb114835a9e136c0232a3e2cf479e5a15b354e232a3",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5PrintSupport.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "00463a98f364fcb6a2e690818fdc0186a7a7a01b57099185b4c06d934a432b8f",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Purchasing.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6652fb12a3e6e72279bb1fd2cdeb7a02dd2303917ce57f1a0c7c920a88ca92ca",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Qml.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "7393a8567258efb588a5911191d3537b6c280d919f51149166365a4932c1dace",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QmlModels.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "1044ed33385be04b57ab87923e011f3b13c268ff15f6072299c1b38a25b2565b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QmlWorkerScript.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "7eb7d298bb9486fa0091dfc3079cb0bc88767bee5abc0df830f5f1453ebeada6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Quick.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "32a496ed857cfc063c0098a11eddd4098e896b77a54f035dee9df18ceb98552d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Quick3D.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "bb8cfa6d58defb53d0d7c091c4d7d9e92db746bbb5bd340dc9d37607730b83e8",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Quick3DAssetImport.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "5cdfe150afb3f70fb7770b510dae9e9a0a958e165a98cfd3177e5913047887df",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Quick3DRender.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "becda05e4847ede8de06356a4fd9b7f6d404ecea7bf777970081723ac7ba3212",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Quick3DRuntimeRender.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "1ae2b2abb2e08dbe0d501c610559fdfaa83e93e013fa7fb85a8483e588d7e82c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Quick3DUtils.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b4cf8a7bfc712c41fe46df6d7bccf5c3cd477ab4e02a11caf6284310dd6e8fc0",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QuickControls2.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "dfb980fd6e1e0d94bbbe7ef365e0f9319f2abcd5e66445d6680865044168169d",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QuickParticles.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "a36662ad053b3068f842789bbceb3fd02a8c8f7525b21941411772b59d6cc4db",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QuickShapes.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "8403ea7f6bf062d5e303bc9f526bfcaa7a1ff627bb1720dc0b50d587f9983e1b",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QuickTemplates2.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "97ea065e1c033f81e77d63f5182c07f1e6bc2098fd5fc334cc35c827826c23ee",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QuickTest.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ee462869abf2f98871ba0f49a64ad0f843fbb4cb73f65b7a25f9280d732d23a6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5QuickWidgets.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "0e4f723d3bec20ca8ec60053b30e82fabf644a87678f95abcec2d9ca83ab5778",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5RemoteObjects.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "cb51b37855cd8a735dfea1b896d58b3eeb1999f2e1773b1a7e7db6780357d5fb",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Scxml.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "7f7b91b6b30df78af4b5c2ecebefecaae6325f95ec7e77676466b337f03ba8cf",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Sensors.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "ddce96c0a9229b05013d0d0c013d0f0d60c152cd2ef156877e90e9a286931917",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5SerialPort.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "363c496db033cb36d9bb2917ad2dc8b88f6acb47dbe760c8c40301db9bf369b5",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Sql.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "e939c43b08625d9eb220f030319a525bf83672103c127a9224f418f09f999621",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Svg.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "1112ea391351cc20cd4f3241dfcb9b8af26d4cac2cd78a7b53e593cf1daca55e",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Test.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "f5a33bd37b41061c8ef8800dcf2e1ddc3950accc8218508973560a3302295e4c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5VirtualKeyboard.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "05ce471e702e844a92098aaa8983698f1989764a4aa8a74ad9324a0e42b906ce",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5WebChannel.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6a841115f0b024251718cc2f3f83fe4575c8c40fab26fd17d86d5e751e9e1784",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5WebEngine.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "8224667dfab9ace13000c97745d7bb043fbe267dd2d5c598bda98c226dd35124",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5WebEngineCore.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        5,
+        2
+      ],
+      "sha256": "17ed7fd8ecc01f40552d3a10349eeaf1c145bd878445d955d54278747e6633e4",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5WebEngineWidgets.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6bc7b049f4cfe89c728133fe9f69f4b464037e482b0dd19d67ae7c88f50a1333",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5WebSockets.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "448901a39a33300028a06df2f16cf1eabd1bd31410b93ecd18d2fcb14b570bbb",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5WebView.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "bdfd61350082c7b5ba1d35dab8682369a748e93c5332aef8288f08f3ade5fae0",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5Widgets.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2be48fd4307f10a611a9349cbaef41af0d7dbc49e2c45af155e6b9207cf64622",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5WinExtras.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "10ed253703ecd4c9a203636aff8cf29dd8cd58380dec2d4ab92a046b29f8f717",
+      "modern_api_imports": []
+    },
+    {
+      "path": "Qt5XmlPatterns.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "2a5b6079f913719a4f3df8cbd7eaa68d069a23d44360d65f259db6697a67e925",
+      "modern_api_imports": []
+    },
+    {
+      "path": "select.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "fcc2e09a2355a5546922874fb4cac92ee00a33c0ed6adbc440d128d1e9f4ec28",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shapely\\_geometry_helpers.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4c4c99fe8dbcb69cac1b25236e9e08408af5f308012f3bf439df2e05f780e5e5",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shapely\\_geos.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "95dd4b0460b603c47ff62862a5bacc2d8c7040fee7ea3c5eea23a58b7f6e53bd",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shapely\\lib.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "993f25587fd7ee842792d954363627909e4711cbb0f8610d298652a70ee3c3c0",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shapely.libs\\geos-601667c569b99092781bd4af7fecde0b.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "9378a881755e9c767a3cee95071b92ad55068aea9b1840bcebbe289956c91258",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shapely.libs\\geos_c-2ec21252057a9a4d4390485e0e576a5a.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "012502442afe3edc0f92529ff9ac454575dcb52cd4b604a5bdd661e0ba9ce5e6",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shapely.libs\\msvcp140-4cdfd5d0df96900d509f170af6d4ba5f.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "1fb410e337f1efbbd824df41978c41933c5c5a316fde25af791ed1d7540e7362",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shapely.libs\\vcruntime140_1-8e75bc22155f33e267d2ce86e8d6adbf.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "47b235fdc5bfe0f1279ffce18f33efe4fda4058a05b5ec67a8d47fc9a41142ae",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shiboken2\\shiboken2.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "4161690265e3dadcd864178c089bb2d07795b46c43ddc2e88d251ce7f2374fdc",
+      "modern_api_imports": []
+    },
+    {
+      "path": "shiboken2.abi3.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "3a21d0ef5713f46bccebe6ff3e324a8ca1433417a39eded43790811a60e3206c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "sqlite3.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "53aa551e62267b887017a95fe14a610c2bb3b53c4be62ddc4dc3548df3720a68",
+      "modern_api_imports": []
+    },
+    {
+      "path": "unicodedata.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "d8091e62c74e1b2b648086f778c3c41ce01f09661a75ea207d3fea2cf26a8762",
+      "modern_api_imports": []
+    },
+    {
+      "path": "VCRUNTIME140.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "6a0850419432735a98e56857d5cfce97e9d58a947a9863ca6afadd1c7bcab27c",
+      "modern_api_imports": []
+    },
+    {
+      "path": "VCRUNTIME140_1.dll",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "b1d3b6b3cdeb5b7b8187767cd86100b76233e7bbb9acf56c64f8288f34b269ca",
+      "modern_api_imports": []
+    },
+    {
+      "path": "websockets\\speedups.cp38-win_amd64.pyd",
+      "machine": "0x8664",
+      "subsystem_version": [
+        6,
+        0
+      ],
+      "sha256": "c1b1df37c4225fa6f20f2d869b143f4e87171dbff679abfb5d72a3bce61a69ff",
+      "modern_api_imports": []
+    }
+  ],
+  "modern_api_candidates": [],
+  "unresolved_import_candidates": [],
+  "file_count": 1778,
+  "bytes": 413469849,
+  "longest_path": [
+    135,
+    "data\\maritime\\malaysia\\GIS Data\\Malaysia GIS Data\\malaysia_production_within_psc_area_wgs84.geojson"
+  ]
 }

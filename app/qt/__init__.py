@@ -24,12 +24,12 @@ if LEGACY:
     QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_ShareOpenGLContexts)
     from PySide2.QtWebEngine import QtWebEngine
     QtWebEngine.initialize()
-    QtGui.QShortcut = QtWidgets.QShortcut
-    for cls in (QtCore.QCoreApplication, QtWidgets.QApplication, QtWidgets.QDialog, QtWidgets.QMessageBox):
-        if not hasattr(cls, 'exec'):
-            cls.exec = cls.exec_
-    QtGui.QMouseEvent.position = QtGui.QMouseEvent.localPos
-    QtGui.QMouseEvent.globalPosition = lambda event: QtCore.QPointF(event.globalPos())
+    # Keep native Shiboken classes/module dictionaries unmodified. Their GC
+    # traversal is native code; compatibility aliases belong in our facade.
+    native_gui=QtGui
+    QtGui=ModuleType('app.qt.QtGui')
+    QtGui.__dict__.update({k:getattr(native_gui,k) for k in dir(native_gui) if not k.startswith('__')})
+    QtGui.QShortcut=QtWidgets.QShortcut
     QtSvgWidgets = QtSvg
     QtWebEngineWidgets = importlib.import_module(API+'.QtWebEngineWidgets')
     # Qt5 keeps page/profile/settings in Widgets; Qt6 moved them to Core.
@@ -47,3 +47,11 @@ else:
 
 for name in ('QtCore','QtGui','QtWidgets','QtSvg','QtSvgWidgets','QtWebChannel','QtWebEngineCore','QtWebEngineWidgets'):
     sys.modules[__name__+'.'+name] = globals()[name]
+
+
+def exec_qt(obj):
+    return obj.exec_() if LEGACY else obj.exec()
+
+
+def global_position(event):
+    return event.globalPos() if LEGACY else event.globalPosition().toPoint()

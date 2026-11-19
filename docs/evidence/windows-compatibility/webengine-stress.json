@@ -1,0 +1,272 @@
+[
+  {
+    "render": "default",
+    "cycle": 1,
+    "pid": 24224,
+    "exit_code": 0,
+    "seconds": 2.22,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 2,
+    "pid": 12464,
+    "exit_code": 0,
+    "seconds": 1.88,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 3,
+    "pid": 12176,
+    "exit_code": 0,
+    "seconds": 1.8,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 4,
+    "pid": 27268,
+    "exit_code": 0,
+    "seconds": 1.77,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 5,
+    "pid": 26060,
+    "exit_code": 0,
+    "seconds": 1.56,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 6,
+    "pid": 5008,
+    "exit_code": 0,
+    "seconds": 1.56,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 7,
+    "pid": 32560,
+    "exit_code": 0,
+    "seconds": 1.58,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 8,
+    "pid": 7364,
+    "exit_code": 0,
+    "seconds": 1.61,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 9,
+    "pid": 22804,
+    "exit_code": 0,
+    "seconds": 1.59,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "default",
+    "cycle": 10,
+    "pid": 3112,
+    "exit_code": 0,
+    "seconds": 1.61,
+    "stdout": "START Qt 5.15.2 default\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 1,
+    "pid": 20804,
+    "exit_code": 0,
+    "seconds": 1.83,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 2,
+    "pid": 6652,
+    "exit_code": 0,
+    "seconds": 1.69,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 3,
+    "pid": 20016,
+    "exit_code": 0,
+    "seconds": 1.56,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 4,
+    "pid": 4212,
+    "exit_code": 0,
+    "seconds": 1.47,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 5,
+    "pid": 28280,
+    "exit_code": 0,
+    "seconds": 1.73,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 6,
+    "pid": 31296,
+    "exit_code": 0,
+    "seconds": 1.84,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 7,
+    "pid": 17852,
+    "exit_code": 0,
+    "seconds": 1.66,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 8,
+    "pid": 21248,
+    "exit_code": 0,
+    "seconds": 1.61,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 9,
+    "pid": 29632,
+    "exit_code": 0,
+    "seconds": 1.52,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "software",
+    "cycle": 10,
+    "pid": 20928,
+    "exit_code": 0,
+    "seconds": 1.69,
+    "stdout": "START Qt 5.15.2 software\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 1,
+    "pid": 22756,
+    "exit_code": 0,
+    "seconds": 1.7,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 2,
+    "pid": 27356,
+    "exit_code": 0,
+    "seconds": 1.72,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 3,
+    "pid": 21388,
+    "exit_code": 0,
+    "seconds": 1.56,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 4,
+    "pid": 25656,
+    "exit_code": 0,
+    "seconds": 1.75,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 5,
+    "pid": 7572,
+    "exit_code": 0,
+    "seconds": 1.59,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 6,
+    "pid": 24492,
+    "exit_code": 0,
+    "seconds": 1.73,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 7,
+    "pid": 19520,
+    "exit_code": 0,
+    "seconds": 1.8,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 8,
+    "pid": 26952,
+    "exit_code": 0,
+    "seconds": 1.47,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 9,
+    "pid": 26580,
+    "exit_code": 0,
+    "seconds": 1.72,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  },
+  {
+    "render": "gpu-disabled",
+    "cycle": 10,
+    "pid": 21248,
+    "exit_code": 0,
+    "seconds": 1.55,
+    "stdout": "START Qt 5.15.2 gpu-disabled\nEVENT LOOP RETURNED 0\nPROBE CLEAN EXIT\n",
+    "stderr": ""
+  }
+]

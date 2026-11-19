@@ -5,7 +5,7 @@ from app.qt.QtCore import QDate, QEvent, QLocale, QPoint, QRectF, Qt, Signal
 from app.qt.QtGui import QColor, QIcon, QPainter, QPen, QPixmap
 from app.qt.QtWidgets import QApplication, QDialog, QFrame, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 from app.ui.theme import COLORS
-from app.qt import isValid, LEGACY
+from app.qt import isValid, LEGACY,global_position
 from .style import themed
 from .widgets import load_fonts
 
@@ -296,7 +296,7 @@ class CalendarPopover(QFrame):
         if not self.isVisible():
             return False
         if event.type() == QEvent.Type.MouseButtonPress:
-            point = event.globalPosition().toPoint()
+            point = global_position(event)
             inside = self.rect().contains(self.mapFromGlobal(point))
             in_owner = self.owner.rect().contains(self.owner.mapFromGlobal(point))
             if not inside and not in_owner:

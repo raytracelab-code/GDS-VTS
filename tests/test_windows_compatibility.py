@@ -97,6 +97,12 @@ def test_loopback_resources_restrict_origin_host_token_and_traversal():
             assert b'MapLibre' in html and server.base.encode() in html
         with urlopen(server.base+'map/assets/qwebchannel.js',timeout=3) as response:
             assert b'QWebChannel' in response.read()
+        original={'sources':[{'tiles':['gds://tiles/sea/basemap/{z}/{x}/{y}.pbf']}],
+                  'remote':'https://example.invalid/map','enabled':True}
+        converted=server.browser_config(original)
+        assert converted['sources'][0]['tiles']==[server.base+'tiles/sea/basemap/{z}/{x}/{y}.pbf']
+        assert converted['remote']==original['remote'] and converted['enabled'] is True
+        assert original['sources'][0]['tiles'][0].startswith('gds://')
         for request in [Request(server.origin+'/wrong/map/index.html'),
                         Request(server.url,headers={'Origin':'https://evil.invalid'}),
                         Request(server.url,headers={'Host':'evil.invalid'}),
@@ -105,3 +111,59 @@ def test_loopback_resources_restrict_origin_host_token_and_traversal():
             assert error.value.code in (403,404)
     finally:server.close()
     assert not server.thread.is_alive()
+
+
+def test_overpass_shutdown_does_not_start_fallback_request(monkeypatch):
+    from app.nav.maritime.adapters import overpass as module
+    from app.nav.maritime.adapters.base import SourceConfig
+    from app.nav.maritime.area_controller import OperatingArea
+    adapter=module.OverpassAdapter(SourceConfig('overpass','https://first.invalid'),['https://second.invalid'])
+    requests=[]
+    def closing(endpoint,**kwargs):
+        requests.append(endpoint);adapter.stop()
+        raise module.ProviderRequestError('TIMEOUT')
+    monkeypatch.setattr(module,'request_json',closing)
+    with pytest.raises(module.ProviderRequestError,match='DISABLED'):
+        adapter.fetch(OperatingArea(22,91,5))
+    assert requests==['https://first.invalid']
+
+
+def test_qt_cycles_are_collected_on_gui_thread_after_worker_allocations(qapp):
+    import gc
+    import threading
+    import weakref
+    from app.qt.QtCore import QObject,QCoreApplication,QEvent
+    from app.qt.garbage_collection import GuiGarbageCollector
+    original=gc.isenabled();owner=threading.get_ident();destroyed=[]
+    collector=GuiGarbageCollector(qapp)
+    class Owned(QObject):
+        def __del__(self):destroyed.append(threading.get_ident())
+    obj=Owned();obj.cycle=obj;reference=weakref.ref(obj);obj=None
+    def allocate():
+        for _ in range(2000):
+            cycle=[];cycle.append(cycle)
+    worker=threading.Thread(target=allocate);worker.start();worker.join()
+    try:
+        assert reference() is not None
+        collector.collect()
+        assert reference() is None and destroyed==[owner]
+    finally:
+        collector.finish();collector.deleteLater()
+        QCoreApplication.sendPostedEvents(None,QEvent.DeferredDelete)
+    assert gc.isenabled()==original
+
+
+def test_legacy_json_wire_preserves_payloads_and_control_validation(qapp):
+    from app.nav.map_bridge import MapBridge
+    from app.nav.legacy_bridge import LegacyWebBridge
+    bridge=MapBridge();wire=LegacyWebBridge(bridge)
+    payload={'name':'TEST VESSEL Ω','values':[None,True,2,1.25],
+             'geometry':{'type':'Point','coordinates':[91.25,22.5]}}
+    bridge.offline_config=payload
+    assert json.loads(wire.getOfflineMapConfig())==payload
+    messages=[];wire.paletteChanged.connect(messages.append)
+    bridge.paletteChanged.emit(payload)
+    assert len(messages)==1 and json.loads(messages[0])==payload
+    centers=[];bridge.mapCenterChanged.connect(lambda a,b:centers.append((a,b)))
+    wire.reportMapCenter(22.5,91.25);wire.reportMapCenter(200,500)
+    assert centers==[(22.5,91.25)]

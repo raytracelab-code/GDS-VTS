@@ -22,6 +22,8 @@ if (-not (Test-Path -LiteralPath $python)) {
 if ($LASTEXITCODE) { throw 'Wrong compatibility interpreter' }
 & $python -m pip check
 if ($LASTEXITCODE) { throw 'Dependency consistency check failed' }
+& $python tools\windows\check_environment.py
+if ($LASTEXITCODE) { throw 'Legacy release inputs do not match requirements-win7.txt' }
 & $python -m compileall -q app main.py tools
 if ($LASTEXITCODE) { throw 'Python 3.8 compilation failed' }
 if (-not $SkipTests) {

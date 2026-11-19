@@ -3,7 +3,8 @@ import json
 import re
 from app.qt.QtCore import Qt, QEvent, QSize, QTimer
 from app.qt.QtWidgets import (QApplication, QFrame, QHBoxLayout, QVBoxLayout,
-    QLabel, QToolButton, QLineEdit, QListWidget, QListWidgetItem, QComboBox, QScrollArea)
+    QLabel, QToolButton, QLineEdit, QListWidget, QListWidgetItem, QComboBox, QScrollArea,QWidget)
+from app.qt import LEGACY,global_position
 from app.ui.components.nav_icons import nav_icon
 
 
@@ -77,8 +78,16 @@ class FloatingControls:
         self.details_button.clicked.connect(self.toggle_details);actions.addWidget(self.details_button)
         self.trackbar.setParent(self);self.trackbar.setObjectName('floatingTrack');self.trackbar.hide()
         self.status.setParent(self.utility);self.status.hide()  # Full telemetry remains in Layers.
-        QApplication.instance().installEventFilter(self)
+        if LEGACY:self._install_local_input_filters()
+        else:QApplication.instance().installEventFilter(self)
         self._position_floating()
+
+    def _install_local_input_filters(self):
+        # Qt5/Shiboken must not wrap every transient native QObject delivered to
+        # QApplication. These controls only handle input on this page's widgets.
+        for widget in [self]+self.findChildren(QWidget):widget.installEventFilter(self)
+        if hasattr(self,'web') and self.web.focusProxy():
+            self.web.focusProxy().installEventFilter(self)
 
     def _map_status_changed(self, message):
         self.map_package_status.setText(message)
@@ -109,7 +118,7 @@ class FloatingControls:
         for widget in (self.utility,self.search_capsule,self.layers_panel,self.selection_panel,self.search_results,self.trackbar):widget.raise_()
 
     def resizeEvent(self,event):
-        super().resizeEvent(event);self._position_floating()
+        QWidget.resizeEvent(self,event);self._position_floating()
 
     def toggle_layers(self):
         visible=self.layers_panel.isHidden();self.layers_panel.setVisible(visible);self.layers_button.setChecked(visible)
@@ -144,12 +153,12 @@ class FloatingControls:
             self.close_overlays();self.search.clearFocus();return True
         if event.type()==QEvent.Type.MouseButtonPress:
             if watched in (self.control_buttons['MARINE'],self.control_buttons['SATELLITE']):return False
-            point=self.mapFromGlobal(event.globalPosition().toPoint())
+            point=self.mapFromGlobal(global_position(event))
             if not self.layers_panel.isHidden() and not self.layers_panel.geometry().contains(point):
-                if not self.layers_button.rect().contains(self.layers_button.mapFromGlobal(event.globalPosition().toPoint())):
+                if not self.layers_button.rect().contains(self.layers_button.mapFromGlobal(global_position(event))):
                     self.layers_panel.hide();self.layers_button.setChecked(False)
             if not self.search_capsule.geometry().contains(point) and not self.search_results.geometry().contains(point):self.search_results.hide()
-        return super().eventFilter(watched,event)
+        return QWidget.eventFilter(self,watched,event)
 
     def _search_loaded(self):
         query=self.search.text().strip();self.search_results.clear()
