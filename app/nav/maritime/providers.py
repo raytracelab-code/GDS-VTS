@@ -35,7 +35,8 @@ def install(runtime,env):
             config=SourceConfig(name,endpoint,key,dynamic,interval)
             runtime.config.sources[name]=config;runtime.adapters[name]=adapter(config)
     fallbacks=[url.strip() for url in env.get('GDS_OVERPASS_FALLBACK_ENDPOINTS','https://overpass.private.coffee/api/interpreter').split(',') if url.strip()]
-    register('overpass',env.get('GDS_OVERPASS_ENDPOINT') or 'https://overpass-api.de/api/interpreter',lambda c:OverpassAdapter(c,fallbacks))
+    # Opt-out: GDS_OVERPASS_ENABLED=false. Queries carry only a generalised area (see maritime/privacy.py).
+    register('overpass',env.get('GDS_OVERPASS_ENDPOINT') or 'https://overpass-api.de/api/interpreter',lambda c:OverpassAdapter(c,fallbacks),enabled(env,'GDS_OVERPASS_ENABLED',True))
     ais_enabled=str(env.get('AISSTREAM_ENABLED','')).strip().lower() not in ('false','0','no','off');ais_key=env.get('AISSTREAM_API_KEY','').strip()
     service.sources['aisstream']=SourceHealth(state=SourceState.CONNECTING if ais_enabled and ais_key else SourceState.NOT_CONFIGURED if ais_enabled else SourceState.DISABLED,dynamic=True)
     if ais_enabled and ais_key:runtime.aisstream=AISStreamAdapter(ais_key)

@@ -10,7 +10,7 @@ from app.vdr.store import ReportStore
 from app.vdr.pdf import export_pdf, import_pdf
 from app.ui.pages.vdr.date_picker import VdrDatePicker
 from app.ui.pages.vdr.workspace import VdrPage
-from test_vdr import fixture_report
+from test_vdr import fixture_report, TEST_IDENTITY
 
 
 def test_new_report_defaults_and_dedicated_key():
@@ -46,7 +46,7 @@ def test_saved_state_normalization_and_deserialization(tmp_path, legacy):
 def test_rollover_matches_other_historical_hse_dates_and_finalization(tmp_path, value):
     report = fixture_report('2026-11-18')
     report['hse'].update(inc24='Nil',lti=value,inj=value,incd=value,containment_loss=value)
-    store = ReportStore(tmp_path/'reports.json',today='2026-11-19')
+    store = ReportStore(tmp_path/'reports.json',today='2026-11-19',identity=TEST_IDENTITY)
     store.reports['2026-11-18'] = report
     store.reports.pop('2026-11-19')
     store.select('2026-11-19')
@@ -59,10 +59,10 @@ def test_rollover_matches_other_historical_hse_dates_and_finalization(tmp_path, 
 
 @pytest.mark.parametrize('mode',['scroll','steps'])
 def test_calendar_selection_clear_autosave_history_and_finalized_lock(qtbot,tmp_path,mode):
-    store = ReportStore(tmp_path/'reports.json',today='2026-11-19')
+    store = ReportStore(tmp_path/'reports.json',today='2026-11-19',identity=TEST_IDENTITY)
     store.reports[store.current] = fixture_report(store.current)
     store.report['hse']['incd'] = '2026-10-01'
-    page = VdrPage(store); qtbot.addWidget(page); page.resize(1440,900); page.show()
+    page = VdrPage(store, identity_provider=lambda: dict(TEST_IDENTITY)); qtbot.addWidget(page); page.resize(1440,900); page.show()
     page.set_mode(mode); page.go_section(0)
     field = page.editors[('hse','containment_loss')]
     assert isinstance(field,VdrDatePicker) and field.clearable and field.iso_value() == ''

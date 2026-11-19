@@ -6,7 +6,7 @@ from app.qt.QtWidgets import QDateEdit, QDialog, QLineEdit, QVBoxLayout, QWidget
 from app.ui.pages.vdr.date_picker import CalendarPopover, VdrDatePicker
 from app.ui.pages.vdr.workspace import VdrPage
 from app.vdr.store import ReportStore
-from test_vdr import fixture_report
+from test_vdr import fixture_report, TEST_IDENTITY
 
 
 @pytest.fixture
@@ -138,9 +138,9 @@ def test_readonly_disabled_and_modal_lock(host, qtbot):
 
 @pytest.fixture
 def page(qtbot, tmp_path):
-    store = ReportStore(tmp_path/'reports.json', today='2026-11-19')
+    store = ReportStore(tmp_path/'reports.json', today='2026-11-19', identity=TEST_IDENTITY)
     store.reports[store.current] = fixture_report('2026-11-19')
-    page = VdrPage(store); qtbot.addWidget(page); page.resize(1440, 820); page.show(); qtbot.wait(30)
+    page = VdrPage(store, identity_provider=lambda: dict(TEST_IDENTITY)); qtbot.addWidget(page); page.resize(1440, 820); page.show(); qtbot.wait(30)
     yield page
     page.save_timer.stop()
 
@@ -169,6 +169,8 @@ def test_finalized_dates_lock_and_draft_edit_restores_existing_workflow(page):
     assert page.editors[('crew',0,'signon')].open_calendar() is None
     # Report-date navigation remains available even on a finalized report.
     popup = page.report_date.open_calendar(); assert popup is not None; popup.hide()
+    page.edit(('meta','captain'), 'Changed'); assert page.report['finalized']  # read-only until reopened
+    page.store.reopen(); page._rebuild()
     page.edit(('meta','captain'), 'Changed')
     assert not page.report['finalized'] and page.editors[('hse','lti')].open_calendar() is not None
 

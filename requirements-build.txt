@@ -1,0 +1,4 @@
+# Modern (PySide6) packaging tools. Install into .venv with: pip install -r requirements-build.txt
+# The legacy Windows 7/8 build pins its own PyInstaller in requirements-win7.txt.
+pyinstaller==6.16.0
+pyinstaller-hooks-contrib==2026.10

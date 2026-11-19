@@ -8,12 +8,60 @@ SECTIONS = ('Report & HSE', 'Weather', 'Activity log', 'Running hours',
             'Bulk inventory', 'Core crew', 'Contractors')
 
 
+THOUSANDS = re.compile(r'[+-]?\d{1,3}(,\d{3})+(\.\d+)?')
+
+
 def number(value):
+    """Parse a user number. A comma is accepted only as a strict thousands
+    separator ("1,250.5"); "2,5" is rejected instead of being read as 25."""
+    text = str(value).strip()
+    if ',' in text:
+        if not THOUSANDS.fullmatch(text):
+            return None
+        text = text.replace(',', '')
     try:
-        result = float(str(value).replace(',', ''))
+        result = float(text)
         return result if math.isfinite(result) else None
     except (ValueError, TypeError):
         return None
+
+
+def number_text(value):
+    """Plain stored text for a calculated number: 5650 not '5650.0', never exponent notation."""
+    if value is None:
+        return ''
+    value = round(float(value), 4)
+    if value == int(value) and abs(value) < 1e15:
+        return str(int(value))
+    return f'{value:.4f}'.rstrip('0').rstrip('.')
+
+
+# Maximum characters per stored text field, sized to what the UI, PDF and Excel
+# template can present. Longer input is refused with a message, never truncated.
+FIELD_LIMITS = {'act': 1000, 'remarks': 1000, 'comments': 1000, 'nextProv': 200, 'inc24': 500}
+DEFAULT_FIELD_LIMIT = 200
+
+
+def field_limit(key):
+    return FIELD_LIMITS.get(key, DEFAULT_FIELD_LIMIT)
+
+
+def oversized_fields(report):
+    """Every (where, key, length, limit) that exceeds the per-field limit."""
+    found = []
+
+    def check(where, row):
+        for key, value in row.items():
+            if isinstance(value, str) and len(value) > field_limit(key):
+                found.append((where, key, len(value), field_limit(key)))
+    for group in ('meta', 'hse', 'end'):
+        check(group, report.get(group, {}))
+    for group in ('wx', 'acts', 'eq', 'bulk', 'crew', 'ctr'):
+        for i, row in enumerate(report.get(group, [])):
+            check(f'{group} row {i+1}', row)
+            for j, transfer in enumerate(row.get('tr', []) if group == 'bulk' else []):
+                check(f'{group} row {i+1} transfer {j+1}', transfer)
+    return found
 
 
 def fmt(value):
@@ -64,7 +112,7 @@ def new_report(day=None, identity=None):
                       ('FUEL', 'FRESH WATER', 'LUB. OIL', 'GEAR OIL', 'DISPERSANT')],
                 crew=[blank_row('crew') for _ in range(5)],
                 ctr=[blank_row('ctr') for _ in range(3)], finalized=False,
-                finalizedAt='', identity=deepcopy(identity or {}))
+                finalizedAt='', identity=deepcopy(identity or {}), carry=dict(source='', values={}))
 
 
 def activity_intervals(activity_rows):
@@ -202,24 +250,127 @@ def validate(report):
     return errors
 
 
-def rollover(previous, day):
-    result = deepcopy(previous)
+def _row_key(name):
+    return ' '.join(str(name).split()).casefold()
+
+
+CARRY_LABELS = {'total': 'total run hours', 'fm0': 'flowmeter @0000H', 'open': 'opening @0000H'}
+
+
+def carried_values(previous):
+    """Opening values the next report inherits from ``previous``'s closing figures.
+
+    Keys are ``group|item name|field``; values are stored text. Only figures that
+    can be derived (a closing that exists) are returned."""
     calc = calculate(previous)
+    values = {}
+    for row in previous['eq']:
+        key = 'eq|' + _row_key(row['name'])
+        if key + '|total' in values or key + '|fm0' in values:
+            continue
+        total, daily = number(row['total']), number(row['daily'])
+        if daily is not None:
+            values[key + '|total'] = number_text((total or 0) + daily)
+        elif row['total'].strip():
+            values[key + '|total'] = row['total'].strip()
+        meter = row['fm24'] or row['fm0']
+        if meter.strip():
+            values[key + '|fm0'] = meter.strip()
+    for i, row in enumerate(previous['bulk']):
+        key = 'bulk|' + _row_key(row['name']) + '|open'
+        if key not in values and calc['bulkClose'][i] is not None:
+            values[key] = number_text(calc['bulkClose'][i])
+    return values
+
+
+def _carry_target(report, key):
+    group, name, field = key.split('|')
+    for row in report[group]:
+        if _row_key(row['name']) == name:
+            return row, field
+    return None, field
+
+
+def _same(a, b):
+    a, b = str(a or '').strip(), str(b or '').strip()
+    if a == b:
+        return True
+    return a != '' and b != '' and number(a) is not None and number(a) == number(b)
+
+
+def apply_carry_forward(report, previous, source_day):
+    """Refresh ``report``'s inherited openings from ``previous`` (closing → opening).
+
+    Rule: a field that still holds the value it last inherited (or is blank) is
+    *linked* and follows the source. A field the user changed is a *manual
+    override* and is never overwritten. Finalized reports are never changed.
+    Returns True if anything changed."""
+    if report.get('finalized'):
+        return False
+    carry = report.setdefault('carry', dict(source='', values={}))
+    recorded = carry.setdefault('values', {})
+    changed = carry.get('source') != source_day
+    carry['source'] = source_day
+    for key, value in carried_values(previous).items():
+        row, field = _carry_target(report, key)
+        if row is None:
+            continue
+        current = row[field]
+        if key in recorded:
+            linked = _same(current, recorded[key])
+        else:
+            # Unknown history (older stores): only blank or already-equal values are linked.
+            linked = not current.strip() or _same(current, value)
+        if linked:
+            if current != value:
+                row[field] = value; changed = True
+            if recorded.get(key) != value:
+                recorded[key] = value; changed = True
+    return changed
+
+
+def carry_forward_status(report, previous):
+    """(linked, differing) lists of (label, current, expected) for display."""
+    linked, differing = [], []
+    if previous is None:
+        return linked, differing
+    for key, value in carried_values(previous).items():
+        row, field = _carry_target(report, key)
+        if row is None:
+            continue
+        item = (f"{row['name']} {CARRY_LABELS[field]}", row[field], value)
+        (linked if _same(row[field], value) else differing).append(item)
+    return linked, differing
+
+
+def reset_carry_forward(report, previous, source_day):
+    """Explicit user action: replace every inherited opening with the source closing."""
+    for key, value in carried_values(previous).items():
+        row, field = _carry_target(report, key)
+        if row is not None:
+            row[field] = value
+    report['carry'] = dict(source=source_day, values=carried_values(previous))
+
+
+def rollover(previous, day):
+    """New report for ``day`` seeded from the most recent prior report.
+
+    Crew, contractors, equipment/bulk rows, captain, location and drafts are copied
+    as editable defaults; numeric openings are linked via :func:`apply_carry_forward`."""
+    result = deepcopy(previous)
     result['meta']['date'] = day
     result['wx'] = new_report(day)['wx']
     result['acts'] = [blank_row('acts')]
     for row in result['eq']:
-        if number(row['daily']) is not None:
-            row['total'] = str((number(row['total']) or 0) + number(row['daily']))
-        row.update(daily='', fm0=row['fm24'] or row['fm0'], fm24='')
-    for i, row in enumerate(result['bulk']):
-        if calc['bulkClose'][i] is not None:
-            row['open'] = str(calc['bulkClose'][i])
+        row.update(total='', daily='', fm0='', fm24='')
+    for row in result['bulk']:
+        row['open'] = ''
         for key in ('rcvQty', 'rcvFrom', 'rcvB', 'rcvA', 'rcvTicket', 'cons'):
             row[key] = ''
         row.update(tr=[], det=False)
     result['hse']['inc24'] = ''
-    result.update(finalized=False, finalizedAt='')
+    result.update(finalized=False, finalizedAt='', carry=dict(source='', values={}))
+    apply_carry_forward(result, previous, previous['meta']['date'])
     return result
 
 
@@ -264,6 +415,11 @@ def normalize(data):
         result[group] = rows
     if len(result['wx']) != 4:
         raise ValueError('Report requires four weather slots')
+    carry = data.get('carry', {})
+    if isinstance(carry, dict) and isinstance(carry.get('values', {}), dict):
+        values = {k: v for k, v in carry.get('values', {}).items()
+                  if isinstance(k, str) and isinstance(v, str) and k.count('|') == 2 and k.split('|')[0] in ('eq', 'bulk')}
+        result['carry'] = dict(source=str(carry.get('source', ''))[:10], values=values)
     result['finalized'] = data.get('finalized') is True
     result['finalizedAt'] = str(data.get('finalizedAt', ''))
     return result

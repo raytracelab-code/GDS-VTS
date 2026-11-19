@@ -4,6 +4,10 @@ from app.qt.QtSvgWidgets import QSvgWidget
 from app.qt.QtWidgets import QWidget, QVBoxLayout, QToolButton
 from .nav_icons import nav_icon
 
+# Abbreviations are spelled out on hover (GDS-AUDIT-049).
+TOOLTIPS={'Configure':'Configure — vessel & client details and sensor connection','VDR':'VDR — Vessel Daily Report',
+          'VJR':'VJR — Vessel Journey Report','Nav':'NAV — Navigation map'}
+
 class TopTabs(QWidget):
     def __init__(self, navigate):
         super().__init__(); self.setObjectName('navigationRail'); self.setFixedWidth(60)
@@ -19,15 +23,14 @@ class TopTabs(QWidget):
         logo=QSvgWidget(str(Path(__file__).resolve().parents[2]/'resources/theme/deep-current/logos/logo-small.svg'))
         logo.setFixedSize(34,34);logo.setToolTip('GDS VTS · Deep Current');layout.addWidget(logo,0,Qt.AlignmentFlag.AlignHCenter);layout.addSpacing(22)
         for name in ('Configure','VDR','VJR','Nav'):
-            button=QToolButton();button.setText('SETUP' if name=='Configure' else name.upper());button.setIcon(nav_icon(name));button.setIconSize(QSize(22,22));button.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextUnderIcon);button.setFixedSize(50,52);button.setToolTip(name);button.setAccessibleName(name);button.setCheckable(True);button.clicked.connect(lambda _=False, n=name:self._select(navigate,n));layout.addWidget(button);self.buttons[name]=button
+            button=QToolButton();button.setText('SETUP' if name=='Configure' else name.upper());button.setIcon(nav_icon(name));button.setIconSize(QSize(22,22));button.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextUnderIcon);button.setFixedSize(50,52);button.setToolTip(TOOLTIPS[name]);button.setAccessibleName(name);button.setCheckable(True);button.clicked.connect(lambda _=False, n=name:self._select(navigate,n));layout.addWidget(button);self.buttons[name]=button
         self.buttons['Configure'].setChecked(True); layout.addStretch(); self.set_locked(False)
     def set_locked(self, unlocked):
         # VDR supports manual reports without a live telemetry source.
-        for name in ('Configure','VDR'):
-            self.buttons[name].setEnabled(True);self.buttons[name].setToolTip(name)
-        # Preserve VJR's existing session gate, including unlock after LIVE.
-        self.buttons['VJR'].setEnabled(unlocked);self.buttons['VJR'].setToolTip('VJR' if unlocked else 'VJR · Locked until telemetry is live')
-        self.buttons['Nav'].setEnabled(True); self.buttons['Nav'].setText('NAV')
+        for name in ('Configure','VDR','VJR'):
+            self.buttons[name].setEnabled(True);self.buttons[name].setToolTip(TOOLTIPS[name])
+        # VJR now supports manually maintained journeys without live telemetry.
+        self.buttons['Nav'].setEnabled(True); self.buttons['Nav'].setText('NAV'); self.buttons['Nav'].setToolTip(TOOLTIPS['Nav'])
     def _select(self,navigate,name):
         for button in self.buttons.values(): button.setChecked(False)
         self.buttons[name].setChecked(True); navigate(name)

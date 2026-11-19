@@ -147,10 +147,22 @@ class VdrExcelExporter:
                 if workbook[sheet][ref].value != expected:
                     raise ExcelExportError(f'Excel template structure mismatch at {sheet}!{ref}.')
 
-    def values(self, report, workbook, identity=None):
-        """Explicit cell map; typed values only. Never reads UI or retains sample outputs."""
+    def values(self, report, workbook, identity=None, checked=False):
+        """Explicit cell map; typed values only. Never reads UI or retains sample outputs.
+
+        ``checked`` is set only by the Finalize dry run, which has already applied
+        the shared final validation (app.vdr.validation)."""
         if not report.get('finalized'):
             raise ExcelExportError('Finalize the report before downloading Excel.')
+        if not checked:
+            from .validation import final_issues, format_issues
+            try:
+                issues = final_issues(normalize(deepcopy(report)), report.get('identity', {}) if identity is None else identity, template_check=False)
+            except (ValueError, TypeError, KeyError) as error:
+                raise ExcelExportError(f'Invalid VDR report: {error}') from error
+            if issues:
+                raise ExcelExportError(f'Report has {len(issues)} validation issues that must be fixed before Excel export. '
+                                       'Reopen the report, correct them, then finalize again:\n' + format_issues(issues))
         # Capacity checks precede normalization's generic record-size guard.
         for group, capacity, label in [('acts',90,'Activity Log'),('crew',200,'Core crew'),('ctr',200,'Contractors')]:
             if len(report.get(group, [])) > capacity:

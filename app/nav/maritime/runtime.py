@@ -24,7 +24,11 @@ class MaritimeRuntime(QObject):
         self.controller = MaritimeAreaController(self.config.radius_nm, self.config.movement_nm, self.config.debounce_seconds)
         self.adapters = {key: JsonPollingAdapter(c) for key, c in self.config.sources.items()}
         self.cache = StaticCache(self.config.cache_directory)
-        self.executor = ThreadPoolExecutor(max_workers=3, thread_name_prefix='maritime')
+        # Remote requests run on abandonable daemon workers (bounded shutdown);
+        # local GIS parsing keeps one dedicated, cooperatively stoppable thread.
+        from .executor import DaemonExecutor
+        self.executor = DaemonExecutor(max_workers=3, thread_name_prefix='maritime')
+        self.gis_executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix='maritime-gis')
         self._generation, self._busy, self._next = 0, set(), {}
         self._dirty, self._closed, self._pending_view = False, False, None
         self._last_own_query = None
@@ -61,7 +65,12 @@ class MaritimeRuntime(QObject):
         from .area_controller import distance_bearing
         if self._last_own_query and distance_bearing(*self._last_own_query, latitude, longitude)[0] < self.config.movement_nm:
             return
-        area = self.controller.request(latitude, longitude)
+        # Privacy: provider queries use a 0.5 degree grid node, never the exact fix.
+        # The radius grows by the worst-case snap offset so the configured
+        # coverage around the vessel is still fully requested.
+        from .privacy import snap_position, SNAP_MARGIN_NM
+        snapped_lat, snapped_lon = snap_position(latitude, longitude)
+        area = self.controller.request(snapped_lat, snapped_lon, radius_nm=min(250, self.controller.radius_nm+SNAP_MARGIN_NM))
         if area:
             self._last_own_query = (latitude, longitude)
             self._set_area(area)
@@ -110,7 +119,7 @@ class MaritimeRuntime(QObject):
             self._busy.add('malaysia_gis')
             if self.malaysia_gis.load_count == 0:
                 self.service.set_source('malaysia_gis',SourceState.LOADING)
-            self.executor.submit(self._fetch_malaysia, self._generation, self.service.area)
+            self.gis_executor.submit(self._fetch_malaysia, self._generation, self.service.area)
         if now-self._last_age_publish >= 1 and any(o.category.value=='vessels' or o.source=='aisstream' for o in self.service.render_snapshot()):
             self._last_age_publish = now; self._dirty = True
         if self.service.area:
@@ -210,10 +219,20 @@ class MaritimeRuntime(QObject):
         self.service.set_source(key, state, error=error, cached=cached, success=error is None and not cached)
         log.info('MARITIME SOURCE %s %s objects=%s error=%s', key.upper(), state,sum(o.source==key for o in self.service.render_snapshot()),error or 'NONE')
 
-    def close(self,wait=False):
+    def close(self,wait=False,timeout=2.0):
+        """Stop providers. With wait=True, waits at most ``timeout`` seconds for
+        in-flight network requests, then abandons them (daemon workers; cache
+        writes are atomic). Local GIS work stops cooperatively and is joined."""
+        first = not self._closed
         self._closed = True; self.timer.stop()
-        if self.aisstream:self.aisstream.stop()
-        if self.malaysia_gis:self.malaysia_gis.stop()
-        for adapter in self.adapters.values():
-            adapter.stop()
-        self.executor.shutdown(wait=wait, cancel_futures=True)
+        if first:
+            if self.aisstream:self.aisstream.stop()
+            if self.malaysia_gis:self.malaysia_gis.stop()
+            for adapter in self.adapters.values():
+                adapter.stop()
+        started = time.monotonic()
+        self.gis_executor.shutdown(wait=wait, cancel_futures=True)
+        drained = self.executor.shutdown(wait=wait, cancel_futures=True, timeout=max(0.0, timeout-(time.monotonic()-started)))
+        if wait and not drained:
+            log.info('MARITIME shutdown abandoned in-flight provider requests after %.1fs', time.monotonic()-started)
+        return drained

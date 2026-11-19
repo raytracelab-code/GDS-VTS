@@ -74,6 +74,12 @@ def bbox_parts(area):
     return [(west, south, east, north)]
 
 
+def request_boxes(area):
+    """Boxes for transmission to external services: outward-snapped, never narrower."""
+    from ..privacy import widen_bounds
+    return [widen_bounds(*box) for box in bbox_parts(area)]
+
+
 def in_region(area, boxes):
     return any(w <= re and e >= rw and s <= rn and n >= rs
                for w,s,e,n in bbox_parts(area) for rw,rs,re,rn in boxes)
@@ -88,7 +94,13 @@ def query_url(endpoint, params):
     return urlunsplit((p.scheme,p.netloc,p.path,urlencode(query+list(params.items())),''))
 
 
-def request_bytes(endpoint, params=None, *, data=None, headers=None, timeout=35):
+# Socket timeout (connect and each read). Overpass passes OVERPASS_TIMEOUT because its
+# server-side query budget is [timeout:25]; shutdown never waits for either.
+DEFAULT_TIMEOUT = 20
+OVERPASS_TIMEOUT = 35
+
+
+def request_bytes(endpoint, params=None, *, data=None, headers=None, timeout=DEFAULT_TIMEOUT):
     url = query_url(endpoint, params or {})
     h = {'User-Agent':'GDS-VTS-Maritime/4R','Accept':'application/json, application/xml, text/xml'}
     h.update(headers or {})

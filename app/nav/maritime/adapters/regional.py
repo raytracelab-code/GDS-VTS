@@ -4,7 +4,7 @@ import re
 import xml.etree.ElementTree as ET
 from datetime import datetime,timezone
 from .base import SourceAdapter,intersects_area
-from .provider_common import bbox_parts,in_region,request_json,request_bytes,canonical_feature,ProviderUnavailable
+from .provider_common import bbox_parts,request_boxes,in_region,request_json,request_bytes,canonical_feature,ProviderUnavailable
 from ..models import MaritimeDataError
 
 US_REGIONS={'GOA_Layers':[(-98,18,-80,31)],'ATL_Layers':[(-83,24,-60,46)],
@@ -54,7 +54,7 @@ class BoemAdapter(SourceAdapter):
             for layer in self._services[family].get('layers',[]):
                 match=classification(layer['name'])
                 if not match:continue
-                for w,s,e,n in bbox_parts(area):
+                for w,s,e,n in request_boxes(area):
                     offset=0
                     for page in range(50):
                         p=request_json(url+f"/{layer['id']}/query",dict(f='geojson',where='1=1',outFields='*',returnGeometry='true',
@@ -90,7 +90,7 @@ class EmodnetAdapter(SourceAdapter):
         # This GeoServer interprets a multi-type GET + BBOX as an invalid join.
         # Query each advertised type independently; cache avoids repeating area loads.
         for layer,match in self._layers.items():
-            for w,s,e,n in bbox_parts(area):
+            for w,s,e,n in request_boxes(area):
                 p={'type':'FeatureCollection','features':self._query_features(layer,(w,s,e,n))}
                 objects.extend(normalize_features(p,'emodnet',layer,*match,area,'OFFICIAL_SERVICE'))
         return list({o.object_id:o for o in objects}.values())

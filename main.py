@@ -46,7 +46,7 @@ def main():
     finally:
         # Explicit ownership order avoids Python local-variable finalization
         # destroying QApplication before a page/profile's native objects.
-        window.maritime_runtime.close(wait=True)
+        window.maritime_runtime.close(wait=True,timeout=2.0)  # bounded: stalled providers are abandoned
         window.nav.shutdown_webengine()
         window.deleteLater();QCoreApplication.sendPostedEvents(None,QEvent.DeferredDelete)
         if collector:collector.finish()

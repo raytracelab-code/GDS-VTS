@@ -114,7 +114,7 @@ class FloatingControls:
         self.selection_panel.setGeometry(max(16,w-328),panel_top,min(312,w-32),max(100,min(card_height,h-panel_top-152)))
         result_height=min(320,max(50,self.search_results.count()*39+14))
         self.search_results.setGeometry(16,68,search_width,min(result_height,max(50,h-100)))
-        self.trackbar.setGeometry(16,h-64,max(200,min(w-270,660)),26)
+        self.trackbar.setGeometry(16,h-64,max(200,min(w-270,920)),26)
         for widget in (self.utility,self.search_capsule,self.layers_panel,self.selection_panel,self.search_results,self.trackbar):widget.raise_()
 
     def resizeEvent(self,event):

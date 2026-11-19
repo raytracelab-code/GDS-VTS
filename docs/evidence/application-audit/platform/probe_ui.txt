@@ -1,0 +1,6 @@
+buttons: ['CONNECT', 'SCAN BLE', 'SCAN USB']
+selected: COM7 — USB Serial Device — 2341:0043 | details Port shown: COM3
+after failed connect, USB status label: ○  DISCONNECTED | any visible error label? on_error wired: None
+LIVE TELEMETRY latitude label: — | heading: —
+health GPS: ●   LIVE | Telemetry: ●   LIVE
+after 15s silence: summary TELEMETRY: NO SOURCE | health GPS: ●   LIVE | health Heading: ●   LIVE | USB tile: ○   NO DEVICE

@@ -1,0 +1,6 @@
+real ports: []
+connect missing COM250 -> False ["Unable to open selected serial device: could not open port 'COM250': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)"]
+after poison line: valid 1 thread alive False is_connected() True errors ['USB read failed: maximum recursion depth exceeded while deco'] states [False, True]
+unplug: errors ["USB read failed: object of type 'SerialException' has no len()"] states [False, True] is_connected() True arbiter active still Source.USB
+double connect: old thread alive True old serial open True threads 3
+after disconnect old thread alive False

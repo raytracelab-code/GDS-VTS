@@ -402,7 +402,7 @@ def test_http_contract_headers_and_bounded_area(monkeypatch):
     adapter = JsonPollingAdapter(SourceConfig('ais', 'https://example.invalid/feed', 'secret', True))
     objects = adapter.fetch(OperatingArea(22, 91))
     assert len(objects) == 1
-    assert 'radius_nm=50' in captured[0].full_url
+    assert 'radius_nm=53' in captured[0].full_url  # privacy: centre generalised to a 0.05 deg grid, radius widened 3 NM
     assert 'secret' not in captured[0].full_url
     assert captured[0].get_header('Authorization') == 'Bearer secret'
 

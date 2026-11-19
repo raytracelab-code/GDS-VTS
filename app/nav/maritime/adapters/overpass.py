@@ -1,7 +1,7 @@
 """Real OSM seamarks; community data, never represented as an official ENC."""
 from .base import SourceAdapter, intersects_area
-from .provider_common import bbox_parts, request_json, canonical_feature
-from .provider_common import ProviderRequestError,query_url
+from .provider_common import bbox_parts, request_boxes, request_json, canonical_feature
+from .provider_common import ProviderRequestError,query_url,OVERPASS_TIMEOUT
 from urllib.parse import urlencode
 import time
 import logging
@@ -47,7 +47,7 @@ def classify(tags):
 
 def query(area, boxes=None):
     parts=[]
-    for w,s,e,n in bbox_parts(area) if boxes is None else boxes:
+    for w,s,e,n in request_boxes(area) if boxes is None else boxes:
         box=f'({s:.6f},{w:.6f},{n:.6f},{e:.6f})'
         for selector in ('["seamark:type"]','["man_made"~"^(offshore_platform|petroleum_well|lighthouse|pipeline|submarine_cable)$"]',
                          '["harbour"]','["location"="underwater"]','["industrial"~"^(oil|gas|offshore_platform)$"]["location"="offshore"]','["natural"~"^(reef|shoal)$"]'):
@@ -118,7 +118,7 @@ class OverpassAdapter(SourceAdapter):
         for endpoint in available[:2]:
             if self._stopped.is_set():raise ProviderRequestError('DISABLED')
             try:
-                payload=request_json(endpoint,data=urlencode({'data':query(area)}).encode(),headers={'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'})
+                payload=request_json(endpoint,data=urlencode({'data':query(area)}).encode(),headers={'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},timeout=OVERPASS_TIMEOUT)
                 objects=self.normalize(payload,area);self._preferred=endpoint
                 return objects
             except ProviderRequestError as error:

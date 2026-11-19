@@ -1,0 +1,4 @@
+﻿[PDF max chars before LayoutError in act] ~2664
+[PDF max chars before LayoutError in remarks] ~19961
+[reload with 20001-char remark] load_error= Could not load report store: Invalid report field | reports= ['2026-11-18'] | captain= ''
+[subsequent save] Could not load report store: Invalid report field; original file preserved

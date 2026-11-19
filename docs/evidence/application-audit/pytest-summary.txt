@@ -1,0 +1,52 @@
+........................................................................ [  9%]
+........................................................................ [ 19%]
+........................................................................ [ 28%]
+........................................................................ [ 38%]
+........................................................................ [ 47%]
+........................................................................ [ 57%]
+........................................................................ [ 66%]
+.....................Windows fatal exception: code 0x8001010d
+
+...................FFF............................. [ 76%]
+........................................................................ [ 85%]
+........................................................................ [ 95%]
+..................................                                       [100%]
+================================== FAILURES ===================================
+___ test_wide_grids_fill_available_width_without_compressing_columns[bulk] ____
+tests\test_vdr.py:245: in test_wide_grids_fill_available_width_without_compressing_columns
+    assert sum(table.columnWidth(i) for i in range(table.columnCount())) == table.viewport().width()
+E   assert 1310 == 1169
+E    +  where 1310 = sum(<generator object test_wide_grids_fill_available_width_without_compressing_columns.<locals>.<genexpr> at 0x00000226AE403300>)
+E    +  and   1169 = <built-in method width of PySide6.QtWidgets.QWidget object at 0x00000226A46A47C0>()
+E    +    where <built-in method width of PySide6.QtWidgets.QWidget object at 0x00000226A46A47C0> = <PySide6.QtWidgets.QWidget(0x226b38fa7e0, name="qt_scrollarea_viewport") at 0x00000226A46A47C0>.width
+E    +      where <PySide6.QtWidgets.QWidget(0x226b38fa7e0, name="qt_scrollarea_viewport") at 0x00000226A46A47C0> = <built-in method viewport of PySide6.QtWidgets.QTableWidget object at 0x00000226A5032540>()
+E    +        where <built-in method viewport of PySide6.QtWidgets.QTableWidget object at 0x00000226A5032540> = <PySide6.QtWidgets.QTableWidget(0x226c13837e0, name="bulk") at 0x00000226A5032540>.viewport
+---------------------------- Captured Qt messages -----------------------------
+QtWarningMsg: QWindowsWindow::setGeometry: Unable to set geometry 2100x1000+9+38 (frame: 2118x1047+0+0) on QWidgetWindow/"vdrPageWindow" on "\\.\DISPLAY1". Resulting geometry: 1924x1000+9+38 (frame: 1942x1047+0+0) margins: 9, 38, 9, 9 minimum size: 376x158 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=488, y=245)))
+___ test_wide_grids_fill_available_width_without_compressing_columns[crew] ____
+tests\test_vdr.py:245: in test_wide_grids_fill_available_width_without_compressing_columns
+    assert sum(table.columnWidth(i) for i in range(table.columnCount())) == table.viewport().width()
+E   assert 1310 == 1169
+E    +  where 1310 = sum(<generator object test_wide_grids_fill_available_width_without_compressing_columns.<locals>.<genexpr> at 0x000002269F6A43C0>)
+E    +  and   1169 = <built-in method width of PySide6.QtWidgets.QWidget object at 0x000002269AED6800>()
+E    +    where <built-in method width of PySide6.QtWidgets.QWidget object at 0x000002269AED6800> = <PySide6.QtWidgets.QWidget(0x226b4c177c0, name="qt_scrollarea_viewport") at 0x000002269AED6800>.width
+E    +      where <PySide6.QtWidgets.QWidget(0x226b4c177c0, name="qt_scrollarea_viewport") at 0x000002269AED6800> = <built-in method viewport of PySide6.QtWidgets.QTableWidget object at 0x000002269A492B80>()
+E    +        where <built-in method viewport of PySide6.QtWidgets.QTableWidget object at 0x000002269A492B80> = <PySide6.QtWidgets.QTableWidget(0x226c13aa2a0, name="crew") at 0x000002269A492B80>.viewport
+---------------------------- Captured Qt messages -----------------------------
+QtWarningMsg: QWindowsWindow::setGeometry: Unable to set geometry 2100x1000+9+38 (frame: 2118x1047+0+0) on QWidgetWindow/"vdrPageWindow" on "\\.\DISPLAY1". Resulting geometry: 1924x1000+9+38 (frame: 1942x1047+0+0) margins: 9, 38, 9, 9 minimum size: 376x158 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=488, y=245)))
+____ test_wide_grids_fill_available_width_without_compressing_columns[ctr] ____
+tests\test_vdr.py:245: in test_wide_grids_fill_available_width_without_compressing_columns
+    assert sum(table.columnWidth(i) for i in range(table.columnCount())) == table.viewport().width()
+E   assert 1310 == 1169
+E    +  where 1310 = sum(<generator object test_wide_grids_fill_available_width_without_compressing_columns.<locals>.<genexpr> at 0x000002269F6A4C80>)
+E    +  and   1169 = <built-in method width of PySide6.QtWidgets.QWidget object at 0x00000226B86860C0>()
+E    +    where <built-in method width of PySide6.QtWidgets.QWidget object at 0x00000226B86860C0> = <PySide6.QtWidgets.QWidget(0x226b547da50, name="qt_scrollarea_viewport") at 0x00000226B86860C0>.width
+E    +      where <PySide6.QtWidgets.QWidget(0x226b547da50, name="qt_scrollarea_viewport") at 0x00000226B86860C0> = <built-in method viewport of PySide6.QtWidgets.QTableWidget object at 0x00000226998964C0>()
+E    +        where <built-in method viewport of PySide6.QtWidgets.QTableWidget object at 0x00000226998964C0> = <PySide6.QtWidgets.QTableWidget(0x226c1381260, name="ctr") at 0x00000226998964C0>.viewport
+---------------------------- Captured Qt messages -----------------------------
+QtWarningMsg: QWindowsWindow::setGeometry: Unable to set geometry 2100x1000+9+38 (frame: 2118x1047+0+0) on QWidgetWindow/"vdrPageWindow" on "\\.\DISPLAY1". Resulting geometry: 1924x1000+9+38 (frame: 1942x1047+0+0) margins: 9, 38, 9, 9 minimum size: 376x158 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=488, y=245)))
+=========================== short test summary info ===========================
+FAILED tests/test_vdr.py::test_wide_grids_fill_available_width_without_compressing_columns[bulk]
+FAILED tests/test_vdr.py::test_wide_grids_fill_available_width_without_compressing_columns[crew]
+FAILED tests/test_vdr.py::test_wide_grids_fill_available_width_without_compressing_columns[ctr]
+3 failed, 751 passed in 291.21s (0:04:51)

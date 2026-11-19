@@ -54,8 +54,11 @@ class JsonPollingAdapter(SourceAdapter):
         if parsed.scheme in ('http', 'https'):
             if parsed.username or parsed.password:
                 raise MaritimeDataError('use an API key header, not URL credentials')
+            # Generalised centre (0.05 deg grid) with the radius widened to keep coverage.
+            from ..privacy import snap_position, BBOX_STEP_DEGREES
+            latitude, longitude = snap_position(area.latitude, area.longitude, BBOX_STEP_DEGREES)
             query = list(parse_qsl(parsed.query, keep_blank_values=True)) + [
-                ('latitude', str(area.latitude)), ('longitude', str(area.longitude)), ('radius_nm', str(area.radius_nm))]
+                ('latitude', str(latitude)), ('longitude', str(longitude)), ('radius_nm', str(min(250, area.radius_nm + 3)))]
             url = urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), ''))
             headers = {'Accept': 'application/json', 'User-Agent': 'GDS-VTS-Maritime/4'}
             if self.config.api_key:

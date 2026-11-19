@@ -2,7 +2,7 @@
 from datetime import timedelta,timezone
 import math
 from .base import SourceAdapter,intersects_area
-from .provider_common import bbox_parts,canonical_feature,ProviderUnavailable
+from .provider_common import bbox_parts,request_boxes,canonical_feature,ProviderUnavailable
 from ..models import utcnow,MaritimeDataError
 from app.core.platform_capabilities import copernicus_available, COPERNICUS_UNAVAILABLE
 
@@ -31,6 +31,25 @@ def canonical_value(field,value,unit):
     return value,unit  # SST retains the dataset's explicit temperature unit.
 
 
+# copernicusmarine.open_dataset exposes no request timeout; bound the whole subset.
+COPERNICUS_TIMEOUT = 120
+
+
+def bounded_call(fn, timeout):
+    """Run fn on an abandonable daemon thread; raise TIMEOUT instead of blocking forever."""
+    import threading
+    from .provider_common import ProviderRequestError
+    result, done = {}, threading.Event()
+    def run():
+        try:result['value']=fn()
+        except BaseException as error:result['error']=error
+        finally:done.set()
+    threading.Thread(target=run,name='copernicus-request',daemon=True).start()
+    if not done.wait(timeout):raise ProviderRequestError('TIMEOUT')
+    if 'error' in result:raise result['error']
+    return result['value']
+
+
 class CopernicusAdapter(SourceAdapter):
     def __init__(self,config,product,dataset_id,username,password):
         self.config=config;self.product=product;self.dataset_id=dataset_id;self._username=username;self._password=password
@@ -39,13 +58,14 @@ class CopernicusAdapter(SourceAdapter):
         if not copernicus_available():raise ProviderUnavailable(COPERNICUS_UNAVAILABLE)
         import copernicusmarine
         objects=[];now=utcnow()
-        for w,s,e,n in bbox_parts(area):
-            ds=copernicusmarine.open_dataset(dataset_id=self.dataset_id,username=self._username,password=self._password,
-                minimum_longitude=w,maximum_longitude=e,minimum_latitude=s,maximum_latitude=n,
-                minimum_depth=0,maximum_depth=1,start_datetime=now-timedelta(hours=1),end_datetime=now+timedelta(hours=1))
-            try:
-                objects.extend(self.normalize(ds,area,now))
-            finally:ds.close()
+        for w,s,e,n in request_boxes(area):
+            def subset(w=w,s=s,e=e,n=n):
+                ds=copernicusmarine.open_dataset(dataset_id=self.dataset_id,username=self._username,password=self._password,
+                    minimum_longitude=w,maximum_longitude=e,minimum_latitude=s,maximum_latitude=n,
+                    minimum_depth=0,maximum_depth=1,start_datetime=now-timedelta(hours=1),end_datetime=now+timedelta(hours=1))
+                try:return self.normalize(ds,area,now)
+                finally:ds.close()
+            objects.extend(bounded_call(subset,COPERNICUS_TIMEOUT))
         return objects
     def normalize(self,ds,area,now=None):
         now=now or utcnow()

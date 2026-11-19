@@ -1,0 +1,28 @@
+== AFTER (working tree), modern .venv
+BUSY ['gebco', 'overpass']
+CLOSE_SECONDS 2.01 drained=False
+STALLED_CONNECTIONS 2
+PROCESS_EXIT_AFTER_CLOSE_SECONDS 0.05
+EXIT_CODE 0
+PYTHON 3.13.15
+== AFTER (working tree), legacy .venv-win7
+BUSY ['gebco', 'overpass']
+CLOSE_SECONDS 2.01 drained=False
+STALLED_CONNECTIONS 2
+PROCESS_EXIT_AFTER_CLOSE_SECONDS 0.04
+EXIT_CODE 0
+PYTHON 3.8.10
+== BEFORE (git HEAD app/), modern .venv
+BUSY ['gebco', 'overpass']
+CLOSE_SECONDS 32.30 drained=None
+STALLED_CONNECTIONS 2
+PROCESS_EXIT_AFTER_CLOSE_SECONDS 0.05
+EXIT_CODE 0
+PYTHON 3.13.15
+== BEFORE (git HEAD app/), legacy .venv-win7
+BUSY ['gebco', 'overpass']
+CLOSE_SECONDS 32.28 drained=None
+STALLED_CONNECTIONS 2
+PROCESS_EXIT_AFTER_CLOSE_SECONDS 0.04
+EXIT_CODE 0
+PYTHON 3.8.10

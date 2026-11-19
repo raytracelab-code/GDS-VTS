@@ -8,7 +8,7 @@ import re
 import zlib
 from xml.sax.saxutils import escape
 
-from .model import calculate, fmt, hhmm, normalize, tour_days
+from .model import calculate, fmt, hhmm, hse_perfect_days, normalize, number, report_number, tour_days
 
 ASSETS = Path(__file__).resolve().parents[1] / 'resources/vdr'
 MAX_PDF = 32 * 1024 * 1024
@@ -93,10 +93,14 @@ def export_pdf(report, path):
         flow.append(Paragraph(escape(title), head))
     m, h, e = report['meta'], report['hse'], report['end']
     identity = report.get('identity', {})
+    report_no, perfect = report_number(report, identity), hse_perfect_days(report, identity)
     section('1 · Report & HSE')
-    table([], [['Captain on duty', m['captain'], 'Location @ 2400H', m['loc24']],
+    table([], [['Vessel', identity.get('vessel', ''), 'Client', identity.get('client', '')],
+               ['Date of hire', identity.get('hireDate', ''), 'Report No.', '' if report_no is None else str(report_no)],
+               ['HSE perfect days', '' if perfect is None else str(perfect), 'Report date', m['date']],
+               ['Captain on duty', m['captain'], 'Location @ 2400H', m['loc24']],
                ['Draft FWD (m)', m['fwd'], 'Draft AFT (m)', m['aft']],
-               ['Fuel endurance (days)', e['fuel'], 'Water endurance (days)', e['water']],
+               ['Fuel endurance (days)', e['fuel'], 'Drinking water endurance (days)', e['water']],
                ['Provision (days)', e['prov'], 'Next provision', e['nextProv']],
                ['HSE incident 24h', h['inc24'] or 'Nil', 'Last LTI', h['lti'] or 'None'],
                ['Last recordable injury', h['inj'] or 'None', 'Last recordable incident', h['incd'] or 'None'],
@@ -115,7 +119,7 @@ def export_pdf(report, path):
     section('5 · Bulk inventory (ROB)')
     table(['Item', 'Opening', 'Received', 'Consumed', 'Transferred', 'Closing @2400H'],
           [[r['name'], r['open'], r['rcvQty'], fmt(calc['totalCons']) if r['name'].startswith('FUEL') else r['cons'],
-            fmt(sum((float(t['qty'].replace(',', '')) if t['qty'] else 0) for t in r['tr'])), fmt(calc['bulkClose'][i])]
+            fmt(sum(number(t['qty']) or 0 for t in r['tr'])), fmt(calc['bulkClose'][i])]
            for i, r in enumerate(report['bulk'])], [2, 1, 1, 1, 1, 1.4])
     for r in report['bulk']:
         if any(r[k] for k in ('rcvFrom', 'rcvB', 'rcvA', 'rcvTicket')) or r['tr'] or r['remarks']:
@@ -155,7 +159,13 @@ def export_pdf(report, path):
         canvas.restoreState()
     output = BytesIO()
     doc = SimpleDocTemplate(output, pagesize=A4, leftMargin=32, rightMargin=32, topMargin=80, bottomMargin=36)
-    doc.build(flow, onFirstPage=chrome, onLaterPages=chrome)
+    try:
+        doc.build(flow, onFirstPage=chrome, onLaterPages=chrome)
+    except Exception as error:
+        if type(error).__name__ != 'LayoutError':
+            raise
+        raise ValueError('A table cell is too long to fit on one PDF page. Shorten the longest activity, '
+                         'remark or comment text, then finalize and download again.') from error
     writer = PdfWriter()
     writer.append(PdfReader(BytesIO(output.getvalue())))
     payload = base64.b64encode(zlib.compress(json.dumps(report, ensure_ascii=False).encode('utf-8')))
@@ -164,5 +174,16 @@ def export_pdf(report, path):
     packet.update({NameObject('/Type'):NameObject('/Metadata'), NameObject('/Subtype'):NameObject('/XML')})
     writer.root_object[NameObject('/Metadata')] = writer._add_object(packet)
     writer.add_metadata({'/Title':'GDS VTS · Vessel Daily Report · '+m['date'], '/Producer':'GDS VTS'})
-    with open(path, 'wb') as stream:
-        writer.write(stream)
+    # Atomic write: a failed export never leaves a half-written PDF at the destination.
+    import os, tempfile
+    target = Path(path)
+    fd, temp = tempfile.mkstemp(prefix='.vdr-pdf-', suffix='.pdf', dir=str(target.parent))
+    try:
+        with os.fdopen(fd, 'wb') as stream:
+            writer.write(stream); stream.flush(); os.fsync(stream.fileno())
+        os.replace(temp, str(target))
+    except PermissionError as error:
+        raise ValueError(f'Cannot save the PDF to {target}. Close it if it is open in a PDF viewer, or choose another folder.') from error
+    finally:
+        if os.path.exists(temp):
+            os.unlink(temp)

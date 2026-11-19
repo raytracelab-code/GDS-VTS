@@ -116,9 +116,9 @@ def test_follow_keeps_existing_semantics_without_text_expansion(floating):
     page.command('FOLLOW');assert not page.follow.enabled
 
 
-def test_rail_selection_preserves_vjr_telemetry_gate(qtbot):
+def test_rail_selection_allows_manual_vjr(qtbot):
     calls=[];rail=TopTabs(calls.append);qtbot.addWidget(rail)
-    assert rail.width()==60 and rail.buttons['VDR'].isEnabled() and not rail.buttons['VJR'].isEnabled()
+    assert rail.width()==60 and rail.buttons['VDR'].isEnabled() and rail.buttons['VJR'].isEnabled()
     rail.buttons['Nav'].click();assert calls==['Nav'] and rail.buttons['Nav'].isChecked()
     rail.set_locked(True);assert rail.buttons['VDR'].isEnabled() and rail.buttons['VJR'].isEnabled()
 

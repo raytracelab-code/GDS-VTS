@@ -162,13 +162,18 @@ def test_crew_contractors_fleet_hse_and_movement(exported):
     assert all('#REF!' not in str(c.value) for sheet in w for row in sheet for c in row)
 
 
-def test_stale_sample_destinations_cleared_and_missing_config_blank(tmp_path):
+def test_stale_sample_destinations_cleared_and_missing_config_blocked(tmp_path):
     r=fixture_report();r['finalized']=True
     r['eq']=[];r['bulk']=[];r['ctr']=[];r['hse']=dict.fromkeys(r['hse'],'')
-    path=tmp_path/'empty.xlsx';VdrExcelExporter().export(r,path,identity={})
+    # Missing Configure identity no longer exports a blank Vessel/Date of Hire/Report No. (GDS-AUDIT-001).
+    with pytest.raises(ExcelExportError,match='Date of Hire is not set'):
+        VdrExcelExporter().export(r,tmp_path/'blocked.xlsx',identity={})
+    assert not (tmp_path/'blocked.xlsx').exists()
+    configured=dict(vessel='CONFIGURED VESSEL',hireDate='2026-01-01')
+    path=tmp_path/'empty.xlsx';VdrExcelExporter().export(r,path,identity=configured)
     w=load_workbook(path,data_only=True);s=w['VDR'];f=w['FLEET MANAGEMENT']
-    assert all(w['GDS Meta'][c].value is None for c in ('C9','C10'))
-    assert all(s[c].value is None for c in ('C12','E12','I12','E15','E16','E17','E18','E19'))
+    assert w['GDS Meta']['C9'].value=='CONFIGURED VESSEL' and s['E12'].value=='CONFIGURED VESSEL' and s['C12'].value==322
+    assert all(s[c].value is None for c in ('E16','E17','E18','E19'))
     for row in range(15,104):
         assert all(s[f'{col}{row}'].value is None for col in ('W','X','Y','Z','AE','AG','AH','AI','AK','AL','AM','AN'))
     for row in range(23,45): assert all(s[f'{c}{row}'].value is None for c in ('H','J','L','P','T'))
@@ -177,7 +182,7 @@ def test_stale_sample_destinations_cleared_and_missing_config_blank(tmp_path):
         assert all(w[sheet][f'{c}{row}'].value is None for row in range(start,206) for c in columns)
     assert all(f[f'D{i}'].value is None for i in [3,4,5,6,*range(8,74),*range(75,83)])
     assert f['D74'].value==0
-    assert 'TEST VESSEL' not in [s['E12'].value,w['GDS Meta']['C9'].value]
+    assert 'TEST VESSEL' not in [s['E12'].value,w['GDS Meta']['C9'].value]  # report copy never overrides Configure
 
 
 @pytest.mark.parametrize('group,limit,label',[('acts',90,'Activity'),('crew',200,'crew'),('ctr',200,'Contractors')])
@@ -248,7 +253,7 @@ def test_ui_gate_save_cancel_success_and_error(qtbot,tmp_path,monkeypatch):
     from app.ui.pages.vdr import workspace
     store=ReportStore(tmp_path/'state.json',today='2026-11-19')
     p=VdrPage(store,identity_provider=lambda:dict(vessel='Configured Vessel',hireDate='2026-01-01'))
-    qtbot.addWidget(p);assert not p.excel_button.isEnabled() and p.download_button.text()=='Download Report'
+    qtbot.addWidget(p);assert not p.excel_button.isEnabled() and p.download_button.text()=='Download PDF'
     calls=[]
     monkeypatch.setattr(workspace.QFileDialog,'getSaveFileName',lambda *a: calls.append(a) or ('',''))
     p.download_excel();assert not calls

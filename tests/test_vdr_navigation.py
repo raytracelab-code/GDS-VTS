@@ -12,7 +12,7 @@ from app.qt.QtWidgets import QWidget
 from app.core.models import TelemetryStatus
 from app.ui.pages.vdr.workspace import VdrPage
 from app.vdr.store import ReportStore
-from test_vdr import fixture_report
+from test_vdr import fixture_report, TEST_IDENTITY
 
 
 @pytest.fixture
@@ -34,8 +34,8 @@ def shell(qtbot, tmp_path, monkeypatch):
     monkeypatch.setattr(module, 'MaritimeRuntime', lambda *args: SimpleNamespace(service=None, close=lambda: None))
     monkeypatch.setattr(module, 'ConfigurePage', UnrelatedPage)
     monkeypatch.setattr(module, 'NavPage', UnrelatedPage)
-    store = ReportStore(tmp_path/'reports.json', today='2026-11-19')
-    vdr = VdrPage(store)
+    store = ReportStore(tmp_path/'reports.json', today='2026-11-19', identity=TEST_IDENTITY)
+    vdr = VdrPage(store, identity_provider=lambda: dict(TEST_IDENTITY))
     created = []
 
     def create_vdr():
@@ -43,6 +43,9 @@ def shell(qtbot, tmp_path, monkeypatch):
         return vdr
 
     monkeypatch.setattr(module.vdr_page, 'page', create_vdr)
+    from app.ui.pages.vjr_workspace import VjrPage
+    from app.vjr.store import VjrStore
+    monkeypatch.setattr(module.vjr_page, 'page', lambda: VjrPage(VjrStore(tmp_path/'vjr.json')))
     window = module.MainWindow()
     window.timer.stop(); window.event_timer.stop()
     qtbot.addWidget(window); window.resize(1200, 800); window.show()
@@ -57,7 +60,7 @@ def test_vdr_click_routes_existing_page_in_every_telemetry_state(shell, qtbot, s
     state.telemetry_status = status
     window.refresh()
     assert window.tabs.buttons['VDR'].isEnabled()
-    assert window.tabs.buttons['VDR'].toolTip() == 'VDR'
+    assert window.tabs.buttons['VDR'].toolTip() == 'VDR — Vessel Daily Report'
     qtbot.mouseClick(window.tabs.buttons['VDR'], Qt.MouseButton.LeftButton)
     assert window.stack.currentWidget() is vdr
     assert vdr.isVisible() and window.tabs.buttons['VDR'].isChecked()
@@ -77,12 +80,12 @@ def test_always_available_routes_without_source(shell, qtbot, name, index):
     assert state.telemetry_status is TelemetryStatus.NO_SOURCE
 
 
-def test_vjr_gate_is_preserved_before_and_after_live(shell, qtbot):
+def test_manual_vjr_is_available_before_and_after_live(shell, qtbot):
     window, vdr, state, _ = shell
     for status in (TelemetryStatus.NO_SOURCE, TelemetryStatus.CONNECTED_WAITING, TelemetryStatus.STALE, TelemetryStatus.LOST):
         state.telemetry_status = status; window.refresh()
-        assert not window.tabs.buttons['VJR'].isEnabled()
-        assert 'Locked until telemetry is live' in window.tabs.buttons['VJR'].toolTip()
+        assert window.tabs.buttons['VJR'].isEnabled()
+        assert window.tabs.buttons['VJR'].toolTip() == 'VJR — Vessel Journey Report'
     state.telemetry_status = TelemetryStatus.LIVE; window.refresh()
     assert window.tabs.buttons['VJR'].isEnabled()
     qtbot.mouseClick(window.tabs.buttons['VJR'], Qt.MouseButton.LeftButton)

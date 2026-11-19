@@ -69,6 +69,12 @@ QWidget#vdrPage {background:$workspace;color:$text;}
 #vdrPage QScrollBar:vertical {width:10px;background:$workspace;margin:0;}
 #vdrPage QScrollBar::handle {background:$border;min-width:24px;min-height:24px;border-radius:4px;}
 #vdrPage QScrollBar::handle:hover {background:$muted;}
+#vdrPage QFrame#storageBanner {background:#FFF7E6;border-bottom:1px solid #F0C36D;}
+#vdrPage QFrame#storageBanner[level="error"], #vdrPage QFrame#storageBanner[level="save"] {background:#FDECEC;border-bottom:1px solid $danger;}
+#vdrPage QLabel#bannerText {color:$dark;font-size:12px;font-weight:600;}
+#vdrPage QFrame#carryNotice {background:$workspace;border:1px solid $border;border-radius:8px;}
+#vdrPage QLabel#carryText {color:$muted;font-size:11px;padding:6px 8px;}
+#vdrPage QLabel#carryText[attention="true"] {color:$dark;font-weight:600;}
 """)
 
 CALCULATION_ERROR_STYLE = themed('color:$text;background:$workspace;border-left:2px solid $danger;font-weight:600;')

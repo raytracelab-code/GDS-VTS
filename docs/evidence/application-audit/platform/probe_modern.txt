@@ -1,0 +1,31 @@
+split1 -> []
+split2 -> ['{"Latitude":"0312.5","Longitude":"10130.0"}']
+crlf+blank -> ['{"a":1}']
+invalid utf8 -> invalid utf8 -> RAISES UnicodeEncodeError 'charmap' codec can't encode characters in position 10-11: character maps to <un
+empty obj valid? -> True
+arbitrary obj valid? -> True
+array -> None
+garbage -> None
+NaN lat valid? -> True
+lat 999999 valid? -> True
+deep nesting -> RAISES RecursionError maximum recursion depth exceeded while decoding a JSON array from a unicode stri
+deep nesting obj -> RAISES RecursionError maximum recursion depth exceeded while decoding a JSON object from a unicode str
+coord 0312.5 -> 3.2083333333333335
+coord 10130.0 -> 101.5
+coord 101.5 -> 1.025
+coord 3.2 -> 3.2
+coord -101.5 -> -1.025
+coord 0030.0 -> 30.0
+coord 115.25 -> 1.2541666666666667
+coord 18000.0 -> 180.0
+no-newline buffer bytes = 52428800 traced peak MB = 104.9
+3000x1KB no-newline feed seconds = 2.252
+flood 20000 frames in 0.257s = 77930 frames/s; valid=20000
+status fresh LIVE
+5s old, before tick STALE
+5s old, after tick NO SOURCE active None
+active Source.USB standby Source.BLE
+listener raises -> RAISES ZeroDivisionError division by zero
+Latitude list -> False
+PID object normalize -> 1.0
+ingest deep nesting -> RAISES RecursionError maximum recursion depth exceeded while decoding a JSON array from a unicode stri

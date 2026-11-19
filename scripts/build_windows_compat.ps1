@@ -31,10 +31,10 @@ if (-not $SkipTests) {
     try { $env:QT_QPA_PLATFORM='offscreen'; & $python -m pytest -q --tb=short; if ($LASTEXITCODE) { throw 'Regression tests failed' } }
     finally { $env:QT_QPA_PLATFORM=$oldPlatform }
 }
-& $python -m PyInstaller --noconfirm --clean --workpath build\win7-pyinstaller gds_vts_win7.spec
+& $python -m PyInstaller --noconfirm --clean --workpath build\win7-pyinstaller --distpath dist\legacy-win7 gds_vts_win7.spec
 if ($LASTEXITCODE) { throw 'PyInstaller failed' }
 $ErrorActionPreference='Stop'
-$dist=Join-Path $root 'dist\GDS VTS'
+$dist=Join-Path $root 'dist\legacy-win7\GDS VTS'
 foreach ($relative in @('GDS VTS.exe','PySide2\QtWebEngineProcess.exe','app\resources\templates\vdr_executive_brilliance_template.xlsx','app\resources\map\index.html')) {
     if (-not (Test-Path -LiteralPath (Join-Path $dist $relative))) { throw "Missing packaged resource: $relative" }
 }

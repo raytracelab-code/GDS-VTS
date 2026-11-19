@@ -1,0 +1,49 @@
+...............Windows fatal exception: code 0x8001010d
+
+Current thread 0x00005df8 (most recent call first):
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pytestqt\qt_compat.py", line 160 in exec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pytestqt\wait_signal.py", line 58 in wait
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pytestqt\qtbot.py", line 503 in wait
+  File "c:\Users\rayha\GDS-VTS\tests\test_vdr.py", line 41 in page
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\fixtures.py", line 1067 in call_fixture_func
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\fixtures.py", line 1407 in pytest_fixture_setup
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\fixtures.py", line 1301 in execute
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\fixtures.py", line 797 in _get_active_fixturedef
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\fixtures.py", line 701 in getfixturevalue
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\fixtures.py", line 877 in _fillfixtures
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\python.py", line 1801 in setup
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 536 in setup
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 170 in pytest_runtest_setup
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 250 in <lambda>
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 361 in from_call
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 249 in call_and_report
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 132 in runtestprotocol
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 118 in pytest_runtest_protocol
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 411 in pytest_runtestloop
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 387 in _main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 333 in wrap_session
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 380 in pytest_cmdline_main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\config\__init__.py", line 262 in _main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\config\__init__.py", line 286 in _console_main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pytest\__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 203 in _run_module_as_main
+......................................................... [ 47%]
+........................................................................ [ 94%]
+.........                                                                [100%]
+153 passed in 106.40s (0:01:46)

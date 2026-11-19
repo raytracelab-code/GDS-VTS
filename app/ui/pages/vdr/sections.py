@@ -134,7 +134,7 @@ class Sections:
                     icon = {'CLEAR':'☀', 'PARTLY CLOUDY':'◔', 'CLOUDY':'☁', 'OVERCAST':'☁', 'RAINING':'☂', 'THUNDERSTORM':'ϟ'}.get(value, '≈' if field == 'sea' else '◉')
                     item = button(icon+'\n'+text, lambda checked=False, n=i, f=field, v=value: self.toggle_weather(n, f, v), check=True)
                     item.setToolTip(text); item.setAccessibleName(f'Weather {row["t"]} {field} {value}')
-                    item.setStyleSheet('font-size:10px;padding:6px;'); self.weather_buttons[(i, field, value)] = item; bl.addWidget(item)
+                    item.setStyleSheet('font-size:10px;padding:6px;'); item.setProperty('editAction', False); self.weather_buttons[(i, field, value)] = item; bl.addWidget(item)
                 gl.addWidget(buttons); flow.addWidget(group)
             cl.addWidget(selectors)
             readings, rl = box(True, margins=(14, 9, 14, 11), gap=28)
@@ -155,6 +155,13 @@ class Sections:
         t.setHorizontalHeaderLabels([v.upper() for v in headers]); t.verticalHeader().hide()
         t.setProperty('baseWidths', widths)
         t.setProperty('flexColumns', {'acts':[3], 'eq':[0], 'bulk':[6], 'crew':[1,8], 'ctr':[1]}[group])
+        # Narrowest readable widths, used only when the window is too narrow for the base widths
+        # (e.g. 1366x768); a horizontal scrollbar appears only below the sum of these.
+        t.setProperty('minWidths', {'acts': [56, 56, 56, 160, 170, 44, 48, 52, 130, 30],
+                                    'eq': [170, 96, 96, 124, 124, 110, 30],
+                                    'bulk': [160, 92, 92, 92, 96, 100, 110, 76, 30],
+                                    'crew': [32, 150, 120, 50, 110, 120, 124, 48, 90, 30],
+                                    'ctr': [32, 150, 130, 50, 110, 130, 30]}[group])
         t.installEventFilter(self)
         t.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Fixed); t.horizontalHeader().setMinimumSectionSize(26)
         t.horizontalHeader().setDefaultAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
@@ -217,8 +224,19 @@ class Sections:
             self._computed(t, i, 0, ('eqname', i), row['name'])
             for col, key in enumerate(('total', 'daily', 'fm0', 'fm24'), 1): self._cell(t, i, col, ('eq', i, key), True)
             self._computed(t, i, 5, ('cons', i)); self._remove_cell(t, i, 6, 'eq', i)
+        layout.addWidget(self._carry_notice())
         layout.addWidget(t); actions, al = box(True, gap=10); al.addWidget(self._add_combo('eq', EQUIPMENT, '+ Add equipment…'))
         al.addWidget(label('Flowmeter @0000H must be less than @2400H.', 'sectionHint'), 1); layout.addWidget(actions)
+
+    def _carry_notice(self):
+        """Explains where opening values come from and flags hand-edited openings."""
+        if not hasattr(self, 'carry_notices') or self._carry_generation != id(self.panel):
+            self.carry_notices, self._carry_generation = [], id(self.panel)
+        wrapper, layout = box(True, gap=10); wrapper.setObjectName('carryNotice')
+        text = label('', 'carryText'); text.setWordWrap(True); layout.addWidget(text, 1)
+        reset = button('Use previous closing values', self.reset_openings); reset.hide(); layout.addWidget(reset)
+        self.carry_notices.append((text, reset))
+        return wrapper
 
     def _add_combo(self, group, options, title):
         combo = QComboBox(); combo.addItem(title, ''); existing = {r['name'] for r in self.report[group]}
@@ -228,8 +246,9 @@ class Sections:
         return combo
 
     def _bulk(self):
-        layout = self._section('Bulk inventory (ROB)', 'closing computed = opening + received − consumed − transferred')
+        layout = self._section('Bulk inventory (ROB)', 'ROB = remaining on board · closing computed = opening + received − consumed − transferred')
         count = len(self.report['bulk'])+sum(bool(r['det']) for r in self.report['bulk'])
+        layout.addWidget(self._carry_notice())
         t = self._table('bulk', ['Item', 'Opening @0000H', 'Received', 'Consumed', 'Transferred', 'Closing @2400H', 'Remarks', '', ''], [200, 104, 104, 104, 110, 110, 150, 76, 30], count)
         display, extra = 0, 0
         for i, row in enumerate(self.report['bulk']):
@@ -256,7 +275,9 @@ class Sections:
             for key, title in [('to', 'To'), ('qty', 'Quantity'), ('mb', 'Meter before'), ('ma', 'Meter after'), ('tk', 'Ticket no.')]:
                 e = self._editor(('bulk', index, 'tr', j, key), key in ('qty', 'mb', 'ma')); e.setPlaceholderText(title); tl.addWidget(e)
             tl.addWidget(button('×', lambda checked=False, b=index, n=j: self.remove_transfer(b, n))); layout.addWidget(transfer)
-        add = button('+ Add transfer', lambda: self.add_transfer(index)); add.setEnabled(len(self.report['bulk'][index]['tr']) < 6)
+        capacity = self.transfer_capacity(index)
+        add = button('+ Add transfer', lambda: self.add_transfer(index)); add.setEnabled(len(self.report['bulk'][index]['tr']) < capacity)
+        add.setToolTip(f'The Excel template holds {capacity} transfer(s) for this item.')
         layout.addWidget(add, alignment=Qt.AlignmentFlag.AlignLeft)
         return wrapper
 

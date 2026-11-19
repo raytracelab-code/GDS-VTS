@@ -1,0 +1,50 @@
+﻿[saved] 01_blank_1366x768.png
+[blank badge] DRAFT · 9 ISSUES
+[activity table width vs viewport] (1032, 986, 46)
+[crew table width vs viewport] (1092, 986, 106)
+[topbar hscroll max (buttons offscreen?)] 0
+[saved] 02_blank_in_shell_1306x728.png
+[in-shell topbar hscroll max] 0
+[in-shell acts table hscroll max] 106
+[topbar buttons not visible at 1306] []
+[saved] 03_activity_1306x728.png
+[saved] 04_crew_1306x728.png
+[blank errors count] 9
+[first errors] ['Captain on duty is required', 'Location @ 2400H is required', 'Draft FWD and AFT are required and must be valid non-negative numbers', 'Weather 0000H: missing wind, swell, sea, sky', 'Weather 0600H: missing wind, swell, sea, sky', 'Weather 1200H: missing wind, swell, sea, sky']
+[fwd=-3 stylesheet/property] ('', None, 'DRAFT · 9 ISSUES')
+[finalize ok/badge] (True, 'FINALIZED', True)
+[captain read-only when finalized?] False
+[after typing 1 char: finalized/badge/excel enabled] (False, 'READY TO FINALIZE', False)
+[saved] 05_finalized_then_typed.png
+[after undo finalized] True
+[undo entries from typing "Capt Ahmad"] 10
+[captain after one Ctrl+Z] Capt Ahma
+[focus widget after undo (rebuild)] QScrollArea
+[rows before] [('0600', 'Alongside LABUAN'), ('1200', 'Enroute to KND'), ('1800', 'Cargo ops at KND'), ('', '')]
+[rows after typing 2400 in row 2 TO + Tab] [('0600', 'Alongside LABUAN'), ('2400', 'Enroute to KND')]
+[any confirmation shown? (top-level dialogs)] []
+[rows after one undo] [('0600', 'Alongside LABUAN'), ('2400', 'Enroute to KND'), ('1800', 'Cargo ops at KND'), ('', '')]
+[TO "6" becomes] 0600
+[row auto-added after valid TO] 2
+[row2 0500 < 0600 duration label] INVALID
+[row2 FROM shown] 0600
+[saved] 06_activity_invalid_row.png
+[saved] 06b_activity_invalid_row_scrolled.png
+[on-disk captain immediately after typing (within 300ms)] Test Captain
+[save_timer active] True
+[after page.close() timer active] True
+[on-disk after 400ms (timer still parented)] Within debounce
+[load error label/tooltip] ('Load error', 'Could not load report store: No valid report data found')
+[label after edits] ('SAVE FAILED', 'Could not load report store: No valid report data found; original file preserved')
+[saved] 07_load_error_save_failed.png
+[tabs from wx0.wind to wx1.wind] (21, ['wx.0.swell', '−', 'wx.0.temp', '+', '= PREV', 'Weather 0600H sky CLEAR', 'Weather 0600H sky PARTLY CLOUDY', 'Weather 0600H sky CLOUDY', 'Weather 0600H sky OVERCAST', 'Weather 0600H sky RAINING', 'Weather 0600H sky THUNDERSTORM', 'Weather 0600H sea CALM', 'Weather 0600H sea SLIGHT', 'Weather 0600H sea MODERATE', 'Weather 0600H sea ROUGH', 'Weather 0600H sea VERY ROUGH', 'Weather 0600H vis 10', 'Weather 0600H vis 5', 'Weather 0600H vis 2', 'Weather 0600H vis 0.5', 'wx.1.wind'])
+[weather button focus policy] [<FocusPolicy.StrongFocus: 11>]
+[saved] 08_weather.png
+[saved] 09_location_durations.png
+[Daily duration at location rows] [['0000', '0600', '06:00', 'LABUAN'], ['0600', '1200', '06:00', 'KND'], ['1200', '1800', '06:00', 'LABUAN'], ['1800', '2400', '06:00', 'labuan']]
+[FW transfers allowed by UI] 3
+[saved] 10_bulk_details.png
+[build page with 120 crew (s)] 1.59
+[10 keystrokes latency (s)] 0.462
+[add crew row (full rebuild) (s)] 2.13
+[tmp dir] C:\Users\rayha\AppData\Local\Temp\vdr-ui-audit-14_ugmhg

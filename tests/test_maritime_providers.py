@@ -383,7 +383,8 @@ def test_viewport_query_uses_actual_bounds_and_can_shrink_after_broad_failure():
     area=controller.viewport(*bounds)
     assert broad is not None and area is not None and area.radius_nm==50
     assert bbox_parts(area)==[bounds]
-    assert '(3.800000,100.120000,4.260000,100.890000)' in query(area)
+    # Privacy: the transmitted box is widened outward to a 0.05 deg grid (never narrower).
+    assert '(3.800000,100.100000,4.300000,100.900000)' in query(area)
     assert '99.28' not in query(area)  # No inflated own-vessel-radius bbox.
     assert controller.viewport(*bounds) is None
     dateline=controller.viewport(179,-1,-179,1)

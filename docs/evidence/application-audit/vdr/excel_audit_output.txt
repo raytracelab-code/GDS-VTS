@@ -1,0 +1,48 @@
+﻿[suggested filename] VDR_GDS___Ünïcode___Test__&_Co_2026-11-18.xlsx
+[suggested filename CON] VDR_CON_2026-11-18.xlsx
+[dense] OK C:\Users\rayha\AppData\Local\Temp\claude\53cd7aab76db0ca9\a2b5405c-7886-40e0-954f-52fa559c6aae\scratchpad\vdr\xlsx\dense.xlsx
+[B12 date value/format] (datetime.datetime(2026, 11, 18, 0, 0), 'mm-dd-yy')
+[J12 captain] Capt. O'Brien & Sons / 船长
+[Z14 long len] 3960
+[W14,X14,Y14] ('0000', '0030', datetime.timedelta(seconds=1800), '[h]:mm')
+[W61,X61 last act] ('2330', '2400')
+[row 62..64 act cells (should be empty)] [None, None, None, None, None]
+[R82..] [('LOC-0', datetime.timedelta(seconds=18000)), ('LOC-1', datetime.timedelta(seconds=18000)), ('LOC-2', datetime.timedelta(seconds=18000)), ('LOC-3', datetime.timedelta(seconds=16200)), ('LOC-4', datetime.timedelta(seconds=16200)), (None, None)]
+[AK/AL/AM/AN 14..16] [('0000', '0030', datetime.timedelta(seconds=1800), 'LOC-0'), ('0030', '0100', datetime.timedelta(seconds=1800), 'LOC-1'), ('0100', '0130', datetime.timedelta(seconds=1800), 'LOC-2')]
+[I82..I103] [datetime.timedelta(seconds=21600), datetime.timedelta(seconds=21600), datetime.timedelta(seconds=21600), datetime.timedelta(seconds=21600), datetime.timedelta(days=1), datetime.timedelta(seconds=43200)]
+[E15..E19] [321, None, None, None, None]
+[template E16..E19] ['None', 'None', 'None', 'None']
+[merged ranges equal] True
+[possible stale sample values in VDR (non-label)] [('G14', 'ENDURANCE STATUS'), ('K14', 'WEATHER CONDITION'), ('G15', 'ITEMS'), ('H15', 'REMAINING DAYS/DATE'), ('K15', 'TIME'), ('L15', 'WIND (Kn)'), ('N15', 'SWELL (m)'), ('P15', 'SEA'), ('R15', 'SKY'), ('T15', 'VISIBILITY (nm)'), ('U15', 'TEMP ( °C )'), ('AE15', 'Cargo works within 500m zone'), ('AG15', 'Y'), ('G16', 'Fuel'), ('K16', '0000H'), ('G17', 'Drinking Water'), ('K17', '0600H'), ('P17', 'SLIGHT'), ('U17', 30.0), ('X17', '0200'), ('AG17', 'Y'), ('G18', 'Provision'), ('K18', '1200H'), ('P18', 'SLIGHT'), ('G19', 'Next prov supply'), ('K19', '1800H'), ('P19', 'SLIGHT'), ('U19', 30.0), ('AE19', 'Cargo works within 500m zone'), ('AG19', 'Y'), ('AG20', 'N'), ('H22', 'TOTAL RUN HOURS'), ('L22', 'FLOWMETER / CONSUMPTION'), ('T22', 'TOTAL'), ('AG22', 'N'), ('I23', 'hrs'), ('K23', 'hrs'), ('U23', 'ltrs'), ('I24', 'hrs'), ('K24', 'hrs'), ('U24', 'ltrs'), ('AG24', 'N'), ('I25', 'hrs'), ('K25', 'hrs'), ('U25', 'ltrs'), ('AG25', 'Y'), ('I26', 'hrs'), ('K26', 'hrs'), ('U26', 'ltrs'), ('I27', 'hrs'), ('K27', 'hrs'), ('U27', 'ltrs'), ('AE27', 'Cargo works within 500m zone'), ('AG27', 'Y'), ('I28', 'hrs'), ('K28', 'hrs'), ('U28', 'ltrs'), ('I29', 'hrs'), ('K29', 'hrs'), ('U29', 'ltrs')]
+[numeric/date template values unchanged in CORE-CREW] [('B6', 1.0), ('B7', 2.0), ('B8', 3.0), ('B9', 4.0), ('B10', 5.0), ('B11', 6.0), ('B12', 7.0), ('B13', 8.0), ('B14', 9.0), ('B15', 10.0), ('B16', 11.0), ('B17', 12.0), ('B18', 13.0), ('B19', 14.0), ('B20', 15.0), ('B21', 16.0), ('B22', 17.0), ('B23', 18.0), ('B24', 19.0), ('B25', 20.0), ('B26', 21.0), ('B27', 22.0), ('B28', 23.0), ('B29', 24.0), ('B30', 25.0), ('B31', 26.0), ('B32', 27.0), ('B33', 28.0), ('B34', 29.0), ('B35', 30.0)]
+[numeric/date template values unchanged in CONTRACTORS] [('B6', 1.0), ('A105', 100.0), ('A205', 100.0)]
+[numeric/date template values unchanged in FLEET MANAGEMENT] []
+[numeric/date template values unchanged in GDS Meta] [('C3', 2.0), ('C5', 134.0), ('C7', 9745029.0), ('C8', 533180205.0), ('C22', 2.0), ('C23', 1.0)]
+[CORE-CREW row 6] [1, 'Crew Ñame 0 & Co', 'AB', 30.0, 'Malaysia', 'IC/0', datetime.datetime(2026, 11, 1, 0, 0), 18, 'ok']
+[CORE-CREW H6 fmt] mm-dd-yy
+[FLEET D3..D6] [None, None, None, None]
+[GDS Meta C9..C11] ['GDS / Ünïcode: "Test" & Co*', datetime.datetime(2026, 1, 1, 0, 0), 'Client & Sons']
+[T45 value] 250.0
+[T52] 5650.0
+[C12 (report no.)] 322
+[validate lifts=abc] []
+[lifts_text] EXPORT ERROR: Lifts: invalid numeric value 'abc'.
+[age_text] EXPORT ERROR: Age: invalid numeric value 'forty'.
+[endurance_text] EXPORT ERROR: fuel endurance: invalid numeric value '12 days'.
+[vis_text] EXPORT ERROR: Weather vis: invalid numeric value '>10'.
+[validate FW 2 transfers] []
+[fw_two_transfers] EXPORT ERROR: FRESH WATER (ltrs) has 2 transfers; template capacity = 1.
+[fuel_three_transfers] EXPORT ERROR: FUEL has 3 transfers. Fleet Management template supports a maximum of two fuel bunker-out transfers.
+[validate 23 locations] []
+[locations_23] EXPORT ERROR: Location summary has 23 locations; template capacity = 22.
+[validate unknown bulk] []
+[unknown_bulk] EXPORT ERROR: Unknown bulk item: 'MUD (bbls)'. The original template has no matching row.
+[validate 201 ctr] []
+[ctr_201] EXPORT ERROR: Contractors has 201 rows; template capacity = 200.
+[control_char] EXPORT ERROR: Invalid Excel text at J12: control character or cell text exceeds 32767 characters.
+[no_identity] OK C:\Users\rayha\AppData\Local\Temp\claude\53cd7aab76db0ca9\a2b5405c-7886-40e0-954f-52fa559c6aae\scratchpad\vdr\xlsx\no_identity.xlsx
+[identity_mismatch] OK C:\Users\rayha\AppData\Local\Temp\claude\53cd7aab76db0ca9\a2b5405c-7886-40e0-954f-52fa559c6aae\scratchpad\vdr\xlsx\identity_mismatch.xlsx
+[screen report no/perfect days (report identity)] (322, 321)
+[excel C12/E15 identity param] (171, 170)
+[overwrite while open-for-read (windows share)] attempt
+[dense] EXPORT ERROR: Cannot save Excel report to C:\Users\rayha\AppData\Local\Temp\claude\53cd7aab76db0ca9\a2b5405c-7886-40e0-954f-52fa559c6aae\scratchpad\vdr\xlsx\dense.xlsx. Check folder permissions and close the destination in Excel. [WinError 5] Access is denied: 'C:\\Users\\rayha\\AppData\\Local\\Temp\\claude\\53cd7aab76db0ca9\\a2b5405c-7886-40e0-954f-52fa559c6aae\\scratchpad\\vdr\\xlsx\\.vdr-excel-o8poaivr.xlsx' -> 'C:\\Users\\rayha\\AppData\\Local\\Temp\\claude\\53cd7aab76db0ca9\\a2b5405c-7886-40e0-954f-52fa559c6aae\\scratchpad\\vdr\\xlsx\\dense.xlsx'

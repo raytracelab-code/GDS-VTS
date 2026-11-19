@@ -9,7 +9,7 @@ import re
 import threading
 import time
 from .base import SourceAdapter
-from .provider_common import bbox_parts, canonical_feature
+from .provider_common import bbox_parts, request_boxes, canonical_feature
 from ..models import normalize_ais, MaritimeDataError, timestamp, utcnow, text, number
 
 ENDPOINT='wss://stream.aisstream.io/v0/stream'
@@ -18,7 +18,7 @@ MESSAGE_TYPES=['PositionReport','StandardClassBPositionReport','ExtendedClassBPo
 
 
 def subscription(area,key):
-    return {'APIKey':key,'BoundingBoxes':[[[s,w],[n,e]] for w,s,e,n in bbox_parts(area)],'FilterMessageTypes':MESSAGE_TYPES}
+    return {'APIKey':key,'BoundingBoxes':[[[s,w],[n,e]] for w,s,e,n in request_boxes(area)],'FilterMessageTypes':MESSAGE_TYPES}
 
 
 def source_time(metadata):

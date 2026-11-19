@@ -1,0 +1,116 @@
+{
+  "captures": [
+    {
+      "file": "01_overview_header.png",
+      "width": 1600,
+      "height": 900,
+      "section": "General / Report Information"
+    },
+    {
+      "file": "02_general_information.png",
+      "width": 1366,
+      "height": 768,
+      "section": "General / Report Information"
+    },
+    {
+      "file": "03_core_crew.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Core Crew"
+    },
+    {
+      "file": "04_contractors.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Contractors"
+    },
+    {
+      "file": "05_waypoint_plan.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Waypoint Plan"
+    },
+    {
+      "file": "06_departure_report.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Departure Report"
+    },
+    {
+      "file": "07_departure_deck_space.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Departure Report"
+    },
+    {
+      "file": "08_departure_inventory.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Departure Report"
+    },
+    {
+      "file": "09_arrival_report.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Arrival Report"
+    },
+    {
+      "file": "09b_arrival_departure_reference.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Arrival Report"
+    },
+    {
+      "file": "10_voyage_progress.png",
+      "width": 1920,
+      "height": 1080,
+      "section": "Voyage Progress"
+    },
+    {
+      "file": "10b_voyage_weather_and_remarks.png",
+      "width": 1920,
+      "height": 1080,
+      "section": "Voyage Progress"
+    },
+    {
+      "file": "11_departure_photo_reserved.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Departure Report"
+    },
+    {
+      "file": "12_arrival_photo_reserved.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Arrival Report"
+    },
+    {
+      "file": "13_responsive_1920.png",
+      "width": 1920,
+      "height": 1080,
+      "section": "Departure Report"
+    },
+    {
+      "file": "14_responsive_1600.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Departure Report"
+    },
+    {
+      "file": "15_responsive_1366.png",
+      "width": 1366,
+      "height": 768,
+      "section": "Departure Report"
+    },
+    {
+      "file": "16_vjr_comparison.png",
+      "width": 1600,
+      "height": 900,
+      "section": "Departure Report"
+    }
+  ],
+  "full_capacity_edit_seconds": 0.0169,
+  "widgets_reused_on_edit": true,
+  "fixture": "tests/vjr_fixture.py",
+  "user_store_modified": false
+}

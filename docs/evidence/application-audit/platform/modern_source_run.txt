@@ -1,0 +1,48 @@
+STARTUP 1: main entered
+STARTUP 2: QApplication created
+STARTUP 3: before MainWindow import
+STARTUP 4: MainWindow imported
+STARTUP 5: before MainWindow construction
+NAVPY 1: entered
+WEB 1 profile acquired
+WEB PROFILE storageName = gds-nav
+WEB PROFILE cachePath = C:\Users\rayha\AppData\Local\qttest\GDS VTS Validation\webengine\cache
+WEB PROFILE persistentStoragePath = C:\Users\rayha\AppData\Local\qttest\GDS VTS Validation\webengine\storage
+WEB PROFILE offTheRecord = False
+WEB Qt CacheLocation = C:/Users/rayha/AppData/Local/qttest/GDS VTS Validation/cache
+WEB Qt AppDataLocation = C:/Users/rayha/AppData/Roaming/qttest/GDS VTS Validation
+WEB PATH C:\Users\rayha\AppData\Local\qttest\GDS VTS Validation\webengine\cache exists=True parent_exists=True writable=True temp=created and removed
+WEB PATH C:\Users\rayha\AppData\Local\qttest\GDS VTS Validation\webengine\storage exists=True parent_exists=True writable=True temp=created and removed
+WEB PATH C:\Users\rayha\AppData\Local\qttest\GDS VTS Validation\cache exists=True parent_exists=True writable=True temp=created and removed
+WEB PATH C:\Users\rayha\AppData\Roaming\qttest\GDS VTS Validation exists=True parent_exists=True writable=True temp=created and removed
+WEB 2 profile paths printed
+STARTUP 6: MainWindow constructed
+STARTUP 7: window shown
+STARTUP 8: entering app.exec
+GDS REQUEST host=map path=/index.html
+GDS SERVED /index.html
+GDS REQUEST host=map path=/assets/maplibre-gl.css
+GDS SERVED /assets/maplibre-gl.css
+GDS REQUEST host=map path=/nav.css
+GDS SERVED /nav.css
+GDS REQUEST host=map path=/assets/maplibre-gl.js
+GDS SERVED /assets/maplibre-gl.js
+GDS REQUEST host=map path=/assets/qwebchannel.js
+GDS SERVED /assets/qwebchannel.js
+GDS REQUEST host=map path=/offline.js
+GDS SERVED /offline.js
+GDS REQUEST host=map path=/regions.js
+GDS SERVED /regions.js
+GDS REQUEST host=map path=/presentation.js
+GDS SERVED /presentation.js
+GDS REQUEST host=map path=/satellite.js
+GDS SERVED /satellite.js
+GDS REQUEST host=map path=/nav.js
+GDS SERVED /nav.js
+NAV JS [JavaScriptConsoleMessageLevel.InfoMessageLevel] gds://map/index.html:1 INDEX INLINE JS EXECUTED
+NAV JS [JavaScriptConsoleMessageLevel.InfoMessageLevel] gds://map/index.html:1 MapLibre resource loaded
+NAV JS [JavaScriptConsoleMessageLevel.InfoMessageLevel] gds://map/index.html:1 QWebChannel resource loaded
+NAV JS [JavaScriptConsoleMessageLevel.InfoMessageLevel] gds://map/index.html:1 nav.js resource loaded
+NAV LOAD FINISHED: True
+STARTUP 9: app.exec returned
+STARTUP 10: Qt objects destroyed before QApplication

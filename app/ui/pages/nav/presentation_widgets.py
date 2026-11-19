@@ -59,6 +59,8 @@ QWidget#navSurface QCheckBox::indicator {{ width:22px; height:12px; border:1px s
 QWidget#navSurface QCheckBox::indicator:checked {{ background:#478d86; border-color:#86c2b6; }}
 QWidget#navSurface QScrollBar::handle:vertical {{ background:#385366; }}
 QWidget#navSurface QLabel#floatingTrack {{ background:rgba(18,26,36,230); color:#95aebc; border:1px solid #344454; border-radius:10px; padding:0 9px; font-family:'{FONT_DATA}'; font-size:10px; }}
+QWidget#navSurface QLabel#floatingTrack[freshness="STALE"] {{ color:#e3bd6d; border-color:#8a6a2c; }}
+QWidget#navSurface QLabel#floatingTrack[freshness="NO_DATA"] {{ color:#b9c3ca; border-color:#56626d; }}
 """
 
 

@@ -9,7 +9,7 @@ from app.vdr.store import ReportStore
 from app.vdr.pdf import export_pdf, import_pdf
 from app.ui.pages.vdr.sections import BULK
 from app.ui.pages.vdr.workspace import VdrPage
-from test_vdr import fixture_report
+from test_vdr import fixture_report, TEST_IDENTITY
 
 
 def activities(*pairs):
@@ -54,8 +54,8 @@ def test_standard_bulk_order_and_default_rows_preserved():
 
 @pytest.fixture
 def page(qtbot, tmp_path):
-    store = ReportStore(tmp_path/'reports.json', today='2026-11-19')
-    page = VdrPage(store); page.resize(1440,900); qtbot.addWidget(page); page.show()
+    store = ReportStore(tmp_path/'reports.json', today='2026-11-19', identity=TEST_IDENTITY)
+    page = VdrPage(store, identity_provider=lambda: dict(TEST_IDENTITY)); page.resize(1440,900); qtbot.addWidget(page); page.show()
     yield page
     page.save_timer.stop()
 

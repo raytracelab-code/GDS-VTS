@@ -1,0 +1,59 @@
+﻿[zero-duration row] ['Row 2: TO time invalid or not after previous entry']
+[backwards time] ['Row 2: TO time invalid or not after previous entry']
+[backwards loc durations] [{'from': '0000', 'to': '0600', 'duration': '06:00', 'location': 'A'}, {'from': '0600', 'to': '2400', 'duration': '18:00', 'location': 'A'}]
+[missing TO mid-row] ['Row 2: TO time invalid or not after previous entry']
+[missing TO intervals] [{'fromM': 0, 'toM': 720, 'ok': True, 'min': 720}, {'fromM': 720, 'toM': None, 'ok': False, 'min': 0}, {'fromM': 720, 'toM': 1440, 'ok': True, 'min': 720}]
+[first row 0000] ['Row 1: TO time invalid or not after previous entry']
+[full day ok] []
+[minutes('24:00')] None
+[minutes('2359')] 1439
+[minutes('930')] 570
+[minutes('0960')] None
+[minutes('12')] None
+[minutes('1200 ')] None
+[minutes('１２００')] 720
+[loc dur A-B-A] [{'from': '0000', 'to': '0600', 'duration': '06:00', 'location': 'A'}, {'from': '0600', 'to': '1200', 'duration': '06:00', 'location': 'B'}, {'from': '1200', 'to': '2400', 'duration': '12:00', 'location': 'A'}]
+[summary A-B-A] {'A': 1080, 'B': 360}
+[case variants] [{'from': '0000', 'to': '0600', 'duration': '06:00', 'location': 'LABUAN'}, {'from': '0600', 'to': '1200', 'duration': '06:00', 'location': 'labuan'}, {'from': '1200', 'to': '2400', 'duration': '12:00', 'location': 'Labuan'}]
+[case summary] {'LABUAN': 360, 'labuan': 360, 'Labuan': 720}
+[negative cons] ([-400.0, None, None, None], 0, ['PORT ME: flowmeter @0000H must be less than @2400H'])
+[daily 30h] []
+[total<daily] []
+[fm24 missing] ([None, None, None, None], [])
+[neg closing FW] (-400.0, ['FRESH WATER (ltrs): closing stock is negative'])
+[no opening but received] (None, [])
+[huge open closing] (1.2345678901234568e+16, '12,345,678,901,234,568')
+[huge rollover opening str] 1.2345678901234568e+16
+[1e3/inf/nan] (1000.0, ['FRESH WATER (ltrs): invalid rcvQty', 'FRESH WATER (ltrs): invalid cons'])
+[comma thousands] 1000.5
+[EU decimal 1.000,5] (1.0, [])
+[rcv meter mismatch (1000 vs 200)] []
+[transfer meter reversed] []
+[transfer qty w/o recipient] []
+[no flowmeter -> fuel cons] (0, 4900.0)
+[lowercase fuel is_fuel] 5650.0
+[free text in numeric fields -> validate] []
+[perfect days no incidents (hire 2026-01-01, date 2026-11-18)] 321
+[perfect days LTI today] 0
+[perfect days LTI after report date] 0
+[perfect days non-ISO LTI] 321
+[perfect days no hire] None
+[inc24 effect] None
+[report number] 322
+[duplicate crew] []
+[signon after report] ['Crew 2 (X): 0 working days outside 1–90 day limit']
+[crew row w/o name but data] []
+[contractor w/o name] []
+[gap rollover (15 -> 17): crew carried?] ('', '', {})
+[17 after 16 created later still blank] 
+[stale carry (open after previous edit)] ('', '', 'expected', 4000.0)
+finalize errors [] True
+[after edit finalized?] False
+[after undo finalized?] True
+[undo stack len after 150 keystrokes] 100
+[imported invalid but finalized] (True, 1)
+[reports created by browsing] ['2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16', '2026-11-17', '2026-11-18']
+[corrupt load_error] Could not load report store: Expecting value: line 1 column 28 (char 27)
+[save after corrupt] Could not load report store: Expecting value: line 1 column 28 (char 27); original file preserved
+[one bad report -> all lost?] ('Could not load report store: Report requires four weather slots', ['2026-11-18'])
+[dir listing] ['bad.json', 'onebad.json']

@@ -27,3 +27,12 @@ body.satellite-active .maplibregl-ctrl-attrib-inner{display:block}
 body.satellite-active .maplibregl-ctrl-attrib{max-width:calc(100% - 32px);height:auto}
 body.satellite-active .maplibregl-ctrl-attrib-inner,body.satellite-active .maplibregl-ctrl-attrib-inner a{color:#a9bec9}
 @media(max-width:700px){#geographic-hud{right:10px;bottom:44px;padding:8px;gap:7px}.hud-coordinates{font-size:9px;min-width:100px}#map-status{max-width:calc(100% - 230px);font-size:8px}.maplibregl-ctrl-attrib{max-width:70%;font-size:8px}}
+/* Honest own-vessel marker: no arrow without a received heading; dimmed when telemetry is stale. */
+.vessel{position:relative}
+.vessel .vessel-neutral,.vessel .vessel-hint{display:none}
+.vessel.heading-unknown .vessel-arrow{display:none}
+.vessel.heading-unknown .vessel-neutral{display:block}
+.vessel.heading-unknown .vessel-hint{display:block;position:absolute;left:50%;top:27px;transform:translateX(-50%);white-space:nowrap;font:600 8px/1.4 Inter,'Segoe UI',sans-serif;letter-spacing:.6px;color:#d8e4ea;background:rgba(18,26,36,.85);border:1px solid #445868;border-radius:4px;padding:0 4px}
+.vessel .vessel-neutral circle:first-child{fill:var(--vessel-color,#167a73)}
+.vessel.stale svg{opacity:.45;filter:grayscale(1)}
+.vessel.no-data svg{opacity:.3;filter:grayscale(1)}

@@ -1,0 +1,20 @@
+window title: GDS VTS 0.9.0 (development) · Modern
+screenshot 01_configure_identity_empty_1366x768.png
+identity status before: Required before finalizing reports: Vessel Name, Date of Hire
+invalid IMO rejected: Vessel IMO must be 7 digits with a valid check digit (for example 9074729).
+identity saved (isolated INI): MV RUNTIME CHECK / hire 2026-01-01
+screenshot 02_configure_identity_saved_1366x768.png
+VDR subtitle='RUNTIME CLIENT — MV RUNTIME CHECK' hire='01 Jan 2026' reportNo='323' (today 2026-11-19)
+today FW opening after rollover from 2026-11-18: 5000
+today FW opening after correcting 2026-11-18: 4000 (expected 4000)
+carry notice: Openings carried from the 18 Nov 2026 closing. 1 value(s) were changed by hand and differ: LUB. OIL (ltrs) opening @0000H: 1,234 (closing was 5,000).
+screenshot 03_vdr_identity_reportno_carry_notice_1366x768.png
+screenshot 04_vdr_finalize_blocked_grouped_issues.png
+finalize incomplete report -> False
+over-long banner visible=True text='This text is too long (250 characters; maximum 200). It has NOT been saved — shorten it an'
+screenshot 05_vdr_overlong_text_refused.png
+VJR meta vessel='MV RUNTIME CHECK' imo='9074729' read-only=True
+screenshot 06_vjr_identity_from_configure_1366x768.png
+NAV readout: 'POSITION\n—\n\nSTATUS\nNO DATA\n\nLAST UPDATE\n—'
+screenshot 07_nav_no_telemetry_state_1366x768.png
+window close + bounded maritime close: 0.02 s

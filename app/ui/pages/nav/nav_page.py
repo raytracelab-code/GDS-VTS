@@ -12,7 +12,7 @@ from app.nav import VesselConfig,VesselState,TrackManager
 from app.nav.map_controls import FollowController, LAYER_VISIBILITY
 from app.nav.map_bridge import MapBridge
 from app.nav.render_geometry import vector_geojson
-from app.nav.presentation import track_metrics,telemetry_age
+from app.nav.presentation import track_metrics,telemetry_age,telemetry_freshness,marker_payload,readout_text,freshness_banner
 from app.nav.web_scheme import GdsMapSchemeHandler
 from app.nav.web_profile import create_nav_profile
 from app.nav.spatial import SpatialStateService
@@ -146,7 +146,12 @@ class NavPage(QWidget,FloatingControls):
   self.spatial.spatialStateChanged.connect(lambda _:self.bridge.publishEventState())
   self._update_events(self.bridge.getEventState())
  def _update_events(self,payload):
-  self.event_count.setText(f'ACTIVE EVENTS  {payload["active_count"]}' if payload['active_count'] else 'No active events')
+  # GDS-AUDIT-021: no production squall feed exists yet, so an empty list must not read as an all-clear.
+  if payload['events']:self._squall_feed_seen=True
+  self.event_count.setText(f'ACTIVE EVENTS  {payload["active_count"]}' if payload['active_count'] else
+                           'No active events' if getattr(self,'_squall_feed_seen',False) else 'Squall feed NOT CONNECTED · no warnings received')
+  self.event_count.setToolTip('Squall warnings appear here only when a squall event feed delivers them. '
+                              'No feed is connected in this build, so an empty list is not an all-clear.')
   ids=[event['event_id'] for event in payload['events']]
   if list(self._event_buttons)!=ids:
    while self.event_cards.count():
@@ -170,9 +175,48 @@ class NavPage(QWidget,FloatingControls):
   if ok:self._send_map_state()
  def _bridge_command(self,name):
   if name=='ready':self._send_map_state()
+  elif name=='online-unavailable':self._use_offline_fallback()
+  elif name=='online-available':self.retry_map()
  def _send_map_state(self):
   self.bridge.spatialStateChanged.emit(self.spatial.payload());self.bridge.eventStateChanged.emit(self.bridge.getEventState());self.bridge.publishMaritimeState()
   for name,checkbox in self.layer_checks.items():self.set_layer_visibility(name,checkbox.isChecked())
+  # A reloaded map surface gets the last known vessel/track again, with its honest freshness.
+  if self.vessel.latitude is not None and self.state.latest_frame is not None:
+   from datetime import datetime,timezone
+   frame=self.state.latest_frame;freshness,age=telemetry_freshness(frame,datetime.now(timezone.utc))
+   self.bridge.telemetryChanged.emit(marker_payload(self.vessel,frame,freshness,age))
+   if self.track.point_count:self.bridge.renderStateChanged.emit({'track':self.track.geojson_segments(),'start':self.track.start_geojson(),'heading':vector_geojson(self.vessel.latitude,self.vessel.longitude,frame.heading),'cog':vector_geojson(self.vessel.latitude,self.vessel.longitude,frame.cog)})
+   self._map_freshness=None
+ def _publish_map_config(self,config):
+  config=self._browser_map_config(config)
+  config['map_view']='MARINE' if config.get('preferred_source')=='online' else QSettings('GDS','VTS').value('nav/map_view','MARINE')
+  self.bridge.offline_config=config
+ def _use_offline_fallback(self):
+  """Online basemap unreachable: use installed offline regions when present, else keep the local shell."""
+  handler=self._gds_scheme_handler
+  if getattr(self,'_offline_fallback',False) or handler.config.get('preferred_source')!='online':return False
+  try:
+   from app.nav.offline_maps.manager import PackageManager
+   if not PackageManager().installed_regions(enabled_only=True):return False
+   config=handler.reload_packages()
+  except Exception as error:
+   log.warning('Offline region fallback unavailable: %s',error);return False
+  if not config.get('installed'):return False
+  from app.nav.online_map import ONLINE_STYLE
+  config['online_probe_url']=ONLINE_STYLE
+  config['status']='MAP / ONLINE UNAVAILABLE / SHOWING INSTALLED OFFLINE REGIONS / RETRYING AUTOMATICALLY'
+  self._offline_fallback=True;self._publish_map_config(config)
+  self.map_package_status.setText(config['status']);self.web.reload();return True
+ def retry_map(self):
+  """Reload the map surface with the online basemap; no application restart required."""
+  handler=self._gds_scheme_handler
+  if getattr(self,'_offline_fallback',False):
+   from app.nav.online_map import online_config
+   handler.config=online_config();self._offline_fallback=False
+  if handler.config.get('preferred_source')=='online':self._publish_map_config(handler.config)
+  self.map_package_status.setText('MAP / ONLINE / RECONNECTING')
+  if hasattr(self,'online_status'):self.online_status.setText('CONNECTING')
+  self.web.reload()
  def _layer_toggle(self,layout,name,caption=None):
   settings=QSettings('GDS','VTS');c=QCheckBox(caption or name)
   c.setChecked(settings.value(f'nav/layers/{name}',GIS_DEFAULTS.get(name,True),type=bool))
@@ -184,6 +228,13 @@ class NavPage(QWidget,FloatingControls):
   host=QFrame();host.setObjectName('navPanel');panel.setWidget(host)
   l=QVBoxLayout(host);l.setContentsMargins(11,10,11,10);l.setSpacing(6)
   self.map_package_status=QLabel('MAP / ONLINE / CONNECTING');self.map_package_status.setWordWrap(True);self.map_package_status.setObjectName('fieldLabelDark');l.addWidget(self.map_package_status)
+  map_actions=QHBoxLayout();map_actions.setSpacing(6)
+  self.retry_map_button=QPushButton('Retry online map');self.retry_map_button.setObjectName('secondaryButton')
+  self.retry_map_button.setToolTip('Reconnect the online basemap now. NAV also retries automatically while offline.')
+  self.retry_map_button.clicked.connect(lambda:self.retry_map());map_actions.addWidget(self.retry_map_button)
+  self.map_regions_button=QPushButton('Map regions…');self.map_regions_button.setObjectName('secondaryButton')
+  self.map_regions_button.setToolTip('Install, enable or remove offline map regions for use without internet.')
+  self.map_regions_button.clicked.connect(lambda:self._map_regions());map_actions.addWidget(self.map_regions_button);l.addLayout(map_actions)
   self.inspector_box=QFrame();self.inspector_box.setObjectName('navInspectorBox');inspector=QVBoxLayout(self.inspector_box)
   inspector.setContentsMargins(9,8,9,8);inspector.setSpacing(5);l.addWidget(self.inspector_box);self.inspector_box.hide()
   def inspector_section(title,command):
@@ -238,9 +289,13 @@ class NavPage(QWidget,FloatingControls):
   self.event_count=QLabel('No active events');self.event_count.setObjectName('navMuted');squall_row.addWidget(self.event_count,1,Qt.AlignmentFlag.AlignRight);l.addLayout(squall_row)
   self.event_cards=QVBoxLayout();self.event_cards.setSpacing(4);l.addLayout(self.event_cards)
   self.sources_section=group('DATA SOURCES','sources',False);self.source_info=SourceStatusPanel();self.sources_section.content.addWidget(self.source_info)
+  self.privacy_note=QLabel('External services (online basemap, OpenStreetMap Overpass, GEBCO) receive map-area requests only. '
+   'Own-vessel queries use a 0.5° grid area and boxes widened to 0.05°, never the exact position. '
+   'Overpass can be turned off with GDS_OVERPASS_ENABLED=false. See docs/nav-external-data-privacy.md.')
+  self.privacy_note.setObjectName('navMuted');self.privacy_note.setWordWrap(True);self.privacy_note.setAccessibleName('External data and privacy');self.sources_section.content.addWidget(self.privacy_note)
   legend=group('LEGEND','legend',False);populate_legend(legend.content)
   self.telemetry_section=group('VESSEL TELEMETRY','vessel-telemetry',False)
-  self.readout=QLabel('Position ?\nSOG ? kn   COG ??\nHeading ??\nSource ?');self.readout.setObjectName('navReadout');self.readout.setWordWrap(True);self.telemetry_section.content.addWidget(self.readout)
+  self.readout=QLabel('POSITION\n—\n\nSTATUS\nNO DATA');self.readout.setObjectName('navReadout');self.readout.setWordWrap(True);self.telemetry_section.content.addWidget(self.readout)
   l.addStretch();return panel
  def _sync_inspector(self,key=None):
   if not hasattr(self,'inspector_box'):return
@@ -288,7 +343,7 @@ class NavPage(QWidget,FloatingControls):
   self.web.page().runJavaScript(f"window.navMap&&navMap.setLayerVisibility({name!r},{str(visible).lower()})")
  def _update_spatial_summary(self):
   metadata=self.spatial.state.metadata or {};counts=self.spatial.state.feature_counts
-  self.spatial_summary.setText('No project package loaded' if not metadata else f'Package  {metadata.get("name")}\nRevision  {metadata.get("revision")}\nFeatures  {counts["total"]}   ?   Status  Active')
+  self.spatial_summary.setText('No project package loaded' if not metadata else f'Package  {metadata.get("name")}\nRevision  {metadata.get("revision")}\nFeatures  {counts["total"]}   ·   Status  Active')
  def _set_spatial_view_hint(self, out_of_view):
   self.spatial_view_hint.setVisible(out_of_view);self.show_spatial_button.setVisible(out_of_view)
  def _show_feature_info(self, feature):
@@ -315,15 +370,32 @@ class NavPage(QWidget,FloatingControls):
  def refresh(self):
   f=self.state.latest_frame;self.status.setText(f'● {self.state.telemetry_status.value}')
   if hasattr(self,'palette'):self.palette.update(follow=self.follow.enabled)
+  from datetime import datetime,timezone
+  freshness,age=telemetry_freshness(f,datetime.now(timezone.utc))
   if f and f.valid and self.vessel.update(f,self.config):
    if self.maritime_runtime:self.maritime_runtime.own_position(self.vessel.latitude,self.vessel.longitude)
    from app.nav.track_manager import TrackPoint
    accepted=self.track.append(TrackPoint(f.received_at,self.vessel.latitude,self.vessel.longitude,f.heading,f.cog,f.speed_knots))
    if accepted:
-    self.bridge.telemetryChanged.emit({'latitude':self.vessel.latitude,'longitude':self.vessel.longitude,'heading':self.vessel.heading or 0})
+    # heading is None when neither HDG nor COG was received: never draw an invented 000°.
+    self.bridge.telemetryChanged.emit(marker_payload(self.vessel,f,freshness,age))
     self.bridge.renderStateChanged.emit({'track':self.track.geojson_segments(),'start':self.track.start_geojson(),'heading':vector_geojson(self.vessel.latitude,self.vessel.longitude,f.heading),'cog':vector_geojson(self.vessel.latitude,self.vessel.longitude,f.cog)})
-   self.trackbar.setVisible(True)
-   m=track_metrics(self.track);self.readout.setText(f'POSITION\n{self.vessel.latitude:.6f}, {self.vessel.longitude:.6f}\n\nSOG\n{f.speed_knots or "—"} kn\n\nCOG\n{f.cog or "—"}°\n\nHEADING\n{f.heading or "—"}°\n\nSOURCE\n{f.source or "—"}\n\nTELEMETRY AGE\n{telemetry_age(f,__import__("datetime").datetime.now(__import__("datetime").timezone.utc))}');self.trackbar.setText(f'TRACK  {m["status"]}     DISTANCE  {m["distance_nm"]}     DURATION  {m["duration"]}     POINTS  {m["points"]}')
+  self._show_freshness(f,freshness,age)
+ def _show_freshness(self,frame,freshness,age):
+  """Text changes at most once per second (whole-second age); map style only on state change."""
+  if getattr(self,'_map_freshness',None)!=freshness:
+   self._map_freshness=freshness
+   self.web.page().runJavaScript(f"window.navMap&&navMap.setFreshness&&navMap.setFreshness('{freshness}')")
+  vessel=self.vessel if frame is not None else VesselState()
+  readout=readout_text(vessel,frame,freshness,age)
+  if self.readout.text()!=readout:self.readout.setText(readout)
+  m=track_metrics(self.track,freshness)
+  bar=f'{freshness_banner(freshness,age)}     TRACK  {m["status"]}     DISTANCE  {m["distance_nm"]}     DURATION  {m["duration"]}     POINTS  {m["points"]}'
+  if self.trackbar.text()!=bar:
+   self.trackbar.setText(bar);self.trackbar.setProperty('freshness',freshness.replace(' ','_'))
+   self.trackbar.style().unpolish(self.trackbar);self.trackbar.style().polish(self.trackbar)
+   self.trackbar.setToolTip('Vessel telemetry is LIVE when a valid frame arrived within the last 3 s. STALE shows the last known position; the track is paused until data resumes.')
+  self.trackbar.setVisible(True)
 
  def _setup_maritime(self):
   for label in (self.source_info,self.maritime_info):label.setSizePolicy(QSizePolicy.Policy.Ignored,QSizePolicy.Policy.Preferred)

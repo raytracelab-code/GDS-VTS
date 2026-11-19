@@ -1,0 +1,11 @@
+﻿[number('2,5')] 25.0
+[number('5,30')] 530.0
+[number('1.000,5')] 1.0005
+[draft 2,5 validate] []
+[day 18 opening FW after rollover] 5000.0
+[day 17 FW closing now] 4000.0
+[day 18 FW opening still] 5000.0
+[undo stack days] ['2026-11-17', '2026-11-18']
+[current after undo 1] 2026-11-18
+[current after undo 2 (jumps day?)] 2026-11-17
+[opened 2 days later: crew/bulk carried?] ('', '', '')

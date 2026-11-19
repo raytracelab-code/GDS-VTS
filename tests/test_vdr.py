@@ -29,11 +29,15 @@ def fixture_report(day='2026-11-18'):
     return r
 
 
+# Configure → Vessel & Client values used by tests (Configure is the single identity source).
+TEST_IDENTITY = dict(vessel='TEST VESSEL', client='TEST CLIENT', hireDate='2026-01-01')
+
+
 @pytest.fixture
 def page(qtbot, tmp_path):
-    store = ReportStore(tmp_path/'reports.json', today='2026-11-18')
+    store = ReportStore(tmp_path/'reports.json', today='2026-11-18', identity=TEST_IDENTITY)
     store.reports[store.current] = fixture_report()
-    p = VdrPage(store)
+    p = VdrPage(store, identity_provider=lambda: dict(TEST_IDENTITY))
     qtbot.addWidget(p); p.resize(1440, 800); p.show(); qtbot.wait(30)
     yield p
     p.save_timer.stop()
@@ -49,9 +53,9 @@ def test_calculations_and_rollover():
     assert c['totalCons'] == 250 and c['bulkClose'][0] == 5650
     assert c['coverage'] == 1440 and c['actD'][0]['fromM'] == 0
     next_day = rollover(r, '2026-11-19')
-    assert next_day['eq'][0]['total'] == '1012.0'
+    assert next_day['eq'][0]['total'] == '1012'  # plain numbers, no '.0' (GDS-AUDIT-052)
     assert next_day['eq'][0]['fm0'] == '350' and next_day['eq'][0]['fm24'] == ''
-    assert next_day['bulk'][0]['open'] == '5650.0' and next_day['bulk'][0]['tr'] == []
+    assert next_day['bulk'][0]['open'] == '5650' and next_day['bulk'][0]['tr'] == []
     assert next_day['crew'] == r['crew'] and next_day['acts'] == [blank_row('acts')]
     assert not next_day['finalized']
 
@@ -74,15 +78,18 @@ def test_store_history_across_dates_and_restart(tmp_path):
     assert reopened.reports == store.reports
 
 
-def test_store_does_not_overwrite_corruption(tmp_path):
+def test_store_does_not_destroy_corruption(tmp_path):
+    # GDS-AUDIT-003: the damaged original is preserved, the user is told, and saving continues (no dead end).
     path = tmp_path/'broken.json'; path.write_text('broken')
     store = ReportStore(path, today='2026-11-18')
-    with pytest.raises(OSError): store.save()
-    assert path.read_text() == 'broken'
+    damaged = list(tmp_path.glob('broken.json.damaged-*'))
+    assert len(damaged) == 1 and damaged[0].read_text() == 'broken' and store.notices
+    store.mutate(lambda r: r['meta'].update(captain='New')); store.save()
+    assert damaged[0].read_text() == 'broken'
 
 
 def test_finalization_edit_undo_compatibility(tmp_path):
-    s = ReportStore(tmp_path/'vdr.json', today='2026-11-18'); s.reports[s.current] = fixture_report()
+    s = ReportStore(tmp_path/'vdr.json', today='2026-11-18', identity=TEST_IDENTITY); s.reports[s.current] = fixture_report()
     assert s.finalize() == [] and s.report['finalized']
     original = deepcopy(s.report); s.save()
     assert ReportStore(s.path, today=s.today).report == original
@@ -178,7 +185,11 @@ def test_ui_undo_redo_save_finalize_download(page, monkeypatch):
     page.edit(('meta', 'captain'), 'Changed'); page.undo(); assert page.report['meta']['captain'] == 'Test Captain'
     page.redo(); assert page.report['meta']['captain'] == 'Changed'
     assert page.flush_save() and page.saved.text().startswith('Saved ')
-    assert page.finalize() and page.download_button.isEnabled() and page.finalize_button.text() == 'FINALIZED'
+    assert page.finalize() and page.download_button.isEnabled() and page.finalize_button.text() == 'Reopen report'
+    page.edit(('meta', 'captain'), ''); assert page.report['finalized']  # finalized reports are read-only (GDS-AUDIT-005)
+    from app.ui.pages.vdr import workspace
+    monkeypatch.setattr(workspace.QMessageBox, 'question', lambda *a: workspace.QMessageBox.StandardButton.Yes)
+    assert page.finalize() and not page.report['finalized']  # explicit, confirmed Reopen
     page.edit(('meta', 'captain'), '')
     errors = []; monkeypatch.setattr(page, 'show_errors', lambda e: errors.extend(e))
     assert not page.finalize() and errors and not page.download_button.isEnabled()
@@ -191,11 +202,14 @@ def test_activity_time_normalization_autoadd_and_2400(page):
     assert not page.add_activity.isEnabled() and page.computed[('from', 1)].text() == '0600'
 
 
-def test_narrow_width_preserves_columns(page, qtbot):
+def test_narrow_width_keeps_readable_minimum_columns(page, qtbot):
+    # Responsive (GDS-AUDIT-033): columns shrink to readable minimums; scroll only below that.
     page.resize(1000, 750); qtbot.wait(30)
     t = page.tables['acts']
-    assert t.columnWidth(4) == 225 and t.columnWidth(3) == 240
-    assert t.horizontalScrollBar().maximum() > 0
+    widths = [t.columnWidth(i) for i in range(t.columnCount())]
+    assert all(w >= m for w, m in zip(widths, t.property('minWidths')))
+    if t.viewport().width() < sum(t.property('minWidths')):
+        assert t.horizontalScrollBar().maximum() > 0
 
 
 def test_keyboard_undo_redo_from_focused_field(page, qtbot):
@@ -212,9 +226,10 @@ def test_ui_pdf_download_and_import_actions(page, tmp_path, monkeypatch):
     page.finalize(); path = tmp_path/'download.pdf'
     monkeypatch.setattr(workspace.QFileDialog, 'getSaveFileName', lambda *a: (str(path), 'PDF'))
     page.download(); assert path.exists()
+    monkeypatch.setattr(workspace.QMessageBox, 'question', lambda *a: workspace.QMessageBox.StandardButton.Yes)
+    page.finalize()  # Reopen (confirmed) before editing a finalized report
     page.edit(('meta', 'captain'), 'Different')
     monkeypatch.setattr(workspace.QFileDialog, 'getOpenFileName', lambda *a: (str(path), 'PDF'))
-    monkeypatch.setattr(workspace.QMessageBox, 'question', lambda *a: workspace.QMessageBox.StandardButton.Yes)
     page.import_report()
     assert page.report['meta']['captain'] == 'Test Captain' and page.report['finalized']
     page.undo(); assert page.report['meta']['captain'] == 'Different'
@@ -223,6 +238,7 @@ def test_ui_pdf_download_and_import_actions(page, tmp_path, monkeypatch):
 def test_old_finalized_import_preserved(tmp_path):
     s = ReportStore(tmp_path/'vdr.json', today='2026-11-18')
     report = fixture_report('2024-01-01'); report.update(finalized=True, finalizedAt='2024-01-02T00:00:00Z')
+    report['crew'][0]['signon'] = '2023-12-15'  # a valid historical report is imported unchanged (still finalized)
     s.import_report(report); s.save()
     assert s.report == report
     assert ReportStore(s.path, today=s.today).reports['2024-01-01'] == report
