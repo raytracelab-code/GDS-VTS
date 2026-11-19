@@ -473,6 +473,11 @@ class NavPage(QWidget,FloatingControls):
    self.web.page().runJavaScript(f"window.navMap&&navMap.setFreshness&&navMap.setFreshness('{freshness}')")
   vessel=self.vessel if frame is not None else VesselState()
   readout=readout_text(vessel,frame,freshness,age)
+  if frame is not None:
+   # Plausibility: received values are shown unchanged; unusual/impossible ones are flagged for the operator.
+   from app.core.plausibility import check_frame
+   flags=[m for k,(level,m) in check_frame(frame).items() if k in ('latitude','longitude','speed_knots','cog','heading')]
+   if flags:readout+='\n\nCHECK VALUES\n'+'\n'.join('▲ '+m for m in flags)
   if self.readout.text()!=readout:self.readout.setText(readout)
   m=track_metrics(self.track,freshness)
   bar=f'{freshness_banner(freshness,age)}     TRACK  {m["status"]}     DISTANCE  {m["distance_nm"]}     DURATION  {m["duration"]}     POINTS  {m["points"]}'

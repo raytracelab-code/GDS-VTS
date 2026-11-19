@@ -48,7 +48,7 @@ class VdrPage(QWidget, Sections):
         self._rebuild()
         QApplication.instance().aboutToQuit.connect(self.flush_save)
         if self.store.load_error:
-            self.saved.setText('NOT SAVING'); self.saved.setToolTip(self.store.load_error)
+            self._set_saved('NOT SAVING'); self.saved.setToolTip(self.store.load_error)
             self.show_banner(self.store.load_error, 'error')
         elif self.store.notices:
             self.show_banner('\n\n'.join(self.store.notices), 'warning')
@@ -184,7 +184,7 @@ class VdrPage(QWidget, Sections):
         self.store.mutate(update); self._changed()
 
     def _changed(self):
-        self.saved.setText('Saving…'); self.save_timer.start(); self.refresh_values()
+        self._set_saved('Saving…'); self.save_timer.start(); self.refresh_values()
 
     def refresh_values(self):
         if self._building:
@@ -241,9 +241,20 @@ class VdrPage(QWidget, Sections):
         self.trim_label.setText(f'FWD {fmt(fwd)} m · AFT {fmt(aft)} m · {trim}'); self.draft_profile.update()
         days = hse_perfect_days(self.report, identity)
         self.perfect_days.setText('PERFECT DAYS  '+str(days if days is not None else '—'))
+        from app.core.plausibility import vdr_warnings
+        warnings = vdr_warnings(self.report)
+        flagged = {tuple(path): message for _section, path, message in warnings}
+        for path, editor in self.editors.items():
+            message = flagged.get(tuple(path))
+            if editor.property('plausibility') != ('warning' if message else None):
+                editor.setProperty('plausibility', 'warning' if message else None); editor.style().unpolish(editor); editor.style().polish(editor)
+                editor.setToolTip('▲ ' + message if message else '')
         for i, item in enumerate(self.nav_buttons):
-            count = sum(e['s'] == i for e in errors)
-            item.setText(f'{i+1:02d}   {SECTIONS[i]}'.replace('&', '&&')+(f'   {count}' if count else ''))
+            count = sum(e['s'] == i for e in errors); soft = sum(w[0] == i for w in warnings)
+            # Text markers (not colour alone): "⚠ n" issues to fix, "▲" unusual values to check, "✓" section complete.
+            marker = f'   ⚠ {count}' if count else ('   ▲' if soft else '   ✓')
+            item.setText(f'{i+1:02d}   {SECTIONS[i]}'.replace('&', '&&') + marker)
+            item.setToolTip(f'{count} item(s) to fix before finalizing' if count else ('Unusual values to check (finalize allowed)' if soft else 'No issues'))
 
     def _refresh_location_durations(self):
         rows = derive_location_durations(self.report['acts'])
@@ -392,18 +403,24 @@ class VdrPage(QWidget, Sections):
         if self.store.redo():
             self._rebuild(); self._changed()
 
+    def _set_saved(self, text):
+        """Autosave state as a compact badge: quiet when saved, prominent only on failure (text unchanged)."""
+        from app.ui.status import set_badge
+        set_badge(self.saved, text, 'error' if 'NOT SAV' in text.upper() or 'FAILED' in text.upper() else
+                  'success' if text.startswith('Saved') else 'neutral', with_icon=False)
+
     def flush_save(self):
         self.save_timer.stop()
         try:
             self.store.save()
             from datetime import datetime
-            self.saved.setText('Saved '+datetime.now().strftime('%H:%M:%S')); self.saved.setToolTip(str(self.store.path))
+            self._set_saved('Saved '+datetime.now().strftime('%H:%M:%S')); self.saved.setToolTip(str(self.store.path))
             if self.banner.property('level') == 'save':
                 self.banner.hide()
             return True
         except OSError as error:
             # Clear, persistent message (not just grey status text): what happened, is data safe, what next.
-            self.saved.setText('NOT SAVED'); self.saved.setToolTip(str(error))
+            self._set_saved('NOT SAVED'); self.saved.setToolTip(str(error))
             self.show_banner(str(error) if str(error).startswith(('Not saved', 'Could not load')) else
                              f'Not saved: {error}. Your previously saved data is safe. Saving retries on your next change.', 'save')
             return False
@@ -487,7 +504,10 @@ class VdrPage(QWidget, Sections):
         if path:
             try:
                 from app.vdr.pdf import export_pdf
-                export_pdf(self._export_report(), path); self.saved.setText('PDF downloaded')
+                from app.ui.status import busy
+                with busy():
+                    export_pdf(self._export_report(), path)
+                self._set_saved('PDF downloaded')
             except Exception as error:
                 dialogs.notify(self, 'PDF not created',
                     'The PDF could not be created. Your report data is safe and unchanged.\n\n'
@@ -507,7 +527,7 @@ class VdrPage(QWidget, Sections):
                 return
             issues = self.store.import_report(report, identity=self.identity_provider()); self.step = 0; self._rebuild()
             if self.flush_save():
-                self.saved.setText('Imported report for '+day)
+                self._set_saved('Imported report for '+day)
             if issues:
                 self.show_errors(issues, 'Imported as a draft', f'The imported report needs {len(issues)} correction(s) before it can be finalized again.')
         except (OSError, ValueError) as error:
@@ -528,8 +548,10 @@ class VdrPage(QWidget, Sections):
         if not Path(path).suffix:
             path += '.xlsx'
         try:
-            VdrExcelExporter().export(self.report, path, identity=identity)
-            self.saved.setText('Excel report downloaded')
+            from app.ui.status import busy
+            with busy():
+                VdrExcelExporter().export(self.report, path, identity=identity)
+            self._set_saved('Excel report downloaded')
         except Exception as error:
             lines = [line for line in str(error).splitlines() if line.strip().startswith('•')]
             if lines:  # multi-issue export result: structured, grouped, scrollable

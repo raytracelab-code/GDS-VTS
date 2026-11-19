@@ -37,8 +37,15 @@ class TelemetryPanel(QWidget):
         key=(id(frame),status)
         if key==self._last: return
         self._last=key
+        from app.core.plausibility import check_frame
+        flagged=check_frame(frame) if frame is not None else {}
         for name,label in self.labels.items():
-            label.setText(format_value(name,getattr(frame,name,None) if frame is not None else None))
+            text=format_value(name,getattr(frame,name,None) if frame is not None else None)
+            level,message=flagged.get(name,(None,''))
+            label.setText(text+('  ▲' if level else ''))
+            label.setToolTip(('Outside the possible range — check the sensor: ' if level=='invalid' else 'Unusual value: ')+message if level else '')
+            if label.property('plausibility')!=level:
+                label.setProperty('plausibility',level); label.style().unpolish(label); label.style().polish(label)
             label.setEnabled(status not in (TelemetryStatus.STALE,TelemetryStatus.LOST))
         self.subtitle.setText({TelemetryStatus.STALE:'Telemetry is STALE — values below are the last received and may be out of date.',
                                TelemetryStatus.LOST:'Telemetry LOST — values below are the last received, not current.',

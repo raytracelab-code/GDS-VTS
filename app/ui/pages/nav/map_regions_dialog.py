@@ -46,6 +46,8 @@ class MapRegionsDialog(QDialog):
         entries += [dict(region_id=k,display_name=p.manifest['name'],group='Installed',status='INSTALLED') for k,p in installed.items() if k not in known]
         invalid=getattr(self.manager,'invalid_regions',{})
         entries += [dict(region_id=k,display_name=k,group='Invalid',status='INVALID') for k in invalid if k not in known and k not in installed]
+        self.note.setText('No offline map regions are listed yet. Press “Check for map updates” to load the region catalogue (needs internet).'
+                          if not entries else 'Independent regional packages · 30 GiB disk reserve · OpenStreetMap / Geofabrik')
         groups={}
         for entry in entries:
             key=entry['region_id'];package=installed.get(key);group=entry['group']

@@ -1,0 +1,24 @@
+first run needed on empty profile: True
+screenshot 00_first_run_step1
+screenshot 00_first_run_step2
+first run after Finish: needed=False vessel=MV POLISH CHECK
+screenshot 01_configure_top
+screenshot 02_configure_connection_link_state
+USB link: 'LIVE — Valid telemetry is arriving.\nPackets 2 · valid frames 1 · invalid 1 · last packet 2 s ago · reconnects 0'
+screenshot 03_configure_telemetry_plausibility
+telemetry speed label: '55.0 kn  ▲' tip='Unusual value: Speed 55 kn is unusually high. Check the value.'
+screenshot 04_configure_support_card
+screenshot 05_about_build_info
+screenshot 06_raw_data_monitor
+support bundle members=['README.txt', 'build_and_runtime.json', 'diagnostics.json', 'logs/startup.log', 'settings_sanitized.json']; contains "Latitude"/position values: False
+backup created in 0.37 s
+restore preview: Backup from 2026-11-19 18:13 UTC · GDS VTS 0.9.0 Modern | • VDR reports: 1 (2026-11-18 to 2026-11-18) | • VJR current journey: yes · archived voyages: 6 · photos: 0 | • Settings (vessel & client, preferences): 7
+screenshot 07_restore_confirmation
+VDR autosave: 'Saving…' tone=neutral
+screenshot 08_vdr_plausibility_and_markers
+VDR nav: ['01   Report && HSE   ✓', '02   Weather   ✓', '03   Activity log   ✓', '04   Running hours   ▲', '05   Bulk inventory   ✓', '06   Core crew   ✓', '07   Contractors   ✓']
+screenshot 09_vjr_progress_plausibility
+screenshot 10_vjr_required_markers
+VJR nav: ['01   Report information   ✓', '02   Core crew   ✓', '03   Contractors   ✓', '04   Waypoint plan   ✓', '05   Departure report   ✓', '06   Arrival report   ✓', '07   Voyage progress   ✓']; save badge 'Saved'
+screenshot 11_nav_readout_and_squall
+NAV readout tail: ['CHECK VALUES', '▲ Speed 55 kn is unusually high. Check the value.']; squall: 'SQUALL PROVIDER UNAVAILABLE · no warnings are being received'

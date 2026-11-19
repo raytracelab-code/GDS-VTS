@@ -2,8 +2,8 @@ from app.qt.QtWidgets import QFrame,QWidget,QVBoxLayout,QGridLayout,QLabel
 from app.telemetry.diagnostics import derive_diagnostics
 
 class DiagnosticsPanel(QFrame):
-    def __init__(self,state):
-        super().__init__(); self.setObjectName('card'); self.state=state; layout=QVBoxLayout(self); layout.setContentsMargins(22,20,22,20); layout.setSpacing(16); title=QLabel('SYSTEM HEALTH'); title.setObjectName('sectionTitle'); layout.addWidget(title); self.health={}; health_grid=QGridLayout(); health_grid.setHorizontalSpacing(28); health_grid.setVerticalSpacing(14)
+    def __init__(self,state,monitor=None):
+        super().__init__(); self.setObjectName('card'); self.state=state; self.monitor=monitor; self._rate=(None,0,0.0); layout=QVBoxLayout(self); layout.setContentsMargins(22,20,22,20); layout.setSpacing(16); title=QLabel('SYSTEM HEALTH'); title.setObjectName('sectionTitle'); layout.addWidget(title); self.health={}; health_grid=QGridLayout(); health_grid.setHorizontalSpacing(28); health_grid.setVerticalSpacing(14)
         for index,key in enumerate(('USB','BLE','Telemetry','GPS','Heading','Weather','IMU','Power')):
             metric=QFrame(); metric.setObjectName('healthTile'); ml=QVBoxLayout(metric); ml.setContentsMargins(12,12,12,12); ml.setSpacing(5); label=QLabel(key.upper()); label.setObjectName('fieldLabelDark'); value=QLabel('○   UNAVAILABLE'); value.setObjectName('statusNeutral'); ml.addWidget(label); ml.addWidget(value); health_grid.addWidget(metric,index//4,index%4); self.health[key]=value
         for column in range(4): health_grid.setColumnStretch(column,1)
@@ -16,4 +16,17 @@ class DiagnosticsPanel(QFrame):
         derived=derive_diagnostics(self.state.telemetry_status,self.state.latest_frame); derived.update({'USB':'CONNECTED' if self.state.active_source and self.state.active_source.value == 'USB' else 'NO DEVICE','BLE':'CONNECTED' if self.state.active_source and self.state.active_source.value == 'BLE' else 'NO DEVICE'})
         for key,value in derived.items():
             if key in self.health: self.health[key].setText(('●   ' if value in ('LIVE','CONNECTED','OK') else '○   ') + value)
-        self.metrics['Frame Age'].setText('—' if self.state.frame_age is None else f'{self.state.frame_age:.1f} s'); self.metrics['Frame Rate'].setText('—'); self.metrics['Valid Frames'].setText(str(self.state.valid_frame_count)); self.metrics['Invalid Frames'].setText(str(self.state.invalid_frame_count)); self.metrics['Reconnect Count'].setText('—'); self.metrics['Active Source Since'].setText('—')
+        self.metrics['Frame Age'].setText('—' if self.state.frame_age is None else f'{self.state.frame_age:.1f} s'); self.metrics['Frame Rate'].setText(self._frame_rate()); self.metrics['Valid Frames'].setText(str(self.state.valid_frame_count)); self.metrics['Invalid Frames'].setText(str(self.state.invalid_frame_count))
+        source=self.state.active_source.value if self.state.active_source else None
+        if self.monitor is not None:
+            self.metrics['Reconnect Count'].setText(str(sum(self.monitor.reconnects(k) for k in ('USB','BLE'))))
+            since=self.monitor.connected_since.get(source) if source else None
+            self.metrics['Active Source Since'].setText(since.astimezone().strftime('%H:%M:%S') if since else '—')
+        else: self.metrics['Reconnect Count'].setText('—'); self.metrics['Active Source Since'].setText('—')
+    def _frame_rate(self):
+        """Valid frames per second measured between refreshes (only real counter differences)."""
+        import time
+        now=time.monotonic(); count=self.state.valid_frame_count; previous_time,previous_count,rate=self._rate
+        if previous_time is not None and now-previous_time>=2: rate=(count-previous_count)/(now-previous_time); self._rate=(now,count,rate)
+        elif previous_time is None: self._rate=(now,count,0.0)
+        return '—' if self.state.active_source is None else f'{self._rate[2]:.1f} /s'

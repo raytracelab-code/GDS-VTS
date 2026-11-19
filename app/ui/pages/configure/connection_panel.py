@@ -6,8 +6,8 @@ from app.core.platform_capabilities import native_ble_available, BLE_UNAVAILABLE
 class ConnectionPanel(QFrame):
     """Connection UI. Transport callbacks may fire on worker threads, so they only
     enqueue events; the GUI thread drains them in refresh() (every 500 ms)."""
-    def __init__(self, usb, ble, state):
-        super().__init__(); self.setObjectName('connectionArea'); self.usb,self.ble,self.state=usb,ble,state; outer=QVBoxLayout(self); outer.setContentsMargins(0,0,0,0); outer.setSpacing(12)
+    def __init__(self, usb, ble, state, monitor=None):
+        super().__init__(); self.setObjectName('connectionArea'); self.usb,self.ble,self.state,self.monitor=usb,ble,state,monitor; outer=QVBoxLayout(self); outer.setContentsMargins(0,0,0,0); outer.setSpacing(12)
         self.events=queue.Queue(); self.connected={'USB':False,'BLE':False}
         for kind,transport in (('USB',usb),('BLE',ble)):
             transport.on_error=lambda message,k=kind: self.events.put((k,'error',message))
@@ -26,13 +26,14 @@ class ConnectionPanel(QFrame):
         l.addLayout(g); selector_label=QLabel('SELECT DEVICE'); selector_label.setObjectName('fieldLabelDark'); l.addWidget(selector_label); selector=QComboBox(); selector.addItem('No device selected'); selector.setEnabled(False); l.addWidget(selector); buttons=QHBoxLayout(); scan=QPushButton(f'SCAN {"BLE" if kind == "BLUETOOTH" else "USB"}'); scan.setObjectName('secondaryButton'); connect=QPushButton('CONNECT'); connect.setEnabled(False)
         disconnect=QPushButton('DISCONNECT'); disconnect.setObjectName('secondaryButton'); disconnect.setEnabled(False)
         buttons.addWidget(scan); buttons.addWidget(connect); buttons.addWidget(disconnect); buttons.addStretch(); l.addLayout(buttons)
+        link=QLabel(''); link.setObjectName('linkDetail'); link.setWordWrap(True); link.hide(); l.addWidget(link)
         message=QLabel(''); message.setObjectName('connectionMessage'); message.setWordWrap(True); message.hide(); l.addWidget(message)
         name='USB' if kind=='USB' else 'BLE'; selector.currentIndexChanged.connect(lambda _i,k=name: self._show_selected(k))
         if kind == 'USB':
-            self.usb_info,self.usb_detail,self.usb_select,self.usb_connect,self.usb_disconnect,self.usb_message=info,details,selector,connect,disconnect,message
+            self.usb_info,self.usb_detail,self.usb_select,self.usb_connect,self.usb_disconnect,self.usb_message,self.usb_link=info,details,selector,connect,disconnect,message,link
             scan.clicked.connect(self.scan_usb); connect.clicked.connect(self.connect_usb); disconnect.clicked.connect(lambda: self.disconnect('USB'))
         else:
-            self.ble_info,self.ble_detail,self.ble_select,self.ble_connect,self.ble_disconnect,self.ble_message=info,details,selector,connect,disconnect,message
+            self.ble_info,self.ble_detail,self.ble_select,self.ble_connect,self.ble_disconnect,self.ble_message,self.ble_link=info,details,selector,connect,disconnect,message,link
             scan.clicked.connect(self.scan_ble); connect.clicked.connect(self.connect_ble); disconnect.clicked.connect(lambda: self.disconnect('BLE'))
             if not native_ble_available():
                 scan.setEnabled(False); scan.setToolTip(BLE_UNAVAILABLE); connect.setToolTip(BLE_UNAVAILABLE)
@@ -56,7 +57,9 @@ class ConnectionPanel(QFrame):
         if kind=='USB': self._set_details(self.usb_detail, {} if not d else {'Device':d.description or d.product or 'Serial device','Port':d.port,'VID:PID':f'{d.vid:04X}:{d.pid:04X}' if d.vid is not None and d.pid is not None else '—','Serial':d.serial_number or '—'})
         else: self._set_details(self.ble_detail, {} if not d else {'Device':d.name or 'Unnamed BLE device','Address':d.address,'RSSI':'—' if d.rssi is None else f'{d.rssi} dBm'})
     def _status(self,label,text,live):
-        label.setText(text); label.setObjectName('statusLive' if live else 'statusNeutral'); label.style().unpolish(label); label.style().polish(label)
+        # Shared badge vocabulary (app/ui/status.py): shape marker + text, colour only reinforces.
+        from app.ui.status import set_badge
+        label.setObjectName('statusBadge'); set_badge(label,text.strip('●○… ').strip())
     def _message(self,kind,text):
         label=self._parts(kind)[6]; label.setText(text); label.setVisible(bool(text))
     def _set_connected(self,kind,up):
@@ -65,6 +68,10 @@ class ConnectionPanel(QFrame):
         self._status(info,'●  CONNECTED' if up else ('○  DISCONNECTED' if devices else '○  NO DEVICE'),up)
         disconnect.setEnabled(up); connect.setEnabled(bool(devices) and not up)
         if was and not up: self.state.mark_disconnected(Source.USB if kind=='USB' else Source.BLE)
+        if self.monitor is not None and was!=up:
+            devices,selector=(self.usb_devices,self.usb_select) if kind=='USB' else (self.ble_devices,self.ble_select); i=selector.currentIndex()
+            device=devices[i] if 0<=i<len(devices) else None
+            self.monitor.connection_changed(kind,up,getattr(device,'port',None) or getattr(device,'address','') or '')
     def _connect(self,kind):
         transport,devices,selector,info,*_rest=self._parts(kind); i=selector.currentIndex()
         if not 0<=i<len(devices): return False
@@ -100,6 +107,23 @@ class ConnectionPanel(QFrame):
                 except Exception: pass
                 self._set_connected(kind,False)
                 if not self._parts(kind)[6].text(): self._message(kind,'Device disconnected. Reconnect the cable or device, then press CONNECT.')
+    def _link_details(self):
+        """Per connected card: plain-language link state + secondary counters (existing metrics only)."""
+        from datetime import datetime,timezone
+        from app.telemetry.link_monitor import link_state
+        now=datetime.now(timezone.utc)
+        for kind,label in (('USB',self.usb_link),('BLE',self.ble_link)):
+            if not self.connected[kind] or self.monitor is None: label.hide(); continue
+            snap=self.monitor.snapshot(); packets=snap['packets'].get(kind,0); last=self.monitor.last_packet_at.get(kind)
+            valid_at=self.state.source_last_valid.get(Source.USB if kind=='USB' else Source.BLE)
+            age=None if valid_at is None else (now-valid_at).total_seconds()
+            # Per-connection state from this source's own last valid frame (same 3 s / 10 s thresholds as telemetry).
+            status='WAITING' if age is None else 'LIVE' if age<3 else 'STALE' if age<10 else 'LOST'
+            text,tone,why=link_state(status,packets,self.state.valid_frame_count,self.state.invalid_frame_count,age)
+            detail=f'{why}\nPackets {packets} · valid frames {self.state.valid_frame_count} · invalid {self.state.invalid_frame_count}'
+            detail+=f' · last packet {(now-last).total_seconds():.0f} s ago' if last else ' · no packet yet'
+            detail+=f' · reconnects {self.monitor.reconnects(kind)}'
+            label.setText(f'{text} — {detail}'); label.setProperty('tone',tone); label.style().unpolish(label); label.style().polish(label); label.show()
     def refresh(self):
-        self._drain()
+        self._drain(); self._link_details()
         self.summary_values['ACTIVE SOURCE'].setText(self.state.active_source.value if self.state.active_source else 'NONE'); self.summary_values['STANDBY'].setText(self.state.standby_source.value if self.state.standby_source else 'NONE'); self.summary_values['TELEMETRY'].setText(self.state.telemetry_status.value)

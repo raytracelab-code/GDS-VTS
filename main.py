@@ -35,7 +35,9 @@ def main():
     print('STARTUP 3: before MainWindow import', flush=True)
     from app.ui.main_window import MainWindow
     print('STARTUP 4: MainWindow imported', flush=True); print('STARTUP 5: before MainWindow construction', flush=True)
-    window=MainWindow(); print('STARTUP 6: MainWindow constructed', flush=True); window.show(); print('STARTUP 7: window shown', flush=True); print('STARTUP 8: entering app.exec', flush=True)
+    window=MainWindow(); print('STARTUP 6: MainWindow constructed', flush=True); window.show();
+    if not validation and not close_ms: QTimer.singleShot(400,window.maybe_first_run)  # only when vessel identity is missing
+    print('STARTUP 7: window shown', flush=True); print('STARTUP 8: entering app.exec', flush=True)
     if close_ms:QTimer.singleShot(max(1000,close_ms),window.close)
     if cycle:
         QTimer.singleShot(500,lambda:window.navigate('Nav'))

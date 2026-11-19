@@ -1,0 +1,45 @@
+s.Windows fatal exception: code 0x8001010d
+
+Current thread 0x00004238 (most recent call first):
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pytestqt\plugin.py", line 222 in _process_events
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pytestqt\plugin.py", line 190 in pytest_runtest_call
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_callers.py", line 124 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_hooks.py", line 513 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\runner.py", line 242 in <lambda>
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\runner.py", line 341 in from_call
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\runner.py", line 241 in call_and_report
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\runner.py", line 132 in runtestprotocol
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\runner.py", line 113 in pytest_runtest_protocol
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_callers.py", line 103 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_hooks.py", line 513 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\main.py", line 362 in pytest_runtestloop
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_callers.py", line 103 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_hooks.py", line 513 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\main.py", line 337 in _main
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\main.py", line 283 in wrap_session
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\main.py", line 330 in pytest_cmdline_main
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_callers.py", line 103 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_manager.py", line 120 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pluggy\_hooks.py", line 513 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\config\__init__.py", line 175 in main
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\_pytest\config\__init__.py", line 201 in console_main
+  File "C:\Users\rayha\GDS-VTS\.venv-win7\lib\site-packages\pytest\__main__.py", line 9 in <module>
+  File "C:\Users\rayha\GDS-VTS\build\toolchains\python3810\lib\runpy.py", line 87 in _run_code
+  File "C:\Users\rayha\GDS-VTS\build\toolchains\python3810\lib\runpy.py", line 194 in _run_module_as_main
+...................................................................... [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 23%]
+........................................................................ [ 31%]
+........................................................................ [ 39%]
+........................................................................ [ 47%]
+........................................................................ [ 55%]
+........................................................................ [ 63%]
+........................................................................ [ 71%]
+........................................................................ [ 79%]
+........................................................................ [ 87%]
+........................................................................ [ 94%]
+..............................................                           [100%]
+909 passed, 1 skipped in 415.86s (0:06:55)

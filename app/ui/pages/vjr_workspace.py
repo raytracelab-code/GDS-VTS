@@ -1,15 +1,21 @@
 """Template-led VJR. All edits, calculations and exports use the canonical store."""
 from pathlib import Path
+import re
 from app.qt.QtCore import Qt, QDate, QTime, QSettings, QStandardPaths, QSignalBlocker, QTimer
-from app.qt.QtGui import QKeySequence, QShortcut, QColor, QFont, QPen
+from app.qt.QtGui import QKeySequence, QShortcut, QColor, QFont, QPen, QPainter
 from app.qt.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel,
     QPushButton, QLineEdit, QDateEdit, QTimeEdit, QCheckBox, QComboBox, QFormLayout,
     QFrame, QScrollArea, QTabWidget, QTableWidget, QTableWidgetItem, QStyledItemDelegate,
-    QFileDialog, QMessageBox, QAbstractItemView, QSizePolicy, QHeaderView, QAbstractSpinBox)
+    QFileDialog, QMessageBox, QAbstractItemView, QSizePolicy, QHeaderView, QAbstractSpinBox, QStyle)
 from app.vjr.schema import META, GENERAL, DEPARTURE, ARRIVAL, TABLES, DECK, INVENTORY, CAPACITIES, COMPASS
 from app.vjr.model import blank_row, with_identity, arrival_fields
 from app.core.vessel_identity import load_identity
 from app.ui import dialogs
+from app.core.plausibility import check as plausibility_check
+# VJR column -> plausibility rule (soft warnings only; hard limits stay in app/vjr/validation.py)
+REQUIRED_FIELDS = {('meta','vessel'), ('departure','departure_date'), ('departure','departure_location')}
+PLAUSIBILITY_KIND = {('waypoints','speed'):'planned_speed', ('progress','speed'):'actual_speed', 'visibility':'visibility_nm',
+                     'wind_speed':'wind_speed_knots', 'wave_height':'wave_height_m', 'quantity':'quantity', 'course':'course'}
 from app.vjr.store import VjrStore
 from app.vjr.validation import validate, validate_value
 from app.vjr.calculations import working_days, deck_values, deck_totals
@@ -81,6 +87,12 @@ class FieldDelegate(QStyledItemDelegate):
         super().paint(painter,option,index)
         if index.data(Qt.ItemDataRole.UserRole):
             painter.save(); painter.setPen(QPen(QColor('#D97770'),1))
+            painter.drawRect(option.rect.adjusted(1,1,-2,-2)); painter.restore()
+        elif str(index.data(Qt.ItemDataRole.ToolTipRole) or '').startswith('▲'):
+            # Suspicious (possible but unusual) value: amber outline + light tint, same pattern as the invalid outline.
+            painter.save(); painter.setCompositionMode(QPainter.CompositionMode.CompositionMode_Multiply)
+            painter.fillRect(option.rect.adjusted(1,1,-1,-1), QColor('#FFF0CC')); painter.restore()
+            painter.save(); painter.setPen(QPen(QColor('#D9A441'),1))
             painter.drawRect(option.rect.adjusted(1,1,-2,-2)); painter.restore()
 
     def initStyleOption(self,option,index):
@@ -178,7 +190,7 @@ class VjrPage(QWidget):
         if self._building:
             return
         try:
-            self.store.mutate(action); self.saved.setText('Saved')
+            self.store.mutate(action); self._set_saved('Saved')
             if self.storage_notice.isVisible() and self.storage_notice.text().startswith('Not saved'):
                 self.storage_notice.hide()
             if structural:
@@ -186,7 +198,7 @@ class VjrPage(QWidget):
             else:
                 self.refresh()
         except (OSError,ValueError,TypeError) as error:
-            self.saved.setText('NOT SAVED'); self.saved.setToolTip(str(error)); self._storage_error(error)
+            self._set_saved('NOT SAVED'); self.saved.setToolTip(str(error)); self._storage_error(error)
 
     def set_field(self,path,value):
         def edit(report):
@@ -202,11 +214,19 @@ class VjrPage(QWidget):
             text = f'Not saved: {text}. Your previously saved journey is safe; your next edit retries.'
         self.storage_notice.setText(dialogs.wrap_long_tokens(text)); self.storage_notice.show()
 
+    def _set_saved(self, text):
+        """Autosave state as a compact badge: quiet when saved, prominent only on failure (text unchanged)."""
+        from app.ui.status import set_badge
+        set_badge(self.saved, text, 'error' if 'NOT SAV' in text.upper() or 'FAILED' in text.upper() else
+                  'success' if text.startswith('Saved') else 'neutral', with_icon=False)
+
     def flush_save(self):
         try:
             self.store.save()
+            return True
         except OSError as error:
-            self.saved.setText('NOT SAVED'); self._storage_error(error)
+            self._set_saved('NOT SAVED'); self._storage_error(error)
+            return False
 
     def undo(self):
         self.history(False)
@@ -217,9 +237,9 @@ class VjrPage(QWidget):
     def history(self,redo):
         try:
             if self.store.redo() if redo else self.store.undo():
-                self.rebuild(); self.saved.setText('Saved · '+('Redone' if redo else 'Undone'))
+                self.rebuild(); self._set_saved('Saved · '+('Redone' if redo else 'Undone'))
         except OSError as error:
-            self.saved.setText('History not saved: '+str(error))
+            self._set_saved('History not saved: '+str(error))
 
     def card(self,layout,title):
         frame = QFrame(); frame.setObjectName('formBlock'); body = QVBoxLayout(frame)
@@ -253,7 +273,9 @@ class VjrPage(QWidget):
         for key,label,_,kind in schema:
             path = (group,key); value = data.get(key,'')
             wrapper = QWidget(); field = QVBoxLayout(wrapper); field.setContentsMargins(0,0,0,0); field.setSpacing(5)
-            caption = QLabel(label.upper()); caption.setObjectName('fieldLabel'); field.addWidget(caption)
+            caption = QLabel(label.upper() + (' *' if path in REQUIRED_FIELDS else '')); caption.setObjectName('fieldLabel'); field.addWidget(caption)
+            if path in REQUIRED_FIELDS:
+                caption.setToolTip('Required before downloading Excel')
             linked_key = linked if isinstance(linked,bool) else key in linked
             readonly = linked_key or kind=='automatic' or (group=='meta' and key in identity)
             if readonly:
@@ -442,7 +464,7 @@ class VjrPage(QWidget):
 
     def _photo_changed(self,slot):
         if not self._building and hasattr(self,'photo_cards'):
-            self.saved.setText('Saved' if self.store.report.get('photos',{}).get(slot) else self.saved.text())
+            self._set_saved('Saved' if self.store.report.get('photos',{}).get(slot) else self.saved.text())
             self.refresh()
 
     def closeEvent(self,event):
@@ -493,10 +515,17 @@ class VjrPage(QWidget):
         self.vessel_context.setToolTip(vessel)
         self.journey_status.setText('Needs attention' if issues else 'Arrival recorded' if report['arrival'].get('report_date') else
                                     'Departure recorded' if report['departure'].get('report_date') else 'Working report')
+        counts = {}
+        for issue in issues:
+            match = re.match(r'[a-z_]+', issue); counts[self.SECTION_OF.get(match.group(0) if match else '', 0)] = counts.get(self.SECTION_OF.get(match.group(0) if match else '', 0), 0) + 1
+        for i, button in enumerate(self.nav_buttons):
+            # Same text markers as VDR: "⚠ n" items to fix, "✓" section complete.
+            button.setText('%02d   %s' % (i+1, self.SECTION_NAMES[i]) + (f'   ⚠ {counts[i]}' if counts.get(i) else '   ✓'))
+            button.setToolTip(f'{counts[i]} item(s) to fix before downloading Excel' if counts.get(i) else 'No issues')
         self.nav_summary.setText('%s crew · %s contractors\n%s waypoints · %s progress rows' % (
             len(report['crew']),len(report['contractors']),len(report['waypoints']),len(report['progress'])))
         if self.store.load_error:
-            self.saved.setText(self.store.load_error)
+            self._set_saved(self.store.load_error)
         for (group,key),editor in self.linked:
             data = report[group] if group!='arrival' else arrival_fields(report)
             if key=='counts':
@@ -534,6 +563,8 @@ class VjrPage(QWidget):
                     computed = {key:None for key,_,_,kind in schema if kind=='derived'}
                 for col,(key,_,_,kind) in enumerate(schema):
                     item = table.item(index,col)
+                    if item is None:  # table older than the data (changed outside this page): rebuild instead of crashing
+                        QTimer.singleShot(0,self.rebuild); return
                     if kind=='derived':
                         value = self.display(computed.get(key),key=='utilization')
                         if item.text()!=value:
@@ -544,6 +575,9 @@ class VjrPage(QWidget):
                         item.setBackground(QColor('#EEF5F5' if kind=='derived' else '#F4F7F9' if kind=='fixed' else 'transparent'))
                         item.setForeground(QColor(COLORS['navy'] if kind in ('derived','fixed') else COLORS['text']))
                         item.setToolTip('Calculated from report values' if kind=='derived' else 'Fixed template value' if kind=='fixed' else '')
+                        warning = plausibility_check(PLAUSIBILITY_KIND.get((path[0],key)) or PLAUSIBILITY_KIND.get(key), row.get(key,''))
+                        if warning:
+                            item.setBackground(QColor('#FFF4DC')); item.setToolTip('▲ '+warning[1])
                     except (ValueError,TypeError) as error:
                         item.setBackground(QColor('#FFF0ED')); item.setToolTip(str(error)); item.setData(Qt.ItemDataRole.UserRole,True)
             if len(path)==2 and path[1]=='deck':
@@ -577,7 +611,7 @@ class VjrPage(QWidget):
         dialog = VoyageHistoryDialog(self.store, self)
         dialogs.exec_dialog(dialog, self)
         if dialog.restored:
-            self.rebuild(); self.saved.setText('Voyage restored · previous journey archived as '+dialog.restored.name)
+            self.rebuild(); self._set_saved('Voyage restored · previous journey archived as '+dialog.restored.name)
         return dialog
 
     def new_voyage(self):
@@ -602,7 +636,7 @@ class VjrPage(QWidget):
             fresh['contractors'] = [dict(row) for row in previous['contractors']]
             report.clear(); report.update(fresh)
         self.mutate(start, structural=True)
-        self.saved.setText('New voyage started · previous archived as '+archived.name)
+        self._set_saved('New voyage started · previous archived as '+archived.name)
         return True
 
     def download_excel(self):
@@ -619,7 +653,10 @@ class VjrPage(QWidget):
         if not Path(destination).suffix:
             destination += '.xlsx'
         try:
-            VjrExcelExporter(photo_root=self.photo_controller.storage.root).export(report,destination); self.saved.setText('Saved · Excel downloaded')
+            from app.ui.status import busy
+            with busy():
+                VjrExcelExporter(photo_root=self.photo_controller.storage.root).export(report,destination)
+            self._set_saved('Saved · Excel downloaded')
         except (ExcelExportError,OSError,ValueError) as error:
             dialogs.notify(self,'Excel file not created','The VJR Excel file was not created. Your journey data is safe and unchanged.\n\n'
                            'If the file is open in Excel, close it and try again, or choose another folder.',details=f'{error}\n\nDestination: {destination}')

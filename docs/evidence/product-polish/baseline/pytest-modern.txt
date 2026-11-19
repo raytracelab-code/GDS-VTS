@@ -1,0 +1,45 @@
+..Windows fatal exception: code 0x8001010d
+
+Current thread 0x00002c4c (most recent call first):
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pytestqt\plugin.py", line 220 in _process_events
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pytestqt\plugin.py", line 188 in pytest_runtest_call
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 180 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 250 in <lambda>
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 361 in from_call
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 249 in call_and_report
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 139 in runtestprotocol
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\runner.py", line 118 in pytest_runtest_protocol
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 411 in pytest_runtestloop
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 387 in _main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 333 in wrap_session
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\main.py", line 380 in pytest_cmdline_main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\config\__init__.py", line 262 in _main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\_pytest\config\__init__.py", line 286 in _console_main
+  File "C:\Users\rayha\GDS-VTS\.venv\Lib\site-packages\pytest\__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 203 in _run_module_as_main
+...................................................................... [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 33%]
+........................................................................ [ 41%]
+........................................................................ [ 49%]
+........................................................................ [ 58%]
+........................................................................ [ 66%]
+........................................................................ [ 74%]
+........................................................................ [ 83%]
+........................................................................ [ 91%]
+........................................................................ [ 99%]
+.                                                                        [100%]
+865 passed in 282.48s (0:04:42)

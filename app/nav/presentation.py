@@ -47,7 +47,7 @@ def squall_feed_text(feed,active_count):
  unless the feed is LIVE; never presents STALE warnings as current."""
  feed=feed or {'state':'PROVIDER UNAVAILABLE','age_seconds':None,'detail':'No squall provider is configured in this build'}
  state=feed.get('state','PROVIDER UNAVAILABLE');age=feed.get('age_seconds')
- events=f'ACTIVE EVENTS  {active_count}' if active_count else 'No active events'
+ events=f'ACTIVE EVENTS  {active_count}' if active_count else 'No current warnings'
  if state=='LIVE':
   text=f'SQUALL FEED LIVE · updated {format_age(age)}\n{events}'
   tip='Squall warnings are being received. An empty list means no active warnings from the feed.'

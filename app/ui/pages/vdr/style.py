@@ -69,6 +69,9 @@ QWidget#vdrPage {background:$workspace;color:$text;}
 #vdrPage QScrollBar:vertical {width:10px;background:$workspace;margin:0;}
 #vdrPage QScrollBar::handle {background:$border;min-width:24px;min-height:24px;border-radius:4px;}
 #vdrPage QScrollBar::handle:hover {background:$muted;}
+#vdrPage QLineEdit[plausibility="warning"] {border:1px solid #D9A441;background:#FFFBF0;}
+#vdrPage QLineEdit[data="true"] {qproperty-alignment:'AlignRight|AlignVCenter';}
+#vdrPage QLineEdit#vdrDateInput {qproperty-alignment:'AlignLeft|AlignVCenter';}
 #vdrPage QFrame#storageBanner {background:#FFF7E6;border-bottom:1px solid #F0C36D;}
 #vdrPage QFrame#storageBanner[level="error"], #vdrPage QFrame#storageBanner[level="save"] {background:#FDECEC;border-bottom:1px solid $danger;}
 #vdrPage QLabel#bannerText {color:$dark;font-size:12px;font-weight:600;}
